@@ -10,4 +10,5 @@ for o in sys.stdin:
    q = int(a / 256)
    sys.stdout.write("%s%s" %(chr(p),chr(q)))
   if sys.argv[3] == "8":
-   int((256.0*(int(b58decode_int(o))-min)/(float(max)-float(min))))
+   i = int((256.0*(int(b58decode_int(o))-min)/(float(max)-float(min))))
+   sys.stdout.write("%s" %(chr(i)))
