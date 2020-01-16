@@ -47,4 +47,4 @@ echo $mat[$m] > 32 ? " ." : ">e";
 echo "\n | | | | | | | | | | | | | | | | | | | | | | | |".$as.$bs."\n v v v v v v v v v v v v v v v v v v v v v v v vvvvvvvvvvvvvvvvv\n l l l l l l l l l l l l l l l l l l l l l l l lllllllllllllllllI";
 $id = bin2hex(fread(STDIN,32));
 echo "\n0\"VideoCrypt ID : " . $id ."\n";
-echo "ssssssssssssssssssssssss\nvvvvvvvvvvvvvvvvvvvvvvvv\n##########################################\n#########################################i\nvvvvvvvvvvvvvvvvvvvvvvvv vvvvvvvv vvvvvvvv\nTTTTTTTTTTTTTTTTTTTTTTTT TTTTTTTT TTTTTTTT";
+echo "TTTTTTTTTTTTTTTTTTTTTTTT\nvvvvvvvvvvvvvvvvvvvvvvvv\n##########################################\n#########################################i\nvvvvvvvvvvvvvvvvvvvvvvvv vvvvvvvv vvvvvvvv\nTTTTTTTTTTTTTTTTTTTTTTTT TTTTTTTT TTTTTTTT";
