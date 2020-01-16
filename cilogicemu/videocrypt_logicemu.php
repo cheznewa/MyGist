@@ -2,9 +2,11 @@
 $a = strval(sprintf("%08b",intval($argv[3])));
 $ac = str_replace("0","c",$a);
 $as = str_replace("1","C",$ac);
+$as = strrev($as);
 $b = strval(sprintf("%08b",intval($argv[4])));
 $bc = str_replace("0","c",$b);
 $bs = str_replace("1","C",$bc);
+$bs = strrev($bs);
 echo "s s s s s s s s s s s s s s s s s s s s s s s s \n| | | | | | | | | | | | | | | | | | | | | | | |";
 for ($l = 0;$l < intval($argv[1]);$l++)
 {
@@ -45,4 +47,4 @@ echo $mat[$m] > 32 ? ". " : "e<";
 echo "\n| | | | | | | | | | | | | | | | | | | | | | | |".$as.$bs."\nv v v v v v v v v v v v v v v v v v v v v v v vvvvvvvvvvvvvvvvv\nl l l l l l l l l l l l l l l l l l l l l l l lllllllllllllllllI";
 $id = bin2hex(fread(STDIN,32));
 echo "\n0\"VideoCrypt ID : " . $id ."\n";
-echo "ssssssssssssssssssssssss\nvvvvvvvvvvvvvvvvvvvvvvvv\n##########################################\n#########################################i\nvvvvvvvvvvvvvvvvvvvvvvvv vvvvvvvv vvvvvvvv\nllllllllllllllllllllllll llllllll llllllll";
+echo "ssssssssssssssssssssssss\nvvvvvvvvvvvvvvvvvvvvvvvv\n##########################################\n#########################################i\nvvvvvvvvvvvvvvvvvvvvvvvv vvvvvvvv vvvvvvvv\nTTTTTTTTTTTTTTTTTTTTTTTT TTTTTTTT TTTTTTTT";
