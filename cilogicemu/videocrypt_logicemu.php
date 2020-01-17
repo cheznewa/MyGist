@@ -18,12 +18,12 @@ $mat[$a] = ord(fgetc(STDIN));
 }
 for ($m = 0;$m < 24;$m++)
 {
-echo $mat[$m] > 32 ? " ." : " v";
+echo $mat[$m] > 50 ? " ." : " v";
 }
 echo "\n";
 for ($m = 0;$m < 24;$m++)
 {
-echo $mat[$m] > 32 ? " ." : ">E";
+echo $mat[$m] > 50 ? " ." : ">E";
 }
 }
 for ($l = 0;$l < intval($argv[2]);$l++)
@@ -36,12 +36,12 @@ $mat[$a] = ord(fgetc(STDIN));
 }
 for ($m = 0;$m < 24;$m++)
 {
-echo $mat[$m] > 32 ? " ." : " v";
+echo $mat[$m] > 50 ? " ." : " v";
 }
 echo "\n";
 for ($m = 0;$m < 24;$m++)
 {
-echo $mat[$m] > 32 ? " ." : ">e";
+echo $mat[$m] > 50 ? " ." : ">e";
 }
 }
 echo "\n | | | | | | | | | | | | | | | | | | | | | | | |".$as.$bs."\n v v v v v v v v v v v v v v v v v v v v v v v vvvvvvvvvvvvvvvvv\n l l l l l l l l l l l l l l l l l l l l l l l lllllllllllllllllI";
