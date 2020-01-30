@@ -5,29 +5,6 @@ imga = img.resize((32,32))
 r = list(bytearray(imga.getdata(0)))
 g = list(bytearray(imga.getdata(1)))
 b = list(bytearray(imga.getdata(2)))
-sys.stdout.write("   lll\n   ^^^\n   |||I\n")
-for n in range(1024):
- if n < 10:
-  if int(r[n]) >= int(sys.argv[2]):
-   sys.stdout.write("s->B")
-  else:
-   sys.stdout.write("s->b")
- else:
-  if int(r[n]) >= int(sys.argv[2]):
-   sys.stdout.write("   B")
-  else:
-   sys.stdout.write("   b")
- if int(g[n]) >= int(sys.argv[2]):
-  sys.stdout.write("B")
- else:
-  sys.stdout.write("b")
- if int(b[n]) >= int(sys.argv[2]):
-  sys.stdout.write("B\n")
- else:
-  sys.stdout.write("b\n")
-
-sys.stdout.write("\n")
-
 sys.stdout.write("10g->D###############################<--g0\n")
 sys.stdout.write("09g->################################<-c\n")
 sys.stdout.write("08g->################################\n")
@@ -65,6 +42,29 @@ sys.stdout.write("     |||||\n")
 sys.stdout.write("     ggggg\n")
 sys.stdout.write("     00000\n")
 sys.stdout.write("     54321\n")
+
+sys.stdout.write("\n")
+
+sys.stdout.write("   lll\n   ^^^\n   |||I\n")
+for n in range(1024):
+ if n < 10:
+  if int(r[n]) >= int(sys.argv[2]):
+   sys.stdout.write("s->B")
+  else:
+   sys.stdout.write("s->b")
+ else:
+  if int(r[n]) >= int(sys.argv[2]):
+   sys.stdout.write("   B")
+  else:
+   sys.stdout.write("   b")
+ if int(g[n]) >= int(sys.argv[2]):
+  sys.stdout.write("B")
+ else:
+  sys.stdout.write("b")
+ if int(b[n]) >= int(sys.argv[2]):
+  sys.stdout.write("B\n")
+ else:
+  sys.stdout.write("b\n")
 
 sys.stdout.write("\n")
 
