@@ -33,10 +33,10 @@ sys.stdout.write("     ################################\n")
 sys.stdout.write("     ################################\n")
 sys.stdout.write("     ################################\n")
 sys.stdout.write("     ################################\n")
-sys.stdout.write("     ################################\n")
 sys.stdout.write("     ################################<-g11\n")
 sys.stdout.write("     ################################<-g12\n")
 sys.stdout.write("     ################################<-g13\n")
+sys.stdout.write("     ################################<-g14\n")
 sys.stdout.write("     ^^^^^\n")
 sys.stdout.write("     |||||\n")
 sys.stdout.write("     ggggg\n")
@@ -45,7 +45,7 @@ sys.stdout.write("     54321\n")
 
 sys.stdout.write("\n")
 
-sys.stdout.write("   lll\n   ^^^\n   |||I\n")
+sys.stdout.write("   llll\n   ^^^^\n   ||||I\n")
 for n in range(1024):
  if n < 10:
   if int(r[n]) >= int(sys.argv[2]):
@@ -53,7 +53,7 @@ for n in range(1024):
   else:
    sys.stdout.write("s->b")
  else:
-  if int(r[n]) >= int(sys.argv[2]):
+  if int(b[n]) >= int(sys.argv[2]):
    sys.stdout.write("   B")
   else:
    sys.stdout.write("   b")
@@ -61,7 +61,11 @@ for n in range(1024):
   sys.stdout.write("B")
  else:
   sys.stdout.write("b")
- if int(b[n]) >= int(sys.argv[2]):
+ if int(r[n]) >= int(sys.argv[2]):
+  sys.stdout.write("B")
+ else:
+  sys.stdout.write("b")
+ if ((int(b[n])+int(g[n])+int(r[n]))/3) >= int(sys.argv[3]):
   sys.stdout.write("B\n")
  else:
   sys.stdout.write("b\n")
@@ -78,4 +82,4 @@ sys.stdout.write("    g g g g g g g g g g\n")
 sys.stdout.write("    0 0 0 0 0 0 0 0 0 1\n")
 sys.stdout.write("    1 2 3 4 5 6 7 8 9 0\n")
 sys.stdout.write("\n")
-sys.stdout.write("    111\n    123\n    ggg\n    |||\n10g>###\n09g>#i#\n08g>###\n07g>###\n06g>###\n05g>###\n04g>###\n03g>###\n02g>###\n01g>###\n")
+sys.stdout.write("    1111\n    1234\n    gggg\n    ||||\n10g>####\n09g>#i##\n08g>####\n07g>####\n06g>####\n05g>####\n04g>####\n03g>####\n02g>####\n01g>####\n")
