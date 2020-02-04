@@ -118,13 +118,13 @@ if cryptage == "Discret 11":
  if ord(reshash[3]) > 20:
   soundcrypt_enable = True
 
-if ord(reshash[2]) <= 130:
+if ord(reshash[2]) <= 220:
  color = "PAL"
 
-if ord(reshash[2]) > 130:
+if ord(reshash[2]) > 220:
  color = "NTSC"
 
-if ord(reshash[2]) > 220:
+if ord(reshash[2]) > 240:
  color = "SECAM"
 
 if ord(reshash[2]) > 250:
