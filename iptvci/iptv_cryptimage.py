@@ -139,7 +139,10 @@ if bool(re.search("\.ci",url)):
 if bool(re.search("\.be",url)):
   color = "SECAM"
 
-if bool(re.search("\.int",url)):
+if bool(re.search("international",url)):
+  color = "MAC"
+
+if bool(re.search("internacional",url)):
   color = "MAC"
   
 if bool(re.search("tntendirect\.com",url)):
