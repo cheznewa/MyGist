@@ -129,19 +129,19 @@ if ord(reshash[2]) > 250:
 if ord(reshash[2]) == 255:
  color = "MAC"
 
-if bool(re.search("\.fr/",url)):
+if bool(re.search("\.fr",url)):
   color = "SECAM"
 
-if bool(re.search("\.ru/",url)):
+if bool(re.search("\.ru",url)):
   color = "SECAM"
 
-if bool(re.search("\.bg/",url)):
+if bool(re.search("\.bg",url)):
   color = "SECAM"
 
-if bool(re.search("nknews\.org/",url)):
+if bool(re.search("nknews\.org",url)):
   color = "SECAM"
 
-if bool(re.search("\.be/",url)):
+if bool(re.search("\.be",url)):
   color = "SECAM"
 
 if bool(re.search("international",url)):
@@ -152,6 +152,40 @@ if bool(re.search("internacional",url)):
   
 if bool(re.search("tntendirect\.com/",url)):
   color = "SECAM"
+
+if color == "SECAM":
+ if ord(reshash[4]) > 220:
+  color = "SECAM III"
+ if ord(reshash[4]) > 230:
+  color = "SECAM II"
+ if ord(reshash[4]) > 240:
+  color = "SECAM I"
+ if ord(reshash[4]) > 245:
+  color = "SECAM M"
+ if ord(reshash[4]) > 250:
+  color = "SECAM N"
+ if ord(reshash[4]) == 255:
+  color = "SECAM A"
+
+if color == "PAL":
+ if ord(reshash[4]) > 235:
+  color = "PAL M"
+ if ord(reshash[4]) > 250:
+  color = "PAL N"
+
+if color == "NIIR":
+ if ord(reshash[4]) > 235:
+  color = "NIIR M"
+ if ord(reshash[4]) > 250:
+  color = "NIIR N"
+
+if color == "NTSC":
+ if ord(reshash[4]) > 200:
+  color = "NTSC N"
+ if ord(reshash[4]) > 210:
+  color = "NTSC I"
+ if ord(reshash[4]) == 255:
+  color = "NTSC A"
 
 print("Votre IPTV Chiffrer Par CryptImage Pour ::: " + url)
 print("System De Chiffrement :: "+cryptage)
