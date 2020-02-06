@@ -78,7 +78,7 @@ if mode == "normal":
   soundcrypt_enable = True
   stars = 500
 
- if bool(re.search("ast\.tv",url)):
+ if bool(re.search("www\.ast\.tv",url)):
   cryptage = "VideoCrypt"
   videocrypt_begin = 1
   videocrypt_end = 255
