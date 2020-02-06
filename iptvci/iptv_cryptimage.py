@@ -130,6 +130,9 @@ if ord(reshash[2]) > 240:
 if ord(reshash[2]) > 250:
  color = "NIIR"
 
+if ord(reshash[2]) == 255:
+ color = "MAC"
+
 if bool(re.search("\.fr",url)):
   color = "SECAM"
 
