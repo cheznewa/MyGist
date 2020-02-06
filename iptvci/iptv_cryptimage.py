@@ -106,10 +106,6 @@ if cryptage == "VideoCrypt":
  if ord(reshash[3]) < 10:
   soundcrypt_enable = True
 
-if cryptage == "VideoCrypt":
- if ord(reshash[3]) < 10:
-  soundcrypt_enable = True
-
 if cryptage == "Nagravision Syster":
  if ord(reshash[3]) > 10:
   soundcrypt_enable = True
@@ -133,13 +129,19 @@ if ord(reshash[2]) > 250:
 if ord(reshash[2]) == 255:
  color = "MAC"
 
-if bool(re.search("\.fr",url)):
+if bool(re.search("\.fr/",url)):
   color = "SECAM"
 
-if bool(re.search("\.ci",url)):
+if bool(re.search("\.ru/",url)):
   color = "SECAM"
 
-if bool(re.search("\.be",url)):
+if bool(re.search("\.bg/",url)):
+  color = "SECAM"
+
+if bool(re.search("nknews\.org/",url)):
+  color = "SECAM"
+
+if bool(re.search("\.be/",url)):
   color = "SECAM"
 
 if bool(re.search("international",url)):
@@ -148,7 +150,7 @@ if bool(re.search("international",url)):
 if bool(re.search("internacional",url)):
   color = "MAC"
   
-if bool(re.search("tntendirect\.com",url)):
+if bool(re.search("tntendirect\.com/",url)):
   color = "SECAM"
 
 print("Votre IPTV Chiffrer Par CryptImage Pour ::: " + url)
