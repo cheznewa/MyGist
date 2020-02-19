@@ -60,7 +60,16 @@ if mode == "normal":
 
 if mode == "noclear":
 
- if ord(reshash[1]) <= 186:
+ if ord(reshash[1]) <= 50:
+  cryptage = "Nagravision Syster"
+
+ if ord(reshash[1]) > 50:
+  cryptage = "VideoCrypt"
+
+ if ord(reshash[1]) > 125:
+  cryptage = "Discret 11"
+
+ if ord(reshash[1]) > 130:
   cryptage = "Nagravision Syster"
 
  if ord(reshash[1]) > 186:
@@ -139,7 +148,7 @@ if bool(re.search("\.bg",url)):
   color = "SECAM"
 
 if bool(re.search("nknews\.org",url)):
-  color = "SECAM"
+  color = "SECAM A"
 
 if bool(re.search("\.be",url)):
   color = "SECAM"
