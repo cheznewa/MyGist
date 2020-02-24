@@ -1,8 +1,7 @@
 import sys
 url = str(sys.argv[1])
 mode = str(sys.argv[2])
-ip = str(sys.argv[3])
-param = str(sys.argv[4])
+colorpourcent = float(sys.argv[3])
 import hashlib
 import re
 syster_table = 1
@@ -18,9 +17,6 @@ vcend = range(129,256)
 videocrypt_begin = vcbegin[ord(reshash[0]) % 127]
 videocrypt_end = vcend[ord(end[0]) % 126]
 
-ipsplit = ip.split(".")
-ipraw = chr(int(ipsplit[0]))+chr(int(ipsplit[1]))+chr(int(ipsplit[2]))+chr(int(ipsplit[3]))
-
 def cond(bool):
  if bool:
   return "Oui"
@@ -31,13 +27,8 @@ syster_table = (ord(reshash[0])%2)+1
 
 import time
 hashtwo = hashlib.sha256()
-hashtwo.update("%s%s%s" %(reshash,int(time.time()/86400),ipraw))
+hashtwo.update("%s%s" %(reshash,int(time.time()/86400)))
 hashday = hashtwo.digest()
-
-fs = open(param,"w")
-
-from random import seed,randint
-seed("%s%s%s" %(reshash,hashday,ipraw))
 
 word = ((((ord(hashday[0]) *256)+(ord(hashday[1]))))%65504)+32
 
@@ -206,41 +197,30 @@ if color == "NTSC":
  if ord(reshash[4]) == 255:
   color = "NTSC A"
 
+if colorpourcent < float(ord(reshash[5])/256.0):
+ color = "Aucun"
+
 print("Votre IPTV Chiffrer Par CryptImage Pour ::: " + url)
 print("System De Chiffrement :: "+cryptage)
 print("Modem Couleur :: "+color)
 if cryptage == "VideoCrypt":
- for n in range(86400*25):
-  p = randint(1,1677216)
-  fs.write("%s;%s;%s\n" %(p,videocrypt_begin,videocrypt_end))
  print("Point De Coupe :: "+str(videocrypt_begin)+"-"+str(videocrypt_end))
  print("Mode Stricte :: "+cond(videocrypt_stricte))
  print("Tatouage Dans La Ligne 576 :: "+cond(tag_enable))
  print("Son Traiter :: "+cond(soundcrypt_enable))
  print("Pour Le Dechiffrer Vous Devrait Jouer A Geometry Dash Et Avoir :: "+str(int(stars*10))+" Etoile")
 if cryptage == "Nagravision Syster":
- for n in range(86400*25):
-  aa = randint(0,255)
-  ba = (randint(0,127)*2)+1
-  if syster_demi:
-   ab = randint(0,255)
-   bb = (randint(0,127)*2)+1
-  else:
-   ab = aa
-   bb = ba
-  fs.write("frames %s;%s;%s;%s;%s;%s\n" %(n+1,syster_table,aa,ba,ab,bb))
  print("Table Primaire :: "+str(syster_table))
  print("Demi-Ligne :: "+cond(syster_demi))
  print("Tatouage Dans La Ligne 288 :: "+cond(tag_enable))
  print("Son Traiter :: "+cond(soundcrypt_enable))
  print("Pour Le Dechiffrer Vous Devrait Jouer A Geometry Dash Et Avoir :: "+str(int(stars*5))+" Etoile")
 if cryptage == "Discret 11":
- fs.write("Mot De 16 Bit :: "+str(word)+"\n")
- fs.write("Multicode :: ")
+ print("Mot De 16 Bit :: "+str(word))
+ sys.stdout.write("Multicode :: ")
  for n in range(10):
-  fs.write("%s" %(level[n]))
- fs.write("\n")
- fs.close()
+  sys.stdout.write("%s" %(level[n]))
+ sys.stdout.write("\n")
  print("Son Traiter :: "+cond(soundcrypt_enable))
  print("Pour Le Dechiffrer Vous Devrait Jouer A Geometry Dash Et Avoir :: "+str(int(stars*3))+" Etoile")
 if cryptage == "Transcode":

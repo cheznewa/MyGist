@@ -1,3 +1,3 @@
-Get Your Setting For CryptImage And Color Modem Via IPTV URL Stream ;;;;;;;;;; args ::::: URL mode your_ip parameter_output ;;;;; mode :::: normal noclear discret11 syster videocrypt 
+Get Your Setting For CryptImage And Color Modem Via IPTV URL Stream ;;;;;;;;;; args ::::: URL mode color% ;;;;; mode :::: normal noclear discret11 syster videocrypt ;;;; color% Define The Pourcent Of Color Television In The World 1.0 For All Color TV Or 0.0 For All Grascale, Grayscale TV If Returned "Aucun"
 
 [IPTV](https://github.com/iptv-org/iptv), [CryptImage](https://github.com/Potomac/cryptimage), [Color Modem](https://github.com/kFYatek/color_modem)
