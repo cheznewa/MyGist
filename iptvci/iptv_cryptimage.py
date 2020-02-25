@@ -200,8 +200,12 @@ if color == "NTSC":
 if colorpourcent < float(ord(reshash[5])/256.0):
  color = "Aucun"
 
+radio = (((ord(reshash[6])*256)+ord(reshash[7]))*100)
+radioend = radio + 100
+
 print("Votre IPTV Chiffrer Par CryptImage Pour ::: " + url)
 print("System De Chiffrement :: "+cryptage)
+print("Plage Radio Utiliser :: "+str(radio)+"-"+str(radioend))
 print("Modem Couleur :: "+color)
 if cryptage == "VideoCrypt":
  print("Point De Coupe :: "+str(videocrypt_begin)+"-"+str(videocrypt_end))
