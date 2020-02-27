@@ -1,4 +1,5 @@
-0"Ceci Est L'heure BLE TOU"
+0"What Time As BLE TOU's Clock"
+0"Is It? ::::"
                 ##l<-.    ##l<-.    ##l<-.    ##l<-.    ##l<-.
                #   # |   #   # |   #   # |   #   # |   #   # |
               >l   l<|  >l   l<|  >l   l<|  >l   l<|  >l   l<| l<g
@@ -25,6 +26,8 @@ i3#################################
 U88################################
 ^
 r
+
+0"Please Setting Time To UTC (Universal Time) On Your Pi"
 
 lllllllllllllllllllllI3
 ^^^^^^^^^^^^^^^^^^^^^
@@ -54,4 +57,4 @@ sssssssssssssssssssssssssssssssssss FFFfFfFFfFfffFfFfffffFFFfFffff
      ||||
      ssss
 
-0"TITLE:Heure BLE TOU"
+0"TITLE:BLE TOU's Clock"
