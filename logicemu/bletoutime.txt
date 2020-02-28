@@ -1,5 +1,4 @@
-0"What Time As BLE TOU's Clock"
-0"Is It? ::::"
+0"Ceci Est L'heure BLE TOU"
                 ##l<-.    ##l<-.    ##l<-.    ##l<-.    ##l<-.
                #   # |   #   # |   #   # |   #   # |   #   # |
               >l   l<|  >l   l<|  >l   l<|  >l   l<|  >l   l<| l<g
@@ -24,37 +23,29 @@
 i3#################################
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 U88################################
-^
-r
-
-0"Please Setting Time To UTC (Universal Time) On Your Pi"
+             ^
+             r
 
 lllllllllllllllllllllI3
 ^^^^^^^^^^^^^^^^^^^^^
-U30##################################################
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^^^^^^^^^^
-||||||||||||||||||||||||||||||||||| FfFfFfffFFfffffff                      
-|||||||||||||||||||||||||||||||||||
-U25###############################################################
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-sssssssssssssssssssssssssssssssssss FFFfFfFFfFfffFfFfffffFFFfFffff
+U25#################################################################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^^^^^^^^^^
+sssssssssssssssssssssssssssssssssss FFFfFfFFfFfffFfFfffffFFFfFffff FfFfFfffFFfffffff
 
-  lllllllI7 0"7-segment digit ROM"
+  lllllllI7
   ^^^^^^^
   |||||||
-  bBBBBBB "0"
-  bbbbBBb "1"
-  BbBBbBB "2"
-  BbbBBBB "3"
-  BBbbBBb "4"
-  BBbBBbB "5"
-  BBBBBbB "6"
-  bbbbBBB "7"
-  BBBBBBB "8"
-  BBbBBBB "9"
+  bBBBBBB
+  bbbbBBb
+  BbBBbBB
+  BbbBBBB
+  BBbbBBb
+  BBbBBbB
+  BBBBBbB
+  bbbbBBB
+  BBBBBBB
+  BBbBBBB
      ^^^^
      ||||
      ||||
      ssss
-
-0"TITLE:BLE TOU's Clock"
