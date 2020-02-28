@@ -1,4 +1,4 @@
-0"Ceci Est L'heure BLE TOU"
+0"What Time As BLE TOU's Clock? ::::"
                 ##l<-.    ##l<-.    ##l<-.    ##l<-.    ##l<-.
                #   # |   #   # |   #   # |   #   # |   #   # |
               >l   l<|  >l   l<|  >l   l<|  >l   l<|  >l   l<| l<g
@@ -25,6 +25,7 @@ i3#################################
 U88################################
              ^
              r
+0"Please Setting Time To Universal"
 
 lllllllllllllllllllllI3
 ^^^^^^^^^^^^^^^^^^^^^
@@ -49,3 +50,5 @@ sssssssssssssssssssssssssssssssssss FFFfFfFFfFfffFfFfffffFFFfFffff FfFfFfffFFfff
      ||||
      ||||
      ssss
+
+0"TITLE:BLE TOU's Clock"
