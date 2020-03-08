@@ -79,30 +79,6 @@ if mode == "noclear":
  if ord(reshash[1]) > 250:
   cryptage = "Discret 11"
 
-# Begin XXX
-if mode == "normal":
- if bool(re.search("redtraffic",url)):
-  cryptage = "VideoCrypt"
-  videocrypt_begin = 1
-  videocrypt_end = 255
-  soundcrypt_enable = True
-  stars = 500
-
- if bool(re.search("www\.ast\.tv",url)):
-  cryptage = "VideoCrypt"
-  videocrypt_begin = 1
-  videocrypt_end = 255
-  soundcrypt_enable = True
-  stars = 500
-
- if bool(re.search("jasminchannel",url)):
-  cryptage = "VideoCrypt"
-  videocrypt_begin = 1
-  videocrypt_end = 255
-  soundcrypt_enable = True
-  stars = 500
-# End XXX
-
 if mode == "syster":
  cryptage = "Nagravision Syster"
 
@@ -196,6 +172,81 @@ if color == "NTSC":
   color = "NTSC I"
  if ord(reshash[4]) == 255:
   color = "NTSC A"
+
+# Begin XXX
+if mode == "normal":
+ if bool(re.search("redtraffic",url)):
+  cryptage = "VideoCrypt"
+  videocrypt_begin = 1
+  videocrypt_end = 255
+  soundcrypt_enable = True
+  stars = 500
+  color = "NTSC"
+  videocrypt_stricte = False
+
+ if bool(re.search("www\.ast\.tv",url)):
+  cryptage = "VideoCrypt"
+  videocrypt_begin = 1
+  videocrypt_end = 255
+  soundcrypt_enable = True
+  stars = 500
+  color = "PAL"
+  videocrypt_stricte = False
+
+ if bool(re.search("jasminchannel",url)):
+  cryptage = "VideoCrypt"
+  videocrypt_begin = 1
+  videocrypt_end = 255
+  soundcrypt_enable = True
+  stars = 500
+  color = "PAL"
+  videocrypt_stricte = False
+
+ if bool(re.search("a2\.skynets\.tv",url)):
+  cryptage = "VideoCrypt"
+  videocrypt_begin = 1
+  videocrypt_end = 255
+  soundcrypt_enable = True
+  stars = 500
+  color = "PAL"
+  videocrypt_stricte = False
+
+ if bool(re.search("psrv\.io",url)):
+  cryptage = "VideoCrypt"
+  videocrypt_begin = 1
+  videocrypt_end = 255
+  soundcrypt_enable = True
+  stars = 500
+  color = "PAL"
+  videocrypt_stricte = False
+
+ if bool(re.search("iptvipaccess\.es",url)):
+  cryptage = "VideoCrypt"
+  videocrypt_begin = 1
+  videocrypt_end = 255
+  soundcrypt_enable = True
+  stars = 500
+  color = "PAL"
+  videocrypt_stricte = False
+
+ if bool(re.search("wer5tuuh\.russtv\.net",url)):
+  cryptage = "VideoCrypt"
+  videocrypt_begin = 1
+  videocrypt_end = 255
+  soundcrypt_enable = True
+  stars = 500
+  color = "SECAM"
+  videocrypt_stricte = False
+
+ if bool(re.search("nruxmzi\.ojswi5dsmftgm2ldfz4hs6q\.cmle\.ru",url)):
+  cryptage = "VideoCrypt"
+  videocrypt_begin = 1
+  videocrypt_end = 255
+  soundcrypt_enable = True
+  stars = 500
+  color = "SECAM"
+  videocrypt_stricte = False
+# End XXX
 
 if colorpourcent < float(ord(reshash[5])/256.0):
  color = "Aucun"
