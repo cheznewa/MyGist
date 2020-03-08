@@ -254,9 +254,17 @@ if colorpourcent < float(ord(reshash[5])/256.0):
 radio = (((ord(reshash[6])*256)+ord(reshash[7]))*100)
 radioend = radio + 100
 
+if bool(ord(end[3])%2):
+ segment = 25
+else:
+ segment = 20
+
 print("Votre IPTV Chiffrer Par CryptImage Pour ::: " + url)
 print("System De Chiffrement :: "+cryptage)
-print("Plage Radio Utiliser :: "+str(radio)+"-"+str(radioend))
+sys.stdout.write("Plage Radio Utiliser :: %s-%s" %(str(radio),str(radioend)))
+if cryptage != "Transcode":
+ sys.stdout.write(" (Chiffrement Segementer En %i)" %(segment)) 
+sys.stdout.write("\n")
 print("Modem Couleur :: "+color)
 if cryptage == "VideoCrypt":
  print("Point De Coupe :: "+str(videocrypt_begin)+"-"+str(videocrypt_end))
