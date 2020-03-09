@@ -30,7 +30,9 @@ hashtwo = hashlib.sha256()
 hashtwo.update("%s%s" %(reshash,int(time.time()/86400)))
 hashday = hashtwo.digest()
 
-word = ((((ord(hashday[0]) *256)+(ord(hashday[1]))))%65504)+32
+word = []
+for j in range(5):
+ word.append(((((ord(hashday[j*2]) *256)+(ord(hashday[(j*2)+1]))))%65504)+32)
 
 level = []
 for n in range(11,21):
@@ -279,7 +281,10 @@ if cryptage == "Nagravision Syster":
  print("Son Traiter :: "+cond(soundcrypt_enable))
  print("Pour Le Dechiffrer Vous Devrait Jouer A Geometry Dash Et Avoir :: "+str(int(stars*5))+" Etoile")
 if cryptage == "Discret 11":
- print("Mot De 16 Bit :: "+str(word))
+ sys.stdout.write("Mot De 16 Bit :: ")
+ for j in range(100 / segment):
+  sys.stdout.write("%s " %(word[j]))
+ sys.stdout.write("\n")
  sys.stdout.write("Multicode :: ")
  for n in range(10):
   sys.stdout.write("%s" %(level[n]))
