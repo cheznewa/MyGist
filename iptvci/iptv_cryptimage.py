@@ -257,9 +257,9 @@ radio = (((ord(reshash[6])*256)+ord(reshash[7]))*100)
 radioend = radio + 100
 
 if bool(ord(end[3])%2):
- segment = 25
+ segment = 4
 else:
- segment = 20
+ segment = 5
 
 print("Votre IPTV Chiffrer Par CryptImage Pour ::: " + url)
 print("System De Chiffrement :: "+cryptage)
@@ -282,7 +282,7 @@ if cryptage == "Nagravision Syster":
  print("Pour Le Dechiffrer Vous Devrait Jouer A Geometry Dash Et Avoir :: "+str(int(stars*5))+" Etoile")
 if cryptage == "Discret 11":
  sys.stdout.write("Mot De 16 Bit :: ")
- for j in range(100 / segment):
+ for j in range(segment):
   sys.stdout.write("%s " %(word[j]))
  sys.stdout.write("\n")
  sys.stdout.write("Multicode :: ")
