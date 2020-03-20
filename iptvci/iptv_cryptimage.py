@@ -88,6 +88,9 @@ if mode == "discret11":
 if mode == "videocrypt":
  cryptage = "VideoCrypt"
 
+if mode == "transcode":
+ cryptage = "Transcode"
+
 if cryptage == "VideoCrypt":
  if ord(reshash[3]) < 10:
   soundcrypt_enable = True
