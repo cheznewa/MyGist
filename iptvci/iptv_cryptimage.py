@@ -49,16 +49,16 @@ if ord(end[2]) > 251:
 
 if mode == "normal":
 
- if ord(reshash[1]) <= 130:
+ if ord(reshash[1]) >= 125:
   cryptage = "Transcode"
 
- if ord(reshash[1]) > 130:
+ if ord(reshash[1]) < 125:
   cryptage = "Nagravision Syster"
 
- if ord(reshash[1]) > 186:
+ if ord(reshash[1]) < 50:
   cryptage = "VideoCrypt"
 
- if ord(reshash[1]) > 250:
+ if ord(reshash[1]) < 5:
   cryptage = "Discret 11"
 
 if mode == "noclear":
@@ -256,17 +256,9 @@ if colorpourcent < float(ord(reshash[5])/256.0):
 radio = (((ord(reshash[6])*256)+ord(reshash[7]))*100)
 radioend = radio + 100
 
-if bool(ord(end[3])%2):
- segment = 4
-else:
- segment = 5
-
 print("Votre IPTV Chiffrer Par CryptImage Pour ::: " + url)
 print("System De Chiffrement :: "+cryptage)
-sys.stdout.write("Plage Radio Utiliser :: %s-%s" %(str(radio),str(radioend)))
-if cryptage != "Transcode":
- sys.stdout.write(" (Chiffrement Segementer En %i)" %(segment)) 
-sys.stdout.write("\n")
+print("Plage Radio Utiliser :: %s-%s" %(str(radio),str(radioend)))
 print("Modem Couleur :: "+color)
 if cryptage == "VideoCrypt":
  print("Point De Coupe :: "+str(videocrypt_begin)+"-"+str(videocrypt_end))
