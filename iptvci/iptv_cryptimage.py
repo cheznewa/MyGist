@@ -47,10 +47,10 @@ if ord(end[2]) > 251:
 
 if mode == "normal":
 
- if ord(reshash[1]) >= 125:
+ if ord(reshash[1]) >= 100:
   cryptage = "Transcode"
 
- if ord(reshash[1]) < 125:
+ if ord(reshash[1]) < 100:
   cryptage = "Nagravision Syster"
 
  if ord(reshash[1]) < 50:
