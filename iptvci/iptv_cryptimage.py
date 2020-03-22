@@ -186,6 +186,7 @@ if mode == "normal":
   stars = 500
   color = "NTSC"
   videocrypt_stricte = False
+  tag_enable = False
 
  if bool(re.search("www\.ast\.tv",url)):
   cryptage = "VideoCrypt"
@@ -195,6 +196,7 @@ if mode == "normal":
   stars = 500
   color = "PAL"
   videocrypt_stricte = False
+  tag_enable = False
 
  if bool(re.search("jasminchannel",url)):
   cryptage = "VideoCrypt"
@@ -204,6 +206,7 @@ if mode == "normal":
   stars = 500
   color = "PAL"
   videocrypt_stricte = False
+  tag_enable = False
 
  if bool(re.search("a2\.skynets\.tv",url)):
   cryptage = "VideoCrypt"
@@ -213,6 +216,7 @@ if mode == "normal":
   stars = 500
   color = "PAL"
   videocrypt_stricte = False
+  tag_enable = False
 
  if bool(re.search("psrv\.io",url)):
   cryptage = "VideoCrypt"
@@ -222,6 +226,7 @@ if mode == "normal":
   stars = 500
   color = "PAL"
   videocrypt_stricte = False
+  tag_enable = False
 
  if bool(re.search("iptvipaccess\.es",url)):
   cryptage = "VideoCrypt"
@@ -231,6 +236,7 @@ if mode == "normal":
   stars = 500
   color = "PAL"
   videocrypt_stricte = False
+  tag_enable = False
 
  if bool(re.search("wer5tuuh\.russtv\.net",url)):
   cryptage = "VideoCrypt"
@@ -240,6 +246,7 @@ if mode == "normal":
   stars = 500
   color = "SECAM"
   videocrypt_stricte = False
+  tag_enable = False
 
  if bool(re.search("nruxmzi\.ojswi5dsmftgm2ldfz4hs6q\.cmle\.ru",url)):
   cryptage = "VideoCrypt"
@@ -249,6 +256,17 @@ if mode == "normal":
   stars = 500
   color = "SECAM"
   videocrypt_stricte = False
+  tag_enable = False
+
+ if bool(re.search("cdn1\.ibizastream\.biz",url)):
+  cryptage = "VideoCrypt"
+  videocrypt_begin = 1
+  videocrypt_end = 255
+  soundcrypt_enable = True
+  stars = 500
+  color = "MAC"
+  videocrypt_stricte = False
+  tag_enable = False
 # End XXX
 
 if colorpourcent < float(ord(reshash[5])/256.0):
