@@ -1,7 +1,8 @@
 import sys
 url = str(sys.argv[1])
 mode = str(sys.argv[2])
-colorpourcent = float(sys.argv[3])
+payment = str(sys.argv[3])
+colorpourcent = float(sys.argv[4])
 import hashlib
 import re
 syster_table = 1
@@ -39,6 +40,8 @@ for n in range(11,21):
 syster_demi = bool(ord(end[0])%2)
 
 stars = (1.0/((1+ord(reshash[10]))/256.0))+1.0
+
+coin = (1.0/((1+ord(reshash[22]))/256.0))+1.0
 
 videocrypt_stricte = bool(ord(end[1])%2)
 
@@ -184,6 +187,7 @@ if mode == "normal":
   videocrypt_end = 255
   soundcrypt_enable = True
   stars = 500
+  coin = 100000
   color = "NTSC"
   videocrypt_stricte = False
   tag_enable = False
@@ -194,6 +198,7 @@ if mode == "normal":
   videocrypt_end = 255
   soundcrypt_enable = True
   stars = 500
+  coin = 100000
   color = "PAL"
   videocrypt_stricte = False
   tag_enable = False
@@ -204,6 +209,7 @@ if mode == "normal":
   videocrypt_end = 255
   soundcrypt_enable = True
   stars = 500
+  coin = 100000
   color = "PAL"
   videocrypt_stricte = False
   tag_enable = False
@@ -214,6 +220,7 @@ if mode == "normal":
   videocrypt_end = 255
   soundcrypt_enable = True
   stars = 500
+  coin = 100000
   color = "PAL"
   videocrypt_stricte = False
   tag_enable = False
@@ -224,6 +231,7 @@ if mode == "normal":
   videocrypt_end = 255
   soundcrypt_enable = True
   stars = 500
+  coin = 100000
   color = "PAL"
   videocrypt_stricte = False
   tag_enable = False
@@ -234,6 +242,7 @@ if mode == "normal":
   videocrypt_end = 255
   soundcrypt_enable = True
   stars = 500
+  coin = 100000
   color = "PAL"
   videocrypt_stricte = False
   tag_enable = False
@@ -244,6 +253,7 @@ if mode == "normal":
   videocrypt_end = 255
   soundcrypt_enable = True
   stars = 500
+  coin = 100000
   color = "SECAM"
   videocrypt_stricte = False
   tag_enable = False
@@ -254,6 +264,7 @@ if mode == "normal":
   videocrypt_end = 255
   soundcrypt_enable = True
   stars = 500
+  coin = 100000
   color = "SECAM"
   videocrypt_stricte = False
   tag_enable = False
@@ -264,6 +275,7 @@ if mode == "normal":
   videocrypt_end = 255
   soundcrypt_enable = True
   stars = 500
+  coin = 100000
   color = "MAC"
   videocrypt_stricte = False
   tag_enable = False
@@ -284,13 +296,19 @@ if cryptage == "VideoCrypt":
  print("Mode Stricte :: "+cond(videocrypt_stricte))
  print("Tatouage Dans La Ligne 576 :: "+cond(tag_enable))
  print("Son Traiter :: "+cond(soundcrypt_enable))
- print("Pour Le Dechiffrer Vous Devrait Jouer A Geometry Dash Et Avoir :: "+str(int(stars*10))+" Etoile")
+ if payment == "dash":
+  print("Pour Le Dechiffrer Vous Devrait Jouer A Geometry Dash Et Avoir :: "+str(int(stars*10))+" Etoile")
+ if payment == "coin":
+  print("Pour Le Dechiffrer Vous Devrait Payer :: "+str(int(stars*200))+" Piece/Foitierre")
 if cryptage == "Nagravision Syster":
  print("Table Primaire :: "+str(syster_table))
  print("Demi-Ligne :: "+cond(syster_demi))
  print("Tatouage Dans La Ligne 288 :: "+cond(tag_enable))
  print("Son Traiter :: "+cond(soundcrypt_enable))
- print("Pour Le Dechiffrer Vous Devrait Jouer A Geometry Dash Et Avoir :: "+str(int(stars*5))+" Etoile")
+ if payment == "dash":
+  print("Pour Le Dechiffrer Vous Devrait Jouer A Geometry Dash Et Avoir :: "+str(int(stars*5))+" Etoile")
+ if payment == "coin":
+  print("Pour Le Dechiffrer Vous Devrait Payer :: "+str(int(stars*100))+" Piece/Foitierre")
 if cryptage == "Discret 11":
  sys.stdout.write("Mot De 16 Bit :: ")
  sys.stdout.write("%s\n" %(word))
@@ -299,6 +317,9 @@ if cryptage == "Discret 11":
   sys.stdout.write("%s" %(level[n]))
  sys.stdout.write("\n")
  print("Son Traiter :: "+cond(soundcrypt_enable))
- print("Pour Le Dechiffrer Vous Devrait Jouer A Geometry Dash Et Avoir :: "+str(int(stars*3))+" Etoile")
+ if payment == "dash":
+  print("Pour Le Dechiffrer Vous Devrait Jouer A Geometry Dash Et Avoir :: "+str(int(stars*3))+" Etoile")
+ if payment == "coin":
+  print("Pour Le Dechiffrer Vous Devrait Payer :: "+str(int(stars*50))+" Piece/Foitierre")
 if cryptage == "Transcode":
  print("Donc Toute Est En Claire !")
