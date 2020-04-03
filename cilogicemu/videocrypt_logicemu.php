@@ -1,11 +1,11 @@
 <?php
 $a = strval(sprintf("%08b",intval($argv[3])));
-$ac = str_replace("0","c",$a);
-$as = str_replace("1","C",$ac);
+$ac = str_replace("0","f",$a);
+$as = str_replace("1","F",$ac);
 $as = strrev($as);
 $b = strval(sprintf("%08b",intval($argv[4])));
-$bc = str_replace("0","c",$b);
-$bs = str_replace("1","C",$bc);
+$bc = str_replace("0","f",$b);
+$bs = str_replace("1","F",$bc);
 $bs = strrev($bs);
 echo " s s s s s s s s s s s s s s s s s s s s s s s s \n | | | | | | | | | | | | | | | | | | | | | | | |";
 for ($l = 0;$l < intval($argv[1]);$l++)
