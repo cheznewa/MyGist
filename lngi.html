@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p><font face="CMU Serif" size="20" id="number"></font></p>
+<script>
+// Original :::: dshamlin98
+var t = 0;
+var numberDisplay = 0;
+
+function ptFunction(num) {
+	var i = num % 1;
+	return 10**((i+i**2)/2); // 1 for x.000, 10 for x.999
+}
+function tetrate10(num, format) { // 10↑↑x, format = 0,1
+	if (num >= 0 && num < 1) {
+		return ptFunction(num);
+	} else if (num >= 1 && num < 2 && ptFunction(num) < 3) {
+		if (format == 1) {
+			return (10**ptFunction(num)).toFixed(3);
+		} else {
+			return (10**ptFunction(num));
+		}
+	} else if (num >= 1 && num < 2) {
+		return (Math.floor(10**ptFunction(num))).toLocaleString();
+	} else if (num >= 2 && num < 10) {
+		var i = Math.floor(num) - 2;
+		return "10<sup>".repeat(i) + (10**((10**ptFunction(num))%1)).toFixed(3) + "×10<sup>" +
+		(Math.floor(10**ptFunction(num))).toLocaleString() + "</sup>".repeat(i+1);
+	} else {
+		return "10↑↑" + Math.floor(num);
+	}
+}
+function pentate10(num) { // 10↑↑↑x
+	if (num >= 0 && num < 1) {
+		return ptFunction(num);
+	} else if (num >= 1 && num < 10) {
+		return "10↑↑".repeat(Math.floor(num)-1) + tetrate10(ptFunction(num),1);
+	} else {
+		return "10↑↑↑" + Math.floor(num);
+	}
+}
+function arrow10(num,arrows) { // 10{arrows}x
+	if (num >= 0 && num < 1) {
+		return ptFunction(num);
+	} else if (num >= 1 && num < 10) {
+		if (arrows == 1) {
+			return Math.floor(10**((num+num**2)/2));
+		} else if (arrows == 2) {
+			return tetrate10(num,1);
+		} else if (arrows <= 5) {
+			return ("10"+"↑".repeat(arrows-1)).repeat(Math.floor(num)-1) + arrow10(ptFunction(num), arrows-1);
+		} else if (arrows <= 20) {
+			return ("10{"+(arrows-1)+"}").repeat(Math.floor(num)-1) + arrow10(ptFunction(num), arrows-1);
+		} else {
+			return "10{" + arrows + "}" + num.toFixed(3);
+		}
+	} else if (arrows <= 5) {
+		return ("10"+"↑".repeat(arrows)) + Math.floor(num);
+	} else if (arrows <= 20) {
+		return ("10{"+(arrows-1)+"}") + Math.floor(num);
+	} else {
+		return "10{" + arrows + "}" + num.toFixed(3);
+	}
+}
+function arrowAp(num) {
+	if (num >= 0 && num < 1) {
+		return tetrate10(num+1,0);
+	} else {
+		return arrow10(1+9**(((num%1)+(num%1)**2)/2), Math.floor(num+1));
+	}
+}
+
+function expand10(num) { // 10{{1}}x
+	if (num >= 0 && num < 1) {
+		return ptFunction(num);
+	} else if (num >= 1 && num < 10) {
+		if (num % 1 < 0.3004039542508032 && num >= 2) {
+		return "10{".repeat(Math.floor(num)-2) + arrowAp(expand10(num%1+1)*1) + "}10".repeat(Math.floor(num)-2);
+		} else {
+		return "10{".repeat(Math.floor(num)-1) + arrowAp(-1+11**((num%1+(num%1)**2)/2)) + "}10".repeat(Math.floor(num)-1);
+		}
+	} else {
+		return "10{{1}}" + num.toFixed(3);
+	}
+}
+function multiexpand10(num, format) { // 10{{2}}x
+	if (num >= 0 && num < 1) {
+		return ptFunction(num);
+	} else if (num >= 1 && num < 10) {
+		if (num%1 < 0.1914886570622825 && format == 0) {
+		return "10{{1}}".repeat(Math.floor(num)-1) + (expand10(ptFunction(num))*1).toFixed(3);
+		} else {
+		return "10{{1}}".repeat(Math.floor(num)-1) + expand10(ptFunction(num));
+		}
+	} else {
+		return "10{{2}}" + Math.floor(num);
+	}
+}
+function expandarrow10(num, arrows) { // 10{{a}}x
+	if (num >= 0 && num < 1) {
+		return ptFunction(num);
+	} else if (arrows == 1) {
+		return expand10(num);
+	} else if (arrows == 2) {
+		return multiexpand10(num, 0);
+	} else if (num >= 1 && num < 10 && arrows <= 15) {
+		return ("10{{" + (arrows-1) + "}}").repeat(Math.floor(num)-1) + expandarrow10(ptFunction(num), arrows-1);
+	} else {
+		return "10{{" + arrows + "}}" + num.toFixed(3);
+	}
+}
+
+function expandarrowAp(num) {
+	if (num >= 0 && num < 1) {
+		return multiexpand10(num+1, 1);
+	} else {
+		return expandarrow10(1+9**(((num%1)+(num%1)**2)/2), Math.floor(num+1));
+	}
+}
+
+function explode10(num) { // 10{{1}}x
+	if (num >= 0 && num < 1) {
+		return ptFunction(num);
+	} else if (num >= 1 && num < 10) {
+		if (num % 1 < 0.1293894400176223 && num >= 2) {
+		return "10{{".repeat(Math.floor(num)-2) + expandarrowAp(explode10(num%1+1)*1) + "}}10".repeat(Math.floor(num)-2);
+		} else {
+		return "10{{".repeat(Math.floor(num)-1) + expandarrowAp(-1+11**((num%1+(num%1)**2)/2)) + "}}10".repeat(Math.floor(num)-1);
+		}
+	} else {
+		return "10{{{1}}}" + num.toFixed(3);
+	}
+}
+function valueNumber(t) {
+	var x = t;
+	if (x <= 100000) {
+		return (Math.floor(10**(x/10000)+x/5-1)).toLocaleString(); // up to 10↑10
+	} else if (x <= 400000) {
+		var i = (x-100000)/300000;
+		return tetrate10(1+9**((i+i**2)/2),1); // up to 10↑↑10
+	} else if (x <= 800000) {
+		var i = (x-400000)/400000;
+		return pentate10(1+9**((i+i**2)/2)); // up to 10↑↑↑10
+	} else if (x <= 1600000) {
+		var i = 2 + 8**((x-800000)/800000);
+		var j = i % 1;
+		return arrow10(1+9**((j+j**2)/2), Math.floor(i+1)); // up to {10,10,10}
+	} else if (x <= 2400000) {
+		var i = 1 + 9**((x-1600000)/800000);
+		return expand10(i); // up to {10,10,1,2}
+	} else if (x <= 3000000) {
+		var i = 1 + 9**((x-2400000)/600000);
+		return multiexpand10(i); // up to {10,10,2,2}
+	} else if (x <= 3800000) {
+		var i = 1 + 9**((x-3000000)/800000);
+		var j = i % 1;
+		return expandarrow10(1+9**((j+j**2)/2), Math.floor(i+1)); // up to {10,10,10,2}
+	} else if (x <= 4600000) {
+		var i = 1 + 9**((x-3800000)/800000);
+		return explode10(i); // up to {10,10,1,3}
+	}
+	return "10{{{1}}}10";
+}
+
+function displayOutput() {
+	document.getElementById("number").innerHTML = "<sup>".repeat(8) + " " + "</sup>".repeat(8) + valueNumber(t);
+	t++;
+	}
+setInterval(displayOutput,1);
+
+</script>
+</body>
+</html>
