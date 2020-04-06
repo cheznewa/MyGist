@@ -15,4 +15,4 @@ $r = intval($time / 2);
 $r .= boolval($time % 2) ? ":" : "";
 return $r;
 }
-echo getdatebt(intval(($argv[1] - 989193600) / 86400))." ".gettimeday(($argv[1] - 18000) % 86400)."\n";
+echo getdatebt(intval(($argv[1] - (989193600 + 18000)) / 86400))." ".gettimeday(($argv[1] - 18000) % 86400)."\n";
