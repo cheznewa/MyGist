@@ -493,10 +493,6 @@ ffffffffffffffffffffffFF ffffffffffffffffffffffFF ||||||||||||||||||||||||
                                                   ||||||||||||||||||||||||
 i24#######################################################################
 ^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^^^^^^^^^^^^^^^^^
-ffffffffffffffffffffffFF ffffffffffffffffffffffFF ||||||||||||||||||||||||
-                                                  ||||||||||||||||||||||||
-i24#######################################################################
-^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^^^^^^^^^^^^^^^^^
 ffffffffffffffffffffffFF ffffffffffffffffffffffFF fffffffffffffffffffffFff
 
 0"TITLE:Tour De Puissances"
