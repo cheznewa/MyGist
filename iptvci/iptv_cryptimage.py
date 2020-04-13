@@ -17,6 +17,12 @@ vcbegin = range(1,129)
 vcend = range(129,256)
 videocrypt_begin = vcbegin[ord(reshash[0]) % 127]
 videocrypt_end = vcend[ord(end[0]) % 126]
+videocrypt_begin_one = vcbegin[ord(reshash[4]) % 127]
+videocrypt_end_one = vcend[ord(end[4]) % 126]
+videocrypt_begin_two = vcbegin[ord(reshash[5]) % 127]
+videocrypt_end_two = vcend[ord(end[5]) % 126]
+videocrypt_begin_three = vcbegin[ord(reshash[6]) % 127]
+videocrypt_end_three = vcend[ord(end[6]) % 126]
 
 def cond(bool):
  if bool:
@@ -91,8 +97,12 @@ if mode == "discret11":
 if mode == "videocrypt":
  cryptage = "VideoCrypt"
 
-if mode == "transcode":
- cryptage = "Transcode"
+if mode == "onion":
+ cryptage = "VideoCrypt"
+ soundcrypt_enable = False
+ videocrypt_stricte = False
+ tag_enable = False
+
 
 if cryptage == "VideoCrypt":
  if ord(reshash[3]) < 10:
@@ -300,6 +310,11 @@ if cryptage == "VideoCrypt":
   print("Pour Le Dechiffrer Vous Devrait Jouer A Geometry Dash Et Avoir :: "+str(int(stars*10))+" Etoile")
  if payment == "coin":
   print("Pour Le Dechiffrer Vous Devrait Payer :: "+str(int(stars*20))+" Piece/Foitierre")
+ if mode == "onion":
+  print("Vous Etes En Routage Onion, Apres Vous Avez Encore 3 Chiffrement Supplementaire Par Relais :::: ")
+  print("Point De Coupe Relais 1 :: "+str(videocrypt_begin_one)+"-"+str(videocrypt_end_one))
+  print("Point De Coupe Relais 2 :: "+str(videocrypt_begin_two)+"-"+str(videocrypt_end_two))
+  print("Point De Coupe Relais 3 :: "+str(videocrypt_begin_three)+"-"+str(videocrypt_end_three))
 if cryptage == "Nagravision Syster":
  print("Table Primaire :: "+str(syster_table))
  print("Demi-Ligne :: "+cond(syster_demi))
