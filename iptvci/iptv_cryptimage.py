@@ -17,12 +17,12 @@ vcbegin = range(1,129)
 vcend = range(129,256)
 videocrypt_begin = vcbegin[ord(reshash[0]) % 127]
 videocrypt_end = vcend[ord(end[0]) % 126]
-videocrypt_begin_one = vcbegin[ord(reshash[4]) % 127]
-videocrypt_end_one = vcend[ord(end[4]) % 126]
-videocrypt_begin_two = vcbegin[ord(reshash[5]) % 127]
-videocrypt_end_two = vcend[ord(end[5]) % 126]
-videocrypt_begin_three = vcbegin[ord(reshash[6]) % 127]
-videocrypt_end_three = vcend[ord(end[6]) % 126]
+videocrypt_begin_one = vcbegin[ord(end[4]) % 127]
+videocrypt_end_one = vcend[ord(end[7]) % 126]
+videocrypt_begin_two = vcbegin[ord(end[5]) % 127]
+videocrypt_end_two = vcend[ord(end[8]) % 126]
+videocrypt_begin_three = vcbegin[ord(end[6]) % 127]
+videocrypt_end_three = vcend[ord(end[9]) % 126]
 
 def cond(bool):
  if bool:
