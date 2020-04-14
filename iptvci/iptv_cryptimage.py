@@ -294,8 +294,12 @@ if mode == "normal":
 if colorpourcent < float(ord(reshash[5])/256.0):
  color = "Aucun"
 
-radio = (((ord(reshash[6])*256)+ord(reshash[7]))*100)
+radio = (((ord(reshash[8])*65536)+(ord(reshash[6])*256)+ord(reshash[7]))*100)
 radioend = radio + 100
+radio_onion = (((ord(end[12])*65536)+(ord(end[10])*256)+ord(end[11]))*100)
+radioend_onion = radio + 100
+radio_onionpub = (((ord(end[13])*65536)+(ord(end[11])*256)+ord(end[12]))*100)
+radioend_onionpub = radio + 100
 
 print("Votre IPTV Chiffrer Par CryptImage Pour ::: " + url)
 print("System De Chiffrement :: "+cryptage)
@@ -313,8 +317,11 @@ if cryptage == "VideoCrypt":
  if mode == "onion":
   print("Vous Etes En Routage Onion, Apres Vous Avez Encore 3 Chiffrement Supplementaire Par Relais :::: ")
   print("Point De Coupe Relais 1 :: "+str(videocrypt_begin_one)+"-"+str(videocrypt_end_one))
+  print("Plage Radio Relais 1 :: "+str(radio_onion)+"-"+str(radioend_onion))
   print("Point De Coupe Relais 2 :: "+str(videocrypt_begin_two)+"-"+str(videocrypt_end_two))
+  print("Plage Radio Relais 2 :: "+str(radio_onion+1600000000)+"-"+str(radioend_onion+1600000000))
   print("Point De Coupe Relais 3 :: "+str(videocrypt_begin_three)+"-"+str(videocrypt_end_three))
+  print("Plage Radio Relais 3 Publique :: "+str(radio_onionpub)+"-"+str(radioend_onionpub))
 if cryptage == "Nagravision Syster":
  print("Table Primaire :: "+str(syster_table))
  print("Demi-Ligne :: "+cond(syster_demi))
