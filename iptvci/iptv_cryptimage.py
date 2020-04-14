@@ -297,9 +297,9 @@ if colorpourcent < float(ord(reshash[5])/256.0):
 radio = (((ord(reshash[8])*65536)+(ord(reshash[6])*256)+ord(reshash[7]))*100)
 radioend = radio + 100
 radio_onion = (((ord(end[12])*65536)+(ord(end[10])*256)+ord(end[11]))*100)
-radioend_onion = radio + 100
+radioend_onion = radio_onion + 100
 radio_onionpub = (((ord(end[13])*65536)+(ord(end[11])*256)+ord(end[12]))*100)
-radioend_onionpub = radio + 100
+radioend_onionpub = radio_onionpub + 100
 
 print("Votre IPTV Chiffrer Par CryptImage Pour ::: " + url)
 print("System De Chiffrement :: "+cryptage)
