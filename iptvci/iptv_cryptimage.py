@@ -197,7 +197,7 @@ if mode == "normal":
   videocrypt_end = 255
   soundcrypt_enable = True
   stars = 500
-  coin = 10000
+  coin = 100
   color = "NTSC"
   videocrypt_stricte = False
   tag_enable = False
@@ -208,7 +208,7 @@ if mode == "normal":
   videocrypt_end = 255
   soundcrypt_enable = True
   stars = 500
-  coin = 10000
+  coin = 100
   color = "PAL"
   videocrypt_stricte = False
   tag_enable = False
@@ -219,7 +219,7 @@ if mode == "normal":
   videocrypt_end = 255
   soundcrypt_enable = True
   stars = 500
-  coin = 10000
+  coin = 100
   color = "PAL"
   videocrypt_stricte = False
   tag_enable = False
@@ -230,7 +230,7 @@ if mode == "normal":
   videocrypt_end = 255
   soundcrypt_enable = True
   stars = 500
-  coin = 10000
+  coin = 100
   color = "PAL"
   videocrypt_stricte = False
   tag_enable = False
@@ -241,7 +241,7 @@ if mode == "normal":
   videocrypt_end = 255
   soundcrypt_enable = True
   stars = 500
-  coin = 10000
+  coin = 100
   color = "PAL"
   videocrypt_stricte = False
   tag_enable = False
@@ -252,7 +252,7 @@ if mode == "normal":
   videocrypt_end = 255
   soundcrypt_enable = True
   stars = 500
-  coin = 10000
+  coin = 100
   color = "PAL"
   videocrypt_stricte = False
   tag_enable = False
@@ -263,7 +263,7 @@ if mode == "normal":
   videocrypt_end = 255
   soundcrypt_enable = True
   stars = 500
-  coin = 10000
+  coin = 100
   color = "SECAM"
   videocrypt_stricte = False
   tag_enable = False
@@ -274,7 +274,7 @@ if mode == "normal":
   videocrypt_end = 255
   soundcrypt_enable = True
   stars = 500
-  coin = 10000
+  coin = 100
   color = "SECAM"
   videocrypt_stricte = False
   tag_enable = False
@@ -285,7 +285,7 @@ if mode == "normal":
   videocrypt_end = 255
   soundcrypt_enable = True
   stars = 500
-  coin = 10000
+  coin = 100
   color = "MAC"
   videocrypt_stricte = False
   tag_enable = False
@@ -313,7 +313,7 @@ if cryptage == "VideoCrypt":
  if payment == "dash":
   print("Pour Le Dechiffrer Vous Devrait Jouer A Geometry Dash Et Avoir :: "+str(int(stars*10))+" Etoile")
  if payment == "coin":
-  print("Pour Le Dechiffrer Vous Devrait Payer :: "+str(int(stars*20))+" Piece/Foitierre")
+  print("Pour Le Dechiffrer Vous Devrait Payer :: "+str(int(coin*20))+" Piece/Foitierre")
  if mode == "onion":
   print("Vous Etes En Routage Onion, Apres Vous Avez Encore 3 Chiffrement Supplementaire Par Relais :::: ")
   print("Point De Coupe Relais 1 :: "+str(videocrypt_begin_one)+"-"+str(videocrypt_end_one))
@@ -330,7 +330,7 @@ if cryptage == "Nagravision Syster":
  if payment == "dash":
   print("Pour Le Dechiffrer Vous Devrait Jouer A Geometry Dash Et Avoir :: "+str(int(stars*5))+" Etoile")
  if payment == "coin":
-  print("Pour Le Dechiffrer Vous Devrait Payer :: "+str(int(stars*10))+" Piece/Foitierre")
+  print("Pour Le Dechiffrer Vous Devrait Payer :: "+str(int(coin*10))+" Piece/Foitierre")
 if cryptage == "Discret 11":
  sys.stdout.write("Mot De 16 Bit :: ")
  sys.stdout.write("%s\n" %(word))
@@ -342,6 +342,6 @@ if cryptage == "Discret 11":
  if payment == "dash":
   print("Pour Le Dechiffrer Vous Devrait Jouer A Geometry Dash Et Avoir :: "+str(int(stars*3))+" Etoile")
  if payment == "coin":
-  print("Pour Le Dechiffrer Vous Devrait Payer :: "+str(int(stars*5))+" Piece/Foitierre")
+  print("Pour Le Dechiffrer Vous Devrait Payer :: "+str(int(coin*5))+" Piece/Foitierre")
 if cryptage == "Transcode":
  print("Donc Toute Est En Claire !")
