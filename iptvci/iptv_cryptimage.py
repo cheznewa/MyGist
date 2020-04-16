@@ -294,12 +294,21 @@ if mode == "normal":
 if colorpourcent < float(ord(reshash[5])/256.0):
  color = "Aucun"
 
+if ord(reshash[18]) > 173:
+ planif = range(0,20)
+ planiftcbegin = planif[ord(reshash[16])%19]
+ planif = range(1,6)
+ planiftcend = planif[ord(reshash[17])%5]
+ planiftcend = planiftcend + planiftcbegin
+ planifbeginend = str(planiftcbegin) + ":00 - " + str(planiftcend) + ":00"
+else:
+ planiftcbegin = 0
+ planiftcend = 0
+ planifbeginend = "Aucun"
+
+
 radio = (((ord(reshash[8])*65536)+(ord(reshash[6])*256)+ord(reshash[7]))*100)
 radioend = radio + 100
-radio_onion = (((ord(end[12])*65536)+(ord(end[10])*256)+ord(end[11]))*100)
-radioend_onion = radio_onion + 100
-radio_onionpub = (((ord(end[13])*65536)+(ord(end[11])*256)+ord(end[12]))*100)
-radioend_onionpub = radio_onionpub + 100
 
 print("Votre IPTV Chiffrer Par CryptImage Pour ::: " + url)
 print("System De Chiffrement :: "+cryptage)
@@ -310,27 +319,26 @@ if cryptage == "VideoCrypt":
  print("Mode Stricte :: "+cond(videocrypt_stricte))
  print("Tatouage Dans La Ligne 576 :: "+cond(tag_enable))
  print("Son Traiter :: "+cond(soundcrypt_enable))
+ print("Horaire De Transcode :: " + planifbeginend)
  if payment == "dash":
-  print("Pour Le Dechiffrer Vous Devrait Jouer A Geometry Dash Et Avoir :: "+str(int(stars*10))+" Etoile")
+  print("Pour Le Dechiffrer Vous Devrait Jouer A Geometry Dash Et Avoir :: "+str(int(stars*10)-((planiftcbegin-planiftcend)/10))+" Etoile")
  if payment == "coin":
-  print("Pour Le Dechiffrer Vous Devrait Payer :: "+str(int(coin*20))+" Piece/Foitierre")
+  print("Pour Le Dechiffrer Vous Devrait Payer :: "+str(int(coin*20)-((planiftcbegin-planiftcend)/20))+" Piece/Foitierre")
  if mode == "onion":
   print("Vous Etes En Routage Onion, Apres Vous Avez Encore 3 Chiffrement Supplementaire Par Relais :::: ")
   print("Point De Coupe Relais 1 :: "+str(videocrypt_begin_one)+"-"+str(videocrypt_end_one))
-  print("Plage Radio Relais 1 :: "+str(radio_onion)+"-"+str(radioend_onion))
   print("Point De Coupe Relais 2 :: "+str(videocrypt_begin_two)+"-"+str(videocrypt_end_two))
-  print("Plage Radio Relais 2 :: "+str(radio_onion+1600000000)+"-"+str(radioend_onion+1600000000))
   print("Point De Coupe Relais 3 :: "+str(videocrypt_begin_three)+"-"+str(videocrypt_end_three))
-  print("Plage Radio Relais 3 Publique :: "+str(radio_onionpub)+"-"+str(radioend_onionpub))
 if cryptage == "Nagravision Syster":
  print("Table Primaire :: "+str(syster_table))
  print("Demi-Ligne :: "+cond(syster_demi))
  print("Tatouage Dans La Ligne 288 :: "+cond(tag_enable))
  print("Son Traiter :: "+cond(soundcrypt_enable))
+ print("Horaire De Transcode :: " + planifbeginend)
  if payment == "dash":
-  print("Pour Le Dechiffrer Vous Devrait Jouer A Geometry Dash Et Avoir :: "+str(int(stars*5))+" Etoile")
+  print("Pour Le Dechiffrer Vous Devrait Jouer A Geometry Dash Et Avoir :: "+str(int(stars*5)-((planiftcbegin-planiftcend)/5))+" Etoile")
  if payment == "coin":
-  print("Pour Le Dechiffrer Vous Devrait Payer :: "+str(int(coin*10))+" Piece/Foitierre")
+  print("Pour Le Dechiffrer Vous Devrait Payer :: "+str(int(coin*10)-((planiftcbegin-planiftcend)/10))+" Piece/Foitierre")
 if cryptage == "Discret 11":
  sys.stdout.write("Mot De 16 Bit :: ")
  sys.stdout.write("%s\n" %(word))
@@ -339,9 +347,10 @@ if cryptage == "Discret 11":
   sys.stdout.write("%s" %(level[n]))
  sys.stdout.write("\n")
  print("Son Traiter :: "+cond(soundcrypt_enable))
+ print("Horaire De Transcode :: " + planifbeginend)
  if payment == "dash":
-  print("Pour Le Dechiffrer Vous Devrait Jouer A Geometry Dash Et Avoir :: "+str(int(stars*3))+" Etoile")
+  print("Pour Le Dechiffrer Vous Devrait Jouer A Geometry Dash Et Avoir :: "+str(int(stars*3)-((planiftcbegin-planiftcend)/3))+" Etoile")
  if payment == "coin":
-  print("Pour Le Dechiffrer Vous Devrait Payer :: "+str(int(coin*5))+" Piece/Foitierre")
+  print("Pour Le Dechiffrer Vous Devrait Payer :: "+str(int(coin*5)-((planiftcbegin-planiftcend)/5))+" Piece/Foitierre")
 if cryptage == "Transcode":
  print("Donc Toute Est En Claire !")
