@@ -11,7 +11,10 @@ done
 for n in $(seq 0 $n)
 do
 python $MYGIST/radio/radiosend.py $(expr $n \* 10000) $(expr $n \* 10000 + 10000) 16 < $tmp/${n}_audio.raw > $tmp/${n}_audio.radio
+rm $tmp/${n}_audio.raw
 python $MYGIST/radio/radiosend.py $(expr $n \* 10000) $(expr $n \* 10000 + 10000) 16 < $tmp/${n}_video.raw > $tmp/${n}_video.radio
+rm $tmp/${n}_video.raw
 done
 paste -d "\n" $tmp/*_audio.radio | sed "/^$/d" | zstd -v -22 --ultra > "${outputfile}_audio.radio.zstd"
 paste -d "\n" $tmp/*_video.radio | sed "/^$/d" | zstd -v -22 --ultra > "${outputfile}_video.radio.zstd"
+rm -r $tmp
