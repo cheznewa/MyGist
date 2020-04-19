@@ -13,4 +13,4 @@ for g in sys.stdin.read():
  n = n + 1
  sys.stdout.write(g)
 
-sys.stdout.write(chr(base58.b58encode_int(s % 58)[0]))
+sys.stdout.write(str(base58.b58encode_int(s % 58)))
