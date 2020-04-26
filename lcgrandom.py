@@ -1,4 +1,5 @@
 import sys
+a = 0
 while True:
- sys.stdout.write(chr(int(sys.argv[1]) % 256))
- sys.argv[1] = (int(sys.argv[2])*int(sys.argv[1])+int(sys.argv[3])) % int(sys.argv[4])
+ a = (int(sys.argv[1])*a+int(sys.argv[2])) % int(sys.argv[3])
+ sys.stdout.write(chr(a % 256))

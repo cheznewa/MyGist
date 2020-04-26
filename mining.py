@@ -8,9 +8,9 @@ opened = True
 difficulty = int(sys.argv[1])
 fill = pow(2,256)-1
 mask = fill/difficulty
-nonce = 0 + difficulty
+nonce = 0
 while opened:
- output = pow(atwork,nonce,fill)
+ output = pow(atwork,nonce+difficulty,fill)
  if output < mask:
   sys.stdout.write("Trouver A La Profondeur ::::: %s\n" %(nonce))
   opened = False
