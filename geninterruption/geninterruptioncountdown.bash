@@ -24,7 +24,10 @@ ffmpeg -y  -i "concat:$tmp/three.avi|$tmp/intthree.avi" -an -vcodec copy $tmp/th
 ffmpeg -y  -i "concat:$tmp/four.avi|$tmp/intfour.avi" -an -vcodec copy $tmp/fourmerge.avi
 ffmpeg -y  -i "concat:$tmp/five.avi|$tmp/intfive.avi" -an -vcodec copy $tmp/fivemerge.avi
 
+if test \! \( -f  a2n.mp4 \)
+then
 youtube-dl -f mp4 -o a2n.mp4 https://www.youtube.com/watch?v=cpNxOE2rMOY
+fi
 
 convert -size 768x576 xc:black $tmp/bg.png
 sox -n -c 2 -r 41100 -L $tmp/null.wav trim 0 $7
