@@ -1,4 +1,4 @@
-# Télévision Render From TV's Phelÿn
+# Television Render From TV's Phelÿn
 import sys
 r = 0
 g = 0
