@@ -2,11 +2,13 @@ import sys
 a = int(sys.argv[1])
 b = int(sys.argv[3])
 z = int(sys.argv[2])
-m = int(sys.argv[4])
+m = sys.argv[4]
+if m[-1:] == "b":
+ m = pow(2,int(m[:-1]))-1
 x = a
 for l in range(z):
  for n in range(b):
-  x = pow(a,x,m)
+  x = pow(a,x,int(m))
  a = x
 
 sys.stdout.write("%s\n" %(a))
