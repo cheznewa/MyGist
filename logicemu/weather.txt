@@ -8,9 +8,9 @@ l<##################################<f |
   ##################################   |
   U152##############################<?<.  
   ^^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^   |
-  ||||||||||||||||||||||||| ????????   |
-  uuuuuuuuuuuuuuuuuuuuuuuuu ^^^^^^^^   |
-                            ........---.
+  ||||||||||||||||||||||||| f???????   |
+  uuuuuuuuuuuuuuuuuuuuuuuuu  ^^^^^^^   |
+                             .......---.
 
 0"Negative = Cloud;Positive = Sun"
   nnnnnnnnnnnnnnnnnnnnnnnnn
@@ -22,9 +22,9 @@ l<##################################<f |
   ##################################   |
   U152##############################<?<.  
   ^^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^   |
-  ||||||||||||||||||||||||| ????????   |
-  uuuuuuuuuuuuuuuuuuuuuuuuu ^^^^^^^^   |
-                            ........---.
+  ||||||||||||||||||||||||| f???????   |
+  uuuuuuuuuuuuuuuuuuuuuuuuu  ^^^^^^^   |
+                             .......---.
 
 0"Negative = Cloud;Positive = Rain,Active If Cloud In sun_cloud Variable"
   nnnnnnnnnnnnnnnnnnnnnnnnn
@@ -36,9 +36,9 @@ l<##################################<f |
   ##################################   |
   U152##############################<?<.  
   ^^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^   |
-  ||||||||||||||||||||||||| ????????   |
-  uuuuuuuuuuuuuuuuuuuuuuuuu ^^^^^^^^   |
-                            ........---.
+  ||||||||||||||||||||||||| f???????   |
+  uuuuuuuuuuuuuuuuuuuuuuuuu  ^^^^^^^   |
+                             .......---.
 
 0"Negative = Cloud;Positive = Snow,Active If Cloud In sun_cloud Variable And If Cold In cold_hot Variable"
   nnnnnnnnnnnnnnnnnnnnnnnnn
@@ -50,9 +50,9 @@ l<##################################<f |
   ##################################   |
   U152##############################<?<.  
   ^^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^   |
-  ||||||||||||||||||||||||| ????????   |
-  uuuuuuuuuuuuuuuuuuuuuuuuu ^^^^^^^^   |
-                            ........---.
+  ||||||||||||||||||||||||| f???????   |
+  uuuuuuuuuuuuuuuuuuuuuuuuu  ^^^^^^^   |
+                             .......---.
 
 0"Negative = Cloud;Positive = Storme,Active If Cloud In sun_cloud Variable And If Hot In cold_hot Variable"
   nnnnnnnnnnnnnnnnnnnnnnnnn
@@ -64,9 +64,9 @@ l<##################################<f |
   ##################################   |
   U152##############################<?<.  
   ^^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^   |
-  ||||||||||||||||||||||||| ????????   |
-  uuuuuuuuuuuuuuuuuuuuuuuuu ^^^^^^^^   |
-                            ........---.
+  ||||||||||||||||||||||||| f???????   |
+  uuuuuuuuuuuuuuuuuuuuuuuuu  ^^^^^^^   |
+                             .......---.
 
 0"Negative = Cloud;Positive = Fog,Active If Cloud In sun_cloud Variable And If Cold In cold_hot Variable"
   nnnnnnnnnnnnnnnnnnnnnnnnn
@@ -78,9 +78,9 @@ l<##################################<f |
   ##################################   |
   U152##############################<?<.  
   ^^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^   |
-  ||||||||||||||||||||||||| ????????   |
-  uuuuuuuuuuuuuuuuuuuuuuuuu ^^^^^^^^   |
-                            ........---.
+  ||||||||||||||||||||||||| f???????   |
+  uuuuuuuuuuuuuuuuuuuuuuuuu  ^^^^^^^   |
+                             .......---.
 
 0"Negative = Passive, Positive = Active"
   nnnnnnnnnnnnnnnnnnnnnnnnn
@@ -92,9 +92,9 @@ l<##################################<f |
   ##################################   |
   U152##############################<?<.  
   ^^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^   |
-  ||||||||||||||||||||||||| ????????   |
-  uuuuuuuuuuuuuuuuuuuuuuuuu ^^^^^^^^   |
-                            ........---.
+  ||||||||||||||||||||||||| f???????   |
+  uuuuuuuuuuuuuuuuuuuuuuuuu  ^^^^^^^   |
+                             .......---.
 
 0"Wind Direction In Grade"
   nnnnnnnnnnnnnnnnnnnnnnnn
