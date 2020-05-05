@@ -5,7 +5,7 @@ tmp=$(mktemp -d)
 n=0
 for url in $(grep -v "^#" "$fileplaylist")
 do
-ffmpeg -t $timetorecord -i "$url" -f rawvideo -pix_fmt yuv422p -vf framerate=25,scale=320x240 $tmp/${n}_video.raw -ar 10000 -ac 1 -f u16le $tmp/${n}_audio.raw
+ffmpeg -t $timetorecord -i "$url" -f rawvideo -pix_fmt yuv422p -vf framerate=25,scale=320x240 $tmp/${n}_video.raw -ar 18000 -ac 1 -f u16le $tmp/${n}_audio.raw
 n=$(expr $n + 1)
 done
 for n in $(seq 0 $n)
