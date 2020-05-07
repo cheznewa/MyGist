@@ -1,4 +1,4 @@
-Ceci Sont Mes Icons (L'icone Poubelle Est De Chez Font Awesome) Qui Indique Le Niveau De Consequence En Cas De Suppression De Votre Publication, Que Ce Soit Sur GitHub Partout Même Sur YouTube
+Ceci Sont Mes Icons (L'icone Poubelle Est De Chez Deepin OpenSymbols) Qui Indique Le Niveau De Consequence En Cas De Suppression De Votre Publication, Que Ce Soit Sur GitHub Partout Même Sur YouTube
 
 * ![DeleteNoProblem](DeleteNoProblem.svg) Indique Que Vous Pouvez Le Supprimé Il Ya Aucune Conséquances
 * ![DeleteKissing](DeleteKissing.svg) Indique Que Votre Suppression Est + Ou Moin Génante
