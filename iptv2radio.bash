@@ -5,14 +5,14 @@ tmp=$(mktemp -d)
 n=0
 for url in $(grep -v "^#" "$fileplaylist")
 do
-ffmpeg -t $timetorecord -i "$url" -f rawvideo -pix_fmt yuv422p -vf framerate=25,scale=320x240 $tmp/${n}_video.raw -ar 18000 -ac 1 -f u16le $tmp/${n}_audio.raw
+ffmpeg -t $timetorecord -i "$url" -f rawvideo -pix_fmt rgb24 -vf framerate=25,scale=320x240 $tmp/${n}_video.raw -ar 18000 -ac 1 -f u8 $tmp/${n}_audio.raw
 n=$(expr $n + 1)
 done
 for n in $(seq 0 $n)
 do
-python $MYGIST/radio/radiosend.py $(expr $n \* 10000) $(expr $n \* 10000 + 10000) 16 < $tmp/${n}_audio.raw > $tmp/${n}_audio.radio
+python $MYGIST/radio/radiosend.py $(expr $n \* 100) $(expr $n \* 100 + 100) 8 < $tmp/${n}_audio.raw > $tmp/${n}_audio.radio
 rm $tmp/${n}_audio.raw
-python $MYGIST/radio/radiosend.py $(expr $n \* 10000) $(expr $n \* 10000 + 10000) 16 < $tmp/${n}_video.raw > $tmp/${n}_video.radio
+php $MYGIST/secam/rgb2secam.php 320 < $tmp/${n}_video.raw | python $MYGIST/radio/radiosend.py $(expr $n \* 100) $(expr $n \* 100 + 100) 8 > $tmp/${n}_video.radio
 rm $tmp/${n}_video.raw
 done
 paste -d "\n" $tmp/*_audio.radio | sed "/^$/d" | zstd -v -22 --ultra > "${outputfile}_audio.radio.zstd"
