@@ -3,8 +3,9 @@ import os
 n = 0
 rate = int(sys.argv[1])
 size = sys.argv[2]
+fps = int(sys.argv[3])
 siza = size.split("x")
-length = (int(siza[0])*int(siza[1]))/rate
+length = (fps*(int(siza[0])*int(siza[1])))/rate
 while True:
  if n >= length:
   n = 0
