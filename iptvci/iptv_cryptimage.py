@@ -306,6 +306,12 @@ else:
  planiftcend = 0
  planifbeginend = "Aucun"
 
+typetext = bool(ord(reshash[9]) > 50)
+
+if typetext:
+ ttv = "A"
+else:
+ ttv = "B"
 
 radio = (((ord(reshash[8])*65536)+(ord(reshash[6])*256)+ord(reshash[7]))*100)
 radioend = radio + 100
@@ -354,3 +360,4 @@ if cryptage == "Discret 11":
   print("Pour Le Dechiffrer Vous Devrait Payer :: "+str(int(coin*5)-((planiftcbegin-planiftcend)/5))+" Piece/Foitierre")
 if cryptage == "Transcode":
  print("Donc Toute Est En Claire !")
+print("Teletext Variant :: " + ttv)
