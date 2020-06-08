@@ -306,7 +306,7 @@ else:
  planiftcend = 0
  planifbeginend = "Aucun"
 
-typetext = bool(ord(reshash[9]) > 50)
+typetext = bool(ord(reshash[9]) > 40)
 
 if typetext:
  ttv = "A"
@@ -360,4 +360,4 @@ if cryptage == "Discret 11":
   print("Pour Le Dechiffrer Vous Devrait Payer :: "+str(int(coin*5)-((planiftcbegin-planiftcend)/5))+" Piece/Foitierre")
 if cryptage == "Transcode":
  print("Donc Toute Est En Claire !")
-print("Teletext Variant :: " + ttv)
+print("TeleText Variant :: " + ttv)
