@@ -12,5 +12,5 @@ for o in sys.stdin:
   levelname = "Trouble"
  if level == 4:
   levelname = "PleaseDoNot"
- sys.stdout.write("<img width='32' height='32' src='https://htmlpreview.github.io/?https://github.com/cheznewa/MyGist/blob/master/iconswarningdelete/Delete%s.svg'/>" %(levelname))
+ sys.stdout.write("<img width='32' height='32' src='Delete%s.svg'/>" %(levelname))
  sys.stdout.write("<a href='%s'>%s</a> => %s<br/>" %(url,name,using))
