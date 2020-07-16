@@ -16,7 +16,7 @@ sox -t mp3 http://broadcast.infomaniak.net/start-latina-high.mp3 -t u16 -r 12000
 sox -t mp3 https://scdn.nrjaudio.fm/audio1/fr/30001/mp3_128.mp3 -t u16 -r 12000 -c 1 - trim 0 $timing | python $MYGIST/radio/radiosend.py 10012000 10040000 16 > $tmp/nrj.radio &
 sox -t mp3 https://start-sud.ice.infomaniak.ch/start-sud-high.mp3 -t u16 -r 12000 -c 1 - trim 0 $timing | python $MYGIST/radio/radiosend.py 9990000 10000000 16 > $tmp/sudradio.radio &
 sox -t mp3 http://streaming.radio.funradio.fr/fun-1-44-128 -t u16 -r 12000 -c 1 - trim 0 $timing | python $MYGIST/radio/radiosend.py 10190000 10200000 16 > $tmp/virginradio.radio &
-sox -t mp3 http://streaming.radio.rtl.fr/rtl-1-44-128 -t u16 -r 12000 -c 1 - trim 0 $timing | python $MYGIST/radio/radiosend.py 10412000 10440000 16 > $tmp/rtl.radio &
+sox -t mp3 http://streaming.radio.rtl.fr/rtl-1-44-128 -t u16 -r 12000 -c 1 - trim 0 $timing | python $MYGIST/radio/radiosend.py 10430000 10440000 16 > $tmp/rtl.radio &
 sleep $timing
 sox -t u16 -r 12000 -c 1 $tmp/rfi.raw -r 12000 -t ul -c 1 $tmp/rfi_ul.raw
 python $MYGIST/radio/radiosend.py 8900000 8910000 16 < $tmp/rfi.raw > $tmp/rfi.radio
