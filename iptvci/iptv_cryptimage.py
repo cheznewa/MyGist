@@ -360,4 +360,4 @@ if cryptage == "Discret 11":
   print("Pour Le Dechiffrer Vous Devrait Payer :: "+str(int(coin*5)-((planiftcbegin-planiftcend)/5))+" Piece/Foitierre")
 if cryptage == "Transcode":
  print("Donc Toute Est En Claire !")
-print("TeleText Variant :: " + ttv)
+print("Variante Du Teletext :: " + ttv)
