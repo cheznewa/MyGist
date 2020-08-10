@@ -10,9 +10,9 @@ def getmusicluxar(c):
  logic = logic + c.count("e")
  logic = logic + c.count("o")
  logicinv = 0
- logicinv = logic + c.count("A")
- logicinv = logic + c.count("E")
- logicinv = logic + c.count("O")
+ logicinv = logicinv + c.count("A")
+ logicinv = logicinv + c.count("E")
+ logicinv = logicinv + c.count("O")
  switch = 0
  switch = switch + c.count("s")
  switch = switch + c.count("S")
