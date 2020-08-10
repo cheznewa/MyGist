@@ -1,6 +1,8 @@
 import sys
+import re
 circ = sys.stdin.read()
 def getmusicluxar(c):
+ c = re.sub("\"[^\"]*\"","",c)
  icd = c.count("I")
  ic = c.count("i")
  logic = 0
