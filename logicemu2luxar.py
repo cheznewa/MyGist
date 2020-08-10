@@ -19,7 +19,9 @@ def getmusicluxar(c):
  switch = switch + c.count("L")
  alu = c.count("U")
  term = c.count("T")
- pist = (alu + (logic - logicinv)) * (ic/(icd+1)) + term + switch + led
+ matrix = c.count("D")
+ quartz = c.count("t")
+ pist = (alu + (logic - logicinv)) * (ic/(icd+1)) + (term%3) + switch + led + (matrix%7) + (quartz%5)
  return pist%16
 luxartracks = ["Birth","First Step","Curiosity","Process","Will Free","Scar","Loneliness","Explorer","Chase","Revolution","Blooming","Torment","Awareness","Self-Confidence","Ambition","Responsability"]
 get = getmusicluxar(circ)
