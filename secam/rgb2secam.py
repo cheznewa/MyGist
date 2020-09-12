@@ -7,14 +7,15 @@ def rgb2yuv(color):
  yuv[2] = color[0] *  .500000 + color[1] * -.418688 + color[2] * -.081312 + 128;
  return yuv
 
+q = 0
 while True:
  o = sys.stdin.read(3)
  final = rgb2yuv([ord(o[0]),ord(o[1]),ord(o[2])])
- q = final[0]
- if bool((m/int(sys.argv[1])) % 2):
-  p = final[1]
+ if bool(m % 2):
+  q = sys.stdout.write(chr((int(final[0]/2)+128)))
  else:
-  p = final[2]
- sys.stdout.write(chr(int(p/2)))
- sys.stdout.write(chr((int(q/2)+128)))
+  if bool((m/int(sys.argv[1])) % 2):
+   sys.stdout.write(chr(int(final[1]/4)))
+  else:
+   sys.stdout.write(chr(int(final[2]/4)+64))
  m = m + 1
