@@ -1,9 +1,9 @@
 background:#0070c5
-on:#826efb
+on:#eff024
 off:#2ca4ff
 gate_bg:#008df8
 gate_on:white
-gate_off:gray
+gate_off:black
 text_fg:white
 text_bg:gray
 bus:#5856db,#4a42bd,#4a42bd,#2448bf,#2448bf,#789ee3,#7f97f0,#7aadf0
