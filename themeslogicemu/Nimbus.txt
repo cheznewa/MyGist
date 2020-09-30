@@ -5,7 +5,7 @@ gate_bg:#33628c
 gate_on:#d6d9df
 gate_off:#8e8f91
 text_fg:#fff
-text_bg:#3969a8
+text_bg:#39698a
 bus:#33628c,#33628c,#33628c,#33628c,#33628c,#33628c,#33628c,#33628c
 led_off_fg:#a92e22,#bf6204,#ffdc23,#b0b332,#73a4d1,#2f5cb4,#a92e22,#fff,#bdc1c8,#fff
 led_off_bg:#8e8f91,#8e8f91,#8e8f91,#8e8f91,#8e8f91,#8e8f91,#8e8f91,#8e8f91,#a92e22,#3d6079
