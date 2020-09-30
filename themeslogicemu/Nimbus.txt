@@ -7,12 +7,12 @@ gate_off:#8e8f91
 text_fg:#000
 text_bg:#3969a8
 bus:#33628c,#33628c,#33628c,#33628c,#33628c,#33628c,#33628c,#33628c
-led_off_fg:#a92e22,#bf6204,#ffdc23,#b0b332,#73a4d1,#2f5cb4,#a92e22,#fff,#000,#fff
+led_off_fg:#a92e22,#bf6204,#ffdc23,#b0b332,#73a4d1,#2f5cb4,#a92e22,#fff,#bdc1c8,#fff
 led_off_bg:#8e8f91,#8e8f91,#8e8f91,#8e8f91,#8e8f91,#8e8f91,#8e8f91,#8e8f91,#a92e22,#3d6079
-led_off_border:#a92e22,#bf6204,#ffdc23,#b0b332,#73a4d1,#2f5cb4,#a92e22,#fff,#000,#fff
-led_on_fg:#fff,#fff,#fff,#fff,#fff,#fff,#fff,#fff,#000,#fff
+led_off_border:#a92e22,#bf6204,#ffdc23,#b0b332,#73a4d1,#2f5cb4,#a92e22,#fff,#bdc1c8,#fff
+led_on_fg:#fff,#fff,#fff,#fff,#fff,#fff,#fff,#000,#babec6,#000
 led_on_bg:#a92e22,#bf6204,#ffdc23,#b0b332,#73a4d1,#2f5cb4,#a92e22,#fff,#b0b332,#fff
-led_on_border:#fff,#fff,#fff,#fff,#fff,#fff,#fff,#fff,#000,#fff
+led_on_border:#fff,#fff,#fff,#fff,#fff,#fff,#fff,#000,#babec6,#000
 switch_off_fg:#d6d9df
 switch_off_bg:#33628c
 switch_off_border:#d6d9df
