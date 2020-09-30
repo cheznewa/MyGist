@@ -13,12 +13,12 @@ led_off_border:#a92e22,#bf6204,#ffdc23,#b0b332,#73a4d1,#2f5cb4,#a92e22,#fff,#bdc
 led_on_fg:#fff,#fff,#fff,#fff,#fff,#fff,#fff,#000,#babec6,#000
 led_on_bg:#a92e22,#bf6204,#ffdc23,#b0b332,#73a4d1,#2f5cb4,#a92e22,#fff,#b0b332,#fff
 led_on_border:#fff,#fff,#fff,#fff,#fff,#fff,#fff,#000,#babec6,#000
-switch_off_fg:#d6d9df
+switch_off_fg:#b0b332
 switch_off_bg:#33628c
-switch_off_border:#d6d9df
-switch_on_fg:babec6
-switch_on_bg:#fff
-switch_on_border:babec6
+switch_off_border:#b0b332
+switch_on_fg:#fff
+switch_on_bg:#b0b332
+switch_on_border:#fff
 terminal_fg:#a9b0be
 terminal_mid:#cdd0d5
 terminal_bg:#000
