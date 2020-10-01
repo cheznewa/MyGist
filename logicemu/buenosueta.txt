@@ -1,5 +1,6 @@
-0"Trouver Celui Qui Possède Le Plus Grand Nombre Si Tu Trouve Tu Gagne"
+0"Trouver Celui Qui Possède Le Plus Grand Nombre Unique, Si Tu Trouve Tu Gagne"
 0"Une Seul Révélation Pour Le Joueur, Le Nul Si Découverte Sera Déclaré Si Vous Le Révélé Une De Plus, Seul Votre Buraliste Peut Le Faire Pour Votre Vérificaion De Pari"
+0"En Cas De Nombre Gagnant Dupliqué, Sont Perdant"
 
   #######################################
   #                                     #
