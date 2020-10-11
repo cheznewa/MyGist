@@ -1,0 +1,25 @@
+Wall ::::
+| Wall Vertical
+- Wall Horizontal
++ Wall Cross
+/ Wall Diagonal
+\ Wall Diagonal Reverse
+x Wall Cross Diagonal
+
+Other ::::
+# Extend A Block/Trigger
+
+Trigger ::::
+C Change Color; R,G,B
+Z Change Zoom; Zoom
+F Set Fixed Cam; X,Y
+O Set Offset Cam; X,Y
+T Set Theme; ID
+B Teleport In; ID
+W Teleport Out; ID
+
+Block ::::
+M Define House; ID
+m Used House; ID
+v Arrow For LogicEmu (In Natural Enviromenent Only)
+g Grass Zone
