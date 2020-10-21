@@ -6,7 +6,7 @@ tmp=$(mktemp -d)
 youtube-dl -o "$tmp/%(title)s.%(ext)s" -i https://soundcloud.com/nocopyrightsounds
 for u in $tmp/*
 do
-aubio pitch "$u" | cut -d "	" -f 2 | cur -d "." -f 1 > "$u.pitch"
+aubio pitch "$u" | cut -d "	" -f 2 | cut -d "." -f 1 > "$u.pitch"
 done
 ssdeep -b $tmp/*.pitch > "$1"
 rm -r $tmp
