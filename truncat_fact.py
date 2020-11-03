@@ -1,4 +1,5 @@
-# Try ::::::::: calc "1000!" | tr -d "    " | python2 mygist/truncat.py 200 | python2 truncat_fact.py 200 1000 30000
+# Try ::::::::: calc "1000!" | tr -d "    " | python2 truncat.py 200 | python2 truncat_fact.py 200 1000 30000
+import sys
 text = sys.stdin.read()
 begin,lengn,end = text.split(" ")
 la = int(sys.argv[1])
