@@ -13,6 +13,16 @@ def getmusicluxar(c):
  logicinv = logicinv + c.count("A")
  logicinv = logicinv + c.count("E")
  logicinv = logicinv + c.count("O")
+ input = 0
+ input = input + c.count("^")
+ input = input + c.count("v")
+ input = input + c.count("<")
+ input = input + c.count(">")
+ inputinv = 0
+ inputinv = inputinv + c.count("m")
+ inputinv = inputinv + c.count("w")
+ inputinv = inputinv + c.count("[")
+ inputinv = inputinv + c.count("]")
  switch = 0
  switch = switch + c.count("s")
  switch = switch + c.count("S")
@@ -23,8 +33,8 @@ def getmusicluxar(c):
  term = c.count("T")
  matrix = c.count("D")
  quartz = c.count("t")
- pist = (alu + (logic - logicinv)) * (ic/(icd+1)) + (term%3) + switch + led + (matrix%7) + (quartz%5)
- return pist%16
+ pist = (alu + (logic - logicinv)) * (ic/(icd+1)) + (term%3) + ((switch + led)*3) + (matrix%7) + (quartz%5) + (input - inputinv)
+ return abs(pist%16)
 luxartracks = ["Birth","First Step","Curiosity","Process","Will Free","Scar","Loneliness","Explorer","Chase","Revolution","Blooming","Torment","Awareness","Self-Confidence","Ambition","Responsability"]
 get = getmusicluxar(circ)
 print("La Musique Luxar Pour Ce Circuit Est ::::: " + luxartracks[get])
