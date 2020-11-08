@@ -1,4 +1,17 @@
-# Please Run On Dom0 (You Cannot Copy/Paste To Dom0) :::::::::: qvm-run -p yourvm "cat /home/user/mygist/morecolorqubesos.bash" | bash
+# Please Run On Dom0 (You Cannot Copy/Paste To Dom0) :::::::::: qvm-run -p yourvm "cat /home/user/mygist/morecolorqubesos.bash" > morecolors.bash && morecolors.bash 10
+# If You Want More Colors Random From Intenet, Please Download :::::::::::::::: https://colornames.org/download/colornames.zip
+if test -f "colornames.zip"
+then
+nbcol=$1
+colors=()
+names=()
+for colsel in $(unzip -p colornames.zip | shuf -n $nbcol |  tr -d " ")
+do
+colors=(${colors} $(cut -d , -f 1 <<< $colsel))
+names=(${names} $(cut -d , -f 2 <<< $colsel))
+done
+else
+nbcol=21
 colors=(
 800000
 9A6324
@@ -47,9 +60,10 @@ Mint
 Lavender
 White
 )
-for n in $(seq 0 21)
+fi
+for n in $(seq 0 $nbcol)
 do
-qubesd-query dom0 admin.label.Create dom0 ${names[$n]} <<< "0x${colors[$n]}"
+qubesd-query dom0 admin.label.Create dom0 "${names[$n]}" <<< "0x${colors[$n]}"
 sudo convert -size 20x20 xc:\#${colors[$n]} -stroke black -fill none -draw "rectangle 0,0 20,20" /usr/share/icons/hicolor/128x128/devices/appvm-${names[$n]}.png
 sudo convert -size 20x20 xc:\#${colors[$n]} -stroke black -fill none -draw "rectangle 0,0 20,20" -fill white -stroke none -draw "rectangle 8,8 12,12" /usr/share/icons/hicolor/128x128/devices/dispvm-${names[$n]}.png
 done
