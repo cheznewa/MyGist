@@ -7,8 +7,8 @@ colors=()
 names=()
 for colsel in $(unzip -p colornames.zip | shuf -n $nbcol |  tr -d " ")
 do
-colors=(${colors} $(cut -d , -f 1 <<< $colsel))
-names=(${names} $(cut -d , -f 2 <<< $colsel))
+colors+=($(cut -d , -f 1 <<< $colsel))
+names+=($(cut -d , -f 2 <<< $colsel))
 done
 else
 nbcol=21
