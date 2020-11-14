@@ -7,17 +7,17 @@ r = copper[1:3]
 r = int(r,16)*2
 if r > 255:
  r = 255
-r = str(hex(r))[2:]
+r = str(format(r,"02x"))
 g = copper[3:5]
 g = int(g,16)*2
 if g > 255:
  g = 255
-g = str(hex(g))[2:]
+g = str(format(g,"02x"))
 b = copper[5:7]
 b = int(b,16)*2
 if b > 255:
  b = 255
-b = str(hex(b))[2:]
+b = str(format(b,"02x"))
 copperactive = "#" + r + g + b
 pads = col["pads"]
 clad = col["clad"]
@@ -25,18 +25,34 @@ vcut = col["vcut"]
 silk = col["silk"]
 r = pads[1:3]
 r = int(r,16)/2
-r = str(hex(r))[2:]
+r = str(format(r,"02x"))
 g = pads[3:5]
 g = int(g,16)/2
-g = str(hex(g))[2:]
+g = str(format(g,"02x"))
 b = pads[5:7]
 b = int(b,16)/2
-b = str(hex(b))[2:]
+b = str(format(b,"02x"))
 labelbg = "#" + r + g + b
+r = clad[1:3]
+r = int(r,16)*2
+if r > 255:
+ r = 255
+r = str(format(r,"02x"))
+g = clad[3:5]
+g = int(g,16)*2
+if g > 255:
+ g = 255
+g = str(format(g,"02x"))
+b = clad[5:7]
+b = int(b,16)*2
+if b > 255:
+ b = 255
+b = str(format(b,"02x"))
+cladactive = "#" + r + g + b
 sys.stdout.write("background:%s\n" %(board))
 sys.stdout.write("on:%s\n" %(copperactive))
 sys.stdout.write("off:%s\n" %(copper))
-sys.stdout.write("gate_on:%s\n" %(clad))
+sys.stdout.write("gate_on:%s\n" %(cladactive))
 sys.stdout.write("gate_off:%s\n" %(clad))
 sys.stdout.write("gate_bg:%s\n" %(pads))
 sys.stdout.write("text_fg:%s\n" %(silk))
