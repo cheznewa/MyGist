@@ -1,9 +1,9 @@
 background:#d5d5d5
 on:#3383f0
 off:#37475c
-gate_bg:#2a6ceb
-gate_on:#c2d4f3
-gate_off:#2d384d
+gate_bg:#8effbc
+gate_on:#3383f0
+gate_off:#37475c
 text_fg:#3952f4
 text_bg:#2d2d2d
 bus:#8bb9c7,#8bc78b,#c7c58b,#c7a58b,#c78b8d,#c78bb6,#a08bc7,#8b8dc7
