@@ -1,10 +1,10 @@
 background:#d5d5d5
 on:#3383f0
 off:#37475c
-gate_bg:#9cafd4
-gate_on:#98b8eb
-gate_off:#697384
-text_fg:#6a77d9
+gate_bg:#2a6ceb
+gate_on:#c2d4f3
+gate_off:#2d384d
+text_fg:#3952f4
 text_bg:#2d2d2d
 bus:#8bb9c7,#8bc78b,#c7c58b,#c7a58b,#c78b8d,#c78bb6,#a08bc7,#8b8dc7
 led_off_fg:#d4d4d4,#d4d4d4,#d4d4d4,#d4d4d4,#d4d4d4,#d4d4d4,#d4d4d4,#1f1f1f,#d4d4d4,#d4d4d4
@@ -21,7 +21,7 @@ switch_on_bg:#27ffa3
 switch_on_border:#232323
 terminal_fg:#00ff32
 terminal_mid:#377243
-terminal_bg:#223125
+terminal_bg:#0e1710
 terminal_outside_fg:#bbc8bd
 terminal_outside_bg:#364639
 link:#7882ff
