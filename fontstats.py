@@ -7,7 +7,8 @@ fontn  = [0]  * nbarray
 t = 0
 p = 0
 while True:
- if "\\" == sys.stdin.read(1):
+ o = sys.stdin.read(1)
+ if "\\" == o:
   if "[" == sys.stdin.read(1):
    f = ""
    i = True
@@ -22,7 +23,7 @@ while True:
       p = t
       t = t + 1
     f = f + s
- if sys.stdin.read(1):
+ if o:
   fontn[p] = fontn[p] + 1
  else:
   break
