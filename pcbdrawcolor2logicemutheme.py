@@ -1,8 +1,8 @@
 import sys
 import json
 col = json.loads(sys.stdin.read())
-board = col["board"]
-copper = col["copper"]
+board = col["copper"]
+copper = col["board"]
 r = copper[1:3]
 r = int(r,16)*2
 if r > 255:
