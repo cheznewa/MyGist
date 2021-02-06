@@ -13,11 +13,11 @@ def getmusicluxar(c):
  logicinv = logicinv + c.count("A")
  logicinv = logicinv + c.count("E")
  logicinv = logicinv + c.count("O")
- input = 0
- input = input + c.count("^")
- input = input + c.count("v")
- input = input + c.count("<")
- input = input + c.count(">")
+ inputi = 0
+ inputi = inputi + c.count("^")
+ inputi = inputi + c.count("v")
+ inputi = inputi + c.count("<")
+ inputi = inputi + c.count(">")
  inputinv = 0
  inputinv = inputinv + c.count("m")
  inputinv = inputinv + c.count("w")
@@ -26,14 +26,16 @@ def getmusicluxar(c):
  switch = 0
  switch = switch + c.count("s")
  switch = switch + c.count("S")
+ switch = switch + c.count("p")
+ switch = switch + c.count("P")
  led = 0
- switch = switch + c.count("l")
- switch = switch + c.count("L")
+ led = led + c.count("l")
+ led = led + c.count("L")
  alu = c.count("U")
  term = c.count("T")
  matrix = c.count("D")
  quartz = c.count("t")
- pist = (alu + (logic - logicinv)) * (ic/(icd+1)) + (term%3) + ((switch + led)*3) + (matrix%7) + (quartz%5) + (input - inputinv)
+ pist = ((alu%11) + (logic - logicinv)) * (ic/(icd+1)) + (term%3) + ((switch*2)+(led*3)) + (matrix%7) + (quartz%5) + (inputi - inputinv)
  return abs(pist%16)
 luxartracks = ["Birth","First Step","Curiosity","Process","Will Free","Scar","Loneliness","Explorer","Chase","Revolution","Blooming","Torment","Awareness","Self-Confidence","Ambition","Responsability"]
 get = getmusicluxar(circ)
