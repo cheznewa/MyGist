@@ -39,6 +39,9 @@ hashday = hashtwo.digest()
 
 word = ((((ord(hashday[0]) *256)+(ord(hashday[1]))))%65504)+32
 
+retardone = ((float((ord(reshash[24]) *256)+(ord(hashday[25])))/65536)*2.5)+0.5
+retardtwo = ((float((ord(reshash[26]) *256)+(ord(hashday[27])))/65536)*3.0)+2.0
+
 level = []
 for n in range(11,21):
  level.append((ord(hashday[n])%6)+1)
@@ -352,6 +355,8 @@ if cryptage == "Discret 11":
  for n in range(10):
   sys.stdout.write("%s" %(level[n]))
  sys.stdout.write("\n")
+ print("Retard 1 :: "+str(retardone))
+ print("Retard 2 :: "+str(retardtwo))
  print("Son Traiter :: "+cond(soundcrypt_enable))
  print("Horaire De Transcode :: " + planifbeginend)
  if payment == "dash":
