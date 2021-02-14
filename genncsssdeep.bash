@@ -1,12 +1,12 @@
-# Pour Générer Un Fichier SSDEEP Contient Touts Les NoCopyrightsounds En Pitch Afin De Identifier Une Musique NCS
+# Pour Générer Un Fichier SSDEEP Contient Touts Les NoCopyrightsounds Avec SongRec Afin D'Identifier Une Musique NCS
 # Premier Argument Est La Sortie
-# Usage Après Génération ::::::::::::::: aubio pitch mamusique.mp3 | cut -d "	" -f 2 | cut -d "." -f 1 | ssdeep -m votressdeepgenerer.txt
-# Requis ::::: Aubio et SSDeep
+# Usage Après Génération ::::::::::::::: songrec audio-file-to-fingerprint votreaudio | cut -d , -f 2 | base64 -d | ssdeep -m votressdeepgenerer.txt
+# Requis ::::: SongRec et SSDeep
 tmp=$(mktemp -d)
 youtube-dl -o "$tmp/%(title)s.%(ext)s" -i https://soundcloud.com/nocopyrightsounds
 for u in $tmp/*
 do
-aubio pitch "$u" | cut -d "	" -f 2 | cut -d "." -f 1 > "$u.pitch"
+songrec audio-file-to-fingerprint "$u" | cut -d , -f 2 | base64 -d > "$u.fingerprint"
 done
-ssdeep -b $tmp/*.pitch > "$1"
+ssdeep -b $tmp/*.fingerprint > "$1"
 rm -r $tmp
