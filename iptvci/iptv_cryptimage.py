@@ -192,6 +192,18 @@ if color == "NTSC":
  if ord(reshash[4]) == 255:
   color = "NTSC A"
 
+if ord(reshash[18]) > 173:
+ planif = range(0,20)
+ planiftcbegin = planif[ord(reshash[16])%19]
+ planif = range(1,6)
+ planiftcend = planif[ord(reshash[17])%5]
+ planiftcend = planiftcend + planiftcbegin
+ planifbeginend = str(planiftcbegin) + ":00 - " + str(planiftcend) + ":00"
+else:
+ planiftcbegin = 0
+ planiftcend = 0
+ planifbeginend = "Aucun"
+  
 # Begin XXX
 if mode == "normal":
  if bool(re.search("redtraffic",url)):
@@ -318,18 +330,6 @@ if mode == "normal":
 
 if colorpourcent < float(ord(reshash[5])/256.0):
  color = "Aucun"
-
-if ord(reshash[18]) > 173:
- planif = range(0,20)
- planiftcbegin = planif[ord(reshash[16])%19]
- planif = range(1,6)
- planiftcend = planif[ord(reshash[17])%5]
- planiftcend = planiftcend + planiftcbegin
- planifbeginend = str(planiftcbegin) + ":00 - " + str(planiftcend) + ":00"
-else:
- planiftcbegin = 0
- planiftcend = 0
- planifbeginend = "Aucun"
 
 typetext = bool(ord(reshash[9]) > 40)
 
