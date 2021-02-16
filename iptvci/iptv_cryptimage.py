@@ -204,6 +204,7 @@ if mode == "normal":
   color = "NTSC"
   videocrypt_stricte = False
   tag_enable = False
+  planifbeginend = "Aucun"
   
 if mode == "normal":
  if bool(re.search("adultiptv",url)):
@@ -216,6 +217,7 @@ if mode == "normal":
   color = "NIIR"
   videocrypt_stricte = False
   tag_enable = False
+  planifbeginend = "Aucun"
 
  if bool(re.search("www\.ast\.tv",url)):
   cryptage = "VideoCrypt"
@@ -227,6 +229,7 @@ if mode == "normal":
   color = "PAL"
   videocrypt_stricte = False
   tag_enable = False
+  planifbeginend = "Aucun"
 
  if bool(re.search("jasminchannel",url)):
   cryptage = "VideoCrypt"
@@ -238,6 +241,7 @@ if mode == "normal":
   color = "PAL"
   videocrypt_stricte = False
   tag_enable = False
+  planifbeginend = "Aucun"
 
  if bool(re.search("a2\.skynets\.tv",url)):
   cryptage = "VideoCrypt"
@@ -249,6 +253,7 @@ if mode == "normal":
   color = "PAL"
   videocrypt_stricte = False
   tag_enable = False
+  planifbeginend = "Aucun"
 
  if bool(re.search("psrv\.io",url)):
   cryptage = "VideoCrypt"
@@ -260,6 +265,7 @@ if mode == "normal":
   color = "PAL"
   videocrypt_stricte = False
   tag_enable = False
+  planifbeginend = "Aucun"
 
  if bool(re.search("iptvipaccess\.es",url)):
   cryptage = "VideoCrypt"
@@ -271,6 +277,7 @@ if mode == "normal":
   color = "PAL"
   videocrypt_stricte = False
   tag_enable = False
+  planifbeginend = "Aucun"
 
  if bool(re.search("wer5tuuh\.russtv\.net",url)):
   cryptage = "VideoCrypt"
@@ -282,6 +289,7 @@ if mode == "normal":
   color = "SECAM"
   videocrypt_stricte = False
   tag_enable = False
+  planifbeginend = "Aucun"
 
  if bool(re.search("nruxmzi\.ojswi5dsmftgm2ldfz4hs6q\.cmle\.ru",url)):
   cryptage = "VideoCrypt"
@@ -293,6 +301,7 @@ if mode == "normal":
   color = "SECAM"
   videocrypt_stricte = False
   tag_enable = False
+  planifbeginend = "Aucun"
 
  if bool(re.search("cdn1\.ibizastream\.biz",url)):
   cryptage = "VideoCrypt"
@@ -304,6 +313,7 @@ if mode == "normal":
   color = "MAC"
   videocrypt_stricte = False
   tag_enable = False
+  planifbeginend = "Aucun"
 # End XXX
 
 if colorpourcent < float(ord(reshash[5])/256.0):
