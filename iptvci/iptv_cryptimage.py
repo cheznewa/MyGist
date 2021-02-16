@@ -205,7 +205,7 @@ if mode == "normal":
   videocrypt_stricte = False
   tag_enable = False
   
-  if mode == "normal":
+if mode == "normal":
  if bool(re.search("adultiptv",url)):
   cryptage = "VideoCrypt"
   videocrypt_begin = 1
