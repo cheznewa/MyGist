@@ -204,6 +204,18 @@ if mode == "normal":
   color = "NTSC"
   videocrypt_stricte = False
   tag_enable = False
+  
+  if mode == "normal":
+ if bool(re.search("adultiptv",url)):
+  cryptage = "VideoCrypt"
+  videocrypt_begin = 1
+  videocrypt_end = 255
+  soundcrypt_enable = True
+  stars = 500
+  coin = 100
+  color = "NIIR"
+  videocrypt_stricte = False
+  tag_enable = False
 
  if bool(re.search("www\.ast\.tv",url)):
   cryptage = "VideoCrypt"
