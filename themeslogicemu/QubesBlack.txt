@@ -6,7 +6,7 @@ gate_on:#999
 gate_off:#333
 text_fg:white
 text_bg:#222
-bus:#aaa,#aab,#aba,#baa,#bba,#bab,#abb,#bbb
+bus:#5b825e,#5c6c82,#825e80,#826e5e,#738267,#678279,#627082,#6d5f82
 led_off_fg:white,white,white,white,white,white,white,white,white,white
 led_off_bg:#6e2a2d,#69412a,#5c592a,#2f5729,#2a5c5b,#2a336e,#633954,#444,#ff6169,#333
 led_off_border:white,white,white,white,white,white,white,white,white,white
@@ -17,7 +17,7 @@ switch_off_fg:white
 switch_off_bg:black
 switch_off_border:white
 switch_on_fg:white
-switch_on_bg:lime
+switch_on_bg:#98faae
 switch_on_border:white
 terminal_fg:#4e59ed
 terminal_mid:#272d78
