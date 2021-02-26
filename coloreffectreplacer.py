@@ -34,16 +34,18 @@ def xorcol(col,r,g,b):
  vb = str(format(vb,"02x"))
  return vr + vg + vb
 import sys
+import string
 while True:
  o = sys.stdin.read(1)
  if "#" == o:
   col = str(sys.stdin.read(6))
-  if sys.argv[1] == "add":
-   col = addcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
-  if sys.argv[1] == "sub":
-   col = subcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
-  if sys.argv[1] == "xor":
-   col = xorcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
+  if all(a in string.hexdigits for a in col):
+   if sys.argv[1] == "add":
+    col = addcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
+   if sys.argv[1] == "sub":
+    col = subcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
+   if sys.argv[1] == "xor":
+    col = xorcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
   sys.stdout.write("#")
   sys.stdout.write(col)
  else:
