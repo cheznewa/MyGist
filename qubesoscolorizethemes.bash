@@ -20,6 +20,8 @@ name=$(cut -d ";" -f 2 <<< ${acol[$n]})
 cp -r /tmp/standard /tmp/standard-${name}
 hex=$(cut -d ";" -f 1 <<< ${acol[$n]})
 python2 $MYGIST/coloreffectreplacer.py rmp "4A90D9" "$hex" 300 < /tmp/standard/gtk-3.0/gtk.css > /tmp/standard-${name}/gtk-3.0/gtk.css
+python2 $MYGIST/coloreffectreplacer.py rmp "4A90D9" "$hex" 300 < /tmp/standard/gtk-3.0/gtk-dark.css > /tmp/standard-${name}/gtk-3.0/gtk-dark.css
+python2 $MYGIST/coloreffectreplacer.py rmp "4A90D9" "$hex" 300 < /tmp/standard/gtk-2.0/gtkrc > /tmp/standard-${name}/gtk-2.0/gtkrc
 cp -r /tmp/standard-${name} /usr/share/themes
 done
 echo "Please Edit .xsettingsd In Line Gtk/KeyThemeName=standard-(yourcolor) And Net/ThemeName=standard-(yourcolor)"
