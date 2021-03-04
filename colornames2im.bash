@@ -1,21 +1,12 @@
 printf "<colormap>\n"
-tmp=$(mktemp -d)
-names=()
-ids=()
-curl -s -o $tmp/cn.zip https://colornames.org/download/colornames.zip
-for line in $(unzip -p $tmp/cn.zip | tr -d " ")
+if test \! \( -f colornames.zip \)
+then
+curl -O -s https://colornames.org/download/colornames.zip
+fi
+for line in $(unzip -p colornames.zip | tr -d " " |  sort -n -t , -k 3 -r)
 do
-id=0
 color=$(cut -d , -f 1 <<< $line)
 name=$(cut -d , -f 2 <<< $line)
-for n in ${!names[@]}
-do
-if test ${names[n]} = ${name}
-then
-id=$(expr $id + 1)
-fi
-done
-printf "<color name=\"${name}${id}\" color=\"#${color}\" compliance=\"SVG, X11, XPM\"/>\n"
-names+=(${name})
+printf "<color name=\"${name}\" color=\"#${color}\" compliance=\"SVG, X11, XPM\"/>\n"
 done
 printf "</colormap>\n"
