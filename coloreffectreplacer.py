@@ -81,6 +81,26 @@ def rmpcol(col,a,b,f):
  vb = str(format(vb,"02x"))
  return vr + vg + vb
 
+i = open("/dev/urandom","rb")
+def rndcol(col,a,f):
+ vr = int(col[0:2],16)
+ vg = int(col[2:4],16)
+ vb = int(col[4:6],16)
+ ar = int(a[0:2],16)
+ ag = int(a[2:4],16)
+ ab = int(a[4:6],16)
+ br = ord(i.read(1))
+ bg = ord(i.read(1))
+ bb = ord(i.read(1))
+ z = float(max(f-(abs(vr-ar)+abs(vg-ag)+abs(vb-ab)),0))
+ vr = int(vr*float(1-(z/f)))+int(br*float(z/f))
+ vg = int(vg*float(1-(z/f)))+int(bg*float(z/f))
+ vb = int(vb*float(1-(z/f)))+int(bb*float(z/f))
+ vr = str(format(vr,"02x"))
+ vg = str(format(vg,"02x"))
+ vb = str(format(vb,"02x"))
+ return vr + vg + vb
+
 import sys
 import string
 while True:
@@ -100,6 +120,8 @@ while True:
     col = sepcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
    if sys.argv[1] == "rmp":
     col = rmpcol(col,sys.argv[2],sys.argv[3],int(sys.argv[4]))
+   if sys.argv[1] == "rnd":
+    col = rndcol(col,sys.argv[2],int(sys.argv[3]))
   sys.stdout.write("#")
   sys.stdout.write(col)
  else:
