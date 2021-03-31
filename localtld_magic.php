@@ -5,7 +5,7 @@
 // Et Accrochez-Vous !
 // Mettez Ce Fichier Sur Votre Serveur Et Rennomé En index.php
 // Si Ca Ne Marche Pas, Vous Devrait Vous-Même Télécharger Les Fichier Qui Manque à L'apelle.
-$freedomaines = ["newanotremaitre.free","timeanddatebletou.free","logicemu.free","jslinux.free","randomlike.free","colormodem.free"];
+$freedomaines = ["newanotremaitre.free","timeanddatebletou.free","logicemu.free","jslinux.free","randomlike.free","colormodem.free","randomfonts.free"];
 if ($_SERVER["HTTP_HOST"] == "freelinks.free")
 {
 echo "<h1>Liste Des Sites Free Disponible</h1>";
@@ -70,5 +70,19 @@ echo "<br/>Le Site A Générer ::::::: " . $count . " Octet -:- Source Aléatoir
 if ($_SERVER["HTTP_HOST"] == $freedomaines[5])
 {
 echo '<h1>Color Modem In My World At Vilande</h1><form enctype="multipart/form-data" action="proc.php" method="post">Please Video To Process ::<input type="file" name="userfile"/><br/>Select Standard From Country In My World :: <select name="country" id="country"><optgroup label="Normal System"><option value="bt">BLE TOU</option><option value="ph">Phélÿn</option><option value="eu">Eurack</option></optgroup><optgroup label="Andean System"><option value="mo">Moênne</option><option value="in">Indie</option><option value="so">Solainie</option><option value="mv">Movenie</option><option value="js">Joséro</option><option value="ln">Luana</option></optgroup><optgroup label="VHS Zone"><option value="ns">Normal System</option><option value="as">Andean System</option></optgroup></select><br/>Select Mode For Process :: <select name="mode" id="mode"><option value="modem">Modulate And Demodulate</option><option value="mod">Modulate Only</option><option value="demod">Demodulate Only</option><option value="multi">Multiplex (Modulate In Second, And Demodulate In First)</option></select><br/><input type="submit" value="Process Now!"></br></form>';
+}
+if ($_SERVER["HTTP_HOST"] == $freedomaines[6])
+{
+echo "<title>Random Fonts</title>";
+$fonts = scandir("fonts");
+$nbf = count($fonts);
+$attrf = rand(0,$nbf);
+echo "<style>@font-face{font-family:aRandomFont;src:url(\"fonts/$fonts[$attrf]\");}</style>";
+echo "<font size='6' face=\"aRandomFont\">".basename($fonts[$attrf],".ttf")."<br/>";
+for ($c = 32;$c<=118;$c++)
+{
+echo chr($c);
+}
+echo "</fonts>";
 }
 ?>
