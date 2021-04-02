@@ -5,7 +5,7 @@
 // Et Accrochez-Vous !
 // Mettez Ce Fichier Sur Votre Serveur Et Rennomé En index.php
 // Si Ca Ne Marche Pas, Vous Devrait Vous-Même Télécharger Les Fichier Qui Manque à L'apelle.
-$freedomaines = ["newanotremaitre.free","timeanddatebletou.free","logicemu.free","jslinux.free","randomlike.free","colormodem.free","randomfonts.free"];
+$freedomaines = ["newanotremaitre.free","timeanddatebletou.free","logicemu.free","jslinux.free","randomlike.free","colormodem.free","randomfonts.free","pagerankcalc.free"];
 if ($_SERVER["HTTP_HOST"] == "freelinks.free")
 {
 echo "<title>Free Links</title>";
@@ -88,5 +88,27 @@ for ($c = 32;$c<=118;$c++)
 echo chr($c);
 }
 echo "</fonts>";
+}
+if ($_SERVER["HTTP_HOST"] == $freedomaines[7])
+{
+echo "<title>PageRank Calculator</title>";
+echo "<h1>PageRank Calculator From Wikipedia</h1><form action='index.php' method='get'>";
+echo "Please Type ID Here (Get Name Wiki From Wikidata, Type \"Q\" Begin) ::::: <input name='id' id='id'></input></br>";
+if (isset($_GET["id"]))
+{
+$content = file_get_contents("enwiki.links.rank"); // https://github.com/athalhammer/danker ; And Calulate :::::: https://archive.org/details/enwiki-20150901
+$exploded = explode("\n",$content);
+unset($content);
+foreach ($exploded as $array)
+{
+$array = explode("\t",$array);
+if ($array[0] == $_GET["id"])
+{
+echo "Result PageRank :::: ";
+echo $array[1];
+break;
+}
+}
+}
 }
 ?>
