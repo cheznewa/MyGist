@@ -5,7 +5,7 @@
 // Et Accrochez-Vous !
 // Mettez Ce Fichier Sur Votre Serveur Et Rennomé En index.php
 // Si Ca Ne Marche Pas, Vous Devrait Vous-Même Télécharger Les Fichier Qui Manque à L'apelle.
-$freedomaines = ["newanotremaitre.free","timeanddatebletou.free","logicemu.free","jslinux.free","randomlike.free","colormodem.free","randomfonts.free","pagerankcalc.free"];
+$freedomaines = ["newanotremaitre.free","timeanddatebletou.free","logicemu.free","jslinux.free","randomlike.free","colormodem.free","randomfonts.free","pagerankcalc.free","pdf2htmlex.free"];
 if ($_SERVER["HTTP_HOST"] == "freelinks.free")
 {
 echo "<title>Free Links</title>";
@@ -73,7 +73,7 @@ echo "<br/>Le Site A Générer ::::::: " . $count . " Octet -:- Source Aléatoir
 if ($_SERVER["HTTP_HOST"] == $freedomaines[5])
 {
 echo "<title>Color Modem In My World</title>";
-echo '<h1>Color Modem In My World At Vilande</h1><form enctype="multipart/form-data" action="proc.php" method="post">Please Video To Process ::<input type="file" name="userfile"/><br/>Select Standard From Country In My World :: <select name="country" id="country"><optgroup label="Normal System"><option value="bt">BLE TOU</option><option value="ph">Phélÿn</option><option value="eu">Eurack</option></optgroup><optgroup label="Andean System"><option value="mo">Moênne</option><option value="in">Indie</option><option value="so">Solainie</option><option value="mv">Movenie</option><option value="js">Joséro</option><option value="ln">Luana</option></optgroup><optgroup label="VHS Zone"><option value="ns">Normal System</option><option value="as">Andean System</option></optgroup></select><br/>Select Mode For Process :: <select name="mode" id="mode"><option value="modem">Modulate And Demodulate</option><option value="mod">Modulate Only</option><option value="demod">Demodulate Only</option><option value="multi">Multiplex (Modulate In Second, And Demodulate In First)</option></select><br/><input type="submit" value="Process Now!"></br></form>';
+echo '<h1>Color Modem In My World At Vilande</h1><form enctype="multipart/form-data" action="proc.php" method="post">Please Select Video To Process ::<input type="file" name="userfile"/><br/>Select Standard From Country In My World :: <select name="country" id="country"><optgroup label="Normal System"><option value="bt">BLE TOU</option><option value="ph">Phélÿn</option><option value="eu">Eurack</option></optgroup><optgroup label="Andean System"><option value="mo">Moênne</option><option value="in">Indie</option><option value="so">Solainie</option><option value="mv">Movenie</option><option value="js">Joséro</option><option value="ln">Luana</option></optgroup><optgroup label="VHS Zone"><option value="ns">Normal System</option><option value="as">Andean System</option></optgroup></select><br/>Select Mode For Process :: <select name="mode" id="mode"><option value="modem">Modulate And Demodulate</option><option value="mod">Modulate Only</option><option value="demod">Demodulate Only</option><option value="multi">Multiplex (Modulate In Second, And Demodulate In First)</option></select><br/><input type="submit" value="Process Now!"></br></form>';
 }
 if ($_SERVER["HTTP_HOST"] == $freedomaines[6])
 {
@@ -92,7 +92,7 @@ echo "</fonts>";
 if ($_SERVER["HTTP_HOST"] == $freedomaines[7])
 {
 echo "<title>PageRank Calculator</title>";
-echo "<h1>PageRank Calculator From Wikipedia</h1><form action='index.php' method='get'>";
+echo "<h1>PageRank Calculator From Wikipedia</h1><form action='.' method='get'>";
 echo "Please Type ID Here (Get Name Wiki From Wikidata, Type \"Q\" Begin) ::::: <input name='id' id='id'></input></br>";
 if (isset($_GET["id"]))
 {
@@ -109,6 +109,26 @@ echo $array[1];
 break;
 }
 }
+}
+}
+if ($_SERVER["HTTP_HOST"] == $freedomaines[8])
+{
+if (isset($_FILES["pdffile"]))
+{
+set_time_limit(0);
+$pdf = uniqid();
+if (!move_uploaded_file($_FILES["pdffile"]["tmp_name"],"/tmp/".$pdf.".pdf"))
+{
+echo "Oops!";
+}
+exec("/usr/local/bin/pdf2htmlEX --zoom 1.618 --dest-dir /tmp/ ///tmp/".$pdf.".pdf ".$pdf.".html");
+header("Content-Type: text/html");
+readfile("/tmp/".$pdf.".html");
+}
+else
+{
+echo "<title>pdf2htmlEX</title>";
+echo "<form enctype='multipart/form-data' action='.' method='post'>Please Select PDF :: <input type='file' name='pdffile' accept='application/pdf'/><br/><input type='submit' value='Submit'/><br/></from>";
 }
 }
 ?>
