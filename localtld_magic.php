@@ -5,7 +5,7 @@
 // Et Accrochez-Vous !
 // Mettez Ce Fichier Sur Votre Serveur Local Et Rennomé En index.php
 // Si Ca Ne Marche Pas, Vous Devrait Vous-Même Télécharger Les Fichier Qui Manque à L'apelle.
-$freedomaines = ["newanotremaitre.free","timeanddatebletou.free","logicemu.free","jslinux.free","randomlike.free","colormodem.free","randomfonts.free","pagerankcalc.free","pdf2htmlex.free","lhvtools.free","cestpassorcier.free","dexsilicium.free"];
+$freedomaines = ["newanotremaitre.free","timeanddatebletou.free","logicemu.free","jslinux.free","randomlike.free","colormodem.free","randomfonts.free","pagerankcalc.free","pdf2htmlex.free","lhvtools.free","cestpassorcier.free","dexsilicium.free","titeuf.free","codelyoko.free","kidpaddle.free"];
 if ($_SERVER["HTTP_HOST"] == "freelinks.free")
 {
 echo "<title>Free Links</title>";
@@ -40,6 +40,7 @@ echo getdatebt(intval((time() - (989193600 + 18000)) / 86400))." ".gettimeday((t
 if ($_SERVER["HTTP_HOST"] == $freedomaines[2])
 {
 echo "<title>LogicEmu - Online Logic Simulator</title>";
+echo "<body><noscript>Please Enable Javascript!</noscript></body>";
 echo "<script src=\"editor.js\"></script>";
 echo "<script src=\"logicemu.js\"></script>";
 echo "<script src=\"main.js\"></script>";
@@ -139,7 +140,10 @@ echo base64_decode("CTxoMj5FbmNvZGFnZSwgZMOpY29kYWdlPC9oMj4KCTxkaXYgY2xhc3M9ImJs
 if ($_SERVER["HTTP_HOST"] == $freedomaines[10])
 {
 $themevideo = "cestpassorcier";
-echo "<h1>C'est Pas Sorcier</h1>";
+$themetitle = "C'est Pas Sorcier";
+$url        = "https://www.youtube.com/playlist?list=PLh-qVJTuss13DTDtjpx40TASjjXkMdJNI";
+echo "<title>$themetitle</title>";
+echo "<h1>$themetitle</h1>";
 if (isset($_GET["v"]))
 {
 echo "<video controls><source src=\"".$themevideo."/".$_GET['v']."\"></video><br/>";
@@ -148,6 +152,12 @@ echo file_get_contents($themevideo."/".basename($_GET['v'],".mp4").".description
 else
 {
 $vids = scandir($themevideo);
+if ($vids == null)
+{
+mkdir($themevideo);
+exec("youtube-dl -i -f mp4 -o \"$themevideo/%(title)s.%(ext)s\" --write-thumbnail --write-description $url");
+exec("mogrify -format webp $themevideo/*.jpg");
+}
 foreach ($vids as $video)
 {
 if (pathinfo($video,PATHINFO_EXTENSION) == "mp4")
@@ -160,7 +170,10 @@ echo "<img width='100' src=\"".$themevideo."/".basename($video,".mp4").".webp\">
 if ($_SERVER["HTTP_HOST"] == $freedomaines[11])
 {
 $themevideo = "dexsilicium";
-echo "<h1>Deus Ex Silicium</h1>";
+$themetitle = "Deus Ex Silicium";
+$url        = "https://www.youtube.com/channel/UCH6ppHEvV3_WIXEwmhv9HEg/videos";
+echo "<title>$themetitle</title>";
+echo "<h1>$themetitle</h1>";
 if (isset($_GET["v"]))
 {
 echo "<video controls><source src=\"".$themevideo."/".$_GET['v']."\"></video><br/>";
@@ -169,6 +182,102 @@ echo file_get_contents($themevideo."/".basename($_GET['v'],".mp4").".description
 else
 {
 $vids = scandir($themevideo);
+if ($vids == null)
+{
+mkdir($themevideo);
+exec("youtube-dl -i -f mp4 -o \"$themevideo/%(title)s.%(ext)s\" --write-thumbnail --write-description $url");
+exec("mogrify -format webp $themevideo/*.jpg");
+}
+foreach ($vids as $video)
+{
+if (pathinfo($video,PATHINFO_EXTENSION) == "mp4")
+{
+echo "<img width='100' src=\"".$themevideo."/".basename($video,".mp4").".webp\"><a href=\"?v=$video\">".basename($video,".mp4")."</a><br/>";
+}
+}
+}
+}
+if ($_SERVER["HTTP_HOST"] == $freedomaines[12])
+{
+$themevideo = "titeuf";
+$themetitle = "Titeuf";
+$url        = "https://www.youtube.com/channel/UCrCqUUNGJ_Wo0FBbho70SMg/videos";
+echo "<title>$themetitle</title>";
+echo "<h1>$themetitle</h1>";
+if (isset($_GET["v"]))
+{
+echo "<video controls><source src=\"".$themevideo."/".$_GET['v']."\"></video><br/>";
+echo file_get_contents($themevideo."/".basename($_GET['v'],".mp4").".description");
+}
+else
+{
+$vids = scandir($themevideo);
+if ($vids == null)
+{
+mkdir($themevideo);
+exec("youtube-dl -i -f mp4 -o \"$themevideo/%(title)s.%(ext)s\" --write-thumbnail --write-description $url");
+exec("mogrify -format webp $themevideo/*.jpg");
+}
+foreach ($vids as $video)
+{
+if (pathinfo($video,PATHINFO_EXTENSION) == "mp4")
+{
+echo "<img width='100' src=\"".$themevideo."/".basename($video,".mp4").".webp\"><a href=\"?v=$video\">".basename($video,".mp4")."</a><br/>";
+}
+}
+}
+}
+if ($_SERVER["HTTP_HOST"] == $freedomaines[13])
+{
+$themevideo = "codelyoko";
+$themetitle = "Code Lyoko";
+$url        = "https://www.youtube.com/channel/UCQiZ4G8PHqUIji3c74jBiTA/videos";
+echo "<title>$themetitle</title>";
+echo "<h1>$themetitle</h1>";
+if (isset($_GET["v"]))
+{
+echo "<video controls><source src=\"".$themevideo."/".$_GET['v']."\"></video><br/>";
+echo file_get_contents($themevideo."/".basename($_GET['v'],".mp4").".description");
+}
+else
+{
+$vids = scandir($themevideo);
+if ($vids == null)
+{
+mkdir($themevideo);
+exec("youtube-dl -i -f mp4 -o \"$themevideo/%(title)s.%(ext)s\" --write-thumbnail --write-description $url");
+exec("mogrify -format webp $themevideo/*.jpg");
+}
+foreach ($vids as $video)
+{
+if (pathinfo($video,PATHINFO_EXTENSION) == "mp4")
+{
+echo "<img width='100' src=\"".$themevideo."/".basename($video,".mp4").".webp\"><a href=\"?v=$video\">".basename($video,".mp4")."</a><br/>";
+}
+}
+}
+}
+if ($_SERVER["HTTP_HOST"] == $freedomaines[14])
+{
+$themevideo = "kidpaddle";
+$themetitle = "Kid Paddle";
+$url        = "https://www.youtube.com/channel/UCdb2F4KPdFlL3vRB1sulgWA";
+echo "<title>$themetitle</title>";
+echo "<h1>$themetitle</h1>";
+if (isset($_GET["v"]))
+{
+echo "<video controls><source src=\"".$themevideo."/".$_GET['v']."\"></video><br/>";
+echo file_get_contents($themevideo."/".basename($_GET['v'],".mp4").".description");
+}
+else
+{
+$vids = scandir($themevideo);
+if ($vids == null)
+{
+mkdir($themevideo);
+exec("youtube-dl -i -f mp4 -o \"$themevideo/%(title)s.%(ext)s\" --write-thumbnail --write-description $url");
+exec("mogrify -format webp $themevideo/*.jpg");
+}
 foreach ($vids as $video)
 {
 if (pathinfo($video,PATHINFO_EXTENSION) == "mp4")
