@@ -207,7 +207,7 @@ echo "<script src=\"circuits_help.js\"></script>";
 echo "<script src=\"circuits_articles.js\"></script>";
 echo "<script src=\"circuits_main.js\"></script>";
 echo "<script src=\"footer.js\"></script>";
-echo "<script type='text/javascript'>var c = origtext.replace(\"\\\"[^\\\"]*\\\"\",'');var icd = (c.split('I')).length-1;var ic = (c.split('i')).length-1;\n";
+echo "<script type='text/javascript'>var c = origtext.replace(/\\\"[^\\\"]*\\\"/g,'');var icd = (c.split('I')).length-1;var ic = (c.split('i')).length-1;\n";
 echo "var logici = 0;var logici = logici + (c.split('a')).length-1;var logici = logici + (c.split('e')).length-1;var logici = logici + (c.split('o')).length-1;var logici = logici + (c.split('h')).length-1;var logici = logici + (c.split('z')).length-1;\n";
 echo "var logicinv = 0;var logicinv = logicinv + (c.split('A')).length-1;var logicinv = logicinv + (c.split('E')).length-1;var logicinv = logicinv + (c.split('O')).length-1;var logicinv = logicinv + (c.split('H')).length-1;var logicinv = logicinv + (c.split('Z')).length-1;\n";
 echo "var inputi = 0;var inputi = inputi + (c.split('^')).length-1;var inputi = inputi + (c.split('v')).length-1;var inputi = inputi + (c.split('<')).length-1;var inputi = inputi + (c.split('>')).length-1;\n";
