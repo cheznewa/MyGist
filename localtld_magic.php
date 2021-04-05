@@ -5,7 +5,7 @@
 // Et Accrochez-Vous !
 // Mettez Ce Fichier Sur Votre Serveur Local Et Rennomé En index.php
 // Si Ca Ne Marche Pas, Vous Devrait Vous-Même Télécharger Les Fichier Qui Manque à L'apelle.
-$freedomaines = ["newanotremaitre.free","timeanddatebletou.free","logicemu.free","jslinux.free","randomlike.free","colormodem.free","randomfonts.free","pagerankcalc.free","pdf2htmlex.free","lhvtools.free","cestpassorcier.free","dexsilicium.free","logicemu2luxar.free","titeuf.free","codelyoko.free","kidpaddle.free"];
+$freedomaines = ["newanotremaitre.free","timeanddatebletou.free","logicemu.free","jslinux.free","randomlike.free","colormodem.free","randomfonts.free","pagerankcalc.free","pdf2htmlex.free","lhvtools.free","cestpassorcier.free","dexsilicium.free","logicemu2luxar.free","titeuf.free","codelyoko.free","kidpaddle.free","emonote.free"];
 if ($_SERVER["HTTP_HOST"] == "freelinks.free")
 {
 echo "<title>Free Links</title>";
@@ -310,5 +310,24 @@ echo "<img width='100' src=\"".$themevideo."/".basename($video,".mp4").".webp\">
 }
 }
 }
+}
+if ($_SERVER["HTTP_HOST"] == $freedomaines[16])
+{
+if (isset($_GET["emo"]))
+{
+if ((intval($_GET["emo"]) <= 50) and (intval($_GET["emo"]) >= -50))
+{
+$nota = intval($_GET["emo"])+188;
+header("Content-Type: image/png");
+$id = uniqid();
+$img = exec("convert -size 256x256 xc:none -stroke black -strokewidth 2.5 -fill none -draw \"circle 128,128 128,253 circle 64,64 64,68 circle 192,64 192,68 bezier 64,188 128,$nota 192,188\" /tmp/$id.png");
+readfile("/tmp/$id.png");
+}
+else
+{
+echo "Choisi Une Valeur Entre -50 Et 50";
+}
+}
+echo "<form method='GET' action='.'>Négatif<input type='range' min='-50' max='50' name='emo' value='0'/>Positif<input type='submit'/>";
 }
 ?>
