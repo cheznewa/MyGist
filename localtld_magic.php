@@ -328,6 +328,6 @@ else
 echo "Choisi Une Valeur Entre -50 Et 50";
 }
 }
-echo "<form method='GET' action='.'>Négatif<input type='range' min='-50' max='50' name='emo' value='0'/>Positif<input type='submit'/>";
+echo "<title>EmoNote - Note Ce Que Tu Veut !</title><h1>Note Ce Que Tu Veut !</h1><form method='GET' action='.'>Négatif<input type='range' min='-50' max='50' name='emo' value='0'/>Positif<br/><input type='submit'/>";
 }
 ?>
