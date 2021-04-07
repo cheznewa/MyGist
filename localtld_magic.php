@@ -5,7 +5,7 @@
 // Et Accrochez-Vous !
 // Mettez Ce Fichier Sur Votre Serveur Local Et Rennomé En index.php
 // Si Ca Ne Marche Pas, Vous Devrait Vous-Même Télécharger Les Fichier Qui Manque à L'apelle.
-$freedomaines = ["newanotremaitre.free","timeanddatebletou.free","logicemu.free","jslinux.free","randomlike.free","colormodem.free","randomfonts.free","pagerankcalc.free","pdf2htmlex.free","lhvtools.free","cestpassorcier.free","dexsilicium.free","logicemu2luxar.free","titeuf.free","codelyoko.free","kidpaddle.free","emonote.free"];
+$freedomaines = ["newanotremaitre.free","timeanddatebletou.free","logicemu.free","jslinux.free","randomlike.free","colormodem.free","dafont.free","pagerankcalc.free","pdf2htmlex.free","lhvtools.free","cestpassorcier.free","dexsilicium.free","logicemu2luxar.free","titeuf.free","codelyoko.free","kidpaddle.free","emonote.free"];
 if ($_SERVER["HTTP_HOST"] == "freelinks.free")
 {
 echo "<title>Free Links</title>";
@@ -77,17 +77,36 @@ echo '<h1>Color Modem In My World At Vilande</h1><form enctype="multipart/form-d
 }
 if ($_SERVER["HTTP_HOST"] == $freedomaines[6])
 {
-echo "<title>Random Fonts</title>";
-$fonts = scandir("fonts");
-$nbf = count($fonts);
-$attrf = rand(0,$nbf);
-echo "<style>@font-face{font-family:aRandomFont;src:url(\"fonts/$fonts[$attrf]\");}</style>";
-echo "<font size='6' face=\"aRandomFont\">".basename($fonts[$attrf],".ttf")."<br/>";
-for ($c = 32;$c<=118;$c++)
+if (!(file_exists("dafont.com_categories_2010-05-19")))
 {
-echo chr($c);
+exec("curl -OL https://archive.org/download/1.5_million_font_files_collection/dafont.com_categories_2010-05-19.zip");
+exec("unzip 'dafont.com_categories_2010-05-19'");
 }
-echo "</fonts>";
+if (isset($_GET['cat']))
+{
+if (isset($_GET['font']))
+{
+header("Content-Type: image/png");
+$id = uniqid();
+exec("convert \"dafont.com_categories_2010-05-19/".$_GET['cat']."/".$_GET['font']."\" /tmp/$id.png");
+readfile("/tmp/$id.png");
+}
+else
+{
+$font = scandir("dafont.com_categories_2010-05-19/".$_GET['cat']);
+foreach ($font as $i)
+{
+if (pathinfo($i,PATHINFO_EXTENSION) == "ttf")
+echo "<a href=\"?cat=".$_GET['cat']."&font=$i\">$i</a><br/>";
+}
+}
+}
+else
+{
+$cat = scandir('dafont.com_categories_2010-05-19');
+foreach ($cat as $i)
+echo "<a href=\"?cat=$i\">$i</a><br/>";
+}
 }
 if ($_SERVER["HTTP_HOST"] == $freedomaines[7])
 {
@@ -217,7 +236,7 @@ echo "var memory = 0;var memory = memory + (c.split('b')).length-1;var memory = 
 echo "var kinetic = (c.split('K')).length-1;var alu = (c.split('U')).length-1;var termi = (c.split('T')).length-1;var matrix = (c.split('D')).length-1;var quartz = (c.split('t')).length-1;\n";
 echo "var switchy = 0;var switchy = switchy + (c.split('s')).length-1;var switchy = switchy + (c.split('\\S')).length-1;var switchy = switchy + (c.split('p')).length-1;var switchy = switchy + (c.split('P')).length-1;\n";
 echo "var pist = Math.abs((((alu%11) + (logici - logicinv)) * Math.floor(ic/(icd+1))) + (termi%3) + ((switchy*2)+(led*3)) + (matrix%7) + (quartz%5) + (inputi - inputinv) + (memory % 17) - kinetic)%16;\n";
-echo "var tracks = ['LUXAR__Stephane_Marty__01_Birth.mp3','LUXAR__Stephane_Marty__02_First_steps.mp3','LUXAR__Stephane_Marty__03_Curiosity.mp3','LUXAR__Stephane_Marty__04_Process.mp3','LUXAR__Stephane_Marty__05_Free_will.mp3','LUXAR__Stephane_Marty__06_Scar.mp3','LUXAR__Stephane_Marty__07_Loneliness.mp3','LUXAR__Stephane_Marty__08_Explorer.mp3','LUXAR__Stephane_Marty__09_Chase.mp3','LUXAR__Stephane_Marty__10_Revolution.mp3','LUXAR__Stephane_Marty__11_Blooming.mp3','LUXAR__Stephane_Marty__12_Torment.mp3','LUXAR__Stephane_Marty__13_Awareness.mp3','LUXAR__Stephane_Marty__14_Self-confidence.mp3','LUXAR__Stephane_Marty__15_Ambition.mp3','LUXAR__Stephane_Marty__16_Responsability.mp3'];\n";
+echo "var tracks = ['LUXAR__Stephane_Marty__01_Birth.mp3','LUXAR__Stephane_Marty__02_First_steps.mp3','LUXAR__Stephane_Marty__03_Curiosity.mp3','LUXAR__Stephane_Marty__04_Process.mp3','LUXAR__Stephane_Marty__05_Free_will.mp3','LUXAR__Stephane_Marty__06_Scar.mp3','LUXAR__Stephane_Marty__07_Loneliness.mp3','LUXAR__Stephane_Marty__08_Explorer.mp3','LUXAR__Stephane_Marty__09_Chase.mp3','LUXAR__Stephane_Marty__10_Revolution.mp3','LUXAR__Stephane_Marty__11_Blooming.mp3','LUXAR__Stephane_Marty__12_Torment.mp3','LUXAR__Stephane_Marty__13_Awareness.mp3','LUXAR__Stephane_Marty__14_Self-confidence.mp3','LUXAR__Stephane_Marty__15_Ambition.mp3','LUXAR__Stephane_Marty__16_Responsability.mp3'];\n"; // http://www.dexsilicium.com/musiques.html
 echo "document.write(\"<audio autoplay hidden loop><source src='\"+tracks[pist]+\"'></audio>\");</script>";
 echo "<script src=\"editor.js\"></script></body>";
 }
