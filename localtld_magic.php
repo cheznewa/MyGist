@@ -5,10 +5,10 @@
 // Et Accrochez-Vous !
 // Mettez Ce Fichier Sur Votre Serveur Local Et Rennomé En index.php
 // Si Ca Ne Marche Pas, Vous Devrait Vous-Même Télécharger Les Fichier Qui Manque à L'apelle.
-$freedomaines = ["newanotremaitre.chezsick","timeanddatebletou.chezsick","logicemu.chezsick","jslinux.chezsick","randomlike.chezsick","colormodem.chezsick","dafont.chezsick","pagerankcalc.chezsick","pdf2htmlex.chezsick","lhvtools.chezsick","cestpassorcier.chezsick","dexsilicium.chezsick","logicemu2luxar.chezsick","titeuf.chezsick","codelyoko.chezsick","kidpaddle.chezsick","emonote.chezsick"];
+$freedomaines = ["newanotremaitre.chezsick","timeanddatebletou.chezsick","logicemu.chezsick","jslinux.chezsick","randomlike.chezsick","colormodem.chezsick","dafont.chezsick","pagerankcalc.chezsick","pdf2htmlex.chezsick","lhvtools.chezsick","cestpassorcier.chezsick","dexsilicium.chezsick","logicemu2luxar.chezsick","titeuf.chezsick","codelyoko.chezsick","kidpaddle.chezsick","emonote.chezsick","garfield.chezsick"];
 if ($_SERVER["HTTP_HOST"] == "linksourmaster.chezsick")
 {
-echo "<title>Free Links</title>";
+echo "<title>ChezSick Links</title>";
 echo "<h1>Liste Des Sites De Newa Disponible</h1>";
 foreach ($freedomaines as $domaine)
 {
@@ -348,5 +348,18 @@ echo "Choisi Une Valeur Entre -50 Et 50";
 }
 }
 echo "<title>EmoNote - Note Ce Que Tu Veut !</title><h1>Note Ce Que Tu Veut !</h1><form method='GET' action='.'>Négatif<input type='range' min='-50' max='50' name='emo' value='0'/>Positif<br/><input type='submit'/>";
+}
+if ($_SERVER["HTTP_HOST"] == $freedomaines[17])
+{
+if (isset($_GET["whatgame"]))
+{
+if (!(file_exists($_GET["whatgame"].".swf")))
+exec("curl -OL https://web.archive.org/web/20050910110440oe_/http://www.garfield.com/fungames/games/".$_GET["whatgame"].".swf");
+echo "<object><param name='movie' value='".$_GET["whatgame"].".swf'><param name='quality' value='high'><embed src='".$_GET["whatgame"]."'.swf' width='768' height='576' quality='high' pluginspage='http://www.macromedia.com/go/getflashplayer' type='application/x-shockwave-flash' menu='false' bgcolor='#003366'></embed></object>";
+}
+else
+{
+echo "<title>Garfiled Games And Fun From Thirtyth Foitierre</title><h1>Garfiled Games And Fun From Thirtyth Foitierre</h1><a href='?whatgame=lasagnafromheaven'>Lasagna From Heaven<br/><a href='?whatgame=dingleballgame'>Dingle Ball<br/><a href='?whatgame=coopcatch'>Coop Catch<br/><a href='?whatgame='sheepshot'>Sheep Shoot<br/><a href='?whatgame=coopcatch'>Coop Catch<br/><a href='?whatgame='beanme3'>Bean Me<br/><a href='?whatgame='amazinggarf'>The Amazing Garfield<br/>";
+}
 }
 ?>
