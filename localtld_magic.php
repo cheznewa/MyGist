@@ -1,15 +1,15 @@
 <?php
 // Je Vais Faire De La Magie Avec ::::::::::::::: https://github.com/jweslley/localtld
-// Ou Fois Installer, Faite La Commande :::::: LOCALTLD=free _browser_
-// Pour Commencé :::::::::::::::: [freelinks.free](http://freelinks.free)
+// Ou Fois Installer, Faite La Commande :::::: LOCALTLD=chezsick _browser_
+// Pour Commencé :::::::::::::::: [linksourmaster.chezsick](http://linksourmaster.chezsick)
 // Et Accrochez-Vous !
 // Mettez Ce Fichier Sur Votre Serveur Local Et Rennomé En index.php
 // Si Ca Ne Marche Pas, Vous Devrait Vous-Même Télécharger Les Fichier Qui Manque à L'apelle.
-$freedomaines = ["newanotremaitre.free","timeanddatebletou.free","logicemu.free","jslinux.free","randomlike.free","colormodem.free","dafont.free","pagerankcalc.free","pdf2htmlex.free","lhvtools.free","cestpassorcier.free","dexsilicium.free","logicemu2luxar.free","titeuf.free","codelyoko.free","kidpaddle.free","emonote.free"];
-if ($_SERVER["HTTP_HOST"] == "freelinks.free")
+$freedomaines = ["newanotremaitre.chezsick","timeanddatebletou.chezsick","logicemu.chezsick","jslinux.chezsick","randomlike.chezsick","colormodem.chezsick","dafont.chezsick","pagerankcalc.chezsick","pdf2htmlex.chezsick","lhvtools.chezsick","cestpassorcier.chezsick","dexsilicium.chezsick","logicemu2luxar.chezsick","titeuf.chezsick","codelyoko.chezsick","kidpaddle.chezsick","emonote.chezsick"];
+if ($_SERVER["HTTP_HOST"] == "linksourmaster.chezsick")
 {
 echo "<title>Free Links</title>";
-echo "<h1>Liste Des Sites Free Disponible</h1>";
+echo "<h1>Liste Des Sites De Newa Disponible</h1>";
 foreach ($freedomaines as $domaine)
 {
 echo "<a href=\"http://$domaine\">$domaine</a><br/>";
