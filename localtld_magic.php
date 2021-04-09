@@ -15,11 +15,11 @@ foreach ($freedomaines as $domaine)
 echo "<a href=\"http://$domaine\">$domaine</a><br/>";
 }
 }
-if ($_SERVER["HTTP_HOST"] == $freedomaines[0])
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[0])
 {
 echo "<title>Newa Notre Maitre - Site Officiel</title><style>body{background-color:#00288c;color:white;}</style><h1>Bonjour Tout Le Monde, C'est Newa Notre Maitre !</h1>Je Suis Un Grand Oiseau, Et Je Joue De La Flute Des Andes, Passionné De Culture Amerindienne (En Interne), Je Suis Sur L'ordinateur Depuis Pas Mal De Temps.";
 }
-if ($_SERVER["HTTP_HOST"] == $freedomaines[1])
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[1])
 {
 echo "<title>Date Et Heure BLE TOU</title>";
 function getdatebt($timestamps)
@@ -37,7 +37,7 @@ return $r;
 echo "La Date Et L'heure BLE TOU ? Il Est Exactement :::::::::::::: ";
 echo getdatebt(intval((time() - (989193600 + 18000)) / 86400))." ".gettimeday((time() - 18000) % 86400)."\n";
 }
-if ($_SERVER["HTTP_HOST"] == $freedomaines[2])
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[2])
 {
 echo "<title>LogicEmu - Online Logic Simulator</title>";
 echo "<body><noscript>Please Enable Javascript!</noscript></body>";
@@ -49,7 +49,7 @@ echo "<script src=\"circuits_articles.js\"></script>";
 echo "<script src=\"circuits_main.js\"></script>";
 echo "<script src=\"footer.js\"></script>";
 }
-if ($_SERVER["HTTP_HOST"] == $freedomaines[3])
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[3])
 {
 echo "<title>JSLinux</title>";
 echo "<style>.term{font-family:monospace;color:white;background-color:black;}.termReverse{color:black;background-color:lime;}</style>";
@@ -60,7 +60,7 @@ echo "<script src=\"utils.js\"></script>";
 echo "<script src=\"cpux86-ta.js\"></script>";
 echo "JSLinux Par Fabrice B.";
 }
-if ($_SERVER["HTTP_HOST"] == $freedomaines[4])
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[4])
 {
 require("config.php");
 echo "<title>RandomLike</title>";
@@ -70,12 +70,12 @@ echo "<br/><a href='syster.php?tp=1&demi=0&frame=1000'>Paramettre D'encodage Nag
 $count = file_get_contents($randomsourcecount);
 echo "<br/>Le Site A Générer ::::::: " . $count . " Octet -:- Source Aléatoire :::::: ".$randomsourceinfo. " -:- <a href='stats.php'>Les Statistiques</a>";
 }
-if ($_SERVER["HTTP_HOST"] == $freedomaines[5])
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[5])
 {
 echo "<title>Color Modem In My World</title>";
 echo '<h1>Color Modem In My World At Vilande</h1><form enctype="multipart/form-data" action="proc.php" method="post">Please Select Video To Process ::<input type="file" name="userfile"/><br/>Select Standard From Country In My World :: <select name="country" id="country"><optgroup label="Normal System"><option value="bt">BLE TOU</option><option value="ph">Phélÿn</option><option value="eu">Eurack</option></optgroup><optgroup label="Andean System"><option value="mo">Moênne</option><option value="in">Indie</option><option value="so">Solainie</option><option value="mv">Movenie</option><option value="js">Joséro</option><option value="ln">Luana</option></optgroup><optgroup label="VHS Zone"><option value="ns">Normal System</option><option value="as">Andean System</option></optgroup></select><br/>Select Mode For Process :: <select name="mode" id="mode"><option value="modem">Modulate And Demodulate</option><option value="mod">Modulate Only</option><option value="demod">Demodulate Only</option><option value="multi">Multiplex (Modulate In Second, And Demodulate In First)</option></select><br/><input type="submit" value="Process Now!"></br></form>';
 }
-if ($_SERVER["HTTP_HOST"] == $freedomaines[6])
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[6])
 {
 if (!(file_exists("dafont.com_categories_2010-05-19")))
 {
@@ -108,7 +108,7 @@ foreach ($cat as $i)
 echo "<a href=\"?cat=$i\">$i</a><br/>";
 }
 }
-if ($_SERVER["HTTP_HOST"] == $freedomaines[7])
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[7])
 {
 echo "<title>PageRank Calculator</title>";
 echo "<h1>PageRank Calculator From Wikipedia</h1><form action='.' method='get'>";
@@ -130,7 +130,7 @@ break;
 }
 }
 }
-if ($_SERVER["HTTP_HOST"] == $freedomaines[8])
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[8])
 {
 if (isset($_FILES["pdffile"]))
 {
@@ -151,12 +151,12 @@ echo "<title>pdf2htmlEX</title>";
 echo "<form enctype='multipart/form-data' action='.' method='post'>Please Select PDF :: <input type='file' name='pdffile' accept='application/pdf'/><br/><input type='submit' value='Submit'/><br/></from>";
 }
 }
-if ($_SERVER["HTTP_HOST"] == $freedomaines[9])
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[9])
 {
 echo "<title>Les Outils En Ligne Du Hollandais Volant</title>";
 echo base64_decode("CTxoMj5FbmNvZGFnZSwgZMOpY29kYWdlPC9oMj4KCTxkaXYgY2xhc3M9ImJsb2MiIGRhdGEtZGVzY3JpcHRpb249InFyY29kZSBmbGFzaGNvZGUgY3LDqWVyIGltYWdlIj4KCQk8YSBocmVmPSJxcmNvZGUvIj4KCQkJPGltZyBzcmM9InFyY29kZS9pY29uLnBuZyIgYWx0PSJpY29uIi8+CgkJCUNyw6llciB1bjxici8+UVItQ29kZQoJCTwvYT4KCTwvZGl2PgoJPGRpdiBjbGFzcz0iYmxvYyIgZGF0YS1kZXNjcmlwdGlvbj0idW4gcXJjb2RlIHFyLWNvZGUgZmxhc2hjb2RlIGTDqWNvZGVyIGZsYXNoZWQgd2ViY2FtIHBob3RvIj4KCQk8YSBocmVmPSJycXJjb2RlLyI+CgkJCTxpbWcgc3JjPSJycXJjb2RlL2ljb24ucG5nIiBhbHQ9Imljb24iLz4KCQkJRMOpY29kZXIgdW48YnIvPlFSLUNvZGUKCQk8L2E+Cgk8L2Rpdj4KCTxkaXYgY2xhc3M9ImJsb2MiIGRhdGEtZGVzY3JpcHRpb249ImNvbnZlcnRpc3NldXIgY29udmVyc2lvbiBiYXNlNjQgYmFzZXMiPgoJCTxhIGhyZWY9ImJhc2U2NC8iPgoJCQk8aW1nIHNyYz0iYmFzZTY0L2ljb24ucG5nIiBhbHQ9Imljb24iLz4KCQkJRW4vZMOpY29kZXI8YnIvPmR1IGJhc2U2NAoJCTwvYT4KCTwvZGl2PgoJPGRpdiBjbGFzcz0iYmxvYyIgZGF0YS1kZXNjcmlwdGlvbj0iY2hpZmZyZW1lbnQgY29kYWdlIGVuY29kYWdlIGTDqWNvZGFnZSBkZSBjw6lzYXIgY2VzYXIgdmlnZW7DqHJlIj4KCQk8YSBocmVmPSJjZXNhci8iPgoJCQk8aW1nIHNyYz0iY2VzYXIvaWNvbi5wbmciIGFsdD0iaWNvbiIvPgoJCQlDaGlmZnJlbWVudDxici8+ZGUgQ8Opc2FyCgkJPC9hPgoJPC9kaXY+Cgk8ZGl2IGNsYXNzPSJibG9jIiBkYXRhLWRlc2NyaXB0aW9uPSJjaGFyYWN0ZXIgY2FyYWN0w6hyZSBlbmNvZGFnZSB1dGY4IHV0Zi04IHV0ZiA4IHVuaWNvZGUgZW1vamkgY29kZSI+CgkJPGEgaHJlZj0iY2hhcmNvZGUvIj4KCQkJPGltZyBzcmM9ImNoYXJjb2RlL2ljb24ucG5nIiBhbHQ9Imljb24iLz4KCQkJRW5jb2RhZ2UgZOKAmXVuPGJyLz5jYXJhY3TDqHJlCgkJPC9hPgoJPC9kaXY+Cgk8aDI+Q29udmVydGlzc2V1cnMgbnVtw6lyaXF1ZTwvaDI+Cgk8ZGl2IGNsYXNzPSJibG9jIiBkYXRhLWRlc2NyaXB0aW9uPSJtYXRow6ltYXRpcXVlIGJhc2VzIGNvbnZlcnRpc3NldXIgZW50cmUgYmluYWlyZSBoZXhhZMOpY2ltYWwgb2N0YWwgZMOpY2ltYWwiPgoJCTxhIGhyZWY9ImJhc2VzLyI+CgkJCTxpbWcgc3JjPSJiYXNlcy9pY29uLnBuZyIgYWx0PSJpY29uIi8+CgkJCUNvbnZlcnNpb25zIGVudHJlIGJhc2VzCgkJPC9hPgoJPC9kaXY+Cgk8ZGl2IGNsYXNzPSJibG9jIiBkYXRhLWRlc2NyaXB0aW9uPSJjb252ZXJ0aXNzZXVyIGQndW5pdMOpcyB1bml0w6lzIG1hdGjDqW1hdGlxdWUgcGh5c2lxdWUiPgoJCTxhIGhyZWY9InVuaXRlcy8iPgoJCQk8aW1nIHNyYz0idW5pdGVzL2ljb24ucG5nIiBhbHQ9Imljb24iLz4KCQkJQ29udmVydGlzc2V1cjxici8+ZOKAmXVuaXTDqXMKCQk8L2E+Cgk8L2Rpdj4KCTxkaXYgY2xhc3M9ImJsb2MiIGRhdGEtZGVzY3JpcHRpb249ImNvbnZlcnRpc3NldXIgbWF0aMOpbWF0aXF1ZXMgdW5pdMOpcyBudW3DqXJpcXVlIG9jdGVjdCBraWxvb2N0ZXQgbcOpZ2FvY3RldCI+CgkJPGEgaHJlZj0ibW8tbWlvLyI+CgkJCTxpbWcgc3JjPSJtby1taW8vaWNvbi5wbmciIGFsdD0iaWNvbiIvPgoJCQlVbml0w6lzIG51bcOpcmlxdWVzCgkJPC9hPgoJPC9kaXY+Cgk8aDI+R8OpbsOpcmF0ZXVycyBlbiB0b3V0IGdlbnJlPC9oMj4KCTxkaXYgY2xhc3M9ImJsb2MiIGRhdGEtZGVzY3JpcHRpb249ImfDqW7DqXJhdGV1ciBnw6luw6lyZXIgdW4gbm9tIGFsw6lhdG9pcmUgbWF0aMOpbWF0aXF1ZXMiPgoJCTxhIGhyZWY9InJhbmRvbS8iPgoJCQk8aW1nIHNyYz0icmFuZG9tL2ljb24ucG5nIiBhbHQ9Imljb24iLz4KCQkJR8OpbsOpcmF0ZXVyIGRlPGJyLz5ub21icmUmbmJzcDthbMOpYXRvaXJlCgkJPC9hPgoJPC9kaXY+Cgk8ZGl2IGNsYXNzPSJibG9jIiBkYXRhLWRlc2NyaXB0aW9uPSJnw6luw6lyYXRldXIgZGUgYmxhYmxhIHRyb24gaW5zdWx0b3Ryb24iPgoJCTxhIGhyZWY9InRyb24vIj4KCQkJPGltZyBzcmM9InRyb24vaWNvbi5wbmciIGFsdD0iaWNvbiIvPgoJCQlHw6luw6lyYXRldXI8YnIvPmRlIGJsYWJsYQoJCTwvYT4KCTwvZGl2PgoJPGRpdiBjbGFzcz0iYmxvYyIgZGF0YS1kZXNjcmlwdGlvbj0iZ8OpbsOpcmF0ZXVyIGfDqW7DqXJlciB1bmUgdkNhcmQgY29udGFjdCI+CgkJPGEgaHJlZj0idmNhcmQvIj4KCQkJPGltZyBzcmM9InZjYXJkL2ljb24ucG5nIiBhbHQ9Imljb24iLz4KCQkJR8OpbsOpcmF0ZXVyPGJyLz5kZSZuYnNwO3ZDYXJkCgkJPC9hPgoJPC9kaXY+Cgk8ZGl2IGNsYXNzPSJibG9jIiBkYXRhLWRlc2NyaXB0aW9uPSJyZXNzb3VyY2UgZGUgZmF1eCB0ZXh0ZSBsb3JlbSBpcHN1bSBnw6luw6lyYXRldXIiPgoJCTxhIGhyZWY9Imlwc3VtLyI+CgkJCTxpbWcgc3JjPSJpcHN1bS9pY29uLnBuZyIgYWx0PSJpY29uIi8+CgkJCUfDqW7DqXJhdGV1ciBkZTxici8+ZmF1eC10ZXh0ZQoJCTwvYT4KCTwvZGl2PgoJPGRpdiBjbGFzcz0iYmxvYyIgZGF0YS1kZXNjcmlwdGlvbj0iZ8OpbsOpcmF0ZXVyIG1hdGjDqW1hdGlxdWUgZ8OpbsOpcmVyIHVuIGNhcnLDqSBtYWdpcXVlIG5vbWJyZXMiPgoJCTxhIGhyZWY9Im1hZ2ljLyI+CgkJCTxpbWcgc3JjPSJtYWdpYy9pY29uLnBuZyIgYWx0PSJpY29uIi8+CgkJCUfDqW7DqXJhdGV1cjxici8+Y2FycsOpLW1hZ2lxdWUKCQk8L2E+Cgk8L2Rpdj4KCTxkaXYgY2xhc3M9ImJsb2MiIGRhdGEtZGVzY3JpcHRpb249ImfDqW7DqXJhdGV1ciBkZSB0b25hbGl0w6lzIHTDqWzDqXBob25lIG11c2lxdWUgc29uIGR0bWYgbXVzaXF1ZSI+CgkJPGEgaHJlZj0iZHRtZi8iPgoJCQk8aW1nIHNyYz0iZHRtZi9pY29uLnBuZyIgYWx0PSJpY29uIi8+CgkJCUfDqW7DqXJhdGV1cjxici8+ZGUgdG9uYWxpdMOpcwoJCTwvYT4KCTwvZGl2PgoJPGRpdiBjbGFzcz0iYmxvYyIgZGF0YS1kZXNjcmlwdGlvbj0iZ8OpbsOpcmF0ZXVyIGfDqW7DqXJlciB1biBndWlkIHVuaXF1ZSBpZCI+CgkJPGEgaHJlZj0iZ3VpZC8iPgoJCQk8aW1nIHNyYz0iZ3VpZC9pY29uLnBuZyIgYWx0PSJpY29uIi8+CgkJCUfDqW7DqXJhdGV1cjxici8+ZGUgR1VJRAoJCTwvYT4KCTwvZGl2PgoJPGRpdiBjbGFzcz0iYmxvYyIgZGF0YS1kZXNjcmlwdGlvbj0iZ8OpbsOpcmF0ZXVyIG1vdHMgbGFuZ3VlcyBsZXR0cmVzIHZvY2FidWxhaXJlIGZha2Ugd29yZHMgaW52ZW50ZXIiPgoJCTxhIGhyZWY9ImZha2Utd29yZHMvIj4KCQkJPGltZyBzcmM9ImZha2Utd29yZHMvaWNvbi5wbmciIGFsdD0iaWNvbiIvPgoJCQlHw6luw6lyYXRldXI8YnIvPmRlcyBtb3RzCgkJPC9hPgoJPC9kaXY+Cgk8aDI+UGhvdG9zICZhbXA7IGNvdWxldXJzPC9oMj4KCTxkaXYgY2xhc3M9ImJsb2MiIGRhdGEtZGVzY3JpcHRpb249IndlYmNhbSBwcmVuZHJlIHVuIHBob3RvIj4KCQk8YSBocmVmPSJ3ZWJjYW0vIj4KCQkJPGltZyBzcmM9IndlYmNhbS9pY29uLnBuZyIgYWx0PSJpY29uIi8+CgkJCVByZW5kcmUgdW5lIHBob3RvCgkJPC9hPgoJPC9kaXY+Cgk8ZGl2IGNsYXNzPSJibG9jIiBkYXRhLWRlc2NyaXB0aW9uPSJzw6lsZWN0ZXVyIGRlIGNvdWxldXJzIGh0bWwgaHNsIHJnYiBjb2xvciBwaWNrZXIiPgoJCTxhIGhyZWY9ImNvbG9yLyI+CgkJCTxpbWcgc3JjPSJjb2xvci9pY29uLnBuZyIgYWx0PSJpY29uIi8+CgkJCVPDqWxlY3RldXI8YnIvPmRlIGNvdWxldXIKCQk8L2E+Cgk8L2Rpdj4KCTxkaXYgY2xhc3M9ImJsb2MiIGRhdGEtZGVzY3JpcHRpb249InJldG91Y2hlciB1bmUgaW1hZ2UgcGhvdG8gZWZmZXRzIGpwZyBwbmciPgoJCTxhIGhyZWY9InRvc2hvcC8iPgoJCQk8aW1nIHNyYz0idG9zaG9wL2ljb24ucG5nIiBhbHQ9Imljb24iLz4KCQkJUmV0b3VjaGVyPGJyPnVuZSBpbWFnZQoJCTwvYT4KCTwvZGl2PgoJPGRpdiBjbGFzcz0iYmxvYyIgZGF0YS1kZXNjcmlwdGlvbj0icGhvdG8gdHJhbnNwYXJlbmNlIGFscGhhIHN1cHByaW1lciByZXRvdWNoZSBnaWYgcG5nIj4KCQk8YSBocmVmPSJhbHBoYS8iPgoJCQk8aW1nIHNyYz0iYWxwaGEvaWNvbi5wbmciIGFsdD0iaWNvbiIvPgoJCQlTdXBwcmltZXIgbGEgdHJhbnNwYXJlbmNlPGJyLz5k4oCZdW5lIGltYWdlCgkJPC9hPgoJPC9kaXY+Cgk8ZGl2IGNsYXNzPSJibG9jIiBkYXRhLWRlc2NyaXB0aW9uPSJjb252ZXJ0aXNzZXVyIGNhbGN1bGVyIGNvdWxldXJzIGRlcyByw6lzaXN0b3JzIHLDqXNpc3RhbmNlcyBwaHlzaXF1ZSBpbmZvcm1hdGlxdWUiPgoJCTxhIGhyZWY9InJlc2lzdG9yLyI+CgkJCTxpbWcgc3JjPSJyZXNpc3Rvci9pY29uLnBuZyIgYWx0PSJpY29uIi8+CgkJCUNvdWxldXJzIGRlczxici8+csOpc2lzdG9ycwoJCTwvYT4KCTwvZGl2PgoJPGgyPkRhdGVzICZhbXA7IGhldXJlczwvaDI+Cgk8ZGl2IGNsYXNzPSJibG9jIiBkYXRhLWRlc2NyaXB0aW9uPSJtYXRow6ltYXRpcXVlIGFkZGl0aW9ubmVyIGRlcyBkYXRlcyBjYWxlbmRyaWVyIj4KCQk8YSBocmVmPSJkYXRlcy8iPgoJCQk8aW1nIHNyYz0iZGF0ZXMvaWNvbi5wbmciIGFsdD0iaWNvbiIvPgoJCQlBZGRpdGlvbm5lcjxici8+ZGVzIGRhdGVzCgkJPC9hPgoJPC9kaXY+Cgk8ZGl2IGNsYXNzPSJibG9jIiBkYXRhLWRlc2NyaXB0aW9uPSJjYWxlbmRyaWVyIGR1IG1vaXMgam91cnMgYW5uw6llIGRhdGVzIj4KCQk8YSBocmVmPSJjYWxlbmRhci8iPgoJCQk8aW1nIHNyYz0iY2FsZW5kYXIvaWNvbi5wbmciIGFsdD0iaWNvbiIvPgoJCQlDYWxlbmRyaWVyPGJyLz5kdSBtb2lzCgkJPC9hPgoJPC9kaXY+Cgk8ZGl2IGNsYXNzPSJibG9jIiBkYXRhLWRlc2NyaXB0aW9uPSJnw6luw6lyYXRldXIgbWludXRldXIgYXZlYyBhbGFybWUgc29uIG11c2lxdWUgZmljaGllcnMiPgoJCTxhIGhyZWY9InRpbWVyLyI+CgkJCTxpbWcgc3JjPSJ0aW1lci9pY29uLnBuZyIgYWx0PSJpY29uIi8+CgkJCU1pbnV0ZXVyPGJyLz5hdmVjIGFsYXJtZQoJCTwvYT4KCTwvZGl2PgoJPGRpdiBjbGFzcz0iYmxvYyIgZGF0YS1kZXNjcmlwdGlvbj0iYXZleiB2b3VzIDFHcyBnaWdhc2Vjb25kZSB0ZW1wcyB1bml0w6kiPgoJCTxhIGhyZWY9ImdpZ2Etc2Vjb25kLyI+CgkJCTxpbWcgc3JjPSJnaWdhLXNlY29uZC9pY29uLnBuZyIgYWx0PSJpY29uIi8+CgkJCUF2ZXotdm91czxici8+MSZuYnNwO0dzJm5ic3A7PwoJCTwvYT4KCTwvZGl2PgoJPGRpdiBjbGFzcz0iYmxvYyIgZGF0YS1kZXNjcmlwdGlvbj0iaGV1cmUgZGF0ZSBwbGFuw6h0ZSBtYXJzIGp1cGl0ZXIgc3lzdMOobWUgc29sYWlyZSBjYWxlbmRyaWVyIj4KCQk8YSBocmVmPSJwbGFuZXRzLXRpbWUvIj4KCQkJPGltZyBzcmM9InBsYW5ldHMtdGltZS9pY29uLnBuZyIgYWx0PSJpY29uIi8+CgkJCVF1ZWxsZSBoZXVyZTxici8+c3VyIE1hcnMmbmJzcDs/CgkJPC9hPgoJPC9kaXY+Cgk8ZGl2IGNsYXNzPSJibG9jIiBkYXRhLWRlc2NyaXB0aW9uPSJoZXVyZSBkYXRlIHBsYW7DqHRlIG1hcnMganVwaXRlciBzeXN0w6htZSBzb2xhaXJlIGNhbGVuZHJpZXIiPgoJCTxhIGhyZWY9ImRheS8iPgoJCQk8aW1nIHNyYz0iZGF5L2ljb24ucG5nIiBhbHQ9Imljb24iLz4KCQkJUXVlbCBqb3VyIMOpdGFpdC1pbCBsZSDigKYgPwoJCTwvYT4KCTwvZGl2PgoJPGRpdiBjbGFzcz0iYmxvYyIgZGF0YS1kZXNjcmlwdGlvbj0iaGV1cmUgam91ciBkYXRlIHByb2dyZXNzaW9uIGFubsOpZSB0ZW1wcyBob3Jsb2dlIHBvdXJjZW50YWdlIj4KCQk8YSBocmVmPSJwcm9ncmVzc2lvbi1jYWxlbmRhci8iPgoJCQk8aW1nIHNyYz0icHJvZ3Jlc3Npb24tY2FsZW5kYXIvaWNvbi5wbmciIGFsdD0iaWNvbiIvPgoJCQlM4oCZaG9ybG9nZSBlbjxici8+cG91cmNlbnRhZ2UKCQk8L2E+Cgk8L2Rpdj4KCTxoMj5Qcm9ncmFtbWF0aW9uPC9oMj4KCTxkaXYgY2xhc3M9ImJsb2MiIGRhdGEtZGVzY3JpcHRpb249ImNhbGN1bGVyIHVuZSBjaGVja3N1bSBpbmZvcm1hdGlxdWUgZmljaGllciBpbWFnZSBtZDUgc2hhMSBzaGEiPgoJCTxhIGhyZWY9ImNoZWNrc3VtLyI+CgkJCTxpbWcgc3JjPSJjaGVja3N1bS9pY29uLnBuZyIgYWx0PSJpY29uIi8+CgkJCUNhbGN1bGVyIHVuZTxici8+Y2hlY2tzdW0KCQk8L2E+Cgk8L2Rpdj4KCTxkaXYgY2xhc3M9ImJsb2MiIGRhdGEtZGVzY3JpcHRpb249ImfDqW7DqXJhdGV1ciBpbWFnZXIgdW5lIHJlZ2V4IGluZm9ybWF0aXF1ZSI+CgkJPGEgaHJlZj0icmVnZXgvIj4KCQkJPGltZyBzcmM9InJlZ2V4L2ljb24ucG5nIiBhbHQ9Imljb24iLz4KCQkJSW1hZ2VyPGJyLz51bmUgUmVnZXgKCQk8L2E+Cgk8L2Rpdj4KCTxkaXYgY2xhc3M9ImJsb2MiIGRhdGEtZGVzY3JpcHRpb249ImNhbGN1bGVyIHVuIGNobW9kIG1vZGUgdW5peCBsaW51eCA3Nzcgcnd4cnd4cnd4Ij4KCQk8YSBocmVmPSJjaG1vZC8iPgoJCQk8aW1nIHNyYz0iY2htb2QvaWNvbi5wbmciIGFsdD0iaWNvbiIvPgoJCQlDYWxjdWxlcjxicj51biBjaG1vZAoJCTwvYT4KCTwvZGl2PgoJPGRpdiBjbGFzcz0iYmxvYyIgZGF0YS1kZXNjcmlwdGlvbj0iaW5mb3JtYXRpcXVlIHRhYmxlIGRlcyBjYXJhY3TDqHJlcyBnw6luw6lyYXRldXIgY2hhcm1hcCBjaGFyYWN0ZXIgdW5pY29kZSI+CgkJPGEgaHJlZj0iY2hhcm1hcC8iPgoJCQk8aW1nIHNyYz0iY2hhcm1hcC9pY29uLnBuZyIgYWx0PSJpY29uIi8+CgkJCVRhYmxlIGRlczxici8+Y2FyYWN0w6hyZXMKCQk8L2E+Cgk8L2Rpdj4KCTxkaXYgY2xhc3M9ImJsb2MiIGRhdGEtZGVzY3JpcHRpb249InZhbGlkYXRldXIgZW1haWwgdmFsaWRlciB2w6lyaWZpZXIgdW5lIGFkcmVzc2UgbWFpbCI+CgkJPGEgaHJlZj0icmZjLXZhbGlkLyI+CgkJCTxpbWcgc3JjPSJyZmMtdmFsaWQvaWNvbi5wbmciIGFsdD0iaWNvbiIvPgoJCQlWYWxpZGVyIHVuZSBlbWFpbAoJCTwvYT4KCTwvZGl2PgoJPGgyPkpldXg8L2gyPgoJPGRpdiBjbGFzcz0iYmxvYyIgZGF0YS1kZXNjcmlwdGlvbj0iam91ZXIgw6AgMjA0OCBqZXV4IGluZm9ybWF0aXF1ZSI+CgkJPGEgaHJlZj0iMjA0OC8iPgoJCQk8aW1nIHNyYz0iMjA0OC9pY29uLnBuZyIgYWx0PSJpY29uIi8+CgkJCUpvdWVyIMOgPGJyPjIwNDgKCQk8L2E+Cgk8L2Rpdj4KCTxkaXYgY2xhc3M9ImJsb2MiIGRhdGEtZGVzY3JpcHRpb249ImpvdWVyIMOgIHRldHJpcyB0w6l0cmlzIGpldXggaW5mb3JtYXRpcXVlIj4KCQk8YSBocmVmPSJ0ZXRyaXMvIj4KCQkJPGltZyBzcmM9InRldHJpcy9pY29uLnBuZyIgYWx0PSJpY29uIi8+CgkJCUpvdWVyIMOgPGJyPlRldHJpcwoJCTwvYT4KCTwvZGl2PgoJPGRpdiBjbGFzcz0iYmxvYyIgZGF0YS1kZXNjcmlwdGlvbj0iY2hpbWllIHRhYmxlYXUgcMOpcmlvZGlxdWUgbWVuZGVsw6lpw6h2IGpldXgiPgoJCTxhIGhyZWY9InBlcmlvZGljLyI+CgkJCTxpbWcgc3JjPSJwZXJpb2RpYy9pY29uLnBuZyIgYWx0PSJpY29uIi8+CgkJCVRhYmxlYXUgcMOpcmlvZGlxdWUKCQk8L2E+Cgk8L2Rpdj4KCTxoMj5EaXZlcnM8L2gyPgoJPGRpdiBjbGFzcz0iYmxvYyIgZGF0YS1kZXNjcmlwdGlvbj0iaW5mb3JtYXRpb25zIHZvdHJlIG5hdmlnYXRldXIgaW5mb3JtYXRpcXVlIj4KCQk8YSBocmVmPSJicm93c2VyLyI+CgkJCTxpbWcgc3JjPSJicm93c2VyL2ljb24ucG5nIiBhbHQ9Imljb24iLz4KCQkJSW5mb3JtYXRpb25zIGRlPGJyLz52b3RyZSBuYXZpZ2F0ZXVyCgkJPC9hPgoJPC9kaXY+Cgk8ZGl2IGNsYXNzPSJibG9jIiBkYXRhLWRlc2NyaXB0aW9uPSJzcGVlZHRlc3QgdGVzdCBkZSBjb25uZXhpb24gYWRzbCBmaWJyZSI+CgkJPGEgaHJlZj0ic3BlZWR0ZXN0LyI+CgkJCTxpbWcgc3JjPSJzcGVlZHRlc3QvaWNvbi5wbmciIGFsdD0iaWNvbiIvPgoJCQlUZXN0ZXI8YnIvPnZvdHJlIGNvbm5leGlvbgoJCTwvYT4KCTwvZGl2PgoJPCEtLQk8ZGl2IGNsYXNzPSJibG9jIj4KCQk8YSBocmVmPSJkbC8iPgoJCQk8aW1nIHNyYz0iZGwvaWNvbi5wbmciIGFsdD0iaWNvbiIvPgoJCQlUw6lsw6ljaGFyZ2VyPGJyLz51bmUgcGFnZQoJCTwvYT4KCTwvZGl2Pi0tPgoJPGRpdiBjbGFzcz0iYmxvYyIgZGF0YS1kZXNjcmlwdGlvbj0idHJhY2VyIHVuIGdyYXBoaXF1ZSBtYXRow6ltYXRpcXVlIGfDqW7DqXJhdGV1ciI+CgkJPGEgaHJlZj0iZ3JhcGgvIj4KCQkJPGltZyBzcmM9ImdyYXBoL2ljb24ucG5nIiBhbHQ9Imljb24iLz4KCQkJVHJhY2VyPGJyPnVuIGdyYXBoaXF1ZQoJCTwvYT4KCTwvZGl2PgoJPGRpdiBjbGFzcz0iYmxvYyIgZGF0YS1kZXNjcmlwdGlvbj0iZm9uY3Rpb25zIHRyaWdvbm9tZXRyaWUgdHJpZ29ub23DqXRyaXF1ZXMgbWF0aMOpbWF0aXF1ZSBncmFwaGlxdWUgc2ludXMgY29zaW51cyI+CgkJPGEgaHJlZj0idHJpZ29ub21ldHJpZS8iPgoJCQk8aW1nIHNyYz0idHJpZ29ub21ldHJpZS9pY29uLnBuZyIgYWx0PSJpY29uIi8+CgkJCUxlcyBmb25jdGlvbnM8YnI+dHJpZ29ub23DqXRyaXF1ZXMKCQk8L2E+Cgk8L2Rpdj4KCTxkaXYgY2xhc3M9ImJsb2MiIGRhdGEtZGVzY3JpcHRpb249IlByb2R1Y3Rpb24gw6lsZWN0cmlxdWUgw6luZXJnaWUgZW4gRnJhbmNlIGNvbnNvbW1hdGlvbiDDqWxlY3RyaWNpdMOpIHN0YXRpc3RpcXVlcyI+CgkJPGEgaHJlZj0iY29uc28tZW4tZnJhbmNlLyI+CgkJCTxpbWcgc3JjPSJjb25zby1lbi1mcmFuY2UvaWNvbi5wbmciIGFsdD0iaWNvbiIvPgoJCQlQcm9kdWN0aW9uIMOpbGVjdHJpcXVlPGJyPmVuIEZyYW5jZQoJCTwvYT4KCTwvZGl2PgoJPGRpdiBjbGFzcz0iYmxvYyIgZGF0YS1kZXNjcmlwdGlvbj0iUGFydGFnZXIgZGVzIGTDqXBlbnNlcyBzaGFyZSBjb3N0cyBhcmdlbnQiPgoJCTxhIGhyZWY9InBheS1iaWxsLyI+CgkJCTxpbWcgc3JjPSJwYXktYmlsbC9pY29uLnBuZyIgYWx0PSJpY29uIi8+CgkJCVBhcnRhZ2VyIGRlczxicj5kw6lwZW5zZXMgZOKAmWFtaXMKCQk8L2E+Cgk8L2Rpdj4KCTxkaXYgY2xhc3M9ImJsb2MiIGRhdGEtZGVzY3JpcHRpb249Ik11ciBkZSBub3Rlcywgbm90ZXBhZCwgcG9zdC1pdCwgbm90ZXMiPgoJCTxhIGhyZWY9Im5vdGVzLXdhbGwvIj4KCQkJPGltZyBzcmM9Im5vdGVzLXdhbGwvaWNvbi5wbmciIGFsdD0iaWNvbiIvPgoJCQlVbiBtdXI8YnIvPmRlIG5vdGVzCgkJPC9hPgoJPC9kaXY+Cgk8ZGl2IGNsYXNzPSJibG9jIiBkYXRhLWRlc2NyaXB0aW9uPSJNdXIgZGUgbm90ZXMsIG5vdGVwYWQsIHBvc3QtaXQsIG5vdGVzIj4KCQk8YSBocmVmPSJwb3N0LWl0LyI+CgkJCTxpbWcgc3JjPSJwb3N0LWl0L2ljb24ucG5nIiBhbHQ9Imljb24iLz4KCQkJVW4gYmxvYyBub3RlPGJyPmVuIHBvc3QtaXQKCQk8L2E+Cgk8L2Rpdj4KCTxkaXYgY2xhc3M9ImJsb2MiIGRhdGEtZGVzY3JpcHRpb249InlvdXR1YmUgcnNzIGF0b20gZmx1eCI+CgkJPGEgaHJlZj0ieW91dHViZS1yc3MvIj4KCQkJPGltZyBzcmM9InlvdXR1YmUtcnNzL2ljb24ucG5nIiBhbHQ9Imljb24iLz4KCQkJUsOpY3Vww6lyZXIgdW4gZmx1eCBSU1MgWW91dHViZQoJCTwvYT4KCTwvZGl2PgoJPGRpdiBjbGFzcz0iYmxvYyIgZGF0YS1kZXNjcmlwdGlvbj0idHJvdSBub2lyIGJsYWNrIGhvbGUgaGF3a2luZyByYWRpYXRpb24gbWFzc2Ugw6luZXJnaWUiPgoJCTxhIGhyZWY9ImJsYWNraG9sZS8iPgoJCQk8aW1nIHNyYz0iYmxhY2tob2xlL2ljb24ucG5nIiBhbHQ9Imljb24iLz4KCQkJQ2FsY3VsYXRldXIgZGUgdHJvdSBub2lyCgkJPC9hPgoJPC9kaXY+Cgk8aDI+w4ljcmFucyBkZSB2ZWlsbGU8L2gyPgoJPGRpdiBjbGFzcz0iYmxvYyIgZGF0YS1kZXNjcmlwdGlvbj0icXVlbGxlIGNvdWxldXIgZXN0IGlsIGltYWdlcyI+CgkJPGEgaHJlZj0iY29sb3Itc2Vjb25kLyI+CgkJCTxpbWcgc3JjPSJjb2xvci1zZWNvbmQvaWNvbi5wbmciIGFsdD0iaWNvbiIvPgoJCQlRdWVsbGUgY291bGV1cjxici8+ZXN0LWlsJm5ic3A7PwoJCTwvYT4KCTwvZGl2PgoJPGRpdiBjbGFzcz0iYmxvYyIgZGF0YS1kZXNjcmlwdGlvbj0ibWF0cml4IGNvZGUgcmFpbiBwbHVpZSBqYXBvbmFpcyI+CgkJPGEgaHJlZj0ibWF0cml4LyI+CgkJCTxpbWcgc3JjPSJtYXRyaXgvaWNvbi5wbmciIGFsdD0iaWNvbiIvPgoJCQlNYXRyaXg8YnIvPmNvZGUgcmFpbgoJCTwvYT4KCTwvZGl2Pgo="); // Copied Just The List (Because Too Loong) ::::::::::::::: https://github.com/timovn/MyWebTools/blob/master/index.php
 }
-if ($_SERVER["HTTP_HOST"] == $freedomaines[10])
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[10])
 {
 $themevideo = "cestpassorcier";
 $themetitle = "C'est Pas Sorcier";
@@ -186,7 +186,7 @@ echo "<img width='100' src=\"".$themevideo."/".basename($video,".mp4").".webp\">
 }
 }
 }
-if ($_SERVER["HTTP_HOST"] == $freedomaines[11])
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[11])
 {
 $themevideo = "dexsilicium";
 $themetitle = "Deus Ex Silicium";
@@ -216,7 +216,7 @@ echo "<img width='100' src=\"".$themevideo."/".basename($video,".mp4").".webp\">
 }
 }
 }
-if ($_SERVER["HTTP_HOST"] == $freedomaines[12])
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[12])
 {
 echo "<head><title>LogicEmu - Online Logic Simulator</title></head>";
 echo "<body><noscript>Please Enable Javascript!</noscript>";
@@ -240,7 +240,7 @@ echo "var tracks = ['LUXAR__Stephane_Marty__01_Birth.mp3','LUXAR__Stephane_Marty
 echo "document.write(\"<audio autoplay hidden loop><source src='\"+tracks[pist]+\"'></audio>\");</script>";
 echo "<script src=\"editor.js\"></script></body>";
 }
-if ($_SERVER["HTTP_HOST"] == $freedomaines[13])
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[13])
 {
 $themevideo = "titeuf";
 $themetitle = "Titeuf";
@@ -270,7 +270,7 @@ echo "<img width='100' src=\"".$themevideo."/".basename($video,".mp4").".webp\">
 }
 }
 }
-if ($_SERVER["HTTP_HOST"] == $freedomaines[14])
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[14])
 {
 $themevideo = "codelyoko";
 $themetitle = "Code Lyoko";
@@ -300,7 +300,7 @@ echo "<img width='100' src=\"".$themevideo."/".basename($video,".mp4").".webp\">
 }
 }
 }
-if ($_SERVER["HTTP_HOST"] == $freedomaines[15])
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[15])
 {
 $themevideo = "kidpaddle";
 $themetitle = "Kid Paddle";
@@ -330,7 +330,7 @@ echo "<img width='100' src=\"".$themevideo."/".basename($video,".mp4").".webp\">
 }
 }
 }
-if ($_SERVER["HTTP_HOST"] == $freedomaines[16])
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[16])
 {
 if (isset($_GET["emo"]))
 {
@@ -349,7 +349,7 @@ echo "Choisi Une Valeur Entre -50 Et 50";
 }
 echo "<title>EmoNote - Note Ce Que Tu Veut !</title><h1>Note Ce Que Tu Veut !</h1><form method='GET' action='.'>Négatif<input type='range' min='-50' max='50' name='emo' value='0'/>Positif<br/><input type='submit'/>";
 }
-if ($_SERVER["HTTP_HOST"] == $freedomaines[17])
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[17])
 {
 if (isset($_GET["whatgame"]))
 {
@@ -359,7 +359,11 @@ echo "<object><param name='movie' value='".$_GET["whatgame"].".swf'><param name=
 }
 else
 {
-echo "<title>Garfiled Games And Fun From Thirtyth Foitierre</title><h1>Garfiled Games And Fun From Thirtyth Foitierre</h1><a href='?whatgame=lasagnafromheaven'>Lasagna From Heaven<br/><a href='?whatgame=dingleballgame'>Dingle Ball<br/><a href='?whatgame=coopcatch'>Coop Catch<br/><a href='?whatgame='sheepshot'>Sheep Shoot<br/><a href='?whatgame=coopcatch'>Coop Catch<br/><a href='?whatgame='beanme3'>Bean Me<br/><a href='?whatgame='amazinggarf'>The Amazing Garfield<br/>";
+echo "<title>Garfiled Games And Fun From Thirtyth Foitierre</title><h1>Garfiled Games And Fun From Thirtyth Foitierre</h1><a href='?whatgame=lasagnafromheaven'>Lasagna From Heaven<br/><a href='?whatgame=dingleballgame'>Dingle Ball<br/><a href='?whatgame=coopcatch'>Coop Catch<br/><a href='?whatgame='sheepshot'>Sheep Shoot<br/><a href='?whatgame='beanme3'>Bean Me<br/><a href='?whatgame=amazinggarf'>The Amazing Garfield<br/>";
 }
+}
+else
+{
+echo "<tt>Name Unknow!<br/><a href='http://linksourmaster.chezsick'>Return The Links</a></tt>";
 }
 ?>
