@@ -5,14 +5,14 @@ exit 1
 fi
 git clone https://github.com/B00merang-Project/B00merang-Flat /tmp/B00merang-Flat
 acol=(
-cc0000\;Red
-f57900\;Orange
-edd400\;Yellow
-73d216\;Green
-555753\;Gray
-3465a4\;Blue
-75507b\;Purple
-000000\;Black
+D62821\;Red
+E96F24\;Orange
+EFBF0A\;Yellow
+5ABC57\;Green
+B4BBC1\;Gray
+4488DF\;Blue
+A23EB2\;Purple
+585858\;Black
 )
 for n in $(seq 0 7)
 do
