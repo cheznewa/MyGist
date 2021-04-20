@@ -23,6 +23,7 @@ python2 $MYGIST/coloreffectreplacer.py rmp "2081CE" "$hex" 200 < /tmp/B00merang-
 python2 $MYGIST/coloreffectreplacer.py rmp "2081CE" "$hex" 200 < /tmp/B00merang-Flat/gtk-3.0/gtk-dark.css > /tmp/B00merang-Flat-${name}/gtk-3.0/gtk-dark.css
 python2 $MYGIST/coloreffectreplacer.py rmp "2081CE" "$hex" 200 < /tmp/B00merang-Flat/gtk-3.0/gtk-light.css > /tmp/B00merang-Flat-${name}/gtk-3.0/gtk-light.css
 python2 $MYGIST/coloreffectreplacer.py rmp "2081CE" "$hex" 200 < /tmp/B00merang-Flat/gtk-2.0/gtkrc > /tmp/B00merang-Flat-${name}/gtk-2.0/gtkrc
+python2 $MYGIST/coloreffectreplacer.py rmp "2081CE" "$hex" 200 < /tmp/B00merang-Flat/gnome-shell/gnome-shell.css > /tmp/B00merang-Flat-${name}/gnome-shell/gnome-shell.css
 cp -r /tmp/B00merang-Flat-${name} /usr/share/themes
 printf "The Color ${name} Has Installed\n"
 done
