@@ -5,7 +5,7 @@
 // Et Accrochez-Vous !
 // Mettez Ce Fichier Sur Votre Serveur Local Et Rennomé En index.php
 // Si Ca Ne Marche Pas, Vous Devrait Vous-Même Télécharger Les Fichier Qui Manque à L'apelle.
-$freedomaines = ["newanotremaitre.chezsick","timeanddatebletou.chezsick","logicemu.chezsick","jslinux.chezsick","randomlike.chezsick","colormodem.chezsick","dafont.chezsick","pagerankcalc.chezsick","pdf2htmlex.chezsick","lhvtools.chezsick","cestpassorcier.chezsick","dexsilicium.chezsick","logicemu2luxar.chezsick","titeuf.chezsick","codelyoko.chezsick","kidpaddle.chezsick","emonote.chezsick","garfield.chezsick"];
+$freedomaines = ["newanotremaitre.chezsick","timeanddatebletou.chezsick","logicemu.chezsick","jslinux.chezsick","randomlike.chezsick","colormodem.chezsick","dafont.chezsick","pagerankcalc.chezsick","pdf2htmlex.chezsick","lhvtools.chezsick","cestpassorcier.chezsick","dexsilicium.chezsick","logicemu2luxar.chezsick","titeuf.chezsick","codelyoko.chezsick","kidpaddle.chezsick","emonote.chezsick","garfield.chezsick","problemepointageamerindienne.chezsick"];
 if ($_SERVER["HTTP_HOST"] == "linksourmaster.chezsick")
 {
 echo "<title>ChezSick Links</title>";
@@ -359,8 +359,17 @@ echo "<object><param name='movie' value='".$_GET["whatgame"].".swf'><param name=
 }
 else
 {
-echo "<title>Garfiled Games And Fun From Thirtyth Foitierre</title><h1>Garfiled Games And Fun From Thirtyth Foitierre</h1><a href='?whatgame=lasagnafromheaven'>Lasagna From Heaven<br/><a href='?whatgame=dingleballgame'>Dingle Ball<br/><a href='?whatgame=coopcatch'>Coop Catch<br/><a href='?whatgame='sheepshot'>Sheep Shoot<br/><a href='?whatgame='beanme3'>Bean Me<br/><a href='?whatgame=amazinggarf'>The Amazing Garfield<br/>";
+echo "<title>Garfiled Games And Fun From Thirtyth Foitierre</title><h1>Garfiled Games And Fun From Thirtyth Foitierre</h1><a href='?whatgame=lasagnafromheaven'>Lasagna From Heaven<br/><a href='?whatgame=dingleballgame'>Dingle Ball<br/><a href='?whatgame=coopcatch'>Coop Catch<br/><a href='?whatgame=sheepshot'>Sheep Shoot<br/><a href='?whatgame='beanme3'>Bean Me<br/><a href='?whatgame=amazinggarf'>The Amazing Garfield<br/>";
 }
+}
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[18])
+{
+echo "Contrairement Aux Idée Recu Ils Viennent Pas Des Etat-Unis Mais Majoritairement D'équateur, Pays Donc Mauvaise Oeuil Quand Il S'agit De Le Faire Sur Toute L'europe L'asie Et Surtout Russie Que Leur Propre Zone.";
+echo "<title>Pointages Amerindien - Imprévisible, Rare, Grave !</title>";
+echo "<h1>Imprévisible</h1>Un Pointage En Général Est Une Personne Qui Joue De La Musique Bien Que C'est Pas Planifier Publiquement, Quand C'est Amerindien Egalement";
+echo "<h1>Rare</h1>Les Pointage Amerindien Sont Vraiment Pas Frequent Qu'un Pointage Classique Et Portant Ya Sur Une Des Platforme Vidéo Très Populaire Une Circulation Pas Possible De Ces Pointage, Une Chaine Peut Se Retrouvé Avec Une Seul Vidéo D'un Pointage Pour Ca Frequence Pas Possible";
+echo "<h1>Grave</h1>Les Pointage Amerindien, Sont Très Souvant Déconcertante Sur Ces Tenu Introuvable Sur Internet Pour Un Passionné, Est Ces Instrument Mais Un Peut Plus Facile A Retrouvé Sur Le Net, Ils Se Raproche Asser Souvant Du Pow-Wow Car Pour Cause Ya Une Tenu Avec Un Bustle Plus Frequent D'apparition Qu'une Coiffe, Mais Ce Qui Est Déconcertant Avec Leur Tenu C'est Les Déssins Avec Les Frange Longue.";
+echo "<h2>Conclusion</h2>Les Pointages Amerindiens Peuvent Basculé Toute Une Journé Voir Toute Une Vie, Et Il Est Pas Possible De S'en Prévenir, Et Encore Moin De Les Eradiqué.";
 }
 else
 {
