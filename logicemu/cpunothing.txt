@@ -1,0 +1,108 @@
+0"ATTENTION !!!"
+0"Ce Putain De CPU Ne Sert A Rien !"
+0"6 bit D'operation Et 4 bit D'addressage"
+
+          T######
+          ^^^^^^^
+        T>bbbbbbbc<g0
+        #>bbbbbbb
+        #>bbbbbbb
+    0g>c#>bbbbbbb
+          bbbbbbb
+          bbbbbbb
+          bbbbbbb
+          bbbbbbb
+          bbbbbbb
+          bbbbbbb
+          bbbbbbb
+          bbbbbbb
+          bbbbbbb
+          bbbbbbb
+          bbbbbbb
+          bbbbbbb
+          ^^^^^^^
+          |||||||
+          $$$$$$$
+ ================
+ $$$$$$$
+ |||||||
+ .U16############<f
+  ###############
+  ###############<---.
+  ###############<--.|
+  ^^^^^^   ^^^^^^   i3##
+  i1####   i2####   ^^^^
+  ^^^^     ^^^^     ||||
+  ||||     ||||     $$$$
+  $$$$     $$$$     ====
+  ===================
+  $$$$
+  ||||    g0
+  ||||    |
+  T#####c<t<s
+
+llllll
+^^^^^^
+bbBBbbI1
+bbBBbB
+BbBbbB
+bbBBbb
+bbBBbB
+BbBbbB
+bBbbBb
+bBbBbb
+bbBBbb
+bbBBbB
+BbBbBB
+bbBBbb
+bbBBbB
+BbBbbB
+bBbbbb
+bBbBbb
+^^^^
+ssss
+
+
+llllll
+^^^^^^
+bbBbbBI2
+BBbbbB
+BbBbbB
+BbbbBB
+bbBbbB
+bBbBbB
+BbbBbb
+bbbBbb
+bbBbbB
+BBbbbB
+BbBbbB
+BBbbBB
+bbBbbB
+bBbbBB
+BbBbbb
+bBbBbb
+^^^^
+ssss
+
+ll
+^^
+bb####I3
+BB####
+Bb####
+bB####
+bb####
+BB####
+Bb####
+bB####
+bb####
+BB####
+Bb####
+bB####
+BB####
+bb####
+bB####
+bb####
+^^^^
+ssss
+
+"TITLE:Ce CPU Ne Sert A Rien !"
