@@ -364,10 +364,10 @@ echo "<title>Garfiled Games And Fun From Thirtyth Foitierre</title><h1>Garfiled 
 }
 elseif ($_SERVER["HTTP_HOST"] == $freedomaines[18])
 {
-echo "Contrairement Aux Idée Recu Ils Viennent Pas Des Etat-Unis Mais Majoritairement D'équateur, Pays Donc Mauvaise Oeuil Quand Il S'agit De Le Faire Sur Toute L'europe L'asie Et Surtout Russie Que Leur Propre Zone.";
+echo "Contrairement Aux Idée Reçu Ils Viennent Pas Des Etat-Unis Mais Majoritairement D'équateur, Pays Donc Mauvaise Oeuil Quand Il S'agit De Le Faire Sur Toute L'europe L'asie Et Surtout La Russie Que Leur Propre Zone.";
 echo "<title>Pointages Amerindien - Imprévisible, Rare, Grave !</title>";
-echo "<h1>Imprévisible</h1>Un Pointage En Général Est Une Personne Qui Joue De La Musique Bien Que C'est Pas Planifier Publiquement, Quand C'est Amerindien Egalement";
-echo "<h1>Rare</h1>Les Pointage Amerindien Sont Vraiment Pas Frequent Qu'un Pointage Classique Et Portant Ya Sur Une Des Platforme Vidéo Très Populaire Une Circulation Pas Possible De Ces Pointage, Une Chaine Peut Se Retrouvé Avec Une Seul Vidéo D'un Pointage Pour Ca Frequence Pas Possible";
+echo "<h1>Imprévisible</h1>Un Pointage En Général Est Une Personne Qui Joue De La Musique Dans La Rue Pour Gagner De L'argent, Bien Que C'est Pas Planifier Publiquement, C'est Pareil Pour Les Pointages Amerindien.";
+echo "<h1>Rare</h1>Les Pointage Amerindien Sont Vraiment Pas Frequent Qu'un Pointage Classique Et Portant Ya Sur Une Des Platforme Vidéo Très Populaire Une Circulation Pas Possible De Ces Pointage, Une Chaine Peut Se Retrouvé Avec Une Seul Vidéo D'un Pointage Pour Ca Frequence Pas Possible.";
 echo "<h1>Grave</h1>Les Pointage Amerindien, Sont Très Souvant Déconcertante Sur Ces Tenu Introuvable Sur Internet Pour Un Passionné, Est Ces Instrument Mais Un Peut Plus Facile A Retrouvé Sur Le Net, Ils Se Raproche Asser Souvant Du Pow-Wow Car Pour Cause Ya Une Tenu Avec Un Bustle Plus Frequent D'apparition Qu'une Coiffe, Mais Ce Qui Est Déconcertant Avec Leur Tenu C'est Les Déssins Avec Les Frange Longue.";
 echo "<h2>Conclusion</h2>Les Pointages Amerindiens Peuvent Basculé Toute Une Journé Voir Toute Une Vie, Et Il Est Pas Possible De S'en Prévenir, Et Encore Moin De Les Eradiqué.";
 }
