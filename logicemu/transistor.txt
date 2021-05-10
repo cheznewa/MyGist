@@ -1,0 +1,94 @@
+0"Avec LogicEmu Je Peut Emuler Les Transtor, A Savoir Que C'est Basé Sur Un Brevet, Mais Pas Mal De Gens Peut Reproduire Pour Cause De Science, Et Que C'est Petit."
+
+0"Deja Pour Un NMOS :::"
+      "s"
+       s
+       v
+"g" s->a
+       v
+       l
+      "d"
+
+0"La Le PMOS :::"
+      "s"
+       s
+       v
+"g" s-]a
+       v
+       l
+      "d"
+0"En Cas De Rencontre De Fils :::"
+  s
+  v
+s>o>l
+
+0"La Source Voltage :::"
+F->
+
+0"Et Enfin La Masse :::"
+->l2
+
+0"Les Entré"
+"A" s-g0
+"B" s-g1
+
+0"La Sortie Ce Fait :::"
+->l0
+
+0"NOT Logic"
+      F
+      v
+   ..]a
+   .  .
+0g..  ..>l
+   .  v
+   ..>a
+      v
+      l2
+
+0"AND Logic"
+     F
+     .
+    v.....    F
+0g.]a    v    v
+    . 1g]a  .]a
+    .    v  . ..>l
+    ....>o... v
+    .       .>a
+    v         v
+    l2        l2
+
+0"OR Logic"
+
+    F
+    v   F
+0g.]a   v
+    v .]a
+1g.]a . ..>l
+    ... v
+    . .>a
+    v   v
+    l2  l2
+
+0"NAND Logic"
+     F
+     .
+    v.....
+0g.]a    v
+    . 1g]a
+    .    v
+    ....>o.>l
+    .
+    v
+    l2
+
+0"NOR Logic"
+    F
+    v
+0g.]a  
+    v
+1g.]a
+    ..>l
+    .
+    v
+    l2
