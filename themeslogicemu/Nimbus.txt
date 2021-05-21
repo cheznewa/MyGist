@@ -11,7 +11,7 @@ led_off_fg:#cc0000,#cc3300,#cccc00,#00cc00,#0000cc,#3300cc,#cc0099,#ffffff,#babe
 led_off_bg:#8e8f91,#8e8f91,#8e8f91,#8e8f91,#8e8f91,#8e8f91,#8e8f91,#8e8f91,#ff3333,#3d6079
 led_off_border:#cc0000,#cc3300,#cccc00,#00cc00,#0000cc,#3300cc,#cc0099,#ffffff,#babec6,#ffffff
 led_on_fg:#ffffff,#ffffff,#ffffff,#ffffff,#ffffff,#ffffff,#ffffff,#000000,#babec6,#000000
-led_on_bg:#cc0000,#cc3300,#cccc00,#00cc00,#00cccc,#3300cc,#cc0099,#ffffff,#33ff33,#ffffff
+led_on_bg:#cc0000,#cc3300,#cccc00,#00cc00,#0000cc,#3300cc,#cc0099,#ffffff,#33ff33,#ffffff
 led_on_border:#ffffff,#ffffff,#ffffff,#ffffff,#ffffff,#ffffff,#ffffff,#000000,#babec6,#000000
 switch_off_fg:#b0b332
 switch_off_bg:#33628c
