@@ -29,5 +29,5 @@ title:#ffffff
 chiplabel_fg:#000000
 chiplabel_bg:#f2f2bd
 error_bg:#a92e22
-error_fg_off:#a92e22
-error_fg_on:#a92e22
+error_fg_off:#bf6204
+error_fg_on:#ffdc23
