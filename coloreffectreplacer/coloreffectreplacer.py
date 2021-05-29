@@ -101,6 +101,30 @@ def rndcol(col,a,f):
  vb = str(format(vb,"02x"))
  return vr + vg + vb
 
+def powcol(col,r,g,b):
+ vr = int(col[0:2],16)
+ vg = int(col[2:4],16)
+ vb = int(col[4:6],16)
+ vr = pow(vr,r,256)
+ vg = pow(vg,g,256)
+ vb = pow(vb,b,256)
+ vr = str(format(vr,"02x"))
+ vg = str(format(vg,"02x"))
+ vb = str(format(vb,"02x"))
+ return vr + vg + vb
+
+def expcol(col,r,g,b):
+ vr = int(col[0:2],16)
+ vg = int(col[2:4],16)
+ vb = int(col[4:6],16)
+ vr = pow(r,vr,256)
+ vg = pow(g,vg,256)
+ vb = pow(b,vb,256)
+ vr = str(format(vr,"02x"))
+ vg = str(format(vg,"02x"))
+ vb = str(format(vb,"02x"))
+ return vr + vg + vb
+
 import sys
 import string
 while True:
@@ -122,6 +146,10 @@ while True:
     col = rmpcol(col,sys.argv[2],sys.argv[3],int(sys.argv[4]))
    if sys.argv[1] == "rnd":
     col = rndcol(col,sys.argv[2],int(sys.argv[3]))
+   if sys.argv[1] == "pow":
+    col = powcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
+   if sys.argv[1] == "exp":
+    col = expcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
   sys.stdout.write("#")
   sys.stdout.write(col)
  else:
