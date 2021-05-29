@@ -26,7 +26,7 @@ python2 $MYGIST/coloreffectreplacer.py rmp "2081CE" "$hex" 200 < /tmp/B00merang-
 python2 $MYGIST/coloreffectreplacer.py rmp "2081CE" "$hex" 200 < /tmp/B00merang-Flat/gnome-shell/gnome-shell.css > /tmp/B00merang-Flat-${name}/gnome-shell/gnome-shell.css
 for m in /tmp/B00merang-Flat/gtk-2.0/assets/*.png
 do
-convert $m -fuzz 20% -fill "#$hex" -opaque "#2081CE" /tmp/B00merang-Flat-${name}/gtk-3.0/assets/$(basename $m)
+convert $m -fuzz 20% -fill "#$hex" -opaque "#2081CE" /tmp/B00merang-Flat-${name}/gtk-2.0/assets/$(basename $m)
 done
 for m in /tmp/B00merang-Flat/gtk-3.0/assets/*.png
 do
