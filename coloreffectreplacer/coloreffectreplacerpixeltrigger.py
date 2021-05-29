@@ -155,9 +155,9 @@ while True:
  if param[1] == "rnd":
   col = rndcol(col,param[2],int(param[3]))
  if sys.argv[1] == "pow":
-  col = powcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
+  col = powcol(col,int(param[2]),int(param[3]),int(param[4]))
  if sys.argv[1] == "exp":
-  col = expcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
+  col = expcol(col,int(param[2]),int(param[3]),int(param[4]))
  sys.stdout.write(chr(int(col[0:2],16)))
  sys.stdout.write(chr(int(col[2:4],16)))
  sys.stdout.write(chr(int(col[4:6],16)))
