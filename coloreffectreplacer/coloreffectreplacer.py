@@ -125,6 +125,25 @@ def expcol(col,r,g,b):
  vb = str(format(vb,"02x"))
  return vr + vg + vb
 
+def mapcol(col,gpl):
+ vr = int(col[0:2],16)
+ vg = int(col[2:4],16)
+ vb = int(col[4:6],16)
+ z = []
+ l = len(gpl)
+ for cgpl in gpl:
+  ar = int(cgpl[0:2],16)
+  ag = int(cgpl[2:4],16)
+  ab = int(cgpl[4:6],16)
+  z.append(max(abs(vr-ar)+abs(vg-ag)+abs(vb-ab),0))
+ d = 10000
+ rcol = "000000"
+ for n in range(l):
+  if z[n] < d:
+   d = z[n]
+   rcol = gpl[n]
+ return rcol
+
 import sys
 import string
 while True:
@@ -150,6 +169,8 @@ while True:
     col = powcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
    if sys.argv[1] == "exp":
     col = expcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
+   if sys.argv[1] == "map":
+    col = mapcol(col,sys.argv[2:])
   sys.stdout.write("#")
   sys.stdout.write(col)
  else:
