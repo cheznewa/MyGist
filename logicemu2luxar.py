@@ -47,5 +47,4 @@ def getmusicluxar(c):
  return abs(pist)%16
 luxartracks = ["Birth","First Step","Curiosity","Process","Will Free","Scar","Loneliness","Explorer","Chase","Revolution","Blooming","Torment","Awareness","Self-Confidence","Ambition","Responsability"]
 get = getmusicluxar(circ)
-print("La Musique Luxar Pour Ce Circuit Est ::::: " + luxartracks[get])
-print("Piste Numero ::::::::: " + str(get+1))
+sys.stdout.write("%s - %s" %(str(get+1),luxartracks[get]))
