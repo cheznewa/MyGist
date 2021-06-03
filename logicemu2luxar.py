@@ -45,6 +45,6 @@ def getmusicluxar(c):
  quartz = c.count("t")
  pist = (((alu%11) + (logic - logicinv)) * (ic/(icd+1))) + (term%3) + ((switch*2)+(led*3)) + (matrix%7) + (quartz%5) + (inputi - inputinv) + (memory % 17) - kinetic
  return abs(pist)%16
-luxartracks = ["Birth","First Step","Curiosity","Process","Will Free","Scar","Loneliness","Explorer","Chase","Revolution","Blooming","Torment","Awareness","Self-Confidence","Ambition","Responsability"]
+luxartracks = ["Birth","First Step","Curiosity","Process","Free Will","Scar","Loneliness","Explorer","Chase","Revolution","Blooming","Torment","Awareness","Self-Confidence","Ambition","Responsability"]
 get = getmusicluxar(circ)
 sys.stdout.write("%s - %s" %(str(get+1),luxartracks[get]))
