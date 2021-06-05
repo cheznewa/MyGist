@@ -5,7 +5,7 @@
 // Et Accrochez-Vous !
 // Mettez Ce Fichier Sur Votre Serveur Local Et Rennomé En index.php
 // Si Ca Ne Marche Pas, Vous Devrait Vous-Même Télécharger Les Fichier Qui Manque à L'apelle.
-$freedomaines = ["newanotremaitre.chezsick","timeanddatebletou.chezsick","logicemu.chezsick","jslinux.chezsick","randomlike.chezsick","colormodem.chezsick","dafont.chezsick","pagerankcalc.chezsick","pdf2htmlex.chezsick","lhvtools.chezsick","cestpassorcier.chezsick","dexsilicium.chezsick","logicemu2luxar.chezsick","titeuf.chezsick","codelyoko.chezsick","kidpaddle.chezsick","emonote.chezsick","garfield.chezsick","problemepointageamerindienne.chezsick","visualarm1.chezsick","infernalcounter.chezsick"];
+$freedomaines = ["newanotremaitre.chezsick","timeanddatebletou.chezsick","logicemu.chezsick","jslinux.chezsick","randomlike.chezsick","colormodem.chezsick","dafont.chezsick","pagerankcalc.chezsick","pdf2htmlex.chezsick","lhvtools.chezsick","cestpassorcier.chezsick","dexsilicium.chezsick","logicemu2luxar.chezsick","titeuf.chezsick","codelyoko.chezsick","kidpaddle.chezsick","emonote.chezsick","garfield.chezsick","problemepointageamerindienne.chezsick","visualarm1.chezsick","infernalcounter.chezsick","internetmerespectpas.chezsick"];
 if ($_SERVER["HTTP_HOST"] == "linksourmaster.chezsick")
 {
 echo "<title>ChezSick Links</title>";
@@ -379,6 +379,21 @@ elseif ($_SERVER["HTTP_HOST"] == $freedomaines[20])
 {
 echo "<title>The Infernal Counter !</title>";
 echo bzdecompress(base64_decode("QlpoOTFBWSZTWey9qh8ABRVf5XAwc3///z9nzCA/99/6AQAggAgAEABgBlwfUUKoKrlqgAEHGTJoxDE0wEDAmmCMExNNNABhCJMmCaCNAbUAAAAAAAAAcZMmjEMTTAQMCaYIwTE000AGEEmpIk9JP1JkGI009TJ6IMhpppoDI00A00aHGTJoxDE0wEDAmmCMExNNNABhBEkSZAJiJ5KbZUjeVPRqafqZJ6R6mgDwKeo/VBs9qSGQkyMkVURQgskFQYCsIoRSQUBRGCQVRYAiqqT9yajDMhBEYiyLAZIn5Jr1boSiqkFgLhUVoqMEHOGCFihRFltpoDbdHs80Ao3GBzHyHHOwNMm2j4XLDBDkAogroNPST4EJEqY5ws2GMCJHq61gGJDbfJEk8Bu1LQLlSde10OcVoyRvQUN2qHqkD3bHsENndvkIkJ7OR8fpKH4EwsZgyBN/A2bEo33bBI/dcLeHREKcIxjo3c8coezSfJDu96pRoC+IJpS9y0AzWwsGHyA2gWtfMNeLIiiqCsFUkmzDY3/G7XTqtSodrvrTCxcxLVJmuUQoufgZMISA7sKcr3LGwiwiduyCdapYF+PrAyIB8vPDiaxx1mMKMgMSvGULAJJrPDPeS+dyKzpdExCgwMOWJLMUsISoNNF4DRmQsEmr9ldXQjvZ6tmqbzF0NU39K4vrKyhLl4LXigVPSy/HCcPRRVStecvYM5LlUXokAtA9FguEguzCCXsuIaJOsw0rr1i1eOjdThSqzFJi6EtJje2baQnUgfgYwkMCqDdWYz4+ksUXSnJXgClHUGgo2ZzIuSigONnQXzTDRYLR9NF71coDKF9tVhp68QJ2QojuNBYIOTPmC6b7WEJAZohAj9yBpA9cAyupnlRPtWypsDBCbYCEgVKlff+VkML0pGkB/KzdrrxlrFWBStiLktavZrZTAANGoTiTvcSgUDLTuCghRRenCF6wmYzBgdo5jA+9xOR4w6DhE3qRFRaaKoZV5MqyYHBBhs3Y/3StosJCGFUQkNZy8LGPZezoWcoYETShFAQEAalFCAFjMtbMkqBNgy+ywIShpdeISERJioMwRRoEHbOMBnIy6goFWl5oqHQUD4ONACXGmzJiAJIAo5zWDw/a5Y5dJD7SK99q1RR2HGkMhT7D8ZJcsjVmX3N0ugcNSgEKmeWtahsQtDNtNEx9Dx0T1DpvWAJ3jb3fn+Pvv7QICW0V7rvx0d7GCxdpzVgfi6fXnw5c/86Int1oBRJj3RWKqMNMDgqkj6/a7QSHZ5pA8wL3ObBPHp2v0/M6wAt89YFhP5xbu3q/tVjJENxwYnly8jg8gT+oGhELdZc4gnknVr1e+qTBAc+/fRTVISUqE9gLx5WDCHiDpc2OcF0ZZ8gc4epg1mCBxjAYhCLqN2ynVmACj0cT/QGzOajUdx2PY0/K1nvBeaIfUGYiguxINtrfSGArzZIwkjJCISRE4mIAYIHKwXykemwzqEEIRBdsUpPEmpQ+b18nmagA3FgWGsFibhQ3AfQedJz+tA4Am07WzqLH93hCJS7ziLtM5AWBZOYJ9aA29V37DMm1Ad4oZxQx9Ypu39iIdvf27utxMZMtGEOeugTrhOFr4dCjbQJKMVl0oF2hvAD0twPMpnMk8mIDifpDQiL5E0dAfAE0gdE86A9R3HnwOCn1E7hQ+CfHkBmqlonhzA1QhsZjpou0AAN/3CxWoMClgIw0vmlcsqakgySGnuKiMVZrMvtyWqhKxsXJ1BD/BDq0NWI4oIqh/xdyRThQkOy9qh8=")); // Original HTML From :::: dshamlin98
+}
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[21])
+{
+echo "<title>Quand Internet Me Respect Pas :(</title>";
+echo "<h1>Les Sites D'actus</h1>";
+echo "Ah Les Site D'actus Sont Bien Pointé Du Doigt, Car Ils Peuvent Faire Infinity Scroll, Player Auto Qui Se Lance Tout Seul Le Son Coupé, Et Suit L'internaute Quand Il Scroll Pour Sortir De La Vidéo, Et Bien Sur Il Ya Vais Pas Ces Parasite Au Passer.";
+echo "<h1>Les Resultats De Recherche Aux Services Désagreable</h1>";
+echo "Le Moteur De Recherche Le Plus Populaire, Met En Tête Des Resultat Des Site Ou Votre Télécharchement Ce Requis D'une Inscription, Au Sujet De Télécharger Des Sons Pour Vos Effet Sonores, Ou Encores Des icones Et J'empasse, Portant Il Ya 10 Ans (2012) Ce Moteur De Recherche Retournais Pas Ces Desagrement On POuvais Télécharger Sans S'inscrire, Il Ya Des Alternative A Ces Services Mais Il Sont Plus En Tête Comme C'etait Au Passé.";
+echo "<h1>Les Protection Anti-Copie</h1>";
+echo "Vous Etes Peut Etre Deja Tombé Sur Un Site Qui Vous Empeche De Copier/Coller Quelque Chose Voir De Faire CTRL-I Et j'empasse ? <i>(Pour L'occasion Seulement Cette Page A Ce Type De Désagrement)</i> Ca Signifie Que L'aueteur N'est Pas Un Ami C'est Un Enemie Des Copieur Et Ami Des Droit D'auteur Autrement Dit, \"NonFreeUser\" !";
+echo "<h1>L'incription Forcer Pour Continuer</h1>";
+echo "A L'époque Un Site Ne Vous Forcez Pas A Vous Inscrire Pour Télécharger Quelque Chose Et Ne Devrais Jamais Le Faire Jusqu'a Présent, Et Portant On A Des Site Qui Force La Main A L'internaute, Comme Ca Il Collecte Des Noms Utilisateur Mails Ceux Qui Sont Abilité A Télécharger, C'est Innaccetable !, Et Les Alternative (Ceux Ou Ya Pas Inscription) Sont Pas Evidant A Trouvé.";
+echo "<h2>Conclusion</h2>";
+echo "Internet Devient De + En + Désagreable En Terme De Chose Indésirable A S'inscire Pour Les Enlevé Bien Que C'est Une Méthode Indésirable, Il Faut Bien S'inscrire Pour Faire Ces Achats Posté etc Mais, Pas Pour Télécharger Et Pour Enlevé Ces Désagrement, Bien Qui Avais Pas Ca Au Passer (2010)";
+echo "<script src='jquery.min.js'></script><script src='amparecopyprotection.js'></script>"; // https://github.com/juthawong/Ampare-Copy-Protection
 }
 else
 {
