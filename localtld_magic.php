@@ -5,7 +5,7 @@
 // Et Accrochez-Vous !
 // Mettez Ce Fichier Sur Votre Serveur Local Et Rennomé En index.php
 // Si Ca Ne Marche Pas, Vous Devrait Vous-Même Télécharger Les Fichier Qui Manque à L'apelle.
-$freedomaines = ["newanotremaitre.chezsick","timeanddatebletou.chezsick","logicemu.chezsick","jslinux.chezsick","randomlike.chezsick","colormodem.chezsick","dafont.chezsick","pagerankcalc.chezsick","pdf2htmlex.chezsick","lhvtools.chezsick","cestpassorcier.chezsick","dexsilicium.chezsick","logicemu2luxar.chezsick","titeuf.chezsick","codelyoko.chezsick","kidpaddle.chezsick","emonote.chezsick","garfield.chezsick","problemepointageamerindienne.chezsick","visualarm1.chezsick","infernalcounter.chezsick","internetmerespectpas.chezsick"];
+$freedomaines = ["newanotremaitre.chezsick","timeanddatebletou.chezsick","logicemu.chezsick","jslinux.chezsick","randomlike.chezsick","colormodem.chezsick","dafont.chezsick","pagerankcalc.chezsick","pdf2htmlex.chezsick","lhvtools.chezsick","cestpassorcier.chezsick","dexsilicium.chezsick","logicemu2luxar.chezsick","titeuf.chezsick","codelyoko.chezsick","kidpaddle.chezsick","emonote.chezsick","garfield.chezsick","problemepointageamerindienne.chezsick","visualarm1.chezsick","infernalcounter.chezsick","internetmerespectpas.chezsick","openfoodfacts.chezsick"];
 if ($_SERVER["HTTP_HOST"] == "linksourmaster.chezsick")
 {
 echo "<title>ChezSick Links</title>";
@@ -385,6 +385,32 @@ echo "A L'époque Un Site Ne Vous Forcez Pas A Vous Inscrire Pour Télécharger 
 echo "<h2>Conclusion</h2>";
 echo "Internet Devient De + En + Désagreable En Terme De Chose Indésirable A S'inscire Pour Les Enlevé Bien Que C'est Une Méthode Indésirable, Il Faut Bien S'inscrire Pour Faire Ces Achats Posté etc Mais, Pas Pour Télécharger Et Pour Enlevé Ces Désagrement, Bien Qui Avais Pas Ca Au Passer (2010)";
 echo "<script src='jquery.min.js'></script><script src='amparecopyprotection.js'></script>"; // https://github.com/juthawong/Ampare-Copy-Protection
+}
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[22])
+{
+echo "<title>OpenFoodFacts</title><h1>Vefifier Un Produit Avec OpenFoodFacts</h1><form action='.' method='get'>";
+echo "Tapez Le Code-Barre Du Produit ::::::::::: <input name='code' id='code'></input></br>";
+if (isset($_GET["code"]))
+{
+$content = file_get_contents("en.openfoodfacts.org.products.csv"); // https://static.openfoodfacts.org/data/en.openfoodfacts.org.products.csv
+$exploded = explode("\n",$content);
+$namefield = explode("\t",$exploded[0]);
+unset($content);
+foreach ($exploded as $array)
+{
+$array = explode("\t",$array);
+if ($array[0] == $_GET["code"])
+{
+echo "Conclusion ::::::::: <br/><tt>";
+foreach ($array as $n => $field)
+{
+echo "$namefield[$n] :: $field<br/>";
+}
+break;
+}
+}
+echo "</tt>";
+}
 }
 else
 {
