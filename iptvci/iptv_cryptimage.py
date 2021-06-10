@@ -39,8 +39,8 @@ hashday = hashtwo.digest()
 
 word = ((((ord(hashday[0]) *256)+(ord(hashday[1]))))%65504)+32
 
-retardone = ((float((ord(reshash[24]) *256)+(ord(hashday[25])))/65536)*2.5)+0.5
-retardtwo = ((float((ord(reshash[26]) *256)+(ord(hashday[27])))/65536)*3.0)+2.0
+retardone = ((float((ord(reshash[24]) *256)+(ord(reshash[25])))/65536)*2.5)+0.5
+retardtwo = ((float((ord(reshash[26]) *256)+(ord(reshash[27])))/65536)*3.0)+2.0
 
 level = []
 for n in range(11,21):
