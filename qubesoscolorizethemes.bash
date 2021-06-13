@@ -3,7 +3,7 @@ then
 printf "Please Declare MYGIST Variable When MyGist Repo On GitHub ::::: cheznewa/mygist\nAnd Dont Forget Use \"sudo\" For Admin With -E MYGIST=... To Declare The Variable.\n"
 exit 1
 fi
-git clone https://github.com/B00merang-Project/B00merang-Flat /tmp/B00merang-Flat
+git clone https://github.com/B00merang-Project/B00merang-Flat /tmp/B00merang-Flat 2> /dev/null
 acol=(
 E41B1B\;Red
 E4601B\;Orange
@@ -39,4 +39,8 @@ done
 cp -r /tmp/B00merang-Flat-${name} /usr/share/themes
 printf "The Color ${name} Has Installed\n"
 done
-printf "Please Edit .xsettingsd In Line Gtk/KeyThemeName=standard-(yourcolor) And Net/ThemeName=standard-(yourcolor)\n"
+git clone https://github.com/vmware/clarity-city /tmp/Clarity-City 2> /dev/null
+mkdir -p /usr/share/fonts/truetype/clarity-city
+cp /tmp/Clarity-City/TrueType/*.ttf /usr/share/fonts/truetype/clarity-city
+printf "The Font Clarity-City Has Installed\n"
+printf "Please Edit .xsettingsd In Line Gtk/KeyThemeName=B00merang-Flat-(yourcolor) And Net/ThemeName=B00merang-Flat-(yourcolor)\n"
