@@ -43,4 +43,4 @@ git clone https://github.com/vmware/clarity-city /tmp/Clarity-City 2> /dev/null
 mkdir -p /usr/share/fonts/truetype/clarity-city
 cp /tmp/Clarity-City/TrueType/*.ttf /usr/share/fonts/truetype/clarity-city
 printf "The Font Clarity-City Has Installed\n"
-printf "Please Edit .xsettingsd In Line Gtk/KeyThemeName=B00merang-Flat-(yourcolor) And Net/ThemeName=B00merang-Flat-(yourcolor)\n"
+printf "Please Edit .xsettingsd In Line Gtk/KeyThemeName=B00merang-Flat-(yourcolor) And Net/ThemeName=B00merang-Flat-(yourcolor) And Gtk/FontName \"Clarity City 10\"\n"
