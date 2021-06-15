@@ -144,7 +144,7 @@ def mapcol(col,gpl):
    rcol = gpl[n]
  return rcol
 
-def colcol(col,base):
+def unicol(col,base):
  vr = int(col[0:2],16)
  vg = int(col[2:4],16)
  vb = int(col[4:6],16)
@@ -155,6 +155,33 @@ def colcol(col,base):
  vr = int(base*(br/255.0))
  vg = int(base*(bg/255.0))
  vb = int(base*(bb/255.0))
+ vr = str(format(vr,"02x"))
+ vg = str(format(vg,"02x"))
+ vb = str(format(vb,"02x"))
+ return vr + vg + vb
+
+def colcol(col,base,r,g,b):
+ vr = int(col[0:2],16)
+ vg = int(col[2:4],16)
+ vb = int(col[4:6],16)
+ br = int(base[0:2],16)
+ bg = int(base[2:4],16)
+ bb = int(base[4:6],16)
+ vr = int(vr*float(1-(r/255.0)))+int(br*float(r/255.0))
+ vg = int(vg*float(1-(g/255.0)))+int(bg*float(g/255.0))
+ vb = int(vb*float(1-(b/255.0)))+int(bb*float(b/255.0))
+ vr = str(format(vr,"02x"))
+ vg = str(format(vg,"02x"))
+ vb = str(format(vb,"02x"))
+ return vr + vg + vb
+
+def poscol(col,r,g,b):
+ vr = int(col[0:2],16)
+ vg = int(col[2:4],16)
+ vb = int(col[4:6],16)
+ vr = (vr/int(255.0/r))*int(255.0/r)
+ vg = (vg/int(255.0/g))*int(255.0/g)
+ vb = (vb/int(255.0/b))*int(255.0/b)
  vr = str(format(vr,"02x"))
  vg = str(format(vg,"02x"))
  vb = str(format(vb,"02x"))
@@ -191,8 +218,12 @@ for o in sys.stdin:
    col = expcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
   if sys.argv[1] == "map":
    col = mapcol(col,sys.argv[2:])
+  if sys.argv[1] == "uni":
+   col = unicol(col,sys.argv[2])
   if sys.argv[1] == "col":
-   col = colcol(col,sys.argv[2])
+   col = colcol(col,sys.argv[2],int(sys.argv[3]),int(sys.argv[4]),int(sys.argv[5]))
+  if sys.argv[1] == "pos":
+   col = poscol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
   sys.stdout.write("<Color red=\"%s\" green=\"%s\" blue=\"%s\"/>\n" %(int(col[0:2],16),int(col[2:4],16),int(col[4:6],16)))
  else:
   sys.stdout.write(o)
