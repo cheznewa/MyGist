@@ -194,9 +194,12 @@ for o in sys.stdin:
   red = re.search("red=",o)
   green = re.search("green=",o)
   blue = re.search("blue=",o)
+  alpha = re.search("alpha=",o)
   rv = int(filter(str.isdigit,o[red.end():red.end()+5]))
   gv = int(filter(str.isdigit,o[green.end():green.end()+5]))
   bv = int(filter(str.isdigit,o[blue.end():blue.end()+5]))
+  if alpha:
+   av = int(filter(str.isdigit,o[alpha.end():alpha.end()+5]))
   col = str(format(rv,"02x")) + str(format(gv,"02x")) + str(format(bv,"02x"))
   if sys.argv[1] == "add":
    col = addcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
@@ -224,7 +227,10 @@ for o in sys.stdin:
    col = colcol(col,sys.argv[2],int(sys.argv[3]),int(sys.argv[4]),int(sys.argv[5]))
   if sys.argv[1] == "pos":
    col = poscol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
-  sys.stdout.write("<Color red=\"%s\" green=\"%s\" blue=\"%s\"/>\n" %(int(col[0:2],16),int(col[2:4],16),int(col[4:6],16)))
+  if alpha:
+   sys.stdout.write("<Color red=\"%s\" green=\"%s\" blue=\"%s\" alpha=\"%s\"/>\n" %(int(col[0:2],16),int(col[2:4],16),int(col[4:6],16),av))
+  else:
+   sys.stdout.write("<Color red=\"%s\" green=\"%s\" blue=\"%s\"/>\n" %(int(col[0:2],16),int(col[2:4],16),int(col[4:6],16)))
  else:
   sys.stdout.write(o)
  if not o:
