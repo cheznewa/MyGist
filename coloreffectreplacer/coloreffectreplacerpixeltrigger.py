@@ -187,6 +187,33 @@ def poscol(col,r,g,b):
  vb = str(format(vb,"02x"))
  return vr + vg + vb
 
+def empcol(col,gpl):
+ vr = int(col[0:2],16)
+ vg = int(col[2:4],16)
+ vb = int(col[4:6],16)
+ z = []
+ l = len(gpl)
+ for cgpl in gpl:
+  ar = int(cgpl[0:2],16)
+  ag = int(cgpl[2:4],16)
+  ab = int(cgpl[4:6],16)
+  z.append(max(abs(vr-ar)+abs(vg-ag)+abs(vb-ab),0))
+ d = 10000
+ rcol = "000000"
+ ll = int(255.0/l)
+ for n in range(l):
+  if z[n] < d:
+   d = z[n]
+   r = n*ll
+ re = str(format(r,"02x"))
+ return re + re + re
+
+def dmpcol(col,gpl):
+ gr = int(col[0:2],16)
+ l = len(gpl)
+ rcol = gpl[gr/int(255.0/l)]
+ return rcol
+
 import sys
 fsa = open(sys.argv[1],"r")
 u = 0
@@ -228,6 +255,10 @@ while True:
   col = colcol(col,param[2],int(param[3]),int(param[4]),int(param[5]))
  if param[1] == "pos":
   col = poscol(col,int(param[2]),int(param[3]),int(param[4]))
+ if param[1] == "emp":
+  col = empcol(col,param[2:])
+ if param[1] == "dmp":
+  col = dmpcol(col,param[2:])
  sys.stdout.write(chr(int(col[0:2],16)))
  sys.stdout.write(chr(int(col[2:4],16)))
  sys.stdout.write(chr(int(col[4:6],16)))
