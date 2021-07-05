@@ -214,6 +214,18 @@ def dmpcol(col,gpl):
  rcol = gpl[gr/int(255.0/l)]
  return rcol
 
+def gamcol(col,r,g,b):
+ vr = int(col[0:2],16)
+ vg = int(col[2:4],16)
+ vb = int(col[4:6],16)
+ vr = int(pow(vr/255.0,1.0/r)*255)
+ vg = int(pow(vg/255.0,1.0/g)*255)
+ vb = int(pow(vb/255.0,1.0/b)*255)
+ vr = str(format(vr,"02x"))
+ vg = str(format(vg,"02x"))
+ vb = str(format(vb,"02x"))
+ return vr + vg + vb
+
 import sys
 import string
 while True:
@@ -251,6 +263,8 @@ while True:
     col = empcol(col,sys.argv[2:])
    if sys.argv[1] == "dmp":
     col = dmpcol(col,sys.argv[2:])
+   if sys.argv[1] == "gam":
+    col = gamcol(col,float(sys.argv[2]),float(sys.argv[3]),float(sys.argv[4]))
   sys.stdout.write("#")
   sys.stdout.write(col)
  else:
