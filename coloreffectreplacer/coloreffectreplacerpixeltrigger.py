@@ -272,7 +272,7 @@ while True:
  if param[1] == "dmp":
   col = dmpcol(col,param[2:])
  if param[1] == "gam":
-  col = gamcol(col,int(param[2]),int(param[3]),int(param[4]))
+  col = gamcol(col,float(param[2]),float(param[3]),float(param[4]))
  sys.stdout.write(chr(int(col[0:2],16)))
  sys.stdout.write(chr(int(col[2:4],16)))
  sys.stdout.write(chr(int(col[4:6],16)))
