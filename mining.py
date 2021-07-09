@@ -12,6 +12,7 @@ nonce = 0
 while opened:
  output = pow(atwork,nonce+difficulty,fill)
  if output < mask:
-  sys.stdout.write("Trouver A La Profondeur ::::: %s\n" %(nonce))
+  sys.stdout.write("Trouver ! ::::: %s\n" %(format(output,"064x")))
+  sys.stdout.write("A La Profondeur ::::: %s\n" %(nonce))
   opened = False
  nonce = nonce + 1
