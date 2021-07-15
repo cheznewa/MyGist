@@ -226,6 +226,18 @@ def gamcol(col,r,g,b):
  vb = str(format(vb,"02x"))
  return vr + vg + vb
 
+def shucol(col,rg,rb,gr,gb,br,bg):
+ vr = int(col[0:2],16)
+ vg = int(col[2:4],16)
+ vb = int(col[4:6],16)
+ fr = min(((int(vr*float((255-rg)/255.0))+int(vr*float((255-rb)/255.0)))/2)+((int(vg*float((gr)/255.0))+int(vb*float((br)/255.0)))/2),255)
+ fg = min(((int(vg*float((255-gr)/255.0))+int(vg*float((255-gb)/255.0)))/2)+((int(vr*float((rg)/255.0))+int(vb*float((bg)/255.0)))/2),255)
+ fb = min(((int(vb*float((255-br)/255.0))+int(vb*float((255-bg)/255.0)))/2)+((int(vr*float((rb)/255.0))+int(vg*float((gb)/255.0)))/2),255)
+ vr = str(format(fr,"02x"))
+ vg = str(format(fg,"02x"))
+ vb = str(format(fb,"02x"))
+ return vr + vg + vb
+
 import sys
 import re
 for o in sys.stdin:
@@ -272,6 +284,8 @@ for o in sys.stdin:
    col = dmpcol(col,sys.argv[2:])
   if sys.argv[1] == "gam":
    col = gamcol(col,float(sys.argv[2]),float(sys.argv[3]),float(sys.argv[4]))
+  if sys.argv[1] == "shu":
+   col = shucol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]),int(sys.argv[5]),int(sys.argv[6]),int(sys.argv[7]))
   if alpha:
    sys.stdout.write("<Color red=\"%s\" green=\"%s\" blue=\"%s\" alpha=\"%s\"/>\n" %(int(col[0:2],16),int(col[2:4],16),int(col[4:6],16),av))
   else:
