@@ -237,6 +237,21 @@ def shucol(col,rg,rb,gr,gb,br,bg):
  vg = str(format(fg,"02x"))
  vb = str(format(fb,"02x"))
  return vr + vg + vb
+ 
+from time import time
+def oldcol(col,t,l):
+ vr = int(col[0:2],16)
+ vg = int(col[2:4],16)
+ vb = int(col[4:6],16)
+ base = (vr+vg+vb)/3
+ t = min((int(time())-t)/l,255)
+ vr = int(vr*float(1-(t/255.0)))+int(base*float(t/255.0))
+ vg = int(vg*float(1-(t/255.0)))+int(base*float(t/255.0))
+ vb = int(vb*float(1-(t/255.0)))+int(base*float(t/255.0))
+ vr = str(format(vr,"02x"))
+ vg = str(format(vg,"02x"))
+ vb = str(format(vb,"02x"))
+ return vr + vg + vb
 
 import sys
 import re
@@ -286,6 +301,8 @@ for o in sys.stdin:
    col = gamcol(col,float(sys.argv[2]),float(sys.argv[3]),float(sys.argv[4]))
   if sys.argv[1] == "shu":
    col = shucol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]),int(sys.argv[5]),int(sys.argv[6]),int(sys.argv[7]))
+  if sys.argv[1] == "old":
+   col = oldcol(col,int(sys.argv[2]),int(sys.argv[3]))
   if alpha:
    sys.stdout.write("<Color red=\"%s\" green=\"%s\" blue=\"%s\" alpha=\"%s\"/>\n" %(int(col[0:2],16),int(col[2:4],16),int(col[4:6],16),av))
   else:
