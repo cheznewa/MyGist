@@ -244,10 +244,15 @@ def oldcol(col,t,l):
  vg = int(col[2:4],16)
  vb = int(col[4:6],16)
  base = (vr+vg+vb)/3
- t = min((int(time())-t)/l,255)
- vr = int(vr*float(1-(t/255.0)))+int(base*float(t/255.0))
- vg = int(vg*float(1-(t/255.0)))+int(base*float(t/255.0))
- vb = int(vb*float(1-(t/255.0)))+int(base*float(t/255.0))
+ t = min((int(time())-t)/l,511)
+ if t < 256:
+  vr = int(vr*float(1-(t/255.0)))+int(base*float(t/255.0))
+  vg = int(vg*float(1-(t/255.0)))+int(base*float(t/255.0))
+  vb = int(vb*float(1-(t/255.0)))+int(base*float(t/255.0))
+ else:
+  vr = (base/int(255.0/float(255-(t-255))))*int(255.0/float(255-(t-255)))
+  vg = (base/int(255.0/float(255-(t-255))))*int(255.0/float(255-(t-255)))
+  vb = (base/int(255.0/float(255-(t-255))))*int(255.0/float(255-(t-255)))
  vr = str(format(vr,"02x"))
  vg = str(format(vg,"02x"))
  vb = str(format(vb,"02x"))
