@@ -1,11 +1,11 @@
 // Le PT, Une Unité De Mesure BLE TOU; 1 Mettre = 4.61 PT
 registerAluOverride(0,
-function(position,outdigit)
+function(inputs,outputs)
 {
 var pos = 0;
-for (var n=0;n<position.length;n++)
+for (var n=0;n<inputs.length;n++)
 {
-pos += position[n] << n;
+pos += inputs[n] << n;
 }
 if (pos == 0)
 {
@@ -30,6 +30,6 @@ fn = 0;
 }
 for (var n=0;n<4;n++)
 {
-outdigit[n] = (fn >> n)%2;
+outputs[n] = (fn >> n)%2;
 }
 });
