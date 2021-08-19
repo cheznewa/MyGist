@@ -2,9 +2,9 @@ background:#333
 on:#8e8e95
 off:black
 gate_bg:#888
-gate_on:blue
+gate_on:#bfbfbf
 gate_off:black
-text_fg:white
+text_fg:#f5f5f5
 text_bg:black
 bus:#5b825e,#5c6c82,#825e80,#826e5e,#738267,#678279,#627082,#6d5f82
 led_off_fg:white,white,white,white,white,white,white,white,white,white
