@@ -11,3 +11,5 @@ while True:
   else:
    sys.stdout.write(b58encode_int(min))
   sys.stdout.write("\n")
+ sys.stdout.write(b58encode_int(min+1))
+ sys.stdout.write("\n")
