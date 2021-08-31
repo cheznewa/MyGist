@@ -8,4 +8,4 @@ sys.stdout.write("farbfeld%s%s" %(b,b))
 for n in range(pow(pow(2,int(sys.argv[1])),2)):
  p = hilbert.distance_from_coordinates([n%pow(2,int(sys.argv[1])),n/pow(2,int(sys.argv[1]))])
  c = o[p]
- sys.stdout.write("%s%s%s%s%s%s%s%s" %(c,c,c,c,c,c,c,c))
+ sys.stdout.write("%s%s%s%s%s%s\xff\xff" %(c,c,c,c,c,c))
