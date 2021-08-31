@@ -258,6 +258,22 @@ def oldcol(col,t,l):
  vb = str(format(vb,"02x"))
  return vr + vg + vb
 
+def depcol(col,bfar,bclose):
+ vr = int(col[0:2],16)
+ vg = int(col[2:4],16)
+ vb = int(col[4:6],16)
+ ar = int(bfar[0:2],16)
+ ag = int(bfar[2:4],16)
+ ab = int(bfar[4:6],16)
+ br = int(bclose[0:2],16)
+ bg = int(bclose[2:4],16)
+ bb = int(bclose[4:6],16)
+ aa = max(abs(vr-ar)+abs(vg-ag)+abs(vb-ab),0)
+ bb = max(abs(vr-br)+abs(vg-bg)+abs(vb-bb),0)
+ cc = max((aa-bb)/3,0)
+ vr = str(format(cc,"02x"))
+ return vr + vr + vr
+
 import sys
 if not "farbfeld" == sys.stdin.read(8):
  exit(1)
@@ -306,6 +322,8 @@ while bool(n):
   col = shucol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]),int(sys.argv[5]),int(sys.argv[6]),int(sys.argv[7]))
  if sys.argv[1] == "old":
   col = oldcol(col,int(sys.argv[2]),int(sys.argv[3]))
+ if sys.argv[1] == "dep":
+  col = depcol(col,sys.argv[2],sys.argv[3])
  sys.stdout.write(chr(int(col[0:2],16)))
  sys.stdout.write(o[1])
  sys.stdout.write(chr(int(col[2:4],16)))

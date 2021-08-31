@@ -258,6 +258,22 @@ def oldcol(col,t,l):
  vb = str(format(vb,"02x"))
  return vr + vg + vb
 
+def depcol(col,bfar,bclose):
+ vr = int(col[0:2],16)
+ vg = int(col[2:4],16)
+ vb = int(col[4:6],16)
+ ar = int(bfar[0:2],16)
+ ag = int(bfar[2:4],16)
+ ab = int(bfar[4:6],16)
+ br = int(bclose[0:2],16)
+ bg = int(bclose[2:4],16)
+ bb = int(bclose[4:6],16)
+ aa = max(abs(vr-ar)+abs(vg-ag)+abs(vb-ab),0)
+ bb = max(abs(vr-br)+abs(vg-bg)+abs(vb-bb),0)
+ cc = max((aa-bb)/3,0)
+ vr = str(format(cc,"02x"))
+ return vr + vr + vr
+
 import sys
 fsa = open(sys.argv[1],"r")
 u = 0
@@ -305,10 +321,12 @@ while True:
   col = dmpcol(col,param[2:])
  if param[1] == "gam":
   col = gamcol(col,float(param[2]),float(param[3]),float(param[4]))
- if sys.argv[1] == "shu":
+ if param[1] == "shu":
   col = shucol(col,int(param[2]),int(param[3]),int(param[4]),int(param[5]),int(param[6]),int(param[7]))
- if sys.argv[1] == "old":
+ if param[1] == "old":
   col = oldcol(col,int(param[2]),intparam[3]))
+ if param[1] == "dep":
+  col = depcol(col,param[2],param[3])
  sys.stdout.write(chr(int(col[0:2],16)))
  sys.stdout.write(chr(int(col[2:4],16)))
  sys.stdout.write(chr(int(col[4:6],16)))
