@@ -5,7 +5,7 @@
 // Et Accrochez-Vous !
 // Mettez Ce Fichier Sur Votre Serveur Local Et Rennomé En index.php
 // Si Ca Ne Marche Pas, Vous Devrait Vous-Même Télécharger Les Fichier Qui Manque à L'apelle.
-$freedomaines = ["newanotremaitre.chezsick","timeanddatebletou.chezsick","logicemu.chezsick","jslinux.chezsick","randomlike.chezsick","colormodem.chezsick","dafont.chezsick","pagerankcalc.chezsick","pdf2htmlex.chezsick","lhvtools.chezsick","cestpassorcier.chezsick","dexsilicium.chezsick","logicemu2luxar.chezsick","titeuf.chezsick","codelyoko.chezsick","kidpaddle.chezsick","emonote.chezsick","garfield.chezsick","problemepointageamerindienne.chezsick","visualarm1.chezsick","infernalcounter.chezsick","internetmerespectpas.chezsick","openfoodfacts.chezsick"];
+$freedomaines = ["newanotremaitre.chezsick","timeanddatebletou.chezsick","logicemu.chezsick","jslinux.chezsick","randomlike.chezsick","colormodem.chezsick","dafont.chezsick","pagerankcalc.chezsick","pdf2htmlex.chezsick","lhvtools.chezsick","cestpassorcier.chezsick","dexsilicium.chezsick","logicemu2luxar.chezsick","titeuf.chezsick","codelyoko.chezsick","kidpaddle.chezsick","emonote.chezsick","garfield.chezsick","problemepointageamerindienne.chezsick","visualarm1.chezsick","infernalcounter.chezsick","internetmerespectpas.chezsick","openfoodfacts.chezsick","javascriptreplay.chezsick"];
 if ($_SERVER["HTTP_HOST"] == "linksourmaster.chezsick")
 {
 echo "<title>ChezSick Links</title>";
@@ -220,7 +220,7 @@ elseif ($_SERVER["HTTP_HOST"] == $freedomaines[12])
 {
 if (!file_exists("LUXAR"))
 {
-exec("mkdir LUXAR");
+mkdir("LUXAR");
 exec("youtube-dl -o 'LUXAR/%(title)s.%(ext)s' https://soundcloud.com/stephane-marty-185716647/sets/luxar");
 }
 echo "<head><title>LogicEmu - Online Logic Simulator</title></head>";
@@ -416,6 +416,10 @@ break;
 }
 echo "</tt>";
 }
+}
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[23])
+{
+echo bzdecompress(base64_decode("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")); // Need :::::::::::: https://github.com/josch/scriptreplayjs Just VT100.js And scriptreplay.js
 }
 else
 {
