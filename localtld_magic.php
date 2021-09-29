@@ -1,19 +1,25 @@
 <?php
 // Je Vais Faire De La Magie Avec ::::::::::::::: https://github.com/jweslley/localtld
-// Ou Fois Installer, Faite La Commande :::::: LOCALTLD=chezsick _browser_
-// Pour Commencé :::::::::::::::: [linksourmaster.chezsick](http://linksourmaster.chezsick)
+// Ou Fois Installer, Faite La Commande :::::: LOCALTLD=chezsick-red,chezsick-green,chezsick-yellow,chezsick-blue,chezsick-orange,chezsick-purple,chezsick-cyan,chezsick-magenta,chezsick-lime,chezsick-pink,chezsick-teal,chezsick-lavender,chezsick-brown,chezsick-beige,chezsick-maroon,chezsick-mint,chezsick-olive,chezsick-apricot,chezsick-navy,chezsick-grey,chezsick-white,chezsick-black _browser_
+// Pour Commencé :::::::::::::::: [linksourmaster.chezsick-black](http://linksourmaster.chezsick-black)
 // Et Accrochez-Vous !
 // Mettez Ce Fichier Sur Votre Serveur Local Et Rennomé En index.php
 // Si Ca Ne Marche Pas, Vous Devrait Vous-Même Télécharger Les Fichier Qui Manque à L'apelle.
-$freedomaines = ["newanotremaitre.chezsick","timeanddatebletou.chezsick","logicemu.chezsick","jslinux.chezsick","randomlike.chezsick","colormodem.chezsick","dafont.chezsick","pagerankcalc.chezsick","pdf2htmlex.chezsick","lhvtools.chezsick","cestpassorcier.chezsick","dexsilicium.chezsick","logicemu2luxar.chezsick","titeuf.chezsick","codelyoko.chezsick","kidpaddle.chezsick","emonote.chezsick","garfield.chezsick","problemepointageamerindienne.chezsick","visualarm1.chezsick","infernalcounter.chezsick","internetmerespectpas.chezsick","openfoodfacts.chezsick","javascriptreplay.chezsick"];
-if ($_SERVER["HTTP_HOST"] == "linksourmaster.chezsick")
+// Nouveau :::: Désormais Les Sites Sont Labelisé D'une Couleur Les Noir Sont A Moi, Les D'autre En Dépend, Quand Aux Rouge, Pas Touche !
+$freedomaines = ["newanotremaitre.chezsick-black","timeanddatebletou.chezsick-black","logicemu.chezsick-green","jslinux.chezsick-cyan","randomlike.chezsick-black","colormodem.chezsick-white","dafont.chezsick-purple","pagerankcalc.chezsick-magenta","pdf2htmlex.chezsick-teal","lhvtools.chezsick-green","cestpassorcier.chezsick-olive","dexsilicium.chezsick-maroon","logicemu2luxar.chezsick-brown","titeuf.chezsick-beige","codelyoko.chezsick-green","kidpaddle.chezsick-green","emonote.chezsick-black","garfield.chezsick-blue","problemepointageamerindienne.chezsick-grey","visualarm1.chezsick-green","infernalcounter.chezsick-mint","internetmerespectpas.chezsick-navy","openfoodfacts.chezsick-yellow","javascriptreplay.chezsick-lime","powwows.chezsick-red"];
+if ($_SERVER["HTTP_HOST"] == "linksourmaster.chezsick-black")
 {
 echo "<title>ChezSick Links</title>";
-echo "<h1>Liste Des Sites De Newa Disponible</h1>";
+echo "<h1>List Of Newa's Website Avaliable</h1>";
+if (!(isset($_GET["dont"])))
+$_GET["dont"] = 0;
 foreach ($freedomaines as $domaine)
 {
+if ((substr($domaine,-4) != "-red") || boolval($_GET["dont"]))
 echo "<a href=\"http://$domaine\">$domaine</a><br/>";
 }
+if (!($_GET["dont"]))
+echo "<br/><a href='?dont=1'>Just Don't Click Please, NO!!!</a>";
 }
 elseif ($_SERVER["HTTP_HOST"] == $freedomaines[0])
 {
@@ -420,6 +426,36 @@ echo "</tt>";
 elseif ($_SERVER["HTTP_HOST"] == $freedomaines[23])
 {
 echo bzdecompress(base64_decode("QlpoOTFBWSZTWa63G0gAAebfgFEQff/33z92HQ/////6YAZcmfbpds7bAVtimtVK7bDQgINEm0aaMmTUQ2k9I3qj01NAA0eifqTQDQIVPMkNNNJpkaaBppoAAAAAAHGTJoYjE0YBGAmEAYCaaNMjQDCRFGSamYUGp4IUeykYgwgA0GRkwjIcZMmhiMTRgEYCYQBgJpo0yNAMJIjU0Apmk8pT2mjTRT9Kepp6jagepoNAGgPU9RYIOB2iGinwgPjEOxC5wWVJQ2ez4TKaaGDXn88TEHu/f+KWLfiJCuBdKaYNCgN/u1O1AJECDosaxvbL0CMgSZHMa6MXbD5rr1drEH8y93FomXPNkM++teKV8bOJvpxuWuNmrH9I2EMEcpndLeaYQhnBMdEkawbmpLJdNYGeITi1ZBwfcwShezDnDJBVS7EVRWZ2CSRi6FKB1o5OR60tyV1rDE+kHZoDgbA326EcchRS19muSt50nTYUh51aUFXDYYy1SQteq+kFZdi9XvrPiCuBQIxKSeulByeDJ31XKuFhABGxpbw7BCf2OCOnWU6+/KfoGA2McMht8WEtTur5lnX5uiSqsjiYtrRAVeV9Qc/4ZsD93OA0gZTBLnkAHdVkPHz2deeSpU2BmNaM39lyVl/aHueB189FCjFttdGvUNxjawE+oHOrcYiMcMoHAdK8vggX6NVTXc0IoMzaWonpZH07FBYLZqibYtU49iPYeyGZmZuSGec7X1OKm9HZDZRkVHLCZsMtatcusAsk9bxJJTdo5prUJ5jljUHXr1TaOX0vebd+ouQCAYkEw73DpqqjAgaaEwhpRDIa/37m9yS5Q0Qmx+r3x/mmNW2XrZPy70hx33LZVxvGtLLBlsR97bFj2WJeXhkW2llF1vWiGuGldN5Aw092kw43Hu75gKcC045wF1cXAsUWGOTwIygYzAy2VH49S8CpkzoJ6evkOJT3a6XW+Fy1zBf5FAZrnjj2U8uhsyFReOncucGnYL0QpnMjZAtrL1mLd5WYyjZgzwK+bEf7498j8xM4Bb9lq5mkPqG97rYjnoSJQNkMZ5Z+wn3Se69YPt3lfJTnahYkkwFd489yHkGUOSGdh3ZeYN4YpxkThmRwFKQFdhlDT9wTK9pYqXiwtP+/baYbydkvn7bpUru6WKMrCkjongKLXk1ELgjtJ3sXXupOPwwvnBCDJ4cgZjstCAqFzCwA33aVVA9+QrhT5EHKKgHbkVZiwvkByRFtTHI0oAse0r0aI1WCYM8apl+1Fns6WupUS7U+fiuSw4j8TXGthPrkrLXLNQZscBiBS4hJGO3V/U+bdoz7MOWIK2dhOgDGL04MMG0zsMonPpWVg1+RJgoqGETKwUuxtSgtBnCVS9p1DNXcp46rYlFch6XcVvBJ7UkrO0PETn0yced9CutHlTNMerNdja92aNfV0s5gxvfXMiNCrpSWL9YtpWLlqZ3a+EGS518oZUox2Vq89RFv96tdnD4LM+hNVbWLiyFzK8reRoiYTmFQsypERFksuGNzCF/SE1PZCSkkKE6CiCorVZAtsipkZVDohzliaKEJLSUgscvRqYO5jz27DpRz7jEvaPSWndS4xAGZIZhntl6ShVWUB96FgQJg3QRoSSIbGadvqvDhtu3gdMtqqnSZkiNAHZtAYeU+UMwzor0eO5UkBpv1sHErckz+fejhIwxc6lRkI0iE0uJma2NYUp3iCnNYOIhuRTWLGNT15Eirohr1LRXSLRmCyuvqSS3RO8Zge4wlQhzoeTyuk8zLM3d2I4XWdbbP+39B7MYLR37VEqU2cNykOTkO+y4W0rKi4qNIczExFuRDEzNXp7DwcriMLni31CZUpdlG53bD7XwmMd5Jp22xMxtwtmtCV4XZZAryXUMtESvImqct0c16g13mEwDIlItCYMKefI0yVeOXbSV1wMK1tPZmENOaq1TA2XqC3vx9eKFeNC39nMbSqxaXUjEM75wwpFNIqXQykCkCeQiyQeJTEU5WEsUCC5c0gVofz70+NKiGMYYsFC+S46wI6zscrQ2ZRC8vLWlHrFLgMM1u/vnUloTGtsQ33Rw/F0Rj8YwRsetpdBaHdJlqCiF2oNnMVQy/4u5IpwoSFdbjaQA=")); // Need :::::::::::: https://github.com/josch/scriptreplayjs Just VT100.js And scriptreplay.js
+}
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[24])
+{
+$themevideo = "powwows";
+$themetitle = "Pow Wow";
+$url        = "https://www.youtube.com/c/Powwows/videos";
+echo "<title>$themetitle</title>";
+echo "<h1>$themetitle</h1>";
+if (isset($_GET["v"]))
+{
+echo "<video controls><source src=\"".$themevideo."/".$_GET['v']."\"></video><br/>";
+echo file_get_contents($themevideo."/".basename($_GET['v'],".mp4").".description");
+}
+else
+{
+$vids = scandir($themevideo);
+if ($vids == null)
+{
+mkdir($themevideo);
+exec("youtube-dl -i -f mp4 -o \"$themevideo/%(title)s.%(ext)s\" --write-thumbnail --write-description --playlist-end 100 $url");
+exec("mogrify -format webp $themevideo/*.jpg");
+}
+foreach ($vids as $video)
+{
+if (pathinfo($video,PATHINFO_EXTENSION) == "mp4")
+{
+echo "<img width='100' src=\"".$themevideo."/".basename($video,".mp4").".webp\"><a href=\"?v=$video\">".basename($video,".mp4")."</a><br/>";
+}
+}
+}
 }
 else
 {
