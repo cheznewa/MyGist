@@ -7,7 +7,7 @@
 // Si Ca Ne Marche Pas, Vous Devrait Vous-Même Télécharger Les Fichier Qui Manque à L'apelle.
 // Nouveau :::: Désormais Les Sites Sont Labelisé D'une Couleur Les Noir Sont A Moi, Les D'autre En Dépend, Quand Aux Rouge, Pas Touche !
 $nonhtml = false;
-$freedomaines = ["newanotremaitre.chezsick-black","timeanddatebletou.chezsick-black","logicemu.chezsick-green","jslinux.chezsick-cyan","randomlike.chezsick-black","colormodem.chezsick-white","dafont.chezsick-purple","pagerankcalc.chezsick-magenta","pdf2htmlex.chezsick-teal","lhvtools.chezsick-green","cestpassorcier.chezsick-olive","dexsilicium.chezsick-maroon","logicemu2luxar.chezsick-brown","titeuf.chezsick-beige","codelyoko.chezsick-green","kidpaddle.chezsick-green","emonote.chezsick-black","garfield.chezsick-blue","problemepointageamerindienne.chezsick-grey","visualarm1.chezsick-green","infernalcounter.chezsick-mint","internetmerespectpas.chezsick-navy","openfoodfacts.chezsick-yellow","javascriptreplay.chezsick-lime","powwows.chezsick-red","emoticon-composer.chezsick-mint"];
+$freedomaines = ["newanotremaitre.chezsick-black","timeanddatebletou.chezsick-black","logicemu.chezsick-green","jslinux.chezsick-cyan","randomlike.chezsick-black","colormodem.chezsick-white","dafont.chezsick-purple","pagerankcalc.chezsick-magenta","pdf2htmlex.chezsick-teal","lhvtools.chezsick-green","cestpassorcier.chezsick-olive","dexsilicium.chezsick-maroon","logicemu2luxar.chezsick-brown","titeuf.chezsick-beige","codelyoko.chezsick-green","kidpaddle.chezsick-green","emonote.chezsick-black","garfield.chezsick-blue","problemepointageamerindienne.chezsick-grey","visualarm1.chezsick-green","infernalcounter.chezsick-mint","internetmerespectpas.chezsick-navy","openfoodfacts.chezsick-yellow","javascriptreplay.chezsick-lime","powwows.chezsick-red","emoticon-composer.chezsick-mint","ptmeasureonemilliondecimal.chezsick-black"];
 if ($_SERVER["HTTP_HOST"] == "linksourmaster.chezsick-black")
 {
 echo "<title>ChezSick Links</title>";
@@ -463,6 +463,7 @@ echo "<img width='100' src=\"".$themevideo."/".basename($video,".mp4").".webp\">
 }
 elseif ($_SERVER["HTTP_HOST"] == $freedomaines[25])
 {
+echo "<title>Emoticon Composer</title>";
 echo "<style>@font-face{font-family:'emoticon-composer';src:url('emoticon-composer-Regular.ttf');}</style>"; // You Need :::::::::::::: https://github.com/google/emoticon-composer-font/blob/master/fonts/emoticon-composer-Regular.ttf
 echo "<h1>Emoticon Composer</h1>";
 echo "<input type='text' id='emo_in'><br/><font face='emoticon-composer' style='font-size:36px;' id='emo_out'></font>";
@@ -483,9 +484,25 @@ echo chr($n);
 }
 echo "<script>function emo_time(){emo_out.innerHTML = emo_in.value;};setInterval(emo_time,40);</script>";
 }
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[26])
+{
+echo "<tt>4.";
+for ($n = 2;$n <= 1000000;$n++)
+{
+$s = strval($n*$n);
+$u = 0;
+for ($m=0;$m<strlen($s);$m++)
+$u = $u + intval($s[$m]);
+$a = (10-($u%10))%10;
+echo $a;
+if (boolval($n % 200) == 0)
+echo "<br/>";
+}
+echo "</tt>";
+}
 else
 {
-echo "<tt>Name Unknow!<br/><a href='http://linksourmaster.chezsick'>Return The Links</a></tt>";
+echo "<tt>Name Unknow!<br/><a href='http://linksourmaster.chezsick-black'>Return The Links</a></tt>";
 }
 $domcum = explode(".",$_SERVER["HTTP_HOST"]);
 switch ($domcum[1])
