@@ -466,7 +466,7 @@ elseif ($_SERVER["HTTP_HOST"] == $freedomaines[25])
 echo "<title>Emoticon Composer</title>";
 echo "<style>@font-face{font-family:'emoticon-composer';src:url('emoticon-composer-Regular.ttf');}</style>"; // You Need :::::::::::::: https://github.com/google/emoticon-composer-font/blob/master/fonts/emoticon-composer-Regular.ttf
 echo "<h1>Emoticon Composer</h1>";
-echo "<input type='text' id='emo_in'><br/><font face='emoticon-composer' style='font-size:36px;' id='emo_out'></font>";
+echo "<input type='text' id='emo_in'><br/><font face='emoticon-composer' style='font-size:72px;' id='emo_out'></font>";
 echo "<h2>Eyes (Uppercase)</h2><font style='font-size:48px;' face='emoticon-composer'>";
 for ($n = 65;$n <= 90;$n++)
 {
@@ -486,6 +486,7 @@ echo "<script>function emo_time(){emo_out.innerHTML = emo_in.value;};setInterval
 }
 elseif ($_SERVER["HTTP_HOST"] == $freedomaines[26])
 {
+echo "<title>PT Measure - One Million Digits";
 echo "<tt>4.";
 for ($n = 2;$n <= 1000000;$n++)
 {
