@@ -486,7 +486,7 @@ echo "<script>function emo_time(){emo_out.innerHTML = emo_in.value;};setInterval
 }
 elseif ($_SERVER["HTTP_HOST"] == $freedomaines[26])
 {
-echo "<title>PT Measure - One Million Digits";
+echo "<title>PT Measure - One Million Digits</title>";
 echo "<tt>4.";
 for ($n = 2;$n <= 1000000;$n++)
 {
