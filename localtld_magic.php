@@ -6,85 +6,8 @@
 // Mettez Ce Fichier Sur Votre Serveur Local Et Rennomé En index.php
 // Si Ca Ne Marche Pas, Vous Devrait Vous-Même Télécharger Les Fichier Qui Manque à L'apelle.
 // Nouveau :::: Désormais Les Sites Sont Labelisé D'une Couleur Les Noir Sont A Moi, Les D'autre En Dépend, Quand Aux Rouge, Pas Touche !
-$freedomaines = ["newanotremaitre.chezsick-black","timeanddatebletou.chezsick-black","logicemu.chezsick-green","jslinux.chezsick-cyan","randomlike.chezsick-black","colormodem.chezsick-white","dafont.chezsick-purple","pagerankcalc.chezsick-magenta","pdf2htmlex.chezsick-teal","lhvtools.chezsick-green","cestpassorcier.chezsick-olive","dexsilicium.chezsick-maroon","logicemu2luxar.chezsick-brown","titeuf.chezsick-beige","codelyoko.chezsick-green","kidpaddle.chezsick-green","emonote.chezsick-black","garfield.chezsick-blue","problemepointageamerindienne.chezsick-grey","visualarm1.chezsick-green","infernalcounter.chezsick-mint","internetmerespectpas.chezsick-navy","openfoodfacts.chezsick-yellow","javascriptreplay.chezsick-lime","powwows.chezsick-red"];
-$domcum = explode(".",$_SERVER["HTTP_HOST"]);
-switch ($domcum[1])
-{
-case "chezsick-red":
-$color = "E6194B";
-break;
-case "chezsick-green":
-$color = "3CB44B";
-break;
-case "chezsick-yellow":
-$color = "FFE119";
-break;
-case "chezsick-blue":
-$color = "4363D8";
-break;
-case "chezsick-orange":
-$color = "F58231";
-break;
-case "chezsick-purple":
-$color = "911EB4";
-break;
-case "chezsick-cyan":
-$color = "42D4F4";
-break;
-case "chezsick-magenta":
-$color = "F032E6";
-break;
-case "chezsick-lime":
-$color = "BFEF45";
-break;
-case "chezsick-pink":
-$color = "FABED4";
-break;
-case "chezsick-teal":
-$color = "469990";
-break;
-case "chezsick-lavender":
-$color = "DCBEFF";
-break;
-case "chezsick-brown":
-$color = "9A6324";
-break;
-case "chezsick-beige":
-$color = "FFFAC8";
-break;
-case "chezsick-maroon":
-$color = "800000";
-break;
-case "chezsick-mint":
-$color = "AAFFC3";
-break;
-case "chezsick-olive":
-$color = "808000";
-break;
-case "chezsick-abricot":
-$color = "FFD8B1";
-break;
-case "chezsick-navy":
-$color = "000075";
-break;
-case "chezsick-abricot":
-$color = "FFD8B1";
-break;
-case "chezsick-grey":
-$color = "A9A9A9";
-break;
-case "chezsick-white":
-$color = "FFFFFF";
-break;
-case "chezsick-black":
-$color = "000000";
-break;
-default:
-$color = "000000";
-break;
-}
-$imgpadlock = base64_encode("<?xml version='1.0' encoding='UTF-8' standalone='no'?><svg xmlns:inkscape='http://www.inkscape.org/namespaces/inkscape' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns='http://www.w3.org/2000/svg' xmlns:cc='http://creativecommons.org/ns#' xmlns:dc='http://purl.org/dc/elements/1.1/' xmlns:sodipodi='http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd' xmlns:svg='http://www.w3.org/2000/svg' xmlns:ns1='http://sozi.baierouge.fr' xmlns:xlink='http://www.w3.org/1999/xlink' id='svg2064' sodipodi:docname='padlock_silhouette_a.j.__01.svg' viewBox='0 0 85.603 121.62' sodipodi:version='0.32' version='1.0' inkscape:output_extension='org.inkscape.output.svg.inkscape' y='0' x='0' inkscape:version='0.46'><sodipodi:namedview id='base' bordercolor='#666666' inkscape:pageshadow='2' guidetolerance='10.0' pagecolor='#ffffff' gridtolerance='10.0' inkscape:zoom='3.0933333' objecttolerance='10.0' borderopacity='1.0' inkscape:current-layer='g2061' inkscape:cx='19.881466' inkscape:cy='72.737069' inkscape:window-y='44' inkscape:window-x='0' inkscape:window-height='1006' showgrid='false' inkscape:pageopacity='0.0' inkscape:window-width='1680'/><g id='layer1' transform='translate(-32.199 -14.191)'><g id='g2061' transform='translate(10.641 12.191)'><path id='rect2723' style='fill-rule:evenodd;fill:#$color' d='m64.359 2c-20.072 0-36.231 16.159-36.231 36.231v40.256h10.064v-40.256c0-14.497 11.671-26.167 26.167-26.167s26.167 11.67 26.167 26.167v40.256h10.064v-40.256c0-20.072-16.159-36.231-36.231-36.231z'/><rect id='rect1941' style='fill-rule:evenodd;fill:#$color' rx='0.5' ry='.5' height='66.259' width='85.603' y='57.359' x='21.558'/></g></g></svg>"); // https://openclipart.org/download/17932/AJ-Padlock-Silhouette.svg
-echo "<img width='24' style='position:fixed;right:8px;top:8px' src='data:image/svg+xml;base64,$imgpadlock'/>";
+$nonhtml = false;
+$freedomaines = ["newanotremaitre.chezsick-black","timeanddatebletou.chezsick-black","logicemu.chezsick-green","jslinux.chezsick-cyan","randomlike.chezsick-black","colormodem.chezsick-white","dafont.chezsick-purple","pagerankcalc.chezsick-magenta","pdf2htmlex.chezsick-teal","lhvtools.chezsick-green","cestpassorcier.chezsick-olive","dexsilicium.chezsick-maroon","logicemu2luxar.chezsick-brown","titeuf.chezsick-beige","codelyoko.chezsick-green","kidpaddle.chezsick-green","emonote.chezsick-black","garfield.chezsick-blue","problemepointageamerindienne.chezsick-grey","visualarm1.chezsick-green","infernalcounter.chezsick-mint","internetmerespectpas.chezsick-navy","openfoodfacts.chezsick-yellow","javascriptreplay.chezsick-lime","powwows.chezsick-red","emoticon-composer.chezsick-mint"];
 if ($_SERVER["HTTP_HOST"] == "linksourmaster.chezsick-black")
 {
 echo "<title>ChezSick Links</title>";
@@ -228,6 +151,7 @@ echo "Oops!";
 exec("/usr/local/bin/pdf2htmlEX --zoom 1.618 --dest-dir /tmp/ ///tmp/".$pdf.".pdf ".$pdf.".html");
 header("Content-Type: text/html");
 echo "<title>pdf2htmlEX</title>";
+$nonhtml = true;
 readfile("/tmp/".$pdf.".html");
 }
 else
@@ -421,6 +345,7 @@ $nota = intval($_GET["emo"])+188;
 header("Content-Type: image/png");
 $id = uniqid();
 $img = exec("convert -size 256x256 xc:none -stroke black -strokewidth 2.5 -fill none -draw \"circle 128,128 128,253 circle 64,64 64,68 circle 192,64 192,68 bezier 64,188 128,$nota 192,188\" /tmp/$id.png");
+$nonhtml = true;
 readfile("/tmp/$id.png");
 }
 else
@@ -509,7 +434,7 @@ echo bzdecompress(base64_decode("QlpoOTFBWSZTWa63G0gAAebfgFEQff/33z92HQ/////6YAZ
 elseif ($_SERVER["HTTP_HOST"] == $freedomaines[24])
 {
 $themevideo = "powwows";
-$themetitle = "Pow Wow";
+$themetitle = "Pow-Wow";
 $url        = "https://www.youtube.com/c/Powwows/videos";
 echo "<title>$themetitle</title>";
 echo "<h1>$themetitle</h1>";
@@ -536,8 +461,109 @@ echo "<img width='100' src=\"".$themevideo."/".basename($video,".mp4").".webp\">
 }
 }
 }
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[25])
+{
+echo "<style>@font-face{font-family:'emoticon-composer';src:url('emoticon-composer-Regular.ttf');}</style>"; // You Need :::::::::::::: https://github.com/google/emoticon-composer-font/blob/master/fonts/emoticon-composer-Regular.ttf
+echo "<h1>Emoticon Composer</h1>";
+echo "<input type='text' id='emo_in'><br/><font face='emoticon-composer' style='font-size:36px;' id='emo_out'></font>";
+echo "<h2>Eyes (Uppercase)</h2><font style='font-size:48px;' face='emoticon-composer'>";
+for ($n = 65;$n <= 90;$n++)
+{
+echo chr($n);
+}
+echo "</font><h2>Mouth (Lowercase)</h2><font style='font-size:48px;' face='emoticon-composer'>";
+for ($n = 97;$n <= 122;$n++)
+{
+echo chr($n);
+}
+echo "</font><h2>Extra (Digit)</h2><font style='font-size:48px;' face='emoticon-composer'>";
+for ($n = 48;$n <= 57;$n++)
+{
+echo chr($n);
+}
+echo "<script>function emo_time(){emo_out.innerHTML = emo_in.value;};setInterval(emo_time,40);</script>";
+}
 else
 {
 echo "<tt>Name Unknow!<br/><a href='http://linksourmaster.chezsick'>Return The Links</a></tt>";
 }
+$domcum = explode(".",$_SERVER["HTTP_HOST"]);
+switch ($domcum[1])
+{
+case "chezsick-red":
+$color = "E6194B";
+break;
+case "chezsick-green":
+$color = "3CB44B";
+break;
+case "chezsick-yellow":
+$color = "FFE119";
+break;
+case "chezsick-blue":
+$color = "4363D8";
+break;
+case "chezsick-orange":
+$color = "F58231";
+break;
+case "chezsick-purple":
+$color = "911EB4";
+break;
+case "chezsick-cyan":
+$color = "42D4F4";
+break;
+case "chezsick-magenta":
+$color = "F032E6";
+break;
+case "chezsick-lime":
+$color = "BFEF45";
+break;
+case "chezsick-pink":
+$color = "FABED4";
+break;
+case "chezsick-teal":
+$color = "469990";
+break;
+case "chezsick-lavender":
+$color = "DCBEFF";
+break;
+case "chezsick-brown":
+$color = "9A6324";
+break;
+case "chezsick-beige":
+$color = "FFFAC8";
+break;
+case "chezsick-maroon":
+$color = "800000";
+break;
+case "chezsick-mint":
+$color = "AAFFC3";
+break;
+case "chezsick-olive":
+$color = "808000";
+break;
+case "chezsick-abricot":
+$color = "FFD8B1";
+break;
+case "chezsick-navy":
+$color = "000075";
+break;
+case "chezsick-abricot":
+$color = "FFD8B1";
+break;
+case "chezsick-grey":
+$color = "A9A9A9";
+break;
+case "chezsick-white":
+$color = "FFFFFF";
+break;
+case "chezsick-black":
+$color = "000000";
+break;
+default:
+$color = "000000";
+break;
+}
+$imgpadlock = base64_encode("<?xml version='1.0' encoding='UTF-8' standalone='no'?><svg xmlns:inkscape='http://www.inkscape.org/namespaces/inkscape' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns='http://www.w3.org/2000/svg' xmlns:cc='http://creativecommons.org/ns#' xmlns:dc='http://purl.org/dc/elements/1.1/' xmlns:sodipodi='http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd' xmlns:svg='http://www.w3.org/2000/svg' xmlns:ns1='http://sozi.baierouge.fr' xmlns:xlink='http://www.w3.org/1999/xlink' id='svg2064' sodipodi:docname='padlock_silhouette_a.j.__01.svg' viewBox='0 0 85.603 121.62' sodipodi:version='0.32' version='1.0' inkscape:output_extension='org.inkscape.output.svg.inkscape' y='0' x='0' inkscape:version='0.46'><sodipodi:namedview id='base' bordercolor='#666666' inkscape:pageshadow='2' guidetolerance='10.0' pagecolor='#ffffff' gridtolerance='10.0' inkscape:zoom='3.0933333' objecttolerance='10.0' borderopacity='1.0' inkscape:current-layer='g2061' inkscape:cx='19.881466' inkscape:cy='72.737069' inkscape:window-y='44' inkscape:window-x='0' inkscape:window-height='1006' showgrid='false' inkscape:pageopacity='0.0' inkscape:window-width='1680'/><g id='layer1' transform='translate(-32.199 -14.191)'><g id='g2061' transform='translate(10.641 12.191)'><path id='rect2723' style='fill-rule:evenodd;fill:#$color' d='m64.359 2c-20.072 0-36.231 16.159-36.231 36.231v40.256h10.064v-40.256c0-14.497 11.671-26.167 26.167-26.167s26.167 11.67 26.167 26.167v40.256h10.064v-40.256c0-20.072-16.159-36.231-36.231-36.231z'/><rect id='rect1941' style='fill-rule:evenodd;fill:#$color' rx='0.5' ry='.5' height='66.259' width='85.603' y='57.359' x='21.558'/></g></g></svg>"); // https://openclipart.org/download/17932/AJ-Padlock-Silhouette.svg
+if (!($nonhtml))
+echo "<img width='24' style='position:fixed;right:8px;top:8px;' src='data:image/svg+xml;base64,$imgpadlock'/>";
 ?>
