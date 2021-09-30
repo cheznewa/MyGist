@@ -25,7 +25,34 @@ echo "<br/><a href='?dont=1'>Just Don't Click Please, NO!!!</a>";
 }
 elseif ($_SERVER["HTTP_HOST"] == $freedomaines[0])
 {
-echo "<title>Newa Notre Maitre - Site Officiel</title><style>body{background-color:#00288c;color:white;}</style><h1>Bonjour Tout Le Monde, C'est Newa Notre Maitre !</h1>Je Suis Un Grand Oiseau, Et Je Joue De La Flute Des Andes, Passionné De Culture Amerindienne (En Interne), Je Suis Sur L'ordinateur Depuis Pas Mal De Temps.";
+echo "<style>body{background-color:#00288c;color:white;}a{color:#feec00;}</style>";
+$themevideo = "newanotremaitre";
+$url        = "https://www.youtube.com/channel/UCZ6aZWdqc2toGWP1xqRoSaw/videos";
+if (isset($_GET["v"]))
+{
+echo "<h1>".basename($_GET["v"],".mp4")."</h1>";
+echo "<video controls><source src=\"".$themevideo."/".$_GET['v']."\"></video><br/>";
+echo file_get_contents($themevideo."/".basename($_GET['v'],".mp4").".description");
+}
+else
+{
+$vids = scandir($themevideo);
+if ($vids == null)
+{
+mkdir($themevideo);
+exec("youtube-dl -i -f 'mp4[height <= 360]' -o \"$themevideo/%(title)s.%(ext)s\" --write-thumbnail --write-description $url");
+exec("mogrify -format webp $themevideo/*.jpg");
+}
+echo "<title>Newa Notre Maitre - Site Officiel</title><h1>Bonjour Tout Le Monde, C'est Newa Notre Maitre !</h1>Je Suis Un Grand Oiseau, Et Je Joue De La Flute Des Andes, Passionné De Culture Amerindienne (En Interne), Je Suis Sur L'ordinateur Depuis Pas Mal De Temps.";
+echo "<h1>Mes Vidéos</h1>";
+foreach ($vids as $video)
+{
+if (pathinfo($video,PATHINFO_EXTENSION) == "mp4")
+{
+echo "<img width='100' src=\"".$themevideo."/".basename($video,".mp4").".webp\"><a href=\"?v=$video\">".basename($video,".mp4")."</a><br/>";
+}
+}
+}
 }
 elseif ($_SERVER["HTTP_HOST"] == $freedomaines[1])
 {
@@ -183,7 +210,7 @@ $vids = scandir($themevideo);
 if ($vids == null)
 {
 mkdir($themevideo);
-exec("youtube-dl -i -f mp4 -o \"$themevideo/%(title)s.%(ext)s\" --write-thumbnail --write-description $url");
+exec("youtube-dl -i -f 'mp4[height <= 360]' -o \"$themevideo/%(title)s.%(ext)s\" --write-thumbnail --write-description $url");
 exec("mogrify -format webp $themevideo/*.jpg");
 }
 foreach ($vids as $video)
@@ -213,7 +240,7 @@ $vids = scandir($themevideo);
 if ($vids == null)
 {
 mkdir($themevideo);
-exec("youtube-dl -i -f mp4 -o \"$themevideo/%(title)s.%(ext)s\" --write-thumbnail --write-description $url");
+exec("youtube-dl -i -f 'mp4[height <= 360]' -o \"$themevideo/%(title)s.%(ext)s\" --write-thumbnail --write-description $url");
 exec("mogrify -format webp $themevideo/*.jpg");
 }
 foreach ($vids as $video)
@@ -263,7 +290,7 @@ $vids = scandir($themevideo);
 if ($vids == null)
 {
 mkdir($themevideo);
-exec("youtube-dl -i -f mp4 -o \"$themevideo/%(title)s.%(ext)s\" --write-thumbnail --write-description $url");
+exec("youtube-dl -i -f 'mp4[height <= 360]' -o \"$themevideo/%(title)s.%(ext)s\" --write-thumbnail --write-description $url");
 exec("mogrify -format webp $themevideo/*.jpg");
 }
 foreach ($vids as $video)
@@ -293,7 +320,7 @@ $vids = scandir($themevideo);
 if ($vids == null)
 {
 mkdir($themevideo);
-exec("youtube-dl -i -f mp4 -o \"$themevideo/%(title)s.%(ext)s\" --write-thumbnail --write-description $url");
+exec("youtube-dl -i -f 'mp4[height <= 360]' -o \"$themevideo/%(title)s.%(ext)s\" --write-thumbnail --write-description $url");
 exec("mogrify -format webp $themevideo/*.jpg");
 }
 foreach ($vids as $video)
@@ -323,7 +350,7 @@ $vids = scandir($themevideo);
 if ($vids == null)
 {
 mkdir($themevideo);
-exec("youtube-dl -i -f mp4 -o \"$themevideo/%(title)s.%(ext)s\" --write-thumbnail --write-description $url");
+exec("youtube-dl -i -f 'mp4[height <= 360]' -o \"$themevideo/%(title)s.%(ext)s\" --write-thumbnail --write-description $url");
 exec("mogrify -format webp $themevideo/*.jpg");
 }
 foreach ($vids as $video)
@@ -449,7 +476,7 @@ $vids = scandir($themevideo);
 if ($vids == null)
 {
 mkdir($themevideo);
-exec("youtube-dl -i -f mp4 -o \"$themevideo/%(title)s.%(ext)s\" --write-thumbnail --write-description --playlist-end 100 $url");
+exec("youtube-dl -i -f 'mp4[height <= 360]' -o \"$themevideo/%(title)s.%(ext)s\" --write-thumbnail --write-description --playlist-end 100 $url");
 exec("mogrify -format webp $themevideo/*.jpg");
 }
 foreach ($vids as $video)
