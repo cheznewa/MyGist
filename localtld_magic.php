@@ -7,7 +7,7 @@
 // Si Ca Ne Marche Pas, Vous Devrait Vous-Même Télécharger Les Fichier Qui Manque à L'apelle.
 // Nouveau :::: Désormais Les Sites Sont Labelisé D'une Couleur Les Noir Sont A Moi, Les D'autre En Dépend, Quand Aux Rouge, Pas Touche !
 $nonhtml = false;
-$freedomaines = ["newanotremaitre.chezsick-black","timeanddatebletou.chezsick-black","logicemu.chezsick-green","jslinux.chezsick-cyan","randomlike.chezsick-black","colormodem.chezsick-white","dafont.chezsick-purple","pagerankcalc.chezsick-magenta","pdf2htmlex.chezsick-teal","lhvtools.chezsick-green","cestpassorcier.chezsick-olive","dexsilicium.chezsick-maroon","logicemu2luxar.chezsick-brown","titeuf.chezsick-beige","codelyoko.chezsick-green","kidpaddle.chezsick-yellow","yakari.chezsick-red","emonote.chezsick-black","garfield.chezsick-blue","problemepointageamerindienne.chezsick-grey","visualarm1.chezsick-green","infernalcounter.chezsick-teal","internetmerespectpas.chezsick-navy","openfoodfacts.chezsick-mint","javascriptreplay.chezsick-lime","powwows.chezsick-red","emoticon-composer.chezsick-mint","ptmeasureonemilliondecimal.chezsick-black","halflife.chezsick-blue","kara.chezsick-green"];
+$freedomaines = ["newanotremaitre.chezsick-black","timeanddatebletou.chezsick-black","logicemu.chezsick-green","jslinux.chezsick-cyan","randomlike.chezsick-black","colormodem.chezsick-white","dafont.chezsick-purple","pagerankcalc.chezsick-magenta","pdf2htmlex.chezsick-teal","lhvtools.chezsick-green","cestpassorcier.chezsick-olive","dexsilicium.chezsick-maroon","logicemu2luxar.chezsick-brown","titeuf.chezsick-beige","codelyoko.chezsick-green","kidpaddle.chezsick-yellow","yakari.chezsick-red","emonote.chezsick-black","garfield.chezsick-blue","problemepointageamerindienne.chezsick-grey","visualarm1.chezsick-green","infernalcounter.chezsick-teal","internetmerespectpas.chezsick-navy","openfoodfacts.chezsick-mint","javascriptreplay.chezsick-lime","powwows.chezsick-red","emoticon-composer.chezsick-mint","ptmeasureonemilliondecimal.chezsick-black","halflife.chezsick-blue","kara.chezsick-green","flodumetro.chezsick-green"];
 if ($_SERVER["HTTP_HOST"] == "linksourmaster.chezsick-black")
 {
 echo "<title>ChezSick Links</title>";
@@ -571,6 +571,36 @@ elseif ($_SERVER["HTTP_HOST"] == $freedomaines[29])
 $themevideo = "kara";
 $themetitle = "Kara";
 $url        = "https://www.youtube.com/channel/UCM4ElalZityYotQIhqpBCpw/videos";
+echo "<title>$themetitle</title>";
+echo "<h1>$themetitle</h1>";
+if (isset($_GET["v"]))
+{
+echo "<video controls><source src=\"".$themevideo."/".$_GET['v']."\"></video><br/>";
+echo file_get_contents($themevideo."/".basename($_GET['v'],".mp4").".description");
+}
+else
+{
+$vids = scandir($themevideo);
+if ($vids == null)
+{
+mkdir($themevideo);
+exec("youtube-dl -i -f 'mp4[height <= 360]' -o \"$themevideo/%(title)s.%(ext)s\" --write-thumbnail --write-description $url");
+exec("mogrify -format webp $themevideo/*.jpg");
+}
+foreach ($vids as $video)
+{
+if (pathinfo($video,PATHINFO_EXTENSION) == "mp4")
+{
+echo "<img width='100' src=\"".$themevideo."/".basename($video,".mp4").".webp\"><a href=\"?v=$video\">".basename($video,".mp4")."</a><br/>";
+}
+}
+}
+}
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[30])
+{
+$themevideo = "flodumetro";
+$themetitle = "Flodumetro";
+$url        = "https://www.youtube.com/user/flodumetro/videos";
 echo "<title>$themetitle</title>";
 echo "<h1>$themetitle</h1>";
 if (isset($_GET["v"]))
