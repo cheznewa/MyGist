@@ -1,5 +1,5 @@
 import sys
-def coordinate2position(p,b):
+def position2coordinate(p,b):
  pb = format(p,"0"+str(b*2)+"b")
  x = ""
  y = ""
@@ -14,6 +14,6 @@ while True:
  p = o.find(sys.argv[2],p)
  if p == -1:
   break
- x,y = coordinate2position(p,int(sys.argv[1]))
+ x,y = position2coordinate(p,int(sys.argv[1]))
  sys.stdout.write("<span style=\"position:absolute;left:%s;top:%s;\">X</span>\n" %(x,y))
  p = p + len(sys.argv[2])
