@@ -7,7 +7,7 @@
 // Si Ca Ne Marche Pas, Vous Devrait Vous-Même Télécharger Les Fichier Qui Manque à L'apelle.
 // Nouveau :::: Désormais Les Sites Sont Labelisé D'une Couleur Les Noir Sont A Moi, Les D'autre En Dépend, Quand Aux Rouge, Pas Touche !
 $nonhtml = false;
-$freedomaines = ["newanotremaitre.chezsick-black","timeanddatebletou.chezsick-black","logicemu.chezsick-green","jslinux.chezsick-cyan","randomlike.chezsick-black","colormodem.chezsick-white","dafont.chezsick-purple","pagerankcalc.chezsick-magenta","pdf2htmlex.chezsick-teal","lhvtools.chezsick-green","cestpassorcier.chezsick-olive","dexsilicium.chezsick-maroon","logicemu2luxar.chezsick-brown","titeuf.chezsick-beige","codelyoko.chezsick-green","kidpaddle.chezsick-yellow","yakari.chezsick-red","emonote.chezsick-black","garfield.chezsick-blue","problemepointageamerindienne.chezsick-grey","visualarm1.chezsick-green","infernalcounter.chezsick-teal","internetmerespectpas.chezsick-navy","openfoodfacts.chezsick-mint","javascriptreplay.chezsick-lime","powwows.chezsick-red","emoticon-composer.chezsick-mint","ptmeasureonemilliondecimal.chezsick-black","halflife.chezsick-blue","kara.chezsick-green","flodumetro.chezsick-green"];
+$freedomaines = ["newanotremaitre.chezsick-black","timeanddatebletou.chezsick-black","logicemu.chezsick-green","jslinux.chezsick-cyan","randomlike.chezsick-black","colormodem.chezsick-white","devinelapolice.chezsick-purple","pagerankcalc.chezsick-magenta","pdf2htmlex.chezsick-teal","lhvtools.chezsick-green","cestpassorcier.chezsick-olive","dexsilicium.chezsick-maroon","logicemu2luxar.chezsick-brown","titeuf.chezsick-beige","codelyoko.chezsick-green","kidpaddle.chezsick-yellow","yakari.chezsick-red","emonote.chezsick-black","garfield.chezsick-blue","problemepointageamerindienne.chezsick-grey","visualarm1.chezsick-green","infernalcounter.chezsick-teal","internetmerespectpas.chezsick-navy","openfoodfacts.chezsick-mint","javascriptreplay.chezsick-lime","powwows.chezsick-red","emoticon-composer.chezsick-mint","ptmeasureonemilliondecimal.chezsick-black","halflife.chezsick-blue","kara.chezsick-green","flodumetro.chezsick-green"];
 if ($_SERVER["HTTP_HOST"] == "linksourmaster.chezsick-black")
 {
 echo "<title>ChezSick Links</title>";
@@ -25,7 +25,7 @@ echo "<br/><a href='?dont=1'>Just Don't Click Please, NO!!!</a>";
 }
 elseif ($_SERVER["HTTP_HOST"] == $freedomaines[0])
 {
-echo "<style>body{background-color:#00288c;color:white;}a{color:#feec00;}</style>";
+echo "<style>@font-face{font-family:'Kalam';font-weight:normal;src:url('Kalam-Regular.ttf');}@font-face{font-family:'Kalam';font-weight:bold;src:url('Kalam-Bold.ttf');}body{font-family:'Kalam';background-color:#00288c;color:white;}a{color:#feec00;}</style>"; // https://www.cdnfonts.com/kalam.font
 $themevideo = "newanotremaitre";
 $url        = "https://www.youtube.com/channel/UCZ6aZWdqc2toGWP1xqRoSaw/videos";
 if (isset($_GET["v"]))
@@ -113,35 +113,82 @@ echo '<h1>Color Modem In My World At Vilande</h1><form enctype="multipart/form-d
 }
 elseif ($_SERVER["HTTP_HOST"] == $freedomaines[6])
 {
-if (!(file_exists("dafont.com_categories_2010-05-19")))
+if (!(file_exists("ADDITIONAL SETS")))
 {
-exec("curl -OL https://archive.org/download/1.5_million_font_files_collection/dafont.com_categories_2010-05-19.zip");
-exec("unzip 'dafont.com_categories_2010-05-19'");
+exec("curl -OL https://archive.org/download/1.5_million_font_files_collection/ADDITIONAL%20SETS.zip");
+exec("unzip 'ADDITIONAL SETS.zip' 'ADDITIONAL SETS/TTF/*'");
 }
-if (isset($_GET['cat']))
+if (!isset($_GET["code"]))
 {
-if (isset($_GET['font']))
-{
-header("Content-Type: image/png");
-$id = uniqid();
-exec("convert \"dafont.com_categories_2010-05-19/".$_GET['cat']."/".$_GET['font']."\" /tmp/$id.png");
-readfile("/tmp/$id.png");
+echo "<h1>Bienvnue Dans Mon Jeu De Devinette De Police D'ecriture</h1><form method='GET'>Avant De Commencé, Choisie Un Caractère En Code Unicode<input type='text' name='code'></form>";
+$_SESSION["point"] = 0;
 }
 else
 {
-$font = scandir("dafont.com_categories_2010-05-19/".$_GET['cat']);
-foreach ($font as $i)
+session_start();
+if (!isset($_GET["res"]))
 {
-if (pathinfo($i,PATHINFO_EXTENSION) == "ttf")
-echo "<a href=\"?cat=".$_GET['cat']."&font=$i\">$i</a><br/>";
+$fonts = scandir("ADDITIONAL SETS/TTF/");
+$fontchoice = array_rand($fonts);
+$fontchoicewrong = array_rand($fonts,3);
+$_SESSION["fontsres"] = basename($fonts[$fontchoice],".ttf");
+echo "<h2>C'est Quoi Le Nom De La Police ?</h2>";
+echo "Ta ".$_SESSION["point"]." Point";
+exec("ttf2svg \"ADDITIONAL SETS/TTF/$fonts[$fontchoice]\" ".$_GET["code"],$svg);
+for ($m=0;$m<count($svg);$m++)
+{
+echo $svg[$m]."\n";
 }
+$good = rand(1,4);
+$_SESSION["good"] = $good;
+$n = 0;
+if ($good == 1)
+{
+echo "<a href='/?code=".$_GET["code"]."&res=1'>".basename($fonts[$fontchoice],".ttf")."</a><br/>";
+}
+else
+{
+echo "<a href='/?code=".$_GET["code"]."&res=1'>".basename($fonts[$fontchoicewrong[$n]],".ttf")."</a><br/>";$n = $n+1;
+}
+if ($good == 2)
+{
+echo "<a href='/?code=".$_GET["code"]."&res=2'>".basename($fonts[$fontchoice],".ttf")."</a><br/>";
+}
+else
+{
+echo "<a href='/?code=".$_GET["code"]."&res=2'>".basename($fonts[$fontchoicewrong[$n]],".ttf")."</a><br/>";$n = $n+1;
+}
+if ($good == 3)
+{
+echo "<a href='/?code=".$_GET["code"]."&res=3'>".basename($fonts[$fontchoice],".ttf")."</a><br/>";
+}
+else
+{
+echo "<a href='/?code=".$_GET["code"]."&res=3'>".basename($fonts[$fontchoicewrong[$n]],".ttf")."</a><br/>";$n = $n+1;
+}
+if ($good == 4)
+{
+echo "<a href='/?code=".$_GET["code"]."&res=4'>".basename($fonts[$fontchoice],".ttf")."</a><br/>";
+}
+else
+{
+echo "<a href='/?code=".$_GET["code"]."&res=4'>".basename($fonts[$fontchoicewrong[$n]],".ttf")."</a><br/>";$n = $n+1;
 }
 }
 else
 {
-$cat = scandir('dafont.com_categories_2010-05-19');
-foreach ($cat as $i)
-echo "<a href=\"?cat=$i\">$i</a><br/>";
+if ($_GET["res"] == $_SESSION["good"])
+{
+echo "<h1>Bonne Réponse !<h1>";
+echo "+1 Point !<br/>";
+$_SESSION["point"] = $_SESSION["point"] +1;
+}
+else
+{
+echo "<h2>Mauvaise Réponse :( C'etait :::: ".$_SESSION["fontsres"]."<h2>";
+}
+echo "<a href='/?code=".$_GET["code"]."'>On Recommance ?</a>";
+}
 }
 }
 elseif ($_SERVER["HTTP_HOST"] == $freedomaines[7])
