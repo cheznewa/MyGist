@@ -120,6 +120,7 @@ exec("unzip 'ADDITIONAL SETS.zip' 'ADDITIONAL SETS/TTF/*'");
 }
 if (!isset($_GET["code"]))
 {
+session_start();
 echo "<h1>Bienvnue Dans Mon Jeu De Devinette De Police D'ecriture</h1><form method='GET'>Avant De Commencé, Choisie Un Caractère En Code Unicode<input type='text' name='code'></form>";
 $_SESSION["point"] = 0;
 }
@@ -188,6 +189,7 @@ else
 echo "<h2>Mauvaise Réponse :( C'etait :::: ".$_SESSION["fontsres"]."<h2>";
 }
 echo "<a href='/?code=".$_GET["code"]."'>On Recommance ?</a>";
+$_SESSION["point"] = $_SESSION["point"];
 }
 }
 }
