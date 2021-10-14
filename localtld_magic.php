@@ -121,7 +121,7 @@ exec("unzip 'ADDITIONAL SETS.zip' 'ADDITIONAL SETS/TTF/*'");
 if (!isset($_GET["code"]))
 {
 session_start();
-echo "<h1>Bienvnue Dans Mon Jeu De Devinette De Police D'ecriture</h1><form method='GET'>Avant De Commencé, Choisie Un Caractère En Code Unicode<input type='text' name='code'></form>";
+echo "<h1>Bienvnue Dans Mon Jeu De Devinette De Police D'ecriture</h1><form method='GET'>Avant De Commencé, Choisie Un Caractère En Code Unicode :::::: <input type='text' name='code'></form>";
 $_SESSION["point"] = 0;
 }
 else
@@ -180,16 +180,15 @@ else
 {
 if ($_GET["res"] == $_SESSION["good"])
 {
-echo "<h1>Bonne Réponse !<h1>";
+echo "<h1>Bonne Réponse !</h1>";
 echo "+1 Point !<br/>";
 $_SESSION["point"] = $_SESSION["point"] +1;
 }
 else
 {
-echo "<h2>Mauvaise Réponse :( C'etait :::: ".$_SESSION["fontsres"]."<h2>";
+echo "<h2>Mauvaise Réponse :( C'etait :::: ".$_SESSION["fontsres"]."</h2>";
 }
-echo "<a href='/?code=".$_GET["code"]."'>On Recommance ?</a>";
-$_SESSION["point"] = $_SESSION["point"];
+echo "<a href='/?code=".$_GET["code"]."'>On Recommence ?</a>";
 }
 }
 }
