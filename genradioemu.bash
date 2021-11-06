@@ -1,6 +1,5 @@
 # Radio Emulation Generator France
 timing=$1
-output=$2
 tmp=$(mktemp -d)
 sox -t mp3 http://direct.francebleu.fr/live/fb1071-midfi.mp3 -t u16 -r 15000 -c 1 $tmp/francebleu.raw trim 0 $timing &
 sox -t mp3 http://live02.rfi.fr/rfimonde-96k.mp3 -t u16 -r 15000 -c 1 $tmp/rfi.raw trim 0 $timing &
@@ -29,5 +28,5 @@ python2 $MYGIST/radio/radiosend.py 86400 86500 8 < $tmp/francebleu_ul.raw > $tmp
 sox -t u16 -r 15000 -c 1 $tmp/rfi.raw -r 15000 -t ul -c 1 $tmp/rfi_ul.raw
 python2 $MYGIST/radio/radiosend.py 8900000 8910000 16 < $tmp/rfi.raw > $tmp/rfi.radio
 python2 $MYGIST/radio/radiosend.py 73800 73900 8 < $tmp/rfi_ul.raw > $tmp/rfi_ul.radio
-paste -d "\n" $tmp/*.radio | sed "/^$/d" | zstd -v -22 --ultra > "${output}.radio.zstd"
+python2 $MYGIST/radio/radiomerge.py $tmp/*.radio
 rm -r $tmp

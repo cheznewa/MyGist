@@ -1,5 +1,5 @@
 import sys
-from base58 import b58encode_int
+from struct import pack
 min = int(sys.argv[1])
 max = int(sys.argv[2])
 while True:
@@ -7,9 +7,7 @@ while True:
  c = str(format(ord(o),"08b"))
  for d in range(8):
   if bool(int(c[d])):
-   sys.stdout.write(b58encode_int(max-1))
+   sys.stdout.write(pack("I",max-1))
   else:
-   sys.stdout.write(b58encode_int(min))
-  sys.stdout.write("\n")
- sys.stdout.write(b58encode_int(min+1))
- sys.stdout.write("\n")
+   sys.stdout.write(pack("I",min))
+ sys.stdout.write(pack("I",min+1))

@@ -1,5 +1,5 @@
 import sys
-from base58 import b58decode_int
+from struct import unpack
 # BEGIN :: Trigger
 fsa = open(sys.argv[1],"r")
 ntrame = 0
@@ -12,22 +12,24 @@ max =  int(param.split(";")[2])
 # END   :: Trigger
 fs = open("/dev/urandom","rb") 
 no = 0
-for o in sys.stdin:
+while True:
+ o = sys.stdin.read(4)
+ n = unpack("I",o)[0]
  if next == ntrame:
   nt = nt + 1
   param = params[nt]
   next =  int(param.split(";")[0])
   min =  int(param.split(";")[1])
   max =  int(param.split(";")[2])
- if int(b58decode_int(o)) >= min and int(b58decode_int(o)) < max:
+ if (n >= min) and (n < max):
   if sys.argv[2] == "16":
-   a = int((65536.0*(int(b58decode_int(o))-min)/(float(max)-float(min))))
+   a = int((65536.0*(n-min)/(float(max)-float(min))))
    p = int(a % 256)
    q = int(a / 256)
    sys.stdout.write("%s%s" %(chr(p),chr(q)))
    no = 0
   if sys.argv[2] == "8":
-   i = int((256.0*(int(b58decode_int(o))-min)/(float(max)-float(min))))
+   i = int((65536.0*(n-min)/(float(max)-float(min))))
    sys.stdout.write("%s" %(chr(i)))
    no = 0
  else:
