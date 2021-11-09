@@ -338,7 +338,7 @@ if typetext:
 else:
  ttv = "B"
 
-radio = (((ord(reshash[8])*65536)+(ord(reshash[6])*256)+ord(reshash[7]))*10000)
+radio = (((ord(reshash[8])*65536)+(ord(reshash[6])*256)+ord(reshash[7]))*10000) % 4000000000
 radioend = radio + 10000
 
 print("Votre IPTV Chiffrer Par CryptImage Pour ::: " + url)
