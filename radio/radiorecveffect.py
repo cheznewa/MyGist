@@ -27,3 +27,5 @@ while True:
    if sys.argv[3] == "8":
     sys.stdout.write(fs.read(1))
     no = 0
+ if n == max:
+  sys.stderr.write("\x07\x0A")
