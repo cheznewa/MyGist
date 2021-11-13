@@ -12,7 +12,7 @@ while True:
    q = int(a / 256)
    sys.stdout.write("%s%s" %(chr(p),chr(q)))
   if sys.argv[3] == "8":
-   i = int((256.0*n-min)/(float(max)-float(min)))
+   i = int((256.0*(n-min)/(float(max)-float(min))))
    sys.stdout.write("%s" %(chr(i)))
  if n == max-1:
   sys.stderr.write("\x07\x0A")

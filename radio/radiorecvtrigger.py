@@ -26,7 +26,7 @@ while True:
    q = int(a / 256)
    sys.stdout.write("%s%s" %(chr(p),chr(q)))
   if sys.argv[2] == "8":
-   i = int((65536.0*(n-min)/(float(max)-float(min))))
+   i = int((256.0*(n-min)/(float(max)-float(min))))
    sys.stdout.write("%s" %(chr(i)))
  ntrame = ntrame + 1
  if n == max-1:
