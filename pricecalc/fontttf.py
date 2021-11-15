@@ -13,12 +13,12 @@ for o in sys.stdin:
  if re.search("<CharString ",o):
   st = True
   price=price/1.1
- if re.search("lineto",o) and st:
-  price=price+0.1
  if re.search("moveto",o) and st:
-  price=price+0.3
+  price=price+1
+ if re.search("lineto",o) and st:
+  price=price+3
  if re.search("curveto",o) and st:
-  price=price+0.5
+  price=price+6
  if re.search("endchar",o) and st:
   st = False
 
