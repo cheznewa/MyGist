@@ -7,7 +7,7 @@
 // Si Ca Ne Marche Pas, Vous Devrait Vous-Même Télécharger Les Fichier Qui Manque à L'apelle.
 // Nouveau :::: Désormais Les Sites Sont Labelisé D'une Couleur Les Noir Sont A Moi, Les D'autre En Dépend, Quand Aux Rouge, Pas Touche !
 $nonhtml = false;
-$freedomaines = ["newanotremaitre.chezsick-black","timeanddatebletou.chezsick-black","logicemu.chezsick-green","jslinux.chezsick-cyan","randomlike.chezsick-black","colormodem.chezsick-white","devinelapolice.chezsick-purple","pagerankcalc.chezsick-magenta","pdf2htmlex.chezsick-teal","lhvtools.chezsick-green","cestpassorcier.chezsick-olive","dexsilicium.chezsick-maroon","logicemu2luxar.chezsick-brown","titeuf.chezsick-beige","codelyoko.chezsick-green","kidpaddle.chezsick-yellow","yakari.chezsick-red","emonote.chezsick-black","garfield.chezsick-blue","problemepointageamerindienne.chezsick-grey","visualarm1.chezsick-green","infernalcounter.chezsick-teal","internetmerespectpas.chezsick-navy","openfoodfacts.chezsick-mint","javascriptreplay.chezsick-lime","powwows.chezsick-red","emoticon-composer.chezsick-mint","ptmeasureonemilliondecimal.chezsick-black","halflife.chezsick-blue","kara.chezsick-green","flodumetro.chezsick-green"];
+$freedomaines = ["newanotremaitre.chezsick-black","timeanddatebletou.chezsick-black","logicemu.chezsick-green","jslinux.chezsick-cyan","randomlike.chezsick-black","colormodem.chezsick-white","devinelapolice.chezsick-purple","pagerankcalc.chezsick-magenta","pdf2htmlex.chezsick-teal","lhvtools.chezsick-green","cestpassorcier.chezsick-olive","dexsilicium.chezsick-maroon","logicemu2luxar.chezsick-brown","titeuf.chezsick-beige","codelyoko.chezsick-green","kidpaddle.chezsick-yellow","yakari.chezsick-red","emonote.chezsick-black","garfield.chezsick-blue","problemepointageamerindienne.chezsick-grey","visualarm1.chezsick-green","infernalcounter.chezsick-teal","internetmerespectpas.chezsick-navy","openfoodfacts.chezsick-mint","javascriptreplay.chezsick-lime","powwows.chezsick-red","emoticon-composer.chezsick-mint","ptmeasureonemilliondecimal.chezsick-black","halflife.chezsick-blue","kara.chezsick-green","flodumetro.chezsick-green","ic--d56qime6a53kyzsy7pr6oenjo6ptixq2c7dtqebpymfebpq4itzr6hpa5gaqm6minvazusu6jedtt5hnt4pqq33w6afr7xde3sioqbbd5oxhxo4i5atmmkyofyniggfalawabpxhy43or3ca6bcmijfswfnggoznyqd76b2j2uf4bdxkjfes6jm33log7pabm4------.chezsick-black"];
 if ($_SERVER["HTTP_HOST"] == "linksourmaster.chezsick-black")
 {
 echo "<title>ChezSick Links</title>";
@@ -17,8 +17,22 @@ $_GET["dont"] = 0;
 foreach ($freedomaines as $domaine)
 {
 $dom = explode(".",$domaine);
+if (strstr($dom[0],"ic--"))
+{
+$dum = str_replace("ic--","",$dom[0]);
 if (($dom[1] != "chezsick-red") || boolval($_GET["dont"]))
+{
+$icodom = exec("bash -c \"tr - = <<< ".$dum." | tr [a-z] [A-Z] | base32 -d | brotli -d | convert ico:- png:- | base64 -w0\"");
+echo "<a href=\"http://$domaine\"><img src=\"data:image/png;base64,".$icodom."\">.".$dom[1]."</a><br/>";
+}
+}
+else
+{
+if (($dom[1] != "chezsick-red") || boolval($_GET["dont"]))
+{
 echo "<a href=\"http://$domaine\">$domaine</a><br/>";
+}
+}
 }
 if (!($_GET["dont"]))
 echo "<br/><a href='?dont=1'>Just Don't Click Please, NO!!!</a>";
@@ -673,6 +687,14 @@ echo "<img width='100' src=\"".$themevideo."/".basename($video,".mp4").".webp\">
 }
 }
 }
+}
+elseif ($_SERVER["HTTP_HOST"] == $freedomaines[31])
+{
+echo "<h1>IconDomain ::::: The New DNS Generation Standard</h1>";
+echo "<h2>What Is IcoDomain?</h2>";
+echo "Is A Icon Embed In Domain Name Instaed Domaine Name Classic.";
+echo "<h2>How To Encode And Decode?</h2>";
+echo "You Create A Icone For Embedded Domaine, You Can Convert To ICO Then Compress In Brotli Then Encoding Into Base32, And For Decode Is The Reverse.";
 }
 else
 {
