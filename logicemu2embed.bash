@@ -13,7 +13,7 @@ if test -z $name
 then
 name=CircuitSansNom
 fi
-if test -n $logo
+if test ! \( -z $logo \)
 then
 curl -o $logo https://raw.githubusercontent.com/gilbarbara/logos/master/logos/${logo}.svg
 logoblacked=$(mktemp)
@@ -27,7 +27,7 @@ r=$(lzcomp -d < $circ | wc -c)
 n=$(lzcomp -d < $circ | python2 $MYGIST/logicemu2luxar.py)
 convert -font OCRA -pointsize 9 -background none "label:${s}/${r} Car" miff:- | composite -gravity southeast - $t miff:$w
 convert -font OCRA -pointsize 9 -background none "label:${n}" miff:- | composite -gravity northeast - $w png:$x
-if test -n $logo
+if test ! \( -z $logo \)
 then
 rsvg-convert -z 0.1 $logoblacked | composite -gravity east - $x png:$x
 rm $logoblacked
