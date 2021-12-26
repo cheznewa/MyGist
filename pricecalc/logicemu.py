@@ -1,12 +1,21 @@
 import sys
 import re
-thinlevel = 1/float(pow(int(sys.argv[1]),2))
-circ = sys.stdin.read()
-c = re.sub("\"[^\"]*\"","",circ)
 price = 0
-price += c.count("v") + c.count("w")
-price += c.count("^") + c.count("m")
-price += c.count("<") + c.count("[")
-price += c.count(">") + c.count("]")
-pricefinal = (thinlevel*price)/(1+c.count("I"))
-sys.stdout.write("%s\n" %(pricefinal))
+while True:
+ o = sys.stdin.read(1)
+ if (o == "<") or (o == ">") or (o == "v") or (o == "^"):
+  price=price+3
+ elif (o == "[") or (o == "]") or (o == "w") or (o == "m"):
+  price=price+5
+ elif o == "i":
+  price=price+10
+ elif o == "I":
+  price=price+100
+ elif o == " ":
+  price=price/1.1
+ else:
+  price=price+1
+ if not o:
+  break
+
+sys.stdout.write("%s\n" %(price))
