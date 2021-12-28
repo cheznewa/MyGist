@@ -4,8 +4,8 @@ def position2coordinate(p,b):
  x = ""
  y = ""
  for n in range(b):
-  x = x + pb[n*2]
-  y = y + pb[1+n*2]
+  x = x + pb[1+n*2]
+  y = y + pb[n*2]
  return int(x,2),int(y,2)
 
 o = sys.stdin.read(pow(2,int(sys.argv[1])*2))

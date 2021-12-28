@@ -4,7 +4,7 @@ def coordinate2position(c,b):
  yb = format(c[1],"0"+str(b)+"b")
  g = ""
  for n in range(b):
-  g = g + xb[n] + yb[n]
+  g = g + yb[n] + xb[n]
  return int(g,2)
 
 if sys.argv[2] == "rgb":
