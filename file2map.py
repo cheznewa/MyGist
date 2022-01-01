@@ -9,6 +9,8 @@ def coordinate2position(c,b):
 
 if sys.argv[2] == "rgb":
  o = sys.stdin.read(pow(2,int(sys.argv[1])*2)*3)
+if sys.argv[2] == "g16":
+ o = sys.stdin.read(pow(2,int(sys.argv[1])*2)*2)
 else:
  o = sys.stdin.read(pow(2,int(sys.argv[1])*2))
 a = format(pow(2,int(sys.argv[1])),"08x")
@@ -19,15 +21,31 @@ for n in range(pow(pow(2,int(sys.argv[1])),2)):
  p = coordinate2position([n%pow(2,int(sys.argv[1])),n/pow(2,int(sys.argv[1]))],int(sys.argv[1]))
  if sys.argv[2] == "bnw":
   r = o[p]
+  rr = r
+  gg = r
+  bb = r
   g = r
   b = r
  elif sys.argv[2] == "col":
   c = col[ord(o[p])]
   r = chr(int(c[0:2],16))
+  rr = r
   g = chr(int(c[2:4],16))
+  gg = g
   b = chr(int(c[4:6],16))
+  bb = b
  elif sys.argv[2] == "rgb":
   r = o[3*p]
+  rr = r
   g = o[3*p+1]
+  gg = g
   b = o[3*p+2]
- sys.stdout.write("%s%s%s%s%s%s\xff\xff" %(r,r,g,g,b,b))
+  bb = b
+ elif sys.argv[2] == "g16":
+  r = o[2*p+1]
+  rr = o[2*p]
+  g = r
+  gg = rr
+  b = r
+  bb = rr
+ sys.stdout.write("%s%s%s%s%s%s\xff\xff" %(r,rr,g,gg,b,bb))
