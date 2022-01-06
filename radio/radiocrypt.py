@@ -1,10 +1,9 @@
 import sys
 mode = sys.argv[1]
-a = 0
+i = 0
 while True:
  o = sys.stdin.read(2)
- a = (int(sys.argv[2])*a+int(sys.argv[3])) % int(sys.argv[4])
- i = a % 333333
+ i = (int(sys.argv[2])*i+int(sys.argv[3])) % int(sys.argv[4])
  r = ord(o[1])*256 + ord(o[0])
  if mode == "enc":
   r = (r + i) % 65536
