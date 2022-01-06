@@ -1,11 +1,10 @@
 import sys
-import random
-seed = sys.argv[1]
-mode = sys.argv[2]
-random.seed(seed)
+mode = sys.argv[1]
+a = 0
 while True:
  o = sys.stdin.read(2)
- i = random.randint(3,268433)
+ a = (int(sys.argv[2])*a+int(sys.argv[3])) % int(sys.argv[4])
+ i = a % 333333
  r = ord(o[1])*256 + ord(o[0])
  if mode == "enc":
   r = (r + i) % 65536
