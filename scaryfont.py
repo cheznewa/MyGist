@@ -13,7 +13,7 @@ for o in sys.stdin:
   yv = int(o[yt+1:ye])
   nt = o.find("\"",ye+1)
   ne = o.find("\"",nt+1)
-  nv = int(o[yt+1:ye])
+  nv = int(o[nt+1:ne])
   xv = xv+(((ord(r.read(1))-127)/255.0)*float(sys.argv[1]))
   yv = yv+(((ord(r.read(1))-127)/255.0)*float(sys.argv[1]))
   sys.stdout.write("<pt x=\"%s\" y=\"%s\" on=\"%s\"/>\n" %(xv,yv,nv))
