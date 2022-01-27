@@ -1,0 +1,17 @@
+0"Testing On Crow Pi"
+
+18!<--s "BEEP/Buzzer"
+23G-->l "Motion"
+
+27!<--s "Vibration"
+24G-->l "Sound"
+
+  r-->l "Rafraissichement"
+
+17G-->l "Touch"
+
+0"Ultrasonic"
+
+16!<.-s "Untrasonic Enabled"
+    w
+12G>e]l "Obstacle Detected"

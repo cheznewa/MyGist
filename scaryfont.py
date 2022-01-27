@@ -1,7 +1,5 @@
 import sys
 import re
-xo = None
-yo = None
 r = open("/dev/urandom","rb")
 for o in sys.stdin:
  if re.search("<pt ",o):
