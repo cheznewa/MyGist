@@ -1,12 +1,12 @@
 0"Testing On Crow Pi"
 
-18!<--s "BEEP/Buzzer"
+18!<--p "BEEP/Buzzer"
 23G-->l "Motion"
 
 27!<--s "Vibration"
 24G-->l "Sound"
 
-  r-->l "Rafraissichement"
+  r-->l "Refreshing"
 
 17G-->l "Touch"
 
