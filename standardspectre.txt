@@ -1,0 +1,15 @@
+debut,fin,nom,usage
+0,10000,Son,Ecoute Gauche
+10000,20000,Son,Ecoute Droite
+20000,30000,Visible,Rouge Gauche
+30000,40000,Visible,Vert Gauche
+40000,50000,Visible,Bleu Gauche
+50000,60000,Visible,Rouge Droite
+60000,70000,Visible,Vert Droite
+70000,80000,Visible,Bleu Droite
+80000,90000,Visible,Alpha Gauche
+90000,100000,Visible,Alpha Droite
+100000,1000000,TH,Communication Réservé Test
+1000000,100000000,FX,Radio Communication
+100000000,1000000000,PH,Radio PayRadio Brouiller
+1000000000,4000000000,NET,Internet Communication
