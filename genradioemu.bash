@@ -6,6 +6,11 @@ fi
 timing=$1
 tmp=$(mktemp -d)
 sox -t mp3 http://direct.francebleu.fr/live/fb1071-midfi.mp3 -t u16 -r 15000 -c 1 $tmp/francebleu.raw trim 0 $timing &
+sox -t mp3 http://direct.francebleu.fr/live/fbbreizizel-midfi.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10720000 10730000 16 > $tmp/fbbzh.radio &
+sox -t mp3 http://direct.francebleu.fr/live/fbhautenormandie-midfi.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10730000 10740000 16 > $tmp/fbhaut.radio &
+sox -t mp3 http://direct.francebleu.fr/live/fbbassenormandie-midfi.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10740000 10750000 16 > $tmp/fbbass.radio &
+sox -t mp3 http://direct.francebleu.fr/live/fbtoulouse-midfi.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10750000 10760000 16 > $tmp/fbtoulouse.radio &
+sox -t mp3 http://direct.francebleu.fr/live/fbnord-midfi.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10760000 10770000 16 > $tmp/fbnord.radio &
 sox -t mp3 http://live02.rfi.fr/rfimonde-96k.mp3 -t u16 -r 15000 -c 1 $tmp/rfi.raw trim 0 $timing &
 sox -t mp3 http://direct.franceinter.fr/live/franceinter-midfi.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 8760000 8770000 16 > $tmp/franceinter.radio &
 sox -t mp3 http://generationfm.ice.infomaniak.ch/generationfm-high.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 8820000 8830000 16 > $tmp/generations.radio &
