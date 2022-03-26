@@ -1,7 +1,7 @@
 import sys
 rate = int(sys.argv[1])
-leng = int(sys.argv[2])
-slow = int(sys.argv[3])
+leng = float(sys.argv[2])
+slow = float(sys.argv[3])
 byte = int(sys.argv[4])
 n = 0
 l = 1.0
