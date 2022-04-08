@@ -12,11 +12,12 @@ for n in range(inpu,+inpu+outp):
  sys.stdout.write("l<g%s\n@\n" %(n))
 
 h = nand
+m = regs
 
 while nand:
- sys.stdout.write("#-g%s\n#<g%s\n%s<g%s\n@\n" %(nand+inpu,randint(1,nand+inpu+outp),gate,randint(1,nand+inpu+outp)))
+ sys.stdout.write("#-g%s\n#<g%s\n%s<g%s\n@\n" %(nand+inpu,randint(0,h+m+inpu+outp),gate,randint(0,h+m+inpu+outp)))
  nand=nand-1
 
 while regs:
- sys.stdout.write("#-g%s\nd<g%s\nc<g%s\n@\n" %(h+regs+inpu+outp,randint(1,regs+inpu+outp),randint(1,regs+inpu+outp)))
+ sys.stdout.write("#-g%s\nd<g%s\nc<g%s\n@\n" %(h+regs+inpu,randint(0,h+m+inpu+outp),randint(0,h+m+inpu+outp)))
  regs=regs-1
