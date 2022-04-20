@@ -2,7 +2,7 @@ import sys
 fs = open(sys.argv[1],"r")
 t = fs.read().split("\n")
 h = 0
-n = 0
+n = 1
 while True:
  o = sys.stdin.read(1)
  if not o:
