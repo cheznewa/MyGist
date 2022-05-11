@@ -61,3 +61,4 @@ if sys.argv[1] == "word":
   out = wordbase[int] + " " + out
 
 sys.stdout.write(out)
+sys.stdout.write("\n")
