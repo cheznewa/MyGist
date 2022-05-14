@@ -3,10 +3,11 @@ from struct import unpack
 import keyboard
 min = int(sys.argv[1])
 max = int(sys.argv[2])
-inc = int(sys.argv[5])
+inc = int(sys.argv[6])
 fs = open("/dev/urandom","rb") 
 no = 0
 u=0
+f = 0
 while True:
  o = sys.stdin.read(4)
  n = unpack("I",o)[0]

@@ -12,6 +12,7 @@ max =  int(param.split(";")[2])
 # END   :: Trigger
 fs = open("/dev/urandom","rb") 
 no = 0
+f = 0
 while True:
  o = sys.stdin.read(4)
  n = unpack("I",o)[0]
