@@ -25,10 +25,18 @@ while True:
   no = no + 1
   if no == int(sys.argv[4]):
    if sys.argv[3] == "16":
-    sys.stdout.write(fs.read(2))
+    if sys.argv[5] == "beep":
+     sys.stdout.write("%s%s" %(chr(((f/50)%2)*255),chr(((f/50)%2)*255)))
+     f = (f + 1) % 100
+    elif sys.argv[5] == "noise":
+     sys.stdout.write(fs.read(2))
     no = 0
    if sys.argv[3] == "8":
-    sys.stdout.write(fs.read(1))
+    if sys.argv[5] == "beep":
+     sys.stdout.write("%s" %(chr(((f/50)%2)*255)))
+     f = (f + 1) % 100
+    elif sys.argv[5] == "noise":
+     sys.stdout.write(fs.read(1))
     no = 0
  if n == max-1:
   sys.stderr.write("\x07\x0A")
