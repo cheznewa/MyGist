@@ -274,6 +274,22 @@ def depcol(col,bfar,bclose):
  vr = str(format(cc,"02x"))
  return vr + vr + vr
 
+def pprcol(col,h): # Paper Color
+ vr = int(col[0:2],16)
+ vg = int(col[2:4],16)
+ vb = int(col[4:6],16)
+ hr = int(h[0:2],16)
+ hg = int(h[2:4],16)
+ hb = int(h[4:6],16)
+ z = (vr+vg+vb)/3
+ vr = max(vr-int((255-hr)*(z/255.0)),0)
+ vg = max(vg-int((255-hg)*(z/255.0)),0)
+ vb = max(vb-int((255-hb)*(z/255.0)),0)
+ vr = str(format(vr,"02x"))
+ vg = str(format(vg,"02x"))
+ vb = str(format(vb,"02x"))
+ return vr + vg + vb
+
 import sys
 import re
 for o in sys.stdin:
@@ -326,6 +342,8 @@ for o in sys.stdin:
    col = oldcol(col,int(sys.argv[2]),int(sys.argv[3]))
   if sys.argv[1] == "dep":
    col = depcol(col,sys.argv[2],sys.argv[3])
+  if sys.argv[1] == "ppr":
+   col = pprcol(col,sys.argv[2])
   if alpha:
    sys.stdout.write("<Color red=\"%s\" green=\"%s\" blue=\"%s\" alpha=\"%s\"/>\n" %(int(col[0:2],16),int(col[2:4],16),int(col[4:6],16),av))
   else:
