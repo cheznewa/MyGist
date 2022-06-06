@@ -290,6 +290,37 @@ def pprcol(col,h): # Paper Color
  vb = str(format(vb,"02x"))
  return vr + vg + vb
 
+from math import *
+def intcol(col,p,fr,fg,fb): # Integral
+ br = int(col[0:2],16)
+ bg = int(col[2:4],16)
+ bb = int(col[4:6],16)
+ x=0
+ vr=0
+ vg=0
+ vb=0
+ while x <= br:
+  exec("u=" + fr)
+  u=u*p
+  x=x+p
+  vr=vr+u
+ x=0
+ while x <= bg:
+  exec("u=" + fg)
+  u=u*p
+  x=x+p
+  vg=vg+u
+ x=0
+ while x <= bb:
+  exec("u=" + fb)
+  u=u*p
+  x=x+p
+  vb=vb+u
+ vr = str(format(min(max(int(vr),0),255),"02x"))
+ vg = str(format(min(max(int(vg),0),255),"02x"))
+ vb = str(format(min(max(int(vb),0),255),"02x"))
+ return vr + vg + vb
+
 import sys
 coa = "00"
 cob = "00"
@@ -342,6 +373,8 @@ while True:
   col = depcol(col,sys.argv[2],sys.argv[3])
  if sys.argv[1] == "ppr":
   col = pprcol(col,sys.argv[2])
+ if sys.argv[1] == "int":
+  col = intcol(col,float(sys.argv[2]),sys.argv[3],sys.argv[4],sys.argv[5])
  if bool(n):
   sys.stdout.write("%s" %(chr(int(col[0:2],16))))
  else:
