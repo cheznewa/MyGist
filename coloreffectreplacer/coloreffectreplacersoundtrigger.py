@@ -383,6 +383,8 @@ while True:
   col = depcol(col,param[2],param[3])
  if param[1] == "ppr":
   col = pprcol(col,param[2])
+ if param[1] == "int":
+  col = intcol(col,float(param[2]),param[3],param[4],param[5])
  if bool(n):
   sys.stdout.write("%s" %(chr(int(col[0:2],16))))
  else:
