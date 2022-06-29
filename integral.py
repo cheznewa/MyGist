@@ -75,9 +75,9 @@ if modeop == "crm":
  while x <= maxint:
   uu=u
   exec("u=" + formul)
-  u=(u-uu)/(1/precis)
+  un=u-uu
   x=x+precis
-  i=i+u
+  i=i+un
 if modeop == "crb":
  i=0
  u=0
@@ -85,9 +85,9 @@ if modeop == "crb":
  while x <= maxint:
   uu=u
   exec("u=" + formul)
-  u=abs((u-uu)/(1/precis))
+  un=abs(u-uu)
   x=x+precis
-  i=i+u
+  i=i+un
 
 
 sys.stdout.write("%s\n" %(i))
