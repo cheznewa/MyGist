@@ -64,9 +64,9 @@ if modeop == "cap":
    exec("u=" + formul)
    mx=max(u,uu)
    mn=min(u,uu)
-   u=mx-mn
+   un=mx-mn
    n=n+precis
-  i=i+u
+  i=i+un
   x=x+precis
 if modeop == "crm":
  i=0
