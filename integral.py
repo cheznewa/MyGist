@@ -67,7 +67,7 @@ if modeop == "cup":
    exec("u=" + formul)
    if not an:
     an=u
-    an=max(abs(u),an)
+   an=max(u,an)
    n=n+precis
   un=an*precis
   i=i+un
