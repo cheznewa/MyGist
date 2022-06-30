@@ -59,27 +59,33 @@ if modeop == "in4":
   y=minint
   x=x+precis
 if modeop == "cup":
- i=0
- an=0
  x=minint
  n=minint
+ an=None
  while x <= maxint:
   while n <= maxint:
    exec("u=" + formul)
-   an=max(u,an)
+   if not an:
+    an=u
+    an=max(abs(u),an)
    n=n+precis
-  n=minint
   un=an*precis
   i=i+un
   x=x+precis
+  n=minint
+  an=None
 if modeop == "cap":
  x=minint
  n=minint
- mn=0
- mx=0
+ mx=None
+ mn=None
  while x <= maxint:
   while n <= maxint:
    exec("u=" + formul)
+   if not mx:
+    mx=u
+   if not mn:
+    mn=u
    mx=max(u,mx)
    mn=min(u,mn)
    n=n+precis
@@ -87,6 +93,8 @@ if modeop == "cap":
   i=i+un
   x=x+precis
   n=minint
+  mx=None
+  mn=None
 if modeop == "crm":
  u=0
  x=minint
