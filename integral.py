@@ -22,7 +22,7 @@ if modeop == "in2":
    u=u*pow(precis,2)
    y=y+precis
    i=i+u
-  y=0
+  y=minint
   x=x+precis
 if modeop == "in3":
  x=minint
@@ -35,9 +35,9 @@ if modeop == "in3":
     u=u*pow(precis,3)
     z=z+precis
     i=i+u
-   z=0
+   z=minint
    y=y+precis
-  y=0
+  y=minint
   x=x+precis
 if modeop == "in4":
  x=minint
@@ -52,11 +52,11 @@ if modeop == "in4":
      u=u*pow(precis,4)
      w=w+precis
      i=i+u
-    w=0
+    w=minint
     z=z+precis
-   z=0
+   z=minint
    y=y+precis
-  y=0
+  y=minint
   x=x+precis
 if modeop == "cup":
  i=0
@@ -68,7 +68,7 @@ if modeop == "cup":
    exec("u=" + formul)
    an=max(u,an)
    n=n+precis
-  n=0
+  n=minint
   un=an*precis
   i=i+un
   x=x+precis
@@ -86,7 +86,7 @@ if modeop == "cap":
   un=(mx-mn)*precis
   i=i+un
   x=x+precis
-  n=0
+  n=minint
 if modeop == "crm":
  u=0
  x=minint
@@ -113,11 +113,11 @@ if modeop == "mul":
   while n <= maxint:
    uu=u
    exec("u=" + formul)
-   un=(u*uu)*precis
+   un=u*uu
    n=n+precis
-  i=i+un
+   i=i+(un*pow(precis,2))
   x=x+precis
-  n=0
+  n=minint
 if modeop == "add":
  u=0
  x=minint
@@ -126,11 +126,11 @@ if modeop == "add":
   while n <= maxint:
    uu=u
    exec("u=" + formul)
-   un=(u+uu)*precis
+   un=u+uu
    n=n+precis
-  i=i+un
+   i=i+(un*pow(precis,2))
   x=x+precis
-  n=0
+  n=minint
 if modeop == "atn":
  x=minint
  while x <= maxint:
@@ -147,11 +147,11 @@ if modeop == "min":
   while n <= maxint:
    uu=u
    exec("u=" + formul)
-   un=min(u,uu)*precis
+   un=min(u,uu)
    n=n+precis
-  i=i+un
+   i=i+(un*pow(precis,2))
   x=x+precis
-  n=0
+  n=minint
 if modeop == "max":
  u=0
  x=minint
@@ -160,11 +160,11 @@ if modeop == "max":
   while n <= maxint:
    uu=u
    exec("u=" + formul)
-   un=max(u,uu)*precis
+   un=max(u,uu)
    n=n+precis
-  i=i+un
+   i=i+(un*pow(precis,2))
   x=x+precis
-  n=0
+  n=minint
 if modeop == "med":
  u=0
  x=minint
@@ -173,10 +173,46 @@ if modeop == "med":
   while n <= maxint:
    uu=u
    exec("u=" + formul)
-   un=((u+uu)/2)*precis
+   un=(u+uu)/2
    n=n+precis
-  i=i+un
+   i=i+(un*pow(precis,2))
   x=x+precis
-  n=0
+  n=minint
+if modeop == "if2":
+ x=minint
+ y=minint
+ while x <= maxint:
+  while y <= maxint:
+   exec("u=" + formul)
+   if u < 0:
+    i=i+pow(precis,2)
+   y=y+precis
+  y=minint
+  x=x+precis
+if modeop == "sp2":
+ x=minint
+ y=minint
+ while x <= maxint:
+  while y <= maxint:
+   exec("u=" + formul)
+   if u > 0:
+    i=i+pow(precis,2)
+   y=y+precis
+  y=minint
+  x=x+precis
+if modeop == "inf":
+ x=minint
+ while x <= maxint:
+  exec("u=" + formul)
+  if u < 0:
+   i=i+precis
+  x=x+precis
+if modeop == "sup":
+ x=minint
+ while x <= maxint:
+  exec("u=" + formul)
+  if u > 0:
+   i=i+precis
+  x=x+precis
 
 sys.stdout.write("%s\n" %(i))
