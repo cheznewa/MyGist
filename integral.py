@@ -5,8 +5,8 @@ precis=float(sys.argv[2])
 minint=float(sys.argv[3])
 maxint=float(sys.argv[4])
 formul=sys.argv[5]
+i=0
 if modeop == "int":
- i=0
  x=minint
  while x <= maxint:
   exec("u=" + formul)
@@ -14,49 +14,49 @@ if modeop == "int":
   x=x+precis
   i=i+u
 if modeop == "in2":
- i=0
  x=minint
  y=minint
- precis=pow(precis,0.5)
  while x <= maxint:
   while y <= maxint:
    exec("u=" + formul)
-   u=u*precis
+   u=u*pow(precis,2)
    y=y+precis
    i=i+u
+  y=0
   x=x+precis
 if modeop == "in3":
- i=0
  x=minint
  y=minint
  z=minint
- precis=pow(precis,1/3.0)
  while x <= maxint:
   while y <= maxint:
    while z <= maxint:
     exec("u=" + formul)
-    u=u*precis
+    u=u*pow(precis,3)
     z=z+precis
     i=i+u
+   z=0
    y=y+precis
+  y=0
   x=x+precis
 if modeop == "in4":
- i=0
  x=minint
  y=minint
  z=minint
  w=minint
- precis=pow(precis,0.25)
  while x <= maxint:
   while y <= maxint:
    while z <= maxint:
     while w <= maxint:
      exec("u=" + formul)
-     u=u*precis
+     u=u*pow(precis,4)
      w=w+precis
      i=i+u
+    w=0
     z=z+precis
+   z=0
    y=y+precis
+  y=0
   x=x+precis
 if modeop == "cup":
  i=0
@@ -68,11 +68,11 @@ if modeop == "cup":
    exec("u=" + formul)
    an=max(u,an)
    n=n+precis
+  n=0
   un=an*precis
   i=i+un
   x=x+precis
 if modeop == "cap":
- i=0
  x=minint
  n=minint
  mn=0
@@ -86,8 +86,8 @@ if modeop == "cap":
   un=(mx-mn)*precis
   i=i+un
   x=x+precis
+  n=0
 if modeop == "crm":
- i=0
  u=0
  x=minint
  while x <= maxint:
@@ -97,7 +97,6 @@ if modeop == "crm":
   x=x+precis
   i=i+un
 if modeop == "crb":
- i=0
  u=0
  x=minint
  while x <= maxint:
@@ -107,7 +106,6 @@ if modeop == "crb":
   x=x+precis
   i=i+un
 if modeop == "mul":
- i=0
  u=0
  x=minint
  n=minint
@@ -119,8 +117,8 @@ if modeop == "mul":
    n=n+precis
   i=i+un
   x=x+precis
+  n=0
 if modeop == "add":
- i=0
  u=0
  x=minint
  n=minint
@@ -132,8 +130,8 @@ if modeop == "add":
    n=n+precis
   i=i+un
   x=x+precis
+  n=0
 if modeop == "atn":
- i=0
  x=minint
  while x <= maxint:
   exec("u=" + formul)
@@ -141,5 +139,44 @@ if modeop == "atn":
   x=x+precis
   i=i+u
  i=i/((maxint-minint)*(1/precis))
+if modeop == "min":
+ u=0
+ x=minint
+ n=minint
+ while x <= maxint:
+  while n <= maxint:
+   uu=u
+   exec("u=" + formul)
+   un=min(u,uu)*precis
+   n=n+precis
+  i=i+un
+  x=x+precis
+  n=0
+if modeop == "max":
+ u=0
+ x=minint
+ n=minint
+ while x <= maxint:
+  while n <= maxint:
+   uu=u
+   exec("u=" + formul)
+   un=max(u,uu)*precis
+   n=n+precis
+  i=i+un
+  x=x+precis
+  n=0
+if modeop == "med":
+ u=0
+ x=minint
+ n=minint
+ while x <= maxint:
+  while n <= maxint:
+   uu=u
+   exec("u=" + formul)
+   un=((u+uu)/2)*precis
+   n=n+precis
+  i=i+un
+  x=x+precis
+  n=0
 
 sys.stdout.write("%s\n" %(i))
