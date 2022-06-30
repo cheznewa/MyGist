@@ -60,30 +60,30 @@ if modeop == "in4":
   x=x+precis
 if modeop == "cup":
  i=0
- u=0
+ an=0
  x=minint
  n=minint
  while x <= maxint:
   while n <= maxint:
-   uu=u
    exec("u=" + formul)
-   un=max(u,uu)*precis
+   an=max(u,an)
    n=n+precis
+  un=an*precis
   i=i+un
   x=x+precis
 if modeop == "cap":
  i=0
- u=0
  x=minint
  n=minint
+ mn=0
+ mx=0
  while x <= maxint:
   while n <= maxint:
-   uu=u
    exec("u=" + formul)
-   mx=max(u,uu)
-   mn=min(u,uu)
-   un=(mx-mn)*precis
+   mx=max(u,mx)
+   mn=min(u,mn)
    n=n+precis
+  un=(mx-mn)*precis
   i=i+un
   x=x+precis
 if modeop == "crm":
