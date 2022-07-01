@@ -222,5 +222,72 @@ if modeop == "sup":
   if u > 0:
    i=i+precis
   x=x+precis
-
+if modeop == "rnd":
+ fs = open("/dev/urandom","rb")
+ x=minint
+ while x <= maxint:
+  exec("u=" + formul)
+  rnd = fs.read(4)
+  grd = (ord(rnd[0])*pow(256,-1))+(ord(rnd[1])*pow(256,-2))+(ord(rnd[2])*pow(256,-3))+(ord(rnd[3])*pow(256,-4))
+  u=u*grd
+  u=u*precis
+  x=x+precis
+  i=i+u
+if modeop == "rd2":
+ fs = open("/dev/urandom","rb")
+ x=minint
+ y=minint
+ while x <= maxint:
+  while y <= maxint:
+   exec("u=" + formul)
+   rnd = fs.read(4)
+   grd = (ord(rnd[0])*pow(256,-1))+(ord(rnd[1])*pow(256,-2))+(ord(rnd[2])*pow(256,-3))+(ord(rnd[3])*pow(256,-4))
+   u=u*grd
+   u=u*pow(precis,2)
+   y=y+precis
+   i=i+u
+  y=minint
+  x=x+precis
+if modeop == "rd3":
+ fs = open("/dev/urandom","rb")
+ x=minint
+ y=minint
+ z=minint
+ while x <= maxint:
+  while y <= maxint:
+   while z <= maxint:
+    exec("u=" + formul)
+    u=u*pow(precis,3)
+    rnd = fs.read(4)
+    grd = (ord(rnd[0])*pow(256,-1))+(ord(rnd[1])*pow(256,-2))+(ord(rnd[2])*pow(256,-3))+(ord(rnd[3])*pow(256,-4))
+    u=u*grd
+    z=z+precis
+    i=i+u
+   z=minint
+   y=y+precis
+  y=minint
+  x=x+precis
+if modeop == "rd4":
+ fs = open("/dev/urandom","rb")
+ x=minint
+ y=minint
+ z=minint
+ w=minint
+ while x <= maxint:
+  while y <= maxint:
+   while z <= maxint:
+    while w <= maxint:
+     exec("u=" + formul)
+     rnd = fs.read(4)
+     grd = (ord(rnd[0])*pow(256,-1))+(ord(rnd[1])*pow(256,-2))+(ord(rnd[2])*pow(256,-3))+(ord(rnd[3])*pow(256,-4))
+     u=u*grd
+     u=u*pow(precis,4)
+     w=w+precis
+     i=i+u
+    w=minint
+    z=z+precis
+   z=minint
+   y=y+precis
+  y=minint
+  x=x+precis
 sys.stdout.write("%s\n" %(i))
