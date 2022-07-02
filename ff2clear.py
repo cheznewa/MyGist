@@ -11,7 +11,6 @@ sys.stdout.write(size)
 rr=0
 gg=0
 bb=0
-aa=0
 while bool(n):
  o = sys.stdin.read(8)
  r = (ord(o[0])*256)+ord(o[1])
@@ -21,50 +20,48 @@ while bool(n):
  dr=r-rr
  dg=g-gg
  db=b-bb
- da=a-aa
  rv=r
  gv=g
  bv=b
- d=(dr+dg+db+da)/4
+ d=(dr+dg+db)/3
  if mode == "rc":
   if d < 0:
-   gv = max(g - abs(d),0)
-   bv = max(b - abs(d),0)
+   rv = min(r + abs(d),65535)
   elif d > 0:
    rv = max(r - abs(d),0)
  if mode == "gm":
   if d < 0:
-   rv = max(r - abs(d),0)
-   bv = max(b - abs(d),0)
+   gv = min(g + abs(d),65535)
   elif d > 0:
    gv = max(g - abs(d),0)
  if mode == "by":
   if d < 0:
-   rv = max(r - abs(d),0)
-   gv = max(g - abs(d),0)
+   bv = min(b + abs(d),65535)
   elif d > 0:
    bv = max(b - abs(d),0)
  if mode == "cr":
-  if d > 0:
+  if d < 0:
+   gv = min(g + abs(d),65535)
+   bv = min(b + abs(d),65535)
+  elif d > 0:
    gv = max(g - abs(d),0)
    bv = max(b - abs(d),0)
-  elif d < 0:
-   rv = max(r - abs(d),0)
  if mode == "mg":
-  if d > 0:
+  if d < 0:
+   rv = min(r + abs(d),65535)
+   bv = min(b + abs(d),65535)
+  elif d > 0:
    rv = max(r - abs(d),0)
    bv = max(b - abs(d),0)
-  elif d < 0:
-   gv = max(g - abs(d),0)
  if mode == "yb":
-  if d > 0:
+  if d < 0:
+   rv = min(r + abs(d),65535)
+   gv = min(g + abs(d),65535)
+  elif d > 0:
    rv = max(r - abs(d),0)
    gv = max(g - abs(d),0)
-  elif d < 0:
-   bv = max(b - abs(d),0)
  sys.stdout.write("%s%s%s%s%s%s%s%s" %(chr(rv/256),chr(rv%256),chr(gv/256),chr(gv%256),chr(bv/256),chr(bv%256),o[6],o[7]))
  rr=r
  gg=g
  bb=b
- aa=a
  n=n-1
