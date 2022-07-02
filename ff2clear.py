@@ -22,44 +22,47 @@ while bool(n):
  dg=g-gg
  db=b-bb
  da=a-aa
+ rv=r
+ gv=g
+ bv=b
  d=(dr+dg+db+da)/4
  if mode == "rc":
   if d < 0:
-   g = max(g - abs(d),0)
-   b = max(b - abs(d),0)
-  if d >= 0:
-   r = max(r - abs(d),0)
+   gv = max(g - abs(d),0)
+   bv = max(b - abs(d),0)
+  elif d > 0:
+   rv = max(r - abs(d),0)
  if mode == "gm":
   if d < 0:
-   r = max(r - abs(d),0)
-   b = max(b - abs(d),0)
-  if d >= 0:
-   g = max(g - abs(d),0)
+   rv = max(r - abs(d),0)
+   bv = max(b - abs(d),0)
+  elif d > 0:
+   gv = max(g - abs(d),0)
  if mode == "by":
   if d < 0:
-   r = max(r - abs(d),0)
-   g = max(g - abs(d),0)
-  if d >= 0:
-   b = max(b - abs(d),0)
+   rv = max(r - abs(d),0)
+   gv = max(g - abs(d),0)
+  elif d > 0:
+   bv = max(b - abs(d),0)
  if mode == "cr":
   if d > 0:
-   g = max(g - abs(d),0)
-   b = max(b - abs(d),0)
-  if d <= 0:
-   r = max(r - abs(d),0)
+   gv = max(g - abs(d),0)
+   bv = max(b - abs(d),0)
+  elif d < 0:
+   rv = max(r - abs(d),0)
  if mode == "mg":
   if d > 0:
-   r = max(r - abs(d),0)
-   b = max(b - abs(d),0)
-  if d <= 0:
-   g = max(g - abs(d),0)
+   rv = max(r - abs(d),0)
+   bv = max(b - abs(d),0)
+  elif d < 0:
+   gv = max(g - abs(d),0)
  if mode == "yb":
   if d > 0:
-   r = max(r - abs(d),0)
-   g = max(g - abs(d),0)
-  if d <= 0:
-   b = max(b - abs(d),0)
- sys.stdout.write("%s%s%s%s%s%s%s%s" %(chr(r/256),chr(r%256),chr(g/256),chr(g%256),chr(b/256),chr(b%256),o[6],o[7]))
+   rv = max(r - abs(d),0)
+   gv = max(g - abs(d),0)
+  elif d < 0:
+   bv = max(b - abs(d),0)
+ sys.stdout.write("%s%s%s%s%s%s%s%s" %(chr(rv/256),chr(rv%256),chr(gv/256),chr(gv%256),chr(bv/256),chr(bv%256),o[6],o[7]))
  rr=r
  gg=g
  bb=b
