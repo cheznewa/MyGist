@@ -9,7 +9,7 @@ chn=$(sqlite3 -tabs $IPTVDATA_DB "select name,country,is_nsfw from channels orde
 ch=$(cut -f 1 -d "	" <<< "$chn")
 cn=$(cut -f 2 -d "	" <<< "$chn" | tr A-Z a-z | sed s/uk/gb/)
 ci=$(cut -f 3 -d "	" <<< "$chn")
-if test $ci = "TRUE"
+if test $ci = "1"
 then
 rsvg-convert -z 10 $FLAGS/flags/4x3/${cn}.svg | convert png:- -resize $2 png:- | convert -fill red -gravity center -font "$3" -pointsize $2 +append png:- "label:\ $ch" png:- | png2ff | python2 $MYGIST/ff2clear.py rc | DISPLAY=:0 lel -t "$ch" &
 else
