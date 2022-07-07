@@ -17,10 +17,6 @@ while bool(n):
  g = (ord(o[2])*256)+ord(o[3])
  b = (ord(o[4])*256)+ord(o[5])
  a = (ord(o[6])*256)+ord(o[7])
- if not bool(n%x):
-  rr=r
-  gg=g
-  bb=b
  rv=r
  gv=g
  bv=b
@@ -67,7 +63,4 @@ while bool(n):
    rv = max(r - abs(d),0)
    gv = max(g - abs(d),0)
  sys.stdout.write("%s%s%s%s%s%s%s%s" %(chr(rv/256),chr(rv%256),chr(gv/256),chr(gv%256),chr(bv/256),chr(bv%256),o[6],o[7]))
- rr=r
- gg=g
- bb=b
  n=n-1
