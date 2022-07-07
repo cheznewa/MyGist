@@ -25,7 +25,6 @@ while bool(n):
  r = (ord(o[0])*256)+ord(o[1])
  g = (ord(o[2])*256)+ord(o[3])
  b = (ord(o[4])*256)+ord(o[5])
- a = (ord(o[6])*256)+ord(o[7])
  if not bool(n%x):
   rr=r
   gg=g
