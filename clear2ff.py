@@ -8,9 +8,6 @@ y = (pow(256,3)*ord(size[4]))+(pow(256,2)*ord(size[5]))+(pow(256,1)*ord(size[6])
 n = x*y
 sys.stdout.write("farbfeld")
 sys.stdout.write(size)
-rr=0
-gg=0
-bb=0
 while bool(n):
  o = sys.stdin.read(8)
  r = (ord(o[0])*256)+ord(o[1])
