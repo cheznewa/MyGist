@@ -20,7 +20,7 @@ switch_on_fg:#e3e3e3
 switch_on_bg:#bd9b54
 switch_on_border:#e3e3e3
 terminal_fg:#e3e3e3
-terminal_mid:#4e5054
+terminal_mid:#7a7a7a
 terminal_bg:#2a2a2a
 terminal_outside_fg:#e3e3e3
 terminal_outside_bg:#383838
