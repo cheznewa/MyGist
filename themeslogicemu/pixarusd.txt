@@ -21,7 +21,7 @@ switch_on_bg:#bd9b54
 switch_on_border:#e3e3e3
 terminal_fg:#e3e3e3
 terminal_mid:#4e5054
-terminal_bg:#383838
+terminal_bg:#2a2a2a
 terminal_outside_fg:#e3e3e3
 terminal_outside_bg:#383838
 link:#5a5a5a
