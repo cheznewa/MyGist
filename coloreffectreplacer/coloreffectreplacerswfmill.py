@@ -292,7 +292,7 @@ def pprcol(col,h): # Paper Color
   m = 0
   y = 0
  # End Source
- z = min(int(k*255)+int(c*255)+int(m*255)+int(y*255),255)
+ z = max(int(k*255),int(c*255),int(m*255),int(y*255))
  vr = max(vr-int((255-hr)*((255-z)/255.0)),0)
  vg = max(vg-int((255-hg)*((255-z)/255.0)),0)
  vb = max(vb-int((255-hb)*((255-z)/255.0)),0)
