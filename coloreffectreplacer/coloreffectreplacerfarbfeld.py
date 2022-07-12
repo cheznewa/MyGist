@@ -281,7 +281,18 @@ def pprcol(col,h): # Paper Color
  hr = int(h[0:2],16)
  hg = int(h[2:4],16)
  hb = int(h[4:6],16)
- z = min(abs(vr-vg)+abs(vr-vb)+abs(vg-vb),255)
+ # Source From ::::::: https://www.rapidtables.com/convert/color/rgb-to-cmyk.html
+ k = 1-max((vr/255.0),(vg/255.0),(vb/255.0))
+ if not k == 1.0:
+  c = (1-(vr/255.0)-k)/(1-k)
+  m = (1-(vg/255.0)-k)/(1-k)
+  y = (1-(vb/255.0)-k)/(1-k)
+ else:
+  c = 0
+  m = 0
+  y = 0
+ # End Source
+ z = min(int(k*255)+int(c*255)+int(m*255)+int(y*255),255)
  vr = max(vr-int((255-hr)*((255-z)/255.0)),0)
  vg = max(vg-int((255-hg)*((255-z)/255.0)),0)
  vb = max(vb-int((255-hb)*((255-z)/255.0)),0)
