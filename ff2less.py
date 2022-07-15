@@ -1,4 +1,5 @@
 import sys
+less=int(sys.argv[1])
 if not "farbfeld" == sys.stdin.read(8):
  exit(1)
 size = sys.stdin.read(8)
@@ -30,7 +31,7 @@ while bool(n):
  gv=g
  bv=b
  d=max(dr,dg,db)
- if d < 21845 or d > 43691:
+ if d < less or d > (65535-less):
   rv = r
   gv = g
   bv = b
