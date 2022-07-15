@@ -23,13 +23,13 @@ while bool(n):
   rr=r
   gg=g
   bb=b
- dr=r-rr
- dg=g-gg
- db=b-bb
+ dr=abs(r-rr)
+ dg=abs(g-gg)
+ db=abs(b-bb)
  rv=r
  gv=g
  bv=b
- d=abs(dr+dg+db)/3
+ d=max(dr,dg,db)
  if d < 21845 or d > 43691:
   rv = r
   gv = g
