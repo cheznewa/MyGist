@@ -1,0 +1,27 @@
+import sys
+if not "farbfeld" == sys.stdin.read(8):
+ exit(1)
+size = sys.stdin.read(8)
+x = (pow(256,3)*ord(size[0]))+(pow(256,2)*ord(size[1]))+(pow(256,1)*ord(size[2]))+(pow(256,0)*ord(size[3]))
+y = (pow(256,3)*ord(size[4]))+(pow(256,2)*ord(size[5]))+(pow(256,1)*ord(size[6]))+(pow(256,0)*ord(size[7]))
+n = x*y
+sys.stdout.write("farbprit")
+sys.stdout.write(size)
+while bool(n):
+ o = sys.stdin.read(8)
+ r = (ord(o[0])*256)+ord(o[1])
+ g = (ord(o[2])*256)+ord(o[3])
+ b = (ord(o[4])*256)+ord(o[5])
+ # Source From ::::::: https://www.rapidtables.com/convert/color/rgb-to-cmyk.html
+ k = 1-max((r/65535.0),(g/65535.0),(b/65535.0))
+ if not k == 1.0:
+  c = (1-(r/65535.0)-k)/(1-k)
+  m = (1-(g/65535.0)-k)/(1-k)
+  y = (1-(b/65535.0)-k)/(1-k)
+ else:
+  c = 0
+  m = 0
+  y = 0
+  # End Source
+ sys.stdout.write("%s%s%s%s%s%s%s%s" %(chr(int(c*65535)/256),chr(int(c*65535)%256),chr(int(m*65535)/256),chr(int(m*65535)%256),chr(int(y*65535)/256),chr(int(y*65535)%256),chr(int(k*65535)/256),chr(int(k*65535)%256)))
+ n=n-1
