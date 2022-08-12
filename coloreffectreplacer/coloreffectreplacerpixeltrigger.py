@@ -332,6 +332,18 @@ def intcol(col,p,fr,fg,fb): # Integral
  vb = str(format(min(max(int(vb),0),255),"02x"))
  return vr + vg + vb
 
+def lumcol(col,sr,sg,sb,r,g,b):
+ vr = int(col[0:2],16)
+ vg = int(col[2:4],16)
+ vb = int(col[4:6],16)
+ vr = int(max(min(vr+(r*(vr-sr)),255),0))
+ vg = int(max(min(vg+(g*(vg-sg)),255),0))
+ vb = int(max(min(vb+(b*(vb-sb)),255),0))
+ vr = str(format(vr,"02x"))
+ vg = str(format(vg,"02x"))
+ vb = str(format(vb,"02x"))
+ return vr + vg + vb
+
 import sys
 fsa = open(sys.argv[1],"r")
 u = 0
@@ -389,6 +401,8 @@ while True:
   col = pprcol(col,param[2])
  if param[1] == "int":
   col = intcol(col,float(param[2]),param[3],param[4],param[5])
+ if param[1] == "lum":
+  col = lumcol(col,int(param[2]),int(param[3]),int(param[4]),float(param[5]),float(param[6]),float(param[7]))
  sys.stdout.write(chr(int(col[0:2],16)))
  sys.stdout.write(chr(int(col[2:4],16)))
  sys.stdout.write(chr(int(col[4:6],16)))
