@@ -81,6 +81,24 @@ while bool(n):
    rv = max(r - (int((1-(rb/255.0))*(abs(d)))),0)
    gv = max(g - (int((1-(gb/255.0))*(abs(d)))),0)
    bv = max(b - (int((1-(bc/255.0))*(abs(d)))),0)
+ if mode == "rgb":
+  if d < 0:
+   rv = min(r + (abs(d)/1),65535)
+   gv = min(g + (abs(d)/2),65535)
+   bv = min(b + (abs(d)/3),65535)
+  elif d > 0:
+   rv = max(r - (abs(d)/1),0)
+   gv = max(g - (abs(d)/2),0)
+   bv = max(b - (abs(d)/3),0)
+ if mode == "bgr":
+  if d < 0:
+   rv = min(r + (abs(d)/3),65535)
+   gv = min(g + (abs(d)/2),65535)
+   bv = min(b + (abs(d)/1),65535)
+  elif d > 0:
+   rv = max(r - (abs(d)/3),0)
+   gv = max(g - (abs(d)/2),0)
+   bv = max(b - (abs(d)/1),0)
  sys.stdout.write("%s%s%s%s%s%s%s%s" %(chr(rv/256),chr(rv%256),chr(gv/256),chr(gv%256),chr(bv/256),chr(bv%256),o[6],o[7]))
  rr=r
  gg=g
