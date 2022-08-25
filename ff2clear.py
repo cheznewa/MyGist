@@ -1,4 +1,5 @@
 import sys
+import math
 mode = sys.argv[1]
 if not "farbfeld" == sys.stdin.read(8):
  exit(1)
@@ -83,22 +84,22 @@ while bool(n):
    bv = max(b - (int((1-(bc/255.0))*(abs(d)))),0)
  if mode == "rgb":
   if d < 0:
-   rv = min(r + (abs(d)/1),65535)
-   gv = min(g + (abs(d)/2),65535)
-   bv = min(b + (abs(d)/3),65535)
+   rv = min(r + int(65535*(math.sin(abs(d)/65535.0)*(math.pi*0.5))),65535)
+   gv = min(g + int(65535*(math.sin(abs(d)/65535.0)*(math.pi*0.25))),65535)
+   bv = min(b + int(65535*(math.sin(abs(d)/65535.0)*(math.pi*0.125))),65535)
   elif d > 0:
-   rv = max(r - (abs(d)/1),0)
-   gv = max(g - (abs(d)/2),0)
-   bv = max(b - (abs(d)/3),0)
+   rv = max(r - int(65535*(math.sin(abs(d)/65535.0)*(math.pi*0.5))),0)
+   gv = max(g - int(65535*(math.sin(abs(d)/65535.0)*(math.pi*0.25))),0)
+   bv = max(b - int(65535*(math.sin(abs(d)/65535.0)*(math.pi*0.125))),0)
  if mode == "bgr":
   if d < 0:
-   rv = min(r + (abs(d)/3),65535)
-   gv = min(g + (abs(d)/2),65535)
-   bv = min(b + (abs(d)/1),65535)
+   rv = min(r + int(65535*(math.sin(abs(d)/65535.0)*(math.pi*0.125))),65535)
+   gv = min(g + int(65535*(math.sin(abs(d)/65535.0)*(math.pi*0.25))),65535)
+   bv = min(b + int(65535*(math.sin(abs(d)/65535.0)*(math.pi*0.5))),65535)
   elif d > 0:
-   rv = max(r - (abs(d)/3),0)
-   gv = max(g - (abs(d)/2),0)
-   bv = max(b - (abs(d)/1),0)
+   rv = max(r - int(65535*(math.sin(abs(d)/65535.0)*(math.pi*0.125))),0)
+   gv = max(g - int(65535*(math.sin(abs(d)/65535.0)*(math.pi*0.25))),0)
+   bv = max(b - int(65535*(math.sin(abs(d)/65535.0)*(math.pi*0.5))),0)
  sys.stdout.write("%s%s%s%s%s%s%s%s" %(chr(rv/256),chr(rv%256),chr(gv/256),chr(gv%256),chr(bv/256),chr(bv%256),o[6],o[7]))
  rr=r
  gg=g
