@@ -1,0 +1,104 @@
+{
+    "frameEnd": "))",
+    "frameStart": "((",
+    "groups": [
+        {
+            "datasets": [
+                {
+                    "alarm": 1023,
+                    "fft": false,
+                    "fftSamples": 1024,
+                    "graph": false,
+                    "led": false,
+                    "log": false,
+                    "max": 1023,
+                    "min": 0,
+                    "title": "Joie",
+                    "units": "sent",
+                    "value": "%1",
+                    "widget": "gauge"
+                },
+                {
+                    "alarm": 1023,
+                    "fft": false,
+                    "fftSamples": 1024,
+                    "graph": false,
+                    "led": false,
+                    "log": false,
+                    "max": 1023,
+                    "min": 0,
+                    "title": "Dégout",
+                    "units": "sent",
+                    "value": "%2",
+                    "widget": "gauge"
+                },
+                {
+                    "alarm": 1023,
+                    "fft": false,
+                    "fftSamples": 1024,
+                    "graph": false,
+                    "led": false,
+                    "log": false,
+                    "max": 1023,
+                    "min": 0,
+                    "title": "Colère",
+                    "units": "sent",
+                    "value": "%3",
+                    "widget": "gauge"
+                },
+                {
+                    "alarm": 1023,
+                    "fft": false,
+                    "fftSamples": 1024,
+                    "graph": false,
+                    "led": false,
+                    "log": false,
+                    "max": 1023,
+                    "min": 0,
+                    "title": "Etonament",
+                    "units": "sent",
+                    "value": "%4",
+                    "widget": "gauge"
+                }
+            ],
+            "title": "Mon Etat",
+            "widget": ""
+        },
+        {
+            "datasets": [
+                {
+                    "alarm": 0,
+                    "fft": false,
+                    "fftSamples": 1024,
+                    "graph": false,
+                    "led": false,
+                    "log": false,
+                    "max": 5000000,
+                    "min": -5000000,
+                    "title": "Journée Blanc/Noir",
+                    "units": "bird",
+                    "value": "%5",
+                    "widget": "bar"
+                },
+                {
+                    "alarm": 0,
+                    "fft": false,
+                    "fftSamples": 1024,
+                    "graph": false,
+                    "led": false,
+                    "log": false,
+                    "max": 500000,
+                    "min": -500000,
+                    "title": "Journée +Rouge",
+                    "units": "bird",
+                    "value": "%6",
+                    "widget": "bar"
+                }
+            ],
+            "title": "Signe D'oiseau",
+            "widget": ""
+        }
+    ],
+    "separator": ";",
+    "title": "My Feeling"
+}
