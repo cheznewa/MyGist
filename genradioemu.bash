@@ -24,10 +24,12 @@ sox -t mp3 https://start-sud.ice.infomaniak.ch/start-sud-high.mp3 -t u16 -r 1500
 sox -t mp3 http://streaming.radio.funradio.fr/fun-1-44-128 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10190000 10200000 16 > $tmp/fun.radio &
 sox -t mp3 http://streaming.radio.rtl.fr/rtl-1-44-128 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10430000 10440000 16 > $tmp/rtl.radio &
 sox -t mp3 http://ais-live.cloud-services.paris:8000/europe1.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10470000 10480000 16 > $tmp/europeun.radio &
-sox -t mp3 http://chai5she.cdn.dvmr.fr/rmcinfo -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10310000 10320000 16 > $tmp/rmc.radio &
+sox -t mp3 https://start-voltage.ice.infomaniak.ch/start-voltage-high.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 9690000 9700000 16 > $tmp/voltage.radio &
 sox -t mp3 http://radio-contact.ice.infomaniak.ch/radio-contact-high.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 9070000 9080000 16 > $tmp/contact.radio &
 sox -t mp3 https://stream.rfm.fr/rfm.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10390000 10400000 16 > $tmp/rfm.radio &
+sox -t mp3 https://scdn.nrjaudio.fm/audio1/fr/30201/mp3_128.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 9130000 9140000 16 > $tmp/cheriefm.radio &
 sox -t mp3 http://mfm.ice.infomaniak.ch/mfm-128.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10270000 10280000 16 > $tmp/mfm.radio &
+sox -t mp3 http://radioclassique.ice.infomaniak.ch/radioclassique-high.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10110000 10120000 16 > $tmp/classique.radio &
 sox -t mp3 http://str0.creacast.com/radio_vinci_autoroutes_1 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10770000 10780000 16 > $tmp/trafic1.radio &
 sox -t mp3 http://str0.creacast.com/radio_vinci_autoroutes_2 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10780000 10790000 16 > $tmp/trafic2.radio &
 sox -t mp3 http://str0.creacast.com/radio_vinci_autoroutes_3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10790000 10800000 16 > $tmp/trafic3.radio &
