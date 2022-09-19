@@ -344,6 +344,33 @@ def lumcol(col,sr,sg,sb,r,g,b):
  vb = str(format(vb,"02x"))
  return vr + vg + vb
 
+def iprcol(col,h): # Invert Paper Color
+ vr = int(col[0:2],16)
+ vg = int(col[2:4],16)
+ vb = int(col[4:6],16)
+ hr = int(h[0:2],16)
+ hg = int(h[2:4],16)
+ hb = int(h[4:6],16)
+ # Source From ::::::: https://www.rapidtables.com/convert/color/rgb-to-cmyk.html
+ k = 1-max((vr/255.0),(vg/255.0),(vb/255.0))
+ if not k == 1.0:
+  c = (1-(vr/255.0)-k)/(1-k)
+  m = (1-(vg/255.0)-k)/(1-k)
+  y = (1-(vb/255.0)-k)/(1-k)
+ else:
+  c = 0
+  m = 0
+  y = 0
+ # End Source
+ z = max(int(k*255),int(c*255),int(m*255),int(y*255))
+ vr = max(int(k*255)+vr-int((255-hr)*((255-z)/255.0)),0)
+ vg = max(int(k*255)+vg-int((255-hg)*((255-z)/255.0)),0)
+ vb = max(int(k*255)+vb-int((255-hb)*((255-z)/255.0)),0)
+ vr = str(format(vr,"02x"))
+ vg = str(format(vg,"02x"))
+ vb = str(format(vb,"02x"))
+ return vr + vg + vb
+
 import sys
 import re
 for o in sys.stdin:
@@ -398,6 +425,8 @@ for o in sys.stdin:
    col = depcol(col,sys.argv[2],sys.argv[3])
   if sys.argv[1] == "ppr":
    col = pprcol(col,sys.argv[2])
+  if sys.argv[1] == "ipr":
+   col = iprcol(col,sys.argv[2])
   if sys.argv[1] == "int":
    col = intcol(col,float(sys.argv[2]),sys.argv[3],sys.argv[4],sys.argv[5])
   if sys.argv[1] == "lum":
