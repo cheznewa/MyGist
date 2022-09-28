@@ -73,6 +73,24 @@ while bool(n):
   elif d > 0:
    rv = max(r - abs(d),0)
    gv = max(g - abs(d),0)
+ if mode == "rb":
+  if d < 0:
+   rv = min(r + abs(d),65535)
+   gv = g
+   bv = max(b - abs(d),0)
+  elif d > 0:
+   rv = max(r - abs(d),0)
+   gv = g
+   bv = min(b + abs(d),65535)
+ if mode == "br":
+  if d < 0:
+   rv = max(r - abs(d),0)
+   gv = g
+   bv = min(b + abs(d),65535)
+  elif d > 0:
+   rv = min(r + abs(d),65535)
+   gv = g
+   bv = max(b - abs(d),0)
  if mode == "cc":
   if d < 0:
    rv = min(r + (int((ra/255.0)*abs(d))),65535)
