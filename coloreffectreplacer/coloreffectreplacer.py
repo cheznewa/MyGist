@@ -331,6 +331,21 @@ def intcol(col,p,fr,fg,fb): # Integral
  vg = str(format(min(max(int(vg),0),255),"02x"))
  vb = str(format(min(max(int(vb),0),255),"02x"))
  return vr + vg + vb
+
+def funcol(col,fr,fg,fb): # Function/Custom
+ r = float(int(col[0:2],16))
+ g = float(int(col[2:4],16))
+ b = float(int(col[4:6],16))
+ exec("u=" + fr)
+ vr = int(u%256)
+ exec("u=" + fg)
+ vg = int(u%256)
+ exec("u=" + fb)
+ vb = int(u%256)
+ vr = str(format(vr,"02x"))
+ vg = str(format(vg,"02x"))
+ vb = str(format(vb,"02x"))
+ return vr + vg + vb
  
 def lumcol(col,sr,sg,sb,r,g,b):
  vr = int(col[0:2],16)
@@ -425,6 +440,8 @@ while True:
     col = iprcol(col,sys.argv[2],sys.argv[3])
    if sys.argv[1] == "int":
     col = intcol(col,float(sys.argv[2]),sys.argv[3],sys.argv[4],sys.argv[5])
+   if sys.argv[1] == "fun":
+    col = funcol(col,sys.argv[2],sys.argv[3],sys.argv[4])
    if sys.argv[1] == "lum":
     col = lumcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]),float(sys.argv[5]),float(sys.argv[6]),float(sys.argv[7]))
   sys.stdout.write("#")

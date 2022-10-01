@@ -332,6 +332,21 @@ def intcol(col,p,fr,fg,fb): # Integral
  vb = str(format(min(max(int(vb),0),255),"02x"))
  return vr + vg + vb
 
+def funcol(col,fr,fg,fb): # Function/Custom
+ r = float(int(col[0:2],16))
+ g = float(int(col[2:4],16))
+ b = float(int(col[4:6],16))
+ exec("u=" + fr)
+ vr = int(u%256)
+ exec("u=" + fg)
+ vg = int(u%256)
+ exec("u=" + fb)
+ vb = int(u%256)
+ vr = str(format(vr,"02x"))
+ vg = str(format(vg,"02x"))
+ vb = str(format(vb,"02x"))
+ return vr + vg + vb
+
 def lumcol(col,sr,sg,sb,r,g,b):
  vr = int(col[0:2],16)
  vg = int(col[2:4],16)
@@ -433,6 +448,8 @@ while True:
   col = iprcol(col,param[2],param[3])
  if param[1] == "int":
   col = intcol(col,float(param[2]),param[3],param[4],param[5])
+ if param[1] == "fun":
+  col = funcol(col,param[2],param[3],param[4])
  if param[1] == "lum":
   col = lumcol(col,int(param[2]),int(param[3]),int(param[4]),float(param[5]),float(param[6]),float(param[7]))
  sys.stdout.write(chr(int(col[0:2],16)))
