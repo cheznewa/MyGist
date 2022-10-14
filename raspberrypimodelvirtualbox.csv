@@ -1,0 +1,8 @@
+Model,Memory MB,Core,Storage GB,3D Acceleration
+Raspberry Pi Pico,256,1,4,0
+Raspberry Pi Zero,512,2,8,0
+Raspberry Pi,1024,3,16,0
+Raspberry Pi 1,512,4,16,0
+Raspberry Pi 2,2048,4,24,0
+Raspberry Pi 3,4096,8,32,0
+Raspberry Pi 4,8192,8,64,1
