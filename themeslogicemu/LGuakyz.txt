@@ -9,10 +9,10 @@ text_bg:#111111
 bus:#6093a7,#60a16b,#9c9f6b,#9c7f6b,#9c656d,#9c6596,#7565a7,#6067a7
 led_off_fg:#d4d4d4,#d4d4d4,#d4d4d4,#d4d4d4,#d4d4d4,#d4d4d4,#d4d4d4,#1f1f1f,#d4d4d4,#d4d4d4
 led_off_bg:#660004,#662a00,#666500,#006608,#000566,#2a0066,#660059,#666666,#ff1200,#333333
-led_off_border:#232323,#232323,#232323,#232323,#232323,#232323,#232323,#232323,#232323,#232323
+led_off_border:#4e4e4e,#4e4e4e,#4e4e4e,#4e4e4e,#4e4e4e,#4e4e4e,#4e4e4e,#4e4e4e,#4e4e4e,#4e4e4e
 led_on_fg:#d4d4d4,#d4d4d4,#d4d4d4,#d4d4d4,#d4d4d4,#d4d4d4,#d4d4d4,#1f1f1f,#d4d4d4,#d4d4d4
 led_on_bg:#ff000a,#ff6800,#fffd00,#00ff15,#000dff,#6900ff,#ff00de,#ffffff,#00ff70,#ede585
-led_on_border:#232323,#232323,#232323,#232323,#232323,#232323,#232323,#232323,#232323,#232323
+led_on_border:#4e4e4e,#4e4e4e,#4e4e4e,#4e4e4e,#4e4e4e,#4e4e4e,#4e4e4e,#4e4e4e,#4e4e4e,#4e4e4e
 switch_off_fg:#d4d4d4
 switch_off_bg:#0c5234
 switch_off_border:#4e4e4e
