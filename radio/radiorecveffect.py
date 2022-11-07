@@ -2,7 +2,9 @@ import sys
 from struct import unpack
 min = int(sys.argv[1])
 max = int(sys.argv[2])
-fs = open("/dev/urandom","rb") 
+fs = open("/dev/urandom","rb")
+if not sys.argv[5] == "beep" or sys.argv[5] == "noise":
+ fsf = open(sys.argv[5],"rb")
 no = 0
 f = 0
 while True:
@@ -28,13 +30,17 @@ while True:
      f = (f + 1) % 100
     elif sys.argv[5] == "noise":
      sys.stdout.write(fs.read(2))
+    else:
+     sys.stdout.write(fsf.read(2))
     no = 0
    if sys.argv[3] == "8":
     if sys.argv[5] == "beep":
      sys.stdout.write("%s" %(chr(((f/50)%2)*255)))
      f = (f + 1) % 100
     elif sys.argv[5] == "noise":
-     sys.stdout.write(fs.read(2))
+     sys.stdout.write(fs.read(1))
+    else:
+     sys.stdout.write(fsf.read(1))
     no = 0
  if n == max-1:
   sys.stderr.write("\x07\x0A")
