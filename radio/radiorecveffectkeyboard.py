@@ -5,7 +5,7 @@ min = int(sys.argv[1])
 max = int(sys.argv[2])
 inc = int(sys.argv[6])
 fs = open("/dev/urandom","rb")
-if not sys.argv[5] == "beep" or sys.argv[5] == "noise":
+if not((sys.argv[5] == "beep") or (sys.argv[5] == "noise")):
  fsf = open(sys.argv[5],"rb")
 no = 0
 u=0

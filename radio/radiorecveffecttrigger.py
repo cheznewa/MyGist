@@ -11,7 +11,7 @@ min =  int(param.split(";")[1])
 max =  int(param.split(";")[2])
 # END   :: Trigger
 fs = open("/dev/urandom","rb")
-if not sys.argv[5] == "beep" or sys.argv[5] == "noise":
+if not((sys.argv[5] == "beep") or (sys.argv[5] == "noise")):
  fsf = open(sys.argv[5],"rb")
 no = 0
 f = 0
