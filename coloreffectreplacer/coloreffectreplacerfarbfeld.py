@@ -400,61 +400,86 @@ sys.stdout.write("farbfeld")
 sys.stdout.write(size)
 while bool(n):
  o = sys.stdin.read(8)
- col = str(format(ord(o[0]),"02x")) + str(format(ord(o[2]),"02x")) + str(format(ord(o[4]),"02x"))
+ acol = str(format(ord(o[0]),"02x")) + str(format(ord(o[2]),"02x")) + str(format(ord(o[4]),"02x"))
+ bcol = str(format(ord(o[1]),"02x")) + str(format(ord(o[3]),"02x")) + str(format(ord(o[5]),"02x"))
  if sys.argv[1] == "add":
-  col = addcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
+  acol = addcol(acol,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
+  bcol = addcol(bcol,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
  if sys.argv[1] == "sub":
-  col = subcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
+  acol = subcol(acol,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
+  bcol = subcol(bcol,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
  if sys.argv[1] == "xor":
-  col = xorcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
+  acol = xorcol(acol,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
+  bcol = xorcol(bcol,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
  if sys.argv[1] == "bnw":
-  col = bnwcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
+  acol = bnwcol(acol,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
+  bcol = bnwcol(bcol,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
  if sys.argv[1] == "sep":
-  col = sepcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
+  acol = sepcol(acol,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
+  bcol = sepcol(bcol,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
  if sys.argv[1] == "rmp":
-  col = rmpcol(col,sys.argv[2],sys.argv[3],int(sys.argv[4]))
+  acol = rmpcol(acol,sys.argv[2],sys.argv[3],int(sys.argv[4]))
+  bcol = rmpcol(bcol,sys.argv[2],sys.argv[3],int(sys.argv[4]))
  if sys.argv[1] == "rnd":
-  col = rndcol(col,sys.argv[2],int(sys.argv[3]))
+  acol = rndcol(acol,sys.argv[2],int(sys.argv[3]))
+  bcol = rndcol(bcol,sys.argv[2],int(sys.argv[3]))
  if sys.argv[1] == "pow":
-  col = powcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
+  acol = powcol(acol,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
+  bcol = powcol(bcol,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
  if sys.argv[1] == "exp":
-  col = expcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
+  acol = expcol(acol,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
+  bcol = expcol(bcol,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
  if sys.argv[1] == "map":
-  col = mapcol(col,sys.argv[2:])
+  acol = mapcol(acol,sys.argv[2:])
+  bcol = mapcol(bcol,sys.argv[2:])
  if sys.argv[1] == "uni":
-  col = unicol(col,sys.argv[2])
+  acol = unicol(acol,sys.argv[2])
+  bcol = unicol(bcol,sys.argv[2])
  if sys.argv[1] == "col":
-  col = colcol(col,sys.argv[2],int(sys.argv[3]),int(sys.argv[4]),int(sys.argv[5]))
+  acol = colcol(acol,sys.argv[2],int(sys.argv[3]),int(sys.argv[4]),int(sys.argv[5]))
+  bcol = colcol(bcol,sys.argv[2],int(sys.argv[3]),int(sys.argv[4]),int(sys.argv[5]))
  if sys.argv[1] == "pos":
-  col = poscol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
+  acol = poscol(acol,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
+  bcol = poscol(bcol,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
  if sys.argv[1] == "emp":
-  col = empcol(col,sys.argv[2:])
+  acol = empcol(acol,sys.argv[2:])
+  bcol = empcol(bcol,sys.argv[2:])
  if sys.argv[1] == "dmp":
-  col = dmpcol(col,sys.argv[2:])
+  acol = dmpcol(acol,sys.argv[2:])
+  bcol = dmpcol(bcol,sys.argv[2:])
  if sys.argv[1] == "gam":
-  col = gamcol(col,float(sys.argv[2]),float(sys.argv[3]),float(sys.argv[4]))
+  acol = gamcol(acol,float(sys.argv[2]),float(sys.argv[3]),float(sys.argv[4]))
+  bcol = gamcol(bcol,float(sys.argv[2]),float(sys.argv[3]),float(sys.argv[4]))
  if sys.argv[1] == "shu":
-  col = shucol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]),int(sys.argv[5]),int(sys.argv[6]),int(sys.argv[7]))
+  acol = shucol(acol,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]),int(sys.argv[5]),int(sys.argv[6]),int(sys.argv[7]))
+  bcol = shucol(bcol,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]),int(sys.argv[5]),int(sys.argv[6]),int(sys.argv[7]))
  if sys.argv[1] == "old":
-  col = oldcol(col,int(sys.argv[2]),int(sys.argv[3]))
+  acol = oldcol(acol,int(sys.argv[2]),int(sys.argv[3]))
+  bcol = oldcol(bcol,int(sys.argv[2]),int(sys.argv[3]))
  if sys.argv[1] == "dep":
-  col = depcol(col,sys.argv[2],sys.argv[3])
+  acol = depcol(acol,sys.argv[2],sys.argv[3])
+  bcol = depcol(bcol,sys.argv[2],sys.argv[3])
  if sys.argv[1] == "ppr":
-  col = pprcol(col,sys.argv[2])
+  acol = pprcol(acol,sys.argv[2])
+  bcol = pprcol(bcol,sys.argv[2])
  if sys.argv[1] == "ipr":
-  col = iprcol(col,sys.argv[2],sys.argv[3])
+  acol = iprcol(acol,sys.argv[2],sys.argv[3])
+  bcol = iprcol(bcol,sys.argv[2],sys.argv[3])
  if sys.argv[1] == "int":
-  col = intcol(col,float(sys.argv[2]),sys.argv[3],sys.argv[4],sys.argv[5])
+  acol = intcol(acol,float(sys.argv[2]),sys.argv[3],sys.argv[4],sys.argv[5])
+  bcol = intcol(bcol,float(sys.argv[2]),sys.argv[3],sys.argv[4],sys.argv[5])
  if sys.argv[1] == "fun":
-  col = funcol(col,sys.argv[2],sys.argv[3],sys.argv[4])
+  acol = funcol(acol,sys.argv[2],sys.argv[3],sys.argv[4])
+  bcol = funcol(bcol,sys.argv[2],sys.argv[3],sys.argv[4])
  if sys.argv[1] == "lum":
-  col = lumcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]),float(sys.argv[5]),float(sys.argv[6]),float(sys.argv[7]))
- sys.stdout.write(chr(int(col[0:2],16)))
- sys.stdout.write(o[1])
- sys.stdout.write(chr(int(col[2:4],16)))
- sys.stdout.write(o[3])
- sys.stdout.write(chr(int(col[4:6],16)))
- sys.stdout.write(o[5])
+  acol = lumcol(acol,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]),float(sys.argv[5]),float(sys.argv[6]),float(sys.argv[7]))
+  bcol = lumcol(bcol,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]),float(sys.argv[5]),float(sys.argv[6]),float(sys.argv[7]))
+ sys.stdout.write(chr(int(acol[0:2],16)))
+ sys.stdout.write(chr(int(bcol[0:2],16)))
+ sys.stdout.write(chr(int(acol[2:4],16)))
+ sys.stdout.write(chr(int(bcol[2:4],16)))
+ sys.stdout.write(chr(int(acol[4:6],16)))
+ sys.stdout.write(chr(int(bcol[4:6],16)))
  sys.stdout.write(o[6])
  sys.stdout.write(o[7])
  n = n-1
