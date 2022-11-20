@@ -389,6 +389,35 @@ def iprcol(col,h,i): # Invert Paper Color
  vb = str(format(vb,"02x"))
  return vr + vg + vb
 
+def dprcol(col,vk,vc,vm,vy): # Deficiency Printing 
+ vr = int(col[0:2],16)
+ vg = int(col[2:4],16)
+ vb = int(col[4:6],16)
+ # Source From ::::::: https://www.rapidtables.com/convert/color/rgb-to-cmyk.html
+ k = 1-max((vr/255.0),(vg/255.0),(vb/255.0))
+ if not k == 1.0:
+  c = (1-(vr/255.0)-k)/(1-k)
+  m = (1-(vg/255.0)-k)/(1-k)
+  y = (1-(vb/255.0)-k)/(1-k)
+ else:
+  c = 0
+  m = 0
+  y = 0
+  # End Source
+ k = (int(vk)/255.0)*k
+ c = (int(vc)/255.0)*c
+ m = (int(vm)/255.0)*m
+ y = (int(vy)/255.0)*y
+ # Source From ::::::: https://www.rapidtables.com/convert/color/cmyk-to-rgb.html
+ r = (1-c)*(1-k)
+ g = (1-m)*(1-k)
+ b = (1-y)*(1-k)
+ # End Source
+ vr = str(format(int(r*255),"02x"))
+ vg = str(format(int(g*255),"02x"))
+ vb = str(format(int(b*255),"02x"))
+ return vr + vg + vb
+
 import sys
 import string
 while True:
@@ -444,6 +473,8 @@ while True:
     col = funcol(col,sys.argv[2],sys.argv[3],sys.argv[4])
    if sys.argv[1] == "lum":
     col = lumcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]),float(sys.argv[5]),float(sys.argv[6]),float(sys.argv[7]))
+   if sys.argv[1] == "dpr":
+    col = dprcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]),int(sys.argv[5]))
   sys.stdout.write("#")
   sys.stdout.write(col)
  else:
