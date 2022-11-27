@@ -1,4 +1,5 @@
-# Command Example :::::::::::::::::::::::::::: FONT_APEX=/path/to/font-apex/svgs fontapexvar.bash 000000 1
+# Command Example :::::::::::::::::::::::::::: FONT_APEX=/path/to/font-apex/svgs bash fontapexffjs.bash 000000 ffffff 1
+# Source ::::::::::::::::::::::::::::::::::::: https://github.com/oracle/font-apex/
 color=$1
 bgcol=$2
 pntsz=$3
