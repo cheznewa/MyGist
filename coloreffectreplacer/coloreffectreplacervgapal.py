@@ -39,9 +39,9 @@ def bnwcol(col,r,g,b):
  vg = int(col[2:4],16)
  vb = int(col[4:6],16)
  base = (vr+vg+vb)/3
- vr = int(vr*float(1-(r/255.0)))+int(base*float(r/255.0))
- vg = int(vg*float(1-(g/255.0)))+int(base*float(g/255.0))
- vb = int(vb*float(1-(b/255.0)))+int(base*float(b/255.0))
+ vr = max(min(int(vr*float(1-(r/255.0)))+int(base*float(r/255.0)),255),0)
+ vg = max(min(int(vg*float(1-(g/255.0)))+int(base*float(g/255.0)),255),0)
+ vb = max(min(int(vb*float(1-(b/255.0)))+int(base*float(b/255.0)),255),0)
  vr = str(format(vr,"02x"))
  vg = str(format(vg,"02x"))
  vb = str(format(vb,"02x"))
