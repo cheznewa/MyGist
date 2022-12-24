@@ -1,7 +1,7 @@
 # Required :::::::::::::::::::: https://quut.com/gsm/
 # And SoX
-up=$2
-down=$1
+up=$1
+down=$2
 server=$3
 if [[ -z $server ]]
 then
