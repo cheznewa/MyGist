@@ -1,18 +1,22 @@
 up=$1
 down=$2
 server=$3
+if [[ -z $MYGIST ]]
+then
+exit 1
+fi
 if [[ -z $server ]]
 then
 server="https://ppng.io"
 fi
-enc=$(tr -cd 0-9 < /dev/urandom | head -c 100)
+enc=$(seq 0 255 | shuf | tr "\n" " ")
 curl -s -T - ${server}/${up}_chat <<< $enc > /dev/null &
 sleep 1
 dec=$(curl -s ${server}/${down}_chat)
 while test 1
 do
 read -p "you : " send
-openssl rc4 -pbkdf2 -k $enc <<< "$send" | curl -s -T - ${server}/${up}_chat > /dev/null &
+python2 $MYGIST/rc4.py $enc <<< "$send" | curl -s -T - ${server}/${up}_chat > /dev/null &
 printf "$down : "
-curl -s ${server}/${down}_chat | openssl rc4 -pbkdf2 -d -k $dec
+curl -s ${server}/${down}_chat | python2 $MYGIST/rc4.py $dec
 done
