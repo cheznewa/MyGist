@@ -1,3 +1,4 @@
+# Usage ::: chatpiping.bash you peer delay [server]
 # Required :::::::::::::::::::: https://quut.com/gsm/
 # And SoX
 up=$1

@@ -1,3 +1,4 @@
+# Usage ::: chatpiping.bash you peer [server]
 up=$1
 down=$2
 server=$3
@@ -9,7 +10,7 @@ if [[ -z $server ]]
 then
 server="https://ppng.io"
 fi
-enc=$(seq 0 255 | shuf | tr "\n" " ")
+enc=$(shuf -i 0-255 | tr "\n" " ")
 curl -s -T - ${server}/${up}_chat <<< $enc > /dev/null &
 sleep 1
 dec=$(curl -s ${server}/${down}_chat)
