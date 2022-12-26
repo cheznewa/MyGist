@@ -1,4 +1,4 @@
-# Usage ::: chatpiping.bash you peer delay [server]
+# Usage ::: gsmphonepiping.bash you peer delay [server]
 # Required :::::::::::::::::::: https://quut.com/gsm/
 # And SoX
 up=$1
@@ -19,6 +19,6 @@ sleep 1
 dec=$(curl -s ${server}/${down}_gsmphone)
 while test 1
 do
-rec -q -t s16 -r 8000 -c 1 - trim 0 $delay | toast -l | python2 $MYGIST/rc4.py $enc | curl -s -T - ${server}/${up}_gsmphone > /dev/null &
-curl -s ${server}/${down}_gsmphone | python2 $MYGIST/rc4.py $dec | toast -d -l
+rec -q -t s16 -r 8000 -c 1 - trim 0 $delay | toast -l | python2 $MYGIST/rc4.py crypto $enc | curl -s -T - ${server}/${up}_gsmphone > /dev/null &
+curl -s ${server}/${down}_gsmphone | python2 $MYGIST/rc4.py crypto $dec | toast -d -l
 done | play -q -t s16 -r 8000 -c 1 -

@@ -17,7 +17,7 @@ dec=$(curl -s ${server}/${down}_chat)
 while test 1
 do
 read -p "you : " send
-python2 $MYGIST/rc4.py $enc <<< "$send" | curl -s -T - ${server}/${up}_chat > /dev/null &
+python2 $MYGIST/rc4.py crypto $enc <<< "$send" | curl -s -T - ${server}/${up}_chat > /dev/null &
 printf "$down : "
-curl -s ${server}/${down}_chat | python2 $MYGIST/rc4.py $dec
+curl -s ${server}/${down}_chat | python2 $MYGIST/rc4.py crypto $dec
 done
