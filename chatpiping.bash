@@ -1,23 +1,22 @@
 # Usage ::: chatpiping.bash you peer [server]
+# Required ::: https://github.com/electrorys/speckcipher
 up=$1
 down=$2
 server=$3
-if [[ -z $MYGIST ]]
-then
-exit 1
-fi
 if [[ -z $server ]]
 then
 server="https://ppng.io"
 fi
-enc=$(shuf -i 0-255 | tr "\n" " ")
-curl -s -T - ${server}/${up}_chat <<< $enc > /dev/null &
+enc=$(mktemp)
+dec=$(mktemp)
+head -c 16 /dev/urandom > $enc
+curl -s -T - ${server}/${up}_chat < $enc > /dev/null &
 sleep 1
-dec=$(curl -s ${server}/${down}_chat)
+curl -s ${server}/${down}_chat > $dec
 while test 1
 do
 read -p "you : " send
-python2 $MYGIST/rc4.py crypto $enc <<< "$send" | curl -s -T - ${server}/${up}_chat > /dev/null &
+speckcrypt $enc - - <<< "$send" | curl -s -T - ${server}/${up}_chat > /dev/null &
 printf "$down : "
-curl -s ${server}/${down}_chat | python2 $MYGIST/rc4.py crypto $dec
+curl -s ${server}/${down}_chat | speckcrypt $dec - -
 done
