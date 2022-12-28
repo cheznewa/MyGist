@@ -1,5 +1,5 @@
-# Command Example :::::::::::::::::::::::::::: FONT_APEX=/path/to/font-apex/svgs bash fontapexffjs.bash name 000000 ffffff 1
-# Command Example With Modifier :::::::::::::::::::::::::::: FONT_APEX=/path/to/font-apex/svgs bash fontapexffjs.bash name 000000 ffffff 1
+# Command Example :::::::::::::::::::::::::::: FONT_APEX=/path/to/font-apex/svgs bash fontapexffjs.bash name 000000 1
+# Command Example With Modifier :::::::::::::::::::::::::::: FONT_APEX=/path/to/font-apex/svgs bash fontapexffjs.bash name 000000 1 blank ff0000
 # Source ::::::::::::::::::::::::::::::::::::: https://github.com/oracle/font-apex/
 if [[ -z $FONT_APEX ]]
 then
@@ -34,6 +34,7 @@ do
 printf "var apex_l_$(basename ${f} .svg | tr - _)_${names} = "
 sed "s/<path /<path fill=\"#$color\" /g" < $f | rsvg-convert -z $pntsz | composite -gravity southeast miff:$tmp png:- png:- | png2ff | base256 --format=js
 done
+rm $tmp
 else
 for f in $FONT_APEX/small/*.svg
 do
@@ -46,3 +47,4 @@ printf "var apex_l_$(basename ${f} .svg | tr - _)_${names} = "
 sed "s/<path /<path fill=\"#$color\" /g" < $f | rsvg-convert -z $pntsz | png2ff | base256 --format=js
 done
 fi
+
