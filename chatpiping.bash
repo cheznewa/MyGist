@@ -9,14 +9,14 @@ server="https://ppng.io"
 fi
 enc=$(mktemp)
 dec=$(mktemp)
-head -c 16 /dev/urandom > $enc
-curl -s -T - ${server}/${up}_chat < $enc > /dev/null &
+enc=$(tr -cd 0-9 < /dev/urandom | head -c 101)
+curl -s -T - ${server}/${up}_${down}_chat <<< $enc > /dev/null &
 sleep 1
-curl -s ${server}/${down}_chat > $dec
+dec=$(curl -s ${server}/${down}_${up}_chat)
 while test 1
 do
 read -p "you : " send
-speckcrypt $enc - - <<< "$send" | curl -s -T - ${server}/${up}_chat > /dev/null &
+speckcrypt <(printf "$enc") - - <<< "$send" | curl -s -T - ${server}/${up}_${down}_chat > /dev/null &
 printf "$down : "
-curl -s ${server}/${down}_chat | speckcrypt $dec - -
+curl -s ${server}/${down}_${up}_chat | speckcrypt <(printf "$dec") - -
 done
