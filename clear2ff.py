@@ -58,7 +58,7 @@ while bool(n):
   elif d > 0:
    rv = max(r - abs(d),0)
    gv = max(g - abs(d),0)
- if mode == "rb":
+ if mode == "gb":
   d=r-b
   if d < 0:
    rv = min(r + abs(d),65535)
