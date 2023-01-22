@@ -58,18 +58,29 @@ while bool(n):
   elif d > 0:
    rv = max(r - abs(d),0)
    gv = max(g - abs(d),0)
- if mode == "gb":
+ if mode == "gr":
   d=r-b
   if d < 0:
    rv = min(r + abs(d),65535)
   elif d > 0:
    rv = max(r - abs(d),0)
-  d=((rv+bv)/2)-g
+  d=((rv+bv)/2)-gv
   if d < 0:
    rv = min(rv + abs(d),65535)
    bv = min(bv + abs(d),65535)
   elif d > 0:
    rv = max(rv - abs(d),0)
    bv = max(bv - abs(d),0)
+ if mode == "gb":
+  d=b-r
+  if d < 0:
+   bv = min(b + abs(d),65535)
+  elif d > 0:
+   bv = max(b - abs(d),0)
+  d=gv-((rv+bv)/2)
+  if d < 0:
+   gv = min(gv + abs(d),65535)
+  elif d > 0:
+   gv = max(gv - abs(d),0)
  sys.stdout.write("%s%s%s%s%s%s%s%s" %(chr(rv/256),chr(rv%256),chr(gv/256),chr(gv%256),chr(bv/256),chr(bv%256),o[6],o[7]))
  n=n-1
