@@ -7,9 +7,7 @@ if [[ -z $server ]]
 then
 server="https://ppng.io"
 fi
-enc=$(mktemp)
-dec=$(mktemp)
-enc=$(tr -cd 0-9 < /dev/urandom | head -c 101)
+enc=$(tr -cd A-Za-z0-9 < /dev/urandom | head -c 8)
 curl -s -T - ${server}/${up}_${down}_chat <<< $enc > /dev/null &
 sleep 1
 dec=$(curl -s ${server}/${down}_${up}_chat)
