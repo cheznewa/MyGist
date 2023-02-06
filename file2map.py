@@ -48,4 +48,20 @@ for n in range(pow(pow(2,int(sys.argv[1])),2)):
   gg = rr
   b = r
   bb = rr
+ elif sys.argv[2] == "deg":
+  aa = sys.argv[3]
+  ar = int(aa[0:2],16)
+  ag = int(aa[2:4],16)
+  ab = int(aa[4:6],16)
+  zz = sys.argv[4]
+  zr = int(zz[0:2],16)
+  zg = int(zz[2:4],16)
+  zb = int(zz[4:6],16)
+  ff = ord(o[p])
+  rr = chr(int((ar*((255-ff)/255.0))+(zr*(ff/255.0))))
+  r = rr
+  gg = chr(int((ag*((255-ff)/255.0))+(zg*(ff/255.0))))
+  g = gg
+  bb = chr(int((ab*((255-ff)/255.0))+(zb*(ff/255.0))))
+  b = bb
  sys.stdout.write("%s%s%s%s%s%s\xff\xff" %(r,rr,g,gg,b,bb))
