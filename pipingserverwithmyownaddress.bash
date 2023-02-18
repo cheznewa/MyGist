@@ -9,7 +9,7 @@ tmp=$(mktemp)
 hmp=$(mktemp)
 cat - > $tmp
 n=0
-split -a 16 -d -b 1024 $tmp ${tmp}_
+split -a 16 -d -b 65536 $tmp ${tmp}_
 for h in ${tmp}_*
 do
 cat $h $hmp | sha3-256sum -b > $hmp
