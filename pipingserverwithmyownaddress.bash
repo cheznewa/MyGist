@@ -12,10 +12,10 @@ n=0
 split -a 16 -d -b 65536 $tmp ${tmp}_
 for h in ${tmp}_*
 do
-cat $h $hmp | sha3-256sum -b > $hmp
+sha3-256sum -b $h >> $hmp
 done
 rm ${tmp}_*
-addr=$(base58 $hmp)
+addr=$(sha3-256sum -b $hmp | base58)
 printf "${server}/ppng${addr}\n"
 while [[ $count -gt 0 ]]
 do
