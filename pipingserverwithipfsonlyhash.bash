@@ -12,7 +12,7 @@ addr=$(ipfs-only-hash --cid-version 0 $tmp)
 printf "${server}/$addr\n"
 while [[ $count -gt 0 ]]
 do
-curl -s -T $tmp ${server}/$addr > /dev/null
+curl -s -T - ${server}/$addr < $tmp > /dev/null
 count=$(($count - 1))
 done
 rm $tmp

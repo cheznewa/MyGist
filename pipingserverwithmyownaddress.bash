@@ -19,7 +19,7 @@ addr=$(base58 $hmp)
 printf "${server}/ppng${addr}\n"
 while [[ $count -gt 0 ]]
 do
-curl -s -T $tmp ${server}/ppng${addr} > /dev/null
+curl -s -T - ${server}/ppng${addr} < $tmp > /dev/null
 count=$(($count - 1))
 done
 rm $tmp $hmp
