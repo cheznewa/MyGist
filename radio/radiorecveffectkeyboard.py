@@ -46,7 +46,7 @@ while True:
      sys.stdout.write(fsf.read(1))
     no = 0
  if n == max-1:
-  sys.stderr.write("\x07\x0A")
+  sys.stderr.write("\x07")
  if u == 0:
   if keyboard.is_pressed("left"):
    min = min - inc

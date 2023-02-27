@@ -58,4 +58,4 @@ while True:
     no = 0
  ntrame = ntrame + 1
  if n == max-1:
-  sys.stderr.write("\x07\x0A")
+  sys.stderr.write("\x07")

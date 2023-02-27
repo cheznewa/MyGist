@@ -18,7 +18,7 @@ while True:
    i = int((256.0*(n-min)/(float(max)-float(min))))
    sys.stdout.write("%s" %(chr(i)))
  if n == max-1:
-  sys.stderr.write("\x07\x0A")
+  sys.stderr.write("\x07")
  if u == 0:
   if keyboard.is_pressed("left"):
    min = min - inc
