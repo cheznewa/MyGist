@@ -14,7 +14,7 @@ while bool(n):
  r = int(r*(a/255.0))
  g = int(g*(a/255.0))
  b = int(b*(a/255.0))
- sys.stdout.write("\x1b[38;2;%s;%s;%sm\xe2\x96\x88\xe2\x96\x88" %(r,g,b))
+ sys.stdout.write("\x1b[48;2;%s;%s;%sm  " %(r,g,b))
  n=n-1
  if not bool(n%x):
   sys.stdout.write("\n")
