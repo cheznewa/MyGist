@@ -1,6 +1,25 @@
 name: Chez Sick
 family: Chez Sick
 
+0x05:
+   ........
+   .@@@@@@.
+   .@....@.
+   .@@@@@@.
+   .@....@.
+   .@....@.
+   .@@@@@@.
+   .@....@.
+   .@@@@@@.
+   ........
+# ^ https://mamot.fr/@sick/110138846100163608
+# Comment Changer De Tableau Sans L'unicode :::::::: "\x05123n"
+
+# Je Décompose ::::::::::
+# \x05 Est Le Caractère Code 5 Qui Signale L'arriver D'un Numéro
+# 123 Suivi D'exemple Est Le Numéro Du Tableau De Caractères De La Fonte
+# n Indique La Fin Du Numéro
+
 0x07:
    ........
    .@@@@@@.
