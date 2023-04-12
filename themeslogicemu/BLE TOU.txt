@@ -1,7 +1,7 @@
 background:#d5d5d5
 on:#3383f0
 off:#37475c
-gate_bg:#bbffdd
+gate_bg:#69fe8c
 gate_on:#3383f0
 gate_off:#37475c
 text_fg:#3952f4
