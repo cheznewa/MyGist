@@ -42,7 +42,7 @@ sox -t mp3 http://str0.creacast.com/radio_vinci_autoroutes_7 -t u16 -r 15000 -c 
 sox -t mp3 https://ice.creacast.com/radio_vinci_autoroutes_a355 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10840000 10850000 16 > $tmp/trafica355.radio &
 sox -t mp3 http://direct.franceinfo.fr/live/franceinfo-midfi.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10550000 10560000 16 > $tmp/franceinfo.radio &
 sox -t mp3 https://audio.bfmtv.com/bfmradio_128.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10850000 10860000 16 > $tmp/bfmradio.radio &
-sox -t mp3 https://audio.bfmtv.com/bfmbusiness_128.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10860000 10870000 16 > $tmp/bfmradio.radio &
+sox -t mp3 https://audio.bfmtv.com/bfmbusiness_128.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10860000 10870000 16 > $tmp/bfmbusiness.radio &
 sox -t mp3 http://icecast.radiofrance.fr/fbalsace-midfi.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10870000 10880000 16 > $tmp/fbalsace.radio &
 sox -t mp3 http://14993.live.streamtheworld.com/NV1.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10900000 10910000 16 > $tmp/nvone.radio &
 sleep $timing
