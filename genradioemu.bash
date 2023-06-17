@@ -15,7 +15,7 @@ sox -t mp3 http://live02.rfi.fr/rfimonde-96k.mp3 -t u16 -r 15000 -c 1 $tmp/rfi.r
 sox -t mp3 http://direct.franceinter.fr/live/franceinter-midfi.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 8760000 8770000 16 > $tmp/franceinter.radio &
 sox -t mp3 http://generationfm.ice.infomaniak.ch/generationfm-high.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 8820000 8830000 16 > $tmp/generations.radio &
 sox -t mp3 https://scdn.nrjaudio.fm/audio1/fr/30601/mp3_128.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 9040000 9050000 16 > $tmp/nostalgie.radio &
-sox -t mp3 http://stream1.evasionfm.com/Chante_France -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 9090000 9100000 16 > $tmp/chantefrance.radio &
+sox -t mp3 https://chantefrance.ice.infomaniak.ch/chantefrance-128.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 9090000 9100000 16 > $tmp/chantefrance.radio &
 sox -t mp3 http://icecast.skyrock.net/s/natio_mp3_128k -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 9600000 9610000 16 > $tmp/skyrock.radio &
 sox -t mp3 https://scdn.nrjaudio.fm/audio1/fr/30401/mp3_128.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 9740000 9750000 16 > $tmp/rireetchansons.radio &
 sox -t mp3 https://windu.radionotredame.net/RadioNotreDame-Fm.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10070000 10080000 16 > $tmp/radionotredame.radio &
@@ -42,7 +42,7 @@ sox -t mp3 http://str0.creacast.com/radio_vinci_autoroutes_7 -t u16 -r 15000 -c 
 sox -t mp3 https://ice.creacast.com/radio_vinci_autoroutes_a355 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10840000 10850000 16 > $tmp/trafica355.radio &
 sox -t mp3 http://direct.franceinfo.fr/live/franceinfo-midfi.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10550000 10560000 16 > $tmp/franceinfo.radio &
 sox -t mp3 https://audio.bfmtv.com/bfmradio_128.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10850000 10860000 16 > $tmp/bfmradio.radio &
-sox -t mp3 https://audio.bfmtv.com/bfmbusiness_128.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10860000 10870000 16 > $tmp/bfmbusiness.radio &
+sox -t mp3 https://audio.bfmtv.com/bfmbusiness_128.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 9640000 9650000 16 > $tmp/bfmbusiness.radio &
 sox -t mp3 http://icecast.radiofrance.fr/fbalsace-midfi.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10870000 10880000 16 > $tmp/fbalsace.radio &
 sox -t mp3 http://14993.live.streamtheworld.com/NV1.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10900000 10910000 16 > $tmp/nvone.radio &
 sleep $timing
