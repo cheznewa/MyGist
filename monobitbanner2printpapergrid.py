@@ -1,7 +1,7 @@
 import sys
 import time
 s = 0
-y = 0
+y = 1
 sys.stdout.write("NEG = None\nPOS = Cross\nRET = New Line\n")
 while True:
  s = s + 1
