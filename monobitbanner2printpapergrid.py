@@ -5,12 +5,13 @@ sys.stdout.write("NEG = None\nPOS = Cross\nRET = New Line\n")
 while True:
  s = s + 1
  i = sys.stdin.read(1)
- if i == "\x2e":
+ if i == ".":
   sys.stdout.write("NEG")
- elif i == "\x40":
+ elif i == "@":
   sys.stdout.write("POS")
- elif i == "\x0a":
+ elif i == "\n":
   sys.stdout.write("RET")
+  s = 0
  else:
   exit(1)
  sys.stdout.write(" - %s" %(s))
