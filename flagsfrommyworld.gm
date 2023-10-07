@@ -17,4 +17,4 @@ mogrify -fill red -draw "rectangle 0,700 2970,1400" -fill purple -draw "rectangl
 convert -size 2970x2100 xc:white Movenie.png
 mogrify -stroke none -fill lime -draw "rectangle 0,0 1485,1050 fill blue rectangle 1485,1050 2970,2100" Movenie.png
 convert -size 2970x2100 xc:white Joséro.png
-mogrify -fill dodgerblue -stroke none -draw "rectangle 0,0 990,2100 rectangle 1980,0 2970,2100 polygon 1485,100 1880,1050 1880,1080 1500,1080 1500,2000 1470,2000 1470,1080 1090,1080 1090,1050" Joséro.png
+mogrify -fill dodgerblue -stroke none -draw "rectangle 0,0 990,2100 rectangle 1980,0 2970,2100 polygon 1485,100 1880,1040 1880,1080 1510,1080 1510,2000 1460,2000 1460,1080 1090,1080 1090,1040" Joséro.png
