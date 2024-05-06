@@ -1,0 +1,16 @@
+@   @ @@@@@    @@@@@       @@@@@
+@   @ @       @     @     @     @
+@   @ @@@@@  @       @   @       @
+@   @     @ @  @   @  @ @   @@@   @
+@@@@@ @@@@@ @  @@ @@  @ @  @   @  @
+            @  @ @ @  @ @  @      @
+@@@@@ @@@@@ @  @   @  @ @  @   @  @
+@   @ @     @  @   @  @ @   @@@   @
+@   @ @      @       @   @       @
+@   @ @       @     @     @     @
+@   @ @@@@@    @@@@@       @@@@@
+
+0"Copyright Maskwork, Ultra Scale Network Circuit, Inc."
+0"All Publications Of This Circuit Will Sued."
+
+s---->l
