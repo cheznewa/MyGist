@@ -18,5 +18,5 @@ for h in $(find /tmp/archlinux/archlinux -type d)
 do
 genlist "$h" > "$h/index.html"
 done
-zip -r archlinux /tmp/archlinux
+zip -r archlinux_$(date +%F) /tmp/archlinux
 rm -fr /tmp/archlinux
