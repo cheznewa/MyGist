@@ -2,7 +2,7 @@
 # https://github.com/lipis/flag-icons
 # https://github.com/iptv-org/database/ iptv-data
 # https://tools.suckless.org/farbfeld/
-# https://github.com/thombashi/sqlitebiter - For Convert The CSV To SQLite Used
+# https://github.com/harelba/q
 # args ::::::::: number size font
 for i in $(seq 1 $1)
 do
