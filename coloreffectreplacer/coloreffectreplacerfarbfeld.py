@@ -418,6 +418,18 @@ def dprcol(col,vk,vc,vm,vy): # Deficiency Printing
  vb = str(format(int(b*255),"02x"))
  return vr + vg + vb
 
+def thtcol(col,r,g,b): # Theta Lumineux
+ vr = int(col[0:2],16)
+ vg = int(col[2:4],16)
+ vb = int(col[4:6],16)
+ vr = int(min(vr*r,255))
+ vg = int(min(vg*g,255))
+ vb = int(min(vb*b,255))
+ vr = str(format(vr,"02x"))
+ vg = str(format(vg,"02x"))
+ vb = str(format(vb,"02x"))
+ return vr + vg + vb
+
 import sys
 if not "farbfeld" == sys.stdin.read(8):
  exit(1)
@@ -506,6 +518,9 @@ while bool(n):
  if sys.argv[1] == "dpr":
   acol = dprcol(acol,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]),int(sys.argv[5]))
   bcol = dprcol(bcol,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]),int(sys.argv[5]))
+ if sys.argv[1] == "tht":
+  acol = thtcol(acol,float(sys.argv[2]),float(sys.argv[3]),float(sys.argv[4]))
+  bcol = thtcol(bcol,float(sys.argv[2]),float(sys.argv[3]),float(sys.argv[4]))
  sys.stdout.write(chr(int(acol[0:2],16)))
  sys.stdout.write(chr(int(bcol[0:2],16)))
  sys.stdout.write(chr(int(acol[2:4],16)))

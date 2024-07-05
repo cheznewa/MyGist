@@ -418,6 +418,18 @@ def dprcol(col,vk,vc,vm,vy): # Deficiency Printing
  vb = str(format(int(b*255),"02x"))
  return vr + vg + vb
 
+def thtcol(col,r,g,b): # Theta Lumineux
+ vr = int(col[0:2],16)
+ vg = int(col[2:4],16)
+ vb = int(col[4:6],16)
+ vr = int(min(vr*r,255))
+ vg = int(min(vg*g,255))
+ vb = int(min(vb*b,255))
+ vr = str(format(vr,"02x"))
+ vg = str(format(vg,"02x"))
+ vb = str(format(vb,"02x"))
+ return vr + vg + vb
+
 import sys
 fsa = open(sys.argv[1],"r")
 u = 0
@@ -483,6 +495,8 @@ while True:
   col = lumcol(col,int(param[2]),int(param[3]),int(param[4]),float(param[5]),float(param[6]),float(param[7]))
  if param[1] == "dpr":
   col = dprcol(col,int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]),int(sys.argv[5]))
+ if param[1] == "tht":
+  col = thtcol(col,float(param[2]),float(param[3]),float(param[4]))
  sys.stdout.write(chr(int(col[0:2],16)))
  sys.stdout.write(chr(int(col[2:4],16)))
  sys.stdout.write(chr(int(col[4:6],16)))
