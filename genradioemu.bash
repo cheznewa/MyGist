@@ -42,11 +42,17 @@ sox -t mp3 https://audio.bfmtv.com/bfmradio_128.mp3 -t u16 -r 15000 -c 1 - trim 
 sox -t mp3 https://audio.bfmtv.com/bfmbusiness_128.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 9640000 9650000 16 > $tmp/bfmbusiness.radio &
 sox -t mp3 http://icecast.radiofrance.fr/fbalsace-midfi.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10870000 10880000 16 > $tmp/fbalsace.radio &
 # Begin Radios InStore
+# Source :::: https://libreantenne.radioactu.com/topic/44822-je-recherche-des-flux-de-radio-de-magasin/
 sox -t mp3 https://burgerking.ice.infomaniak.ch/burgerking.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 20000000 20010000 16 > $tmp/burgerking.radio &
 sox -t mp3 https://quick.ice.infomaniak.ch/quick.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 20010000 20020000 16 > $tmp/quick.radio &
 sox -t mp3 http://46.105.251.82/colombuscafe -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 20020000 20030000 16 > $tmp/colombus.radio &
 sox -t mp3 http://46.105.251.82/carrmarket -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 20030000 20040000 16 > $tmp/carrefourmarket.radio &
-sox -t mp3 http://46.105.251.82/monop1 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 20040000 20050000 16 > $tmp/monopony.radio &
+sox -t mp3 http://46.105.251.82/monop1 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 20040000 20050000 16 > $tmp/monoprix.radio &
+sox -t mp3 https://carglass.ice.infomaniak.ch/carglass-tubes.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 20050000 20060000 16 > $tmp/carglass.radio &
+sox -t mp3 http://46.105.251.82/confo1 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 20060000 20070000 16 > $tmp/conforama.radio &
+sox -t mp3 http://46.105.251.82/carrhyper -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 20070000 20080000 16 > $tmp/carrefour.radio &
+sox -t mp3 http://46.105.251.82/laposte28 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 20080000 20090000 16 > $tmp/laposte.radio &
+sox -t mp3 http://46.105.251.82/indigo46 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 20090000 20100000 16 > $tmp/indigo.radio &
 # End Radios InStore
 sleep $timing
 sox -t u16 -r 15000 -c 1 $tmp/francebleu.raw -r 15000 -t ul -c 1 $tmp/francebleu_ul.raw
