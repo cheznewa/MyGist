@@ -24,7 +24,6 @@ sox -t mp3 http://streaming.radio.funradio.fr/fun-1-44-128 -t u16 -r 15000 -c 1 
 sox -t mp3 https://europe2.lmn.fm/europe2.mp3?aw_0_1st.playerid=lgrdnwsRadioplayer -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10350000 10360000 16 > $tmp/europe2.radio &
 sox -t mp3 http://streaming.radio.rtl.fr/rtl-1-44-128 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10430000 10440000 16 > $tmp/rtl.radio &
 sox -t mp3 http://streaming.radio.rtl2.fr/rtl2-1-44-128 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10590000 10600000 16 > $tmp/rtl2.radio &
-sox -t mp3 http://ais-live.cloud-services.paris:8000/europe1.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10470000 10480000 16 > $tmp/europe1.radio &
 sox -t mp3 https://start-voltage.ice.infomaniak.ch/start-voltage-high.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 9690000 9700000 16 > $tmp/voltage.radio &
 sox -t mp3 https://stream.rfm.fr/rfm.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10390000 10400000 16 > $tmp/rfm.radio &
 sox -t mp3 https://scdn.nrjaudio.fm/audio1/fr/30201/mp3_128.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 9130000 9140000 16 > $tmp/cheriefm.radio &
@@ -42,6 +41,13 @@ sox -t mp3 http://direct.franceinfo.fr/live/franceinfo-midfi.mp3 -t u16 -r 15000
 sox -t mp3 https://audio.bfmtv.com/bfmradio_128.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10850000 10860000 16 > $tmp/bfmradio.radio &
 sox -t mp3 https://audio.bfmtv.com/bfmbusiness_128.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 9640000 9650000 16 > $tmp/bfmbusiness.radio &
 sox -t mp3 http://icecast.radiofrance.fr/fbalsace-midfi.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 10870000 10880000 16 > $tmp/fbalsace.radio &
+# Begin Radios InStore
+sox -t mp3 https://burgerking.ice.infomaniak.ch/burgerking.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 20000000 20010000 16 > $tmp/burgerking.radio &
+sox -t mp3 https://quick.ice.infomaniak.ch/quick.mp3 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 20010000 20020000 16 > $tmp/quick.radio &
+sox -t mp3 http://46.105.251.82/colombuscafe -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 20020000 20030000 16 > $tmp/colombus.radio &
+sox -t mp3 http://46.105.251.82/carrmarket -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 20030000 20040000 16 > $tmp/carrefourmarket.radio &
+sox -t mp3 http://46.105.251.82/monop1 -t u16 -r 15000 -c 1 - trim 0 $timing | python2 $MYGIST/radio/radiosend.py 20040000 20050000 16 > $tmp/monopony.radio &
+# End Radios InStore
 sleep $timing
 sox -t u16 -r 15000 -c 1 $tmp/francebleu.raw -r 15000 -t ul -c 1 $tmp/francebleu_ul.raw
 python2 $MYGIST/radio/radiosend.py 10710000 10720000 16 < $tmp/francebleu.raw > $tmp/francebleu.radio
