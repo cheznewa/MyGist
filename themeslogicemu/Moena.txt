@@ -28,7 +28,6 @@ link:#3c44e6
 title:#ceedde
 chiplabel_fg:#49f2f2
 chiplabel_bg:#123d3d
-error_bg:#f0cc3e
-error_fg_off:#f0cc3e
-error_fg_on:#f0cc3e
-
+error_bg:red
+error_fg_off:orange
+error_fg_on:yellow
