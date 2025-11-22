@@ -1,7 +1,7 @@
 convert -size 2970x2100 xc:blue BLE\ TOU.png
 mogrify -fill gray -stroke none -draw "rectangle 0,0 990,2100" BLE\ TOU.png
-convert -size 2970x2100 xc:white Phelyn.png
-mogrify -fill orange -stroke none -draw "rectangle 0,0 990,2100 rectangle 1980,0 2970,2100" Phelyn.png
+convert -size 2970x2100 xc:white Phélÿn.png
+mogrify -fill orange -stroke none -draw "rectangle 0,0 990,2100 rectangle 1980,0 2970,2100" Phélÿn.png
 convert -size 2970x2100 xc:white Moênne.png
 mogrify -fill mediumforestgreen -draw "rectangle 0,0 990,2100 rectangle 1980,0 2970,2100" Moênne.png
 convert -size 501x501 xc:none -fill magenta -draw "rectangle 0,0 250,250 fill yellow rectangle 250,0 500,250 fill cyan rectangle 0,250 250,500" -fill black -draw "rectangle 250,250 500,500" Moênne_sym.png
@@ -14,8 +14,8 @@ convert -size 2970x2100 xc:forestgreen Indih.png
 mogrify -stroke none -fill white -draw "polygon 0,0 1485,1050 0,2100 polygon 1485,1050 2970,0 2970,2100" Indih.png
 convert -size 2970x2100 xc:yellow Solainie.png
 mogrify -fill red -draw "rectangle 0,700 2970,1400" -fill purple -draw "rectangle 0,1400 2970,2100" Solainie.png
-convert -size 2970x2100 xc:white Movenie.png
-mogrify -stroke none -fill lime -draw "rectangle 0,0 1485,1050 fill blue rectangle 1485,1050 2970,2100" Movenie.png
+convert -size 2970x2100 xc:white Movénie.png
+mogrify -stroke none -fill lime -draw "rectangle 0,0 1485,1050 fill blue rectangle 1485,1050 2970,2100" Movénie.png
 convert -size 2970x2100 xc:white Joséro.png
 mogrify -fill dodgerblue -stroke none -draw "rectangle 0,0 990,2100 rectangle 1980,0 2970,2100 polygon 1485,100 1880,1040 1880,1080 1510,1080 1510,2000 1460,2000 1460,1080 1090,1080 1090,1040" Joséro.png
 convert -size 2970x2100 xc:white Luana.png
