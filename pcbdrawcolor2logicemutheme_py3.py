@@ -28,19 +28,13 @@ b = int(b,16)/2
 b = str(format(int(b),"02x"))
 labelbg = "#" + r + g + b
 r = clad[1:3]
-r = int(r,16)*2
-if r > 255:
- r = 255
+r = min(int(str(r),16)*2,255)
 r = str(format(r,"02x"))
 g = clad[3:5]
-g = int(g,16)*2
-if g > 255:
- g = 255
+g = min(int(str(g),16)*2,255)
 g = str(format(g,"02x"))
 b = clad[5:7]
-b = int(b,16)*2
-if b > 255:
- b = 255
+b = min(int(str(b),16)*2,255)
 b = str(format(b,"02x"))
 cladactive = "#" + r + g + b
 sys.stdout.write("background:%s\n" %(board))
