@@ -4,10 +4,8 @@ col = json.loads(sys.stdin.read())
 board = col["copper"]
 copper = col["board"]
 r = copper[1:3]
-r = int(r,16)*2
-if r > 255:
- r = 255
 r = min(int(str(r),16)*2,255)
+r = str(format(r,"02x"))
 g = copper[3:5]
 g = min(int(str(g),16)*2,255)
 g = str(format(g,"02x"))
