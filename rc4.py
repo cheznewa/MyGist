@@ -9,7 +9,8 @@ while True:
  b=S[j]
  S[i]=b
  S[j]=a
- c=S[(S[i]+S[j])%256]
+ d=S[(S[i]+S[j])%256]
+ c=S[d]
  if "crypto" == sys.argv[1]:
   z=sys.stdin.read(1)
   if not z:
