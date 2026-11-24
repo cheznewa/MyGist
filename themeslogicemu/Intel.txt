@@ -29,6 +29,6 @@ title:#6197c9
 chiplabel_fg:#827c0e
 chiplabel_bg:#edf024
 error_bg:red
-error_fg_off:red
+error_fg_off:orange
 error_fg_on:yellow
 
